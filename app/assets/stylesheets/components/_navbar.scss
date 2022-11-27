@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $blue;
-  color: $yellow;
+  background: $yellow;
+  color: $blue;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -20,22 +20,14 @@
   h4 {
     font-size: 15px;
     font-style: italic;
-    color: $yellow;
+    color: $blue;
     font-weight: 800;
     line-height: 0.6;
   }
 }
 
 .navbar-nav .nav-link {
-  color: $yellow;
+  color: $blue;
   font-family: $body-font;
   font-weight: 600;
-}
-
-@media (min-width: 350px) {
-  .navbar-expand-sm .navbar-collapse {
-      display: flex !important;
-      flex-basis: auto;
-  }
-
 }

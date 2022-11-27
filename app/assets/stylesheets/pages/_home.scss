@@ -3,7 +3,7 @@
 .home-container {
   text-align: center;
   margin: 0 auto;
-  background-color: $yellow;
+  background-color: $blue;
   height: 100vh;
   padding-top: 90px;
 
@@ -12,7 +12,13 @@
     font-size: 45px;
     font-style: italic;
     font-weight: 900;
-    color: $blue;
+    color: $yellow;
     line-height: 45px;
   }
+}
+
+.btn-jouer {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
 }
