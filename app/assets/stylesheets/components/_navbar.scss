@@ -25,3 +25,10 @@
     line-height: 0.6;
   }
 }
+
+@media (min-width: 300px) {
+  .navbar-expand-sm .navbar-collapse {
+      display: flex !important;
+      flex-basis: auto;
+  }
+}
