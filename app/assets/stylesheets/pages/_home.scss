@@ -1,1 +1,18 @@
 // Specific CSS for your home-page
+
+.home-container {
+  text-align: center;
+  margin: 0 auto;
+  background-color: $blue;
+  height: 100vh;
+  padding-top: 90px;
+
+
+  h1 {
+    font-size: 45px;
+    font-style: italic;
+    font-weight: 900;
+    color: white;
+    line-height: 45px;
+  }
+}
