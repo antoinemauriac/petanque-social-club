@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_114555) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_133322) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,20 +64,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_114555) do
     t.index ["league_id"], name: "index_games_on_league_id"
   end
 
-  create_table "league_teams", force: :cascade do |t|
-    t.bigint "league_id", null: false
-    t.bigint "team_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["league_id"], name: "index_league_teams_on_league_id"
-    t.index ["team_id"], name: "index_league_teams_on_team_id"
-  end
-
   create_table "leagues", force: :cascade do |t|
     t.string "name"
     t.boolean "status"
     t.bigint "league_winner"
-    t.bigint "admin_user_id"
+    t.bigint "admin_user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -96,6 +87,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_114555) do
     t.integer "second_player"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "league_id"
+    t.index ["league_id"], name: "index_teams_on_league_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -106,6 +99,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_114555) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.date "date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -115,8 +110,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_114555) do
   add_foreign_key "game_teams", "games"
   add_foreign_key "game_teams", "teams"
   add_foreign_key "games", "leagues"
-  add_foreign_key "league_teams", "leagues"
-  add_foreign_key "league_teams", "teams"
   add_foreign_key "team_users", "teams"
   add_foreign_key "team_users", "users"
+  add_foreign_key "teams", "leagues"
 end
