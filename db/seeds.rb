@@ -6,37 +6,78 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-TeamUser.destroy_all
-User.destroy_all
-GameTeam.destroy_all
-Team.destroy_all
-Game.destroy_all
-League.destroy_all
+  TeamUser.destroy_all
+  User.destroy_all
+  GameTeam.destroy_all
+  Team.destroy_all
+  Game.destroy_all
+  League.destroy_all
 
-5.times do
-  User.create!(email: Faker::Internet.email, username: Faker::Internet.username, password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-end
+  League.create(name: "La premier league")
 
-user1 = User.all[0]
-user2 = User.all[1]
-user3 = User.all[2]
-user4 = User.all[3]
+  for i in (0..10) do
+    User.create!(email: Faker::Internet.email, username: Faker::Internet.username, password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  end
 
-ligue1 = League.create(name: "La premier league")
-game1 = Game.create!(league: ligue1)
-team1 = Team.create!(league: League.first)
-team2 = Team.create!(league: League.first)
+  10.times do
+    Game.create!(league: League.first)
+  end
 
-team_user1 = TeamUser.create!(user: user1, team: team1)
-team_user2 = TeamUser.create!(user: user2, team: team1)
-team_user3 = TeamUser.create!(user: user3, team: team2)
-team_user4 = TeamUser.create!(user: user4, team: team2)
+  6.times do
+    Team.create!(league: League.first)
+  end
 
-game_team1 = GameTeam.create!(team: team1, game: game1)
-game_team2 = GameTeam.create!(team: team2, game: game1)
+  def create_team_user
+    k = -2
+    for j in (1..5) do
+      k += 2
+      for i in (k..k+1) do
+        TeamUser.create!(user: User.all[i], team: Team.all[j])
+      end
+    end
+  end
 
-TeamUser.where(team: team1).each { |t| t.user.username }
+  create_team_user
 
-teams_game_array  = GameTeam.where(game: game1).map { |gt| TeamUser.where(team: gt.team)}
-game_players = teams_game_array.map { |t| t.map { |u| u.user.username} }
-p game_players
+
+GameTeam.create!(team: Team.all[0], game: Game.all[0])
+GameTeam.create!(team: Team.all[1], game: Game.all[0])
+GameTeam.create!(team: Team.all[0], game: Game.all[1])
+GameTeam.create!(team: Team.all[2], game: Game.all[1])
+GameTeam.create!(team: Team.all[0], game: Game.all[2])
+GameTeam.create!(team: Team.all[3], game: Game.all[2])
+GameTeam.create!(team: Team.all[0], game: Game.all[3])
+GameTeam.create!(team: Team.all[4], game: Game.all[3])
+GameTeam.create!(team: Team.all[1], game: Game.all[4])
+GameTeam.create!(team: Team.all[2], game: Game.all[4])
+GameTeam.create!(team: Team.all[1], game: Game.all[5])
+GameTeam.create!(team: Team.all[3], game: Game.all[5])
+GameTeam.create!(team: Team.all[1], game: Game.all[6])
+GameTeam.create!(team: Team.all[4], game: Game.all[6])
+GameTeam.create!(team: Team.all[2], game: Game.all[7])
+GameTeam.create!(team: Team.all[3], game: Game.all[7])
+GameTeam.create!(team: Team.all[2], game: Game.all[8])
+GameTeam.create!(team: Team.all[4], game: Game.all[8])
+GameTeam.create!(team: Team.all[3], game: Game.all[9])
+GameTeam.create!(team: Team.all[4], game: Game.all[9])
+
+
+#renvoie les deux players d'une team donnée
+
+TeamUser.where(team: Team.all[2]).map { |t| t.user }
+
+#renvoie les deux teams d'un game donné
+
+GameTeam.where(game: Game.all[4]).map { |g| g.team }
+
+#renvoie les teams d'une ligue donnée
+
+Team.where(league: League.first)
+
+#renvoie tous les players d'une ligue donnée
+
+Team.where(league: League.first).map { |team| TeamUser.where(team: team).map { |t| t.user }}
+
+# teams_game_array  = GameTeam.where(game: game1).map { |gt| TeamUser.where(team: gt.team)}
+# game_players = teams_game_array.map { |t| t.map { |u| u.user.username} }
+# p game_players
