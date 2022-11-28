@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_27_175741) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_114555) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,62 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_27_175741) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "game_teams", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "team_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_game_teams_on_game_id"
+    t.index ["team_id"], name: "index_game_teams_on_team_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.bigint "league_id", null: false
+    t.integer "first_team"
+    t.integer "second_team"
+    t.integer "score_first_team"
+    t.integer "score_second_team"
+    t.integer "game_winner"
+    t.boolean "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_games_on_league_id"
+  end
+
+  create_table "league_teams", force: :cascade do |t|
+    t.bigint "league_id", null: false
+    t.bigint "team_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_league_teams_on_league_id"
+    t.index ["team_id"], name: "index_league_teams_on_team_id"
+  end
+
+  create_table "leagues", force: :cascade do |t|
+    t.string "name"
+    t.boolean "status"
+    t.bigint "league_winner"
+    t.bigint "admin_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "team_users", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "team_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_team_users_on_team_id"
+    t.index ["user_id"], name: "index_team_users_on_user_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.integer "first_player"
+    t.integer "second_player"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -56,4 +112,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_27_175741) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "game_teams", "games"
+  add_foreign_key "game_teams", "teams"
+  add_foreign_key "games", "leagues"
+  add_foreign_key "league_teams", "leagues"
+  add_foreign_key "league_teams", "teams"
+  add_foreign_key "team_users", "teams"
+  add_foreign_key "team_users", "users"
 end
