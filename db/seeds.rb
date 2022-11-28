@@ -8,51 +8,35 @@
 
 TeamUser.destroy_all
 User.destroy_all
+GameTeam.destroy_all
 Team.destroy_all
 Game.destroy_all
 League.destroy_all
 
 5.times do
-  User.create(email: Faker::Internet.email, username: Faker::Internet.username, password: 123456, date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  User.create!(email: Faker::Internet.email, username: Faker::Internet.username, password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
 end
 
+user1 = User.all[0]
+user2 = User.all[1]
+user3 = User.all[2]
+user4 = User.all[3]
+
 ligue1 = League.create(name: "La premier league")
-team1 = Team.new(league: League.first)
-team2 = Team.new(league: League.first)
-game1 = Game.new(league: ligue1)
+game1 = Game.create!(league: ligue1)
+team1 = Team.create!(league: League.first)
+team2 = Team.create!(league: League.first)
 
+team_user1 = TeamUser.create!(user: user1, team: team1)
+team_user2 = TeamUser.create!(user: user2, team: team1)
+team_user3 = TeamUser.create!(user: user3, team: team2)
+team_user4 = TeamUser.create!(user: user4, team: team2)
 
-# team_user1 = TeamUser.new
-# team_user1.user = User.all[0]
-# team_user1.team = team1
-# team_user1.save
+game_team1 = GameTeam.create!(team: team1, game: game1)
+game_team2 = GameTeam.create!(team: team2, game: game1)
 
-# team_user2 = TeamUser.new
-# team_user2.user = User.all[1]
-# team_user2.team = team1
-# team_user2.save
+TeamUser.where(team: team1).each { |t| t.user.username }
 
-# team_user3 = TeamUser.new
-# team_user3.user = User.all[2]
-# team_user3.team = team2
-# team_user3.save
-
-# team_user4 = TeamUser.new
-# team_user4.user = User.all[3]
-# team_user4.team = team2
-# team_user4.save
-
-team1.first_player = User.all[0]
-team1.second_player = User.all[1]
-team1.league = ligue1
-team1.save
-
-team2.first_player = User.all[2]
-team2.second_player = User.all[3]
-team2.league = ligue1
-team2.save
-
-game1.first_team = team1
-game1.second_team = team2
-game1.league = ligue1
-game1.save
+teams_game_array  = GameTeam.where(game: game1).map { |gt| TeamUser.where(team: gt.team)}
+game_players = teams_game_array.map { |t| t.map { |u| u.user.username} }
+p game_players
