@@ -1,2 +1,12 @@
 <h1>Games#index</h1>
 <p>Find me in app/views/games/index.html.erb</p>
+
+<% @league.games.each do |game| %>
+<ul><li>
+<% GameTeam.teams_of_the_game(game).each do |team| %>
+<% TeamUser.players_of_the_team(team).each do |user|%>
+<%= user.username %>
+<% end %>
+<% end %>
+</li></ul>
+<% end %>
