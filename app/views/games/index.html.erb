@@ -1,12 +1,27 @@
-<h1>Games#index</h1>
-<p>Find me in app/views/games/index.html.erb</p>
 
 <% @league.games.each do |game| %>
-<ul><li>
-<% GameTeam.teams_of_the_game(game).each do |team| %>
-<% TeamUser.players_of_the_team(team).each do |user|%>
-<%= user.username %>
+<ul>
+  <li>
+  <% game_players = game.teams.map { |team| team.users }.flatten %>
+  <% if game_players.include?(current_user) %>
+  <%= game_players[0].username %> <%= game_players[1].username %>
+  <% if game.status = false %> <%= "13-4" %><% else %> <%= "SCORE ?"%><% end %>
+  <%= game_players[2].username %> <%= game_players[3].username %>
+  <% end %>
+  </li>
+</ul>
 <% end %>
-<% end %>
-</li></ul>
+
+<h1>------------------------------------</h1>
+<% @league.games.each do |game| %>
+<ul>
+  <li>
+  <% game_players = game.teams.map { |team| team.users }.flatten %>
+  <% if game_players.exclude?(current_user) %>
+  <%= game_players[0].username %> <%= game_players[1].username %>
+  <% if game.status = false %> <%= "8-13" %><% else %> <%= " - "%><% end %><%= game_players[2].username %> <%= game_players[3].username %>
+  <%= game_players[2].username %> <%= game_players[3].username %>
+  <% end %>
+  </li>
+</ul>
 <% end %>
