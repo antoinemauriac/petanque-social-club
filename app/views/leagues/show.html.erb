@@ -1,4 +1,6 @@
-<h1 class="flexy"><%= @league.name %></h1>
+<h2 class="flexy light-blue-bar">
+  <%= @league.name.upcase %>
+</h2>
 
 <div data-controller="display">
   <ul class="nav nav-pills nav-fill">
@@ -13,16 +15,21 @@
     </li>
   </ul>
 
-  <div class="d-none" data-display-target="classements"></div>
+  <div data-display-target="classements">
+  <h3>Hello from classement</h3>
+  </div>
 
-  <div class="d-none" data-display-target="matchs">
+  <div class="d-none flexy" data-display-target="matchs">
     <% @league.games.each do |game| %>
       <ul>
         <li>
         <% game_players = game.teams.map { |team| team.users }.flatten %>
         <% if game_players.include?(current_user) %>
         <%= game_players[0].username %> <%= game_players[1].username %>
-        <% if game.status = false %> <%= "13-4" %><% else %> <%= "SCORE ?"%><% end %>
+        <% if game.status == false %>
+          <%= game.score_first_team %> - <%= game.score_second_team %>
+          <% else %> <%= link_to "SCORE ?", league_game_path(@league, game.id), class:"btn-small" %>
+        <% end %>
         <%= game_players[2].username %> <%= game_players[3].username %>
         <% end %>
         </li>
@@ -42,10 +49,13 @@
       </ul>
       <% end %>
       <h3>
-      <%= link_to "retour à mes ligues", leagues_path %></h3>
+      <%= link_to "retour à mes ligues", leagues_path %>
+      </h3>
   </div>
 
-  <div class="d-none" data-display-target="murs"></div>
+  <div class="d-none" data-display-target="murs">
+  <h3>Hello from mur</h3>
+  </div>
 
 <!--<h2>classement</h2>
 <h2> <%= link_to "matchs", league_games_path(@league)  %></h2>
