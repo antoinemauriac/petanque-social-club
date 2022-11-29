@@ -4,12 +4,10 @@
   <%= link_to "CREER UNE NOUVELLE LIGUE", new_league_path, class:"btn-medium", id:"btn-create" %>
 </div>
 
-  <% @leagues.each do |league| %>
-
 <ul class="flexy">
+  <% @leagues.each do |league| %>
   <li class="btn-medium"><%= link_to league.name.upcase , league_path(league) %></li>
   <li class="btn-medium"><%= link_to "Family League".upcase , league_path(league) %></li>
   <li class="btn-medium"><%= link_to "La ligue de toto titi et tata".upcase , league_path(league) %></li>
-</ul>
-
   <% end %>
+</ul>
