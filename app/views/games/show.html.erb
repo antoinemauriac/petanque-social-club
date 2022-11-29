@@ -1,2 +1,5 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+ <%= simple_form_for @game do |f| %>
+    <%= f.input :score_first_team, label: "#{@team1.users.first.username} - #{@team1.users.last.username}"  %>
+    <%= f.input :score_second_team, label: "#{@team2.users.first.username} - #{@team2.users.last.username}" %>
+    <%= f.button :submit, class: "btn btn-info button-trouve" %>
+  <% end %>
