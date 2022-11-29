@@ -10,3 +10,27 @@
   font-style: italic;
   margin-top: 60px;
 }
+
+  .btn-medium {
+    margin: 10px 0px;
+    width: 95%;
+    height: 50px;
+    border-radius: 15px;
+    background-color: $blue;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+      a {
+      font-size: 16px;
+      color: $white;
+      font-weight: 800;
+      padding: 10px 5px;
+    }
+  }
+
+  #btn-create {
+    align-items: center;
+    color: $blue;
+    background-color: $yellow;
+  }
