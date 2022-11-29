@@ -1,0 +1,11 @@
+<h1>coucou leagues</h1>
+
+<%= link_to "creer une league", new_league_path %>
+
+<h2>Mes ligues :</h2>
+
+<% @leagues.each do |league| %>
+<ol>
+<li><%= link_to league.name , league_path(league) %></li>
+</ol>
+<% end %>
