@@ -15,7 +15,7 @@
 
   League.create(name: "La premier league")
 
-  for i in (0..10) do
+  10.times do
     User.create!(email: Faker::Internet.email, username: Faker::Internet.username, password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   end
 
@@ -23,60 +23,82 @@
     Game.create!(league: League.first)
   end
 
-  6.times do
+  5.times do
     Team.create!(league: League.first)
   end
 
-  def create_team_user
-    k = -2
-    for j in (1..5) do
-      k += 2
-      for i in (k..k+1) do
-        TeamUser.create!(user: User.all[i], team: Team.all[j])
-      end
-    end
-  end
+  # def create_team_user
+  #   k = -2
+  #   for j in (1..5) do
+  #     k += 2
+  #     for i in (k..k+1) do
+  #       TeamUser.create!(user: User.all[i], team: Team.all[j])
+  #     end
+  #   end
+  # end
 
-  create_team_user
+  # create_team_user
+
+  TeamUser.create!(user: User.all[0], team: Team.all[0])
+  TeamUser.create!(user: User.all[1], team: Team.all[0])
+  TeamUser.create!(user: User.all[2], team: Team.all[1])
+  TeamUser.create!(user: User.all[3], team: Team.all[1])
+  TeamUser.create!(user: User.all[4], team: Team.all[2])
+  TeamUser.create!(user: User.all[5], team: Team.all[2])
+  TeamUser.create!(user: User.all[6], team: Team.all[3])
+  TeamUser.create!(user: User.all[7], team: Team.all[3])
+  TeamUser.create!(user: User.all[8], team: Team.all[4])
+  TeamUser.create!(user: User.all[9], team: Team.all[4])
+
+  GameTeam.create!(team: Team.all[0], game: Game.all[0])
+  GameTeam.create!(team: Team.all[1], game: Game.all[0])
+  GameTeam.create!(team: Team.all[0], game: Game.all[1])
+  GameTeam.create!(team: Team.all[2], game: Game.all[1])
+  GameTeam.create!(team: Team.all[0], game: Game.all[2])
+  GameTeam.create!(team: Team.all[3], game: Game.all[2])
+  GameTeam.create!(team: Team.all[0], game: Game.all[3])
+  GameTeam.create!(team: Team.all[4], game: Game.all[3])
+  GameTeam.create!(team: Team.all[1], game: Game.all[4])
+  GameTeam.create!(team: Team.all[2], game: Game.all[4])
+  GameTeam.create!(team: Team.all[1], game: Game.all[5])
+  GameTeam.create!(team: Team.all[3], game: Game.all[5])
+  GameTeam.create!(team: Team.all[1], game: Game.all[6])
+  GameTeam.create!(team: Team.all[4], game: Game.all[6])
+  GameTeam.create!(team: Team.all[2], game: Game.all[7])
+  GameTeam.create!(team: Team.all[3], game: Game.all[7])
+  GameTeam.create!(team: Team.all[2], game: Game.all[8])
+  GameTeam.create!(team: Team.all[4], game: Game.all[8])
+  GameTeam.create!(team: Team.all[3], game: Game.all[9])
+  GameTeam.create!(team: Team.all[4], game: Game.all[9])
 
 
-GameTeam.create!(team: Team.all[0], game: Game.all[0])
-GameTeam.create!(team: Team.all[1], game: Game.all[0])
-GameTeam.create!(team: Team.all[0], game: Game.all[1])
-GameTeam.create!(team: Team.all[2], game: Game.all[1])
-GameTeam.create!(team: Team.all[0], game: Game.all[2])
-GameTeam.create!(team: Team.all[3], game: Game.all[2])
-GameTeam.create!(team: Team.all[0], game: Game.all[3])
-GameTeam.create!(team: Team.all[4], game: Game.all[3])
-GameTeam.create!(team: Team.all[1], game: Game.all[4])
-GameTeam.create!(team: Team.all[2], game: Game.all[4])
-GameTeam.create!(team: Team.all[1], game: Game.all[5])
-GameTeam.create!(team: Team.all[3], game: Game.all[5])
-GameTeam.create!(team: Team.all[1], game: Game.all[6])
-GameTeam.create!(team: Team.all[4], game: Game.all[6])
-GameTeam.create!(team: Team.all[2], game: Game.all[7])
-GameTeam.create!(team: Team.all[3], game: Game.all[7])
-GameTeam.create!(team: Team.all[2], game: Game.all[8])
-GameTeam.create!(team: Team.all[4], game: Game.all[8])
-GameTeam.create!(team: Team.all[3], game: Game.all[9])
-GameTeam.create!(team: Team.all[4], game: Game.all[9])
-
-
-#renvoie les deux players d'une team donnée
+#renvoie les DEUX players d'une team donnée
 
 TeamUser.where(team: Team.all[2]).map { |t| t.user }
 
-#renvoie les deux teams d'un game donné
+#renvoie UN player donné d'une team donnée
+
+# TeamUser.where(team: Team.all[2]).map { |t| t.user }.select { |user| user.id = User.all[5].id }
+
+#renvoie TOUTES les teams d'un game donné
 
 GameTeam.where(game: Game.all[4]).map { |g| g.team }
 
-#renvoie les teams d'une ligue donnée
+#renvoie UNE team donnée d'un game donné
+
+
+
+#renvoie TOUTES les teams d'une ligue donnée
 
 Team.where(league: League.first)
 
+#renvoie UNE team donnée d'une ligue donnée
+
+Team.where(league: League.first).find(Team.all[3].id)
+
 #renvoie tous les players d'une ligue donnée
 
-Team.where(league: League.first).map { |team| TeamUser.where(team: team).map { |t| t.user }}
+p Team.where(league: League.first).map { |team| TeamUser.where(team: team).map { |t| t.user }}.flatten.select { |u| u.id = User.all[4].id }
 
 # teams_game_array  = GameTeam.where(game: game1).map { |gt| TeamUser.where(team: gt.team)}
 # game_players = teams_game_array.map { |t| t.map { |u| u.user.username} }
