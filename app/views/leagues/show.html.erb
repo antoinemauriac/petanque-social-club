@@ -21,19 +21,24 @@
 
   <div class="d-none flexy" data-display-target="matchs">
     <% @league.games.each do |game| %>
-      <ul>
-        <li>
+      <div class=row style="width:80%">
         <% game_players = game.teams.map { |team| team.users }.flatten %>
         <% if game_players.include?(current_user) %>
-        <%= game_players[0].username %> <%= game_players[1].username %>
+        <div class="col-5 col-left">
+          <%= game_players[0].username %> <%= game_players[1].username %>
+        </div>
+        <div class="col-2" style="text-align:center">
         <% if game.status == false %>
           <%= game.score_first_team %> - <%= game.score_second_team %>
-          <% else %> <%= link_to "SCORE ?", league_game_path(@league, game.id), class:"btn-small" %>
+          <% else %>
+          <%= link_to "SCORE ?", league_game_path(@league, game.id), class:"btn-small btn-score" %>
         <% end %>
-        <%= game_players[2].username %> <%= game_players[3].username %>
+        </div>
+        <div class="col-5 col-right">
+          <%= game_players[2].username %> <%= game_players[3].username %>
+        </div>
         <% end %>
-        </li>
-      </ul>
+      </div>
       <% end %>
       <h1>------------------------------------</h1>
       <% @league.games.each do |game| %>
