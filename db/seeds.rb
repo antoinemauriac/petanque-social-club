@@ -84,7 +84,6 @@ TeamUser.where(team: Team.all[2]).map { |team| team.user }
 
 GameTeam.where(game: Game.all[4]).map { |game| game.team }
 
-
 #renvoie UNE team donnée d'un game donné
 
 # GameTeam.where(game: Game.all[4]).map { |game| game.team }.select { |team| team.id = Team.all[2].id }
