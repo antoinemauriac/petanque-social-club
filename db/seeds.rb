@@ -76,20 +76,19 @@
 
 #renvoie les DEUX players d'une team donnée
 
-TeamUser.where(team: Team.all[2]).map { |t| t.user }
+TeamUser.where(team: Team.all[2]).map { |team| team.user }
 
 #renvoie UN player donné d'une team donnée
 
-# TeamUser.where(team: Team.all[2]).map { |t| t.user }.select { |user| user.id = User.all[5].id }
+# TeamUser.where(team: Team.all[2]).map { |team| team.user }.select { |user| user = User.find(765) }
 
-#renvoie TOUTES les teams d'un game donné
+#renvoie les DEUX teams d'un game donné
 
-GameTeam.where(game: Game.all[4]).map { |g| g.team }
+GameTeam.where(game: Game.all[4]).map { |game| game.team }
 
 #renvoie UNE team donnée d'un game donné // la 1er ou la deuxieme
 
-
-GameTeam.where(game: Game.all[4]).map { |g| g.team }.first
+# GameTeam.where(game: Game.all[4]).map { |game| game.team }.select { |team| team.id = Team.all[2].id }
 
 #renvoie TOUTES les teams d'une ligue donnée
 
@@ -101,7 +100,8 @@ Team.where(league: League.first).find(Team.all[3].id)
 
 #renvoie tous les players d'une ligue donnée
 
-p Team.where(league: League.first).map { |team| TeamUser.where(team: team).map { |t| t.user }}.flatten.select { |u| u.id = User.all[4].id }
+Team.where(league: League.first).map { |team| TeamUser.where(team: team).map { |t| t.user }}.flatten
+
 
 # teams_game_array  = GameTeam.where(game: game1).map { |gt| TeamUser.where(team: gt.team)}
 # game_players = teams_game_array.map { |t| t.map { |u| u.user.username} }
