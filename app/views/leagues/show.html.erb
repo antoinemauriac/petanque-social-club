@@ -1,6 +1,55 @@
-<h2>hello la shoooow d'une league</h2>
+<h1 class="flexy"><%= @league.name %></h1>
 
+<div data-controller="display">
+  <ul class="nav nav-pills nav-fill">
+    <li class="nav-item" data-action="click->display#classements">
+      <a class="nav-link active" data-display-target="classement" href="#">CLASSEMENT</a>
+    </li>
+    <li class="nav-item" data-action="click->display#matchs">
+      <a class="nav-link" data-display-target="match" href="#">MATCHS</a>
+    </li>
+    <li class="nav-item" data-action="click->display#murs">
+      <a class="nav-link" data-display-target="mur" href="#">MUR</a>
+    </li>
+  </ul>
 
-<%= @league.name %>
+  <div class="d-none" data-display-target="classements"></div>
 
- <%= link_to "matchs", league_games_path(@league)  %>
+  <div class="d-none" data-display-target="matchs">
+    <% @league.games.each do |game| %>
+      <ul>
+        <li>
+        <% game_players = game.teams.map { |team| team.users }.flatten %>
+        <% if game_players.include?(current_user) %>
+        <%= game_players[0].username %> <%= game_players[1].username %>
+        <% if game.status = false %> <%= "13-4" %><% else %> <%= "SCORE ?"%><% end %>
+        <%= game_players[2].username %> <%= game_players[3].username %>
+        <% end %>
+        </li>
+      </ul>
+      <% end %>
+      <h1>------------------------------------</h1>
+      <% @league.games.each do |game| %>
+      <ul>
+        <li>
+        <% game_players = game.teams.map { |team| team.users }.flatten %>
+        <% if game_players.exclude?(current_user) %>
+        <%= game_players[0].username %> <%= game_players[1].username %>
+        <% if game.status = false %> <%= "8-13" %><% else %> <%= " - "%><% end %><%= game_players[2].username %> <%= game_players[3].username %>
+        <%= game_players[2].username %> <%= game_players[3].username %>
+        <% end %>
+        </li>
+      </ul>
+      <% end %>
+      <h3>
+      <%= link_to "retour à mes ligues", leagues_path %></h3>
+  </div>
+
+  <div class="d-none" data-display-target="murs"></div>
+
+<!--<h2>classement</h2>
+<h2> <%= link_to "matchs", league_games_path(@league)  %></h2>
+<h2>mur</h2>
+<h3><%= link_to "retour à mes ligues", leagues_path %></h3>-->
+
+</div>
