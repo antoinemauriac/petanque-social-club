@@ -1,27 +1,30 @@
-
-<% @league.games.each do |game| %>
-<ul>
-  <li>
-  <% game_players = game.teams.map { |team| team.users }.flatten %>
-  <% if game_players.include?(current_user) %>
-  <%= game_players[0].username %> <%= game_players[1].username %>
-  <% if game.status = false %> <%= "13-4" %><% else %> <%= "SCORE ?"%><% end %>
-  <%= game_players[2].username %> <%= game_players[3].username %>
+<h2><%= link_to @league.name, league_path(@league) %></h2>
+<div class="flexy">
+  <% @league.games.each do |game| %>
+  <ul>
+    <li>
+    <% game_players = game.teams.map { |team| team.users }.flatten %>
+    <% if game_players.include?(current_user) %>
+    <%= game_players[0].username %> <%= game_players[1].username %>
+    <% if game.status = false %> <%= "13-4" %><% else %> <%= "SCORE ?"%><% end %>
+    <%= game_players[2].username %> <%= game_players[3].username %>
+    <% end %>
+    </li>
+  </ul>
   <% end %>
-  </li>
-</ul>
-<% end %>
-
 <h1>------------------------------------</h1>
-<% @league.games.each do |game| %>
-<ul>
-  <li>
-  <% game_players = game.teams.map { |team| team.users }.flatten %>
-  <% if game_players.exclude?(current_user) %>
-  <%= game_players[0].username %> <%= game_players[1].username %>
-  <% if game.status = false %> <%= "8-13" %><% else %> <%= " - "%><% end %><%= game_players[2].username %> <%= game_players[3].username %>
-  <%= game_players[2].username %> <%= game_players[3].username %>
+  <% @league.games.each do |game| %>
+  <ul>
+    <li>
+    <% game_players = game.teams.map { |team| team.users }.flatten %>
+    <% if game_players.exclude?(current_user) %>
+    <%= game_players[0].username %> <%= game_players[1].username %>
+    <% if game.status = false %> <%= "8-13" %><% else %> <%= " - "%><% end %><%= game_players[2].username %> <%= game_players[3].username %>
+    <%= game_players[2].username %> <%= game_players[3].username %>
+    <% end %>
+    </li>
+  </ul>
   <% end %>
-  </li>
-</ul>
-<% end %>
+  <h3>
+  <%= link_to "retour à mes ligues", leagues_path %></h3>
+</div>
