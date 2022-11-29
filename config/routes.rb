@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :leagues, only: %i[new create show] do
+  resources :leagues, only: %i[new create show index] do
     resources :games, only: %i[new create show edit update index]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

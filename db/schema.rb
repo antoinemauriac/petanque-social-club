@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_170340) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_092036) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,8 +53,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_170340) do
 
   create_table "games", force: :cascade do |t|
     t.bigint "league_id", null: false
-    t.integer "first_team"
-    t.integer "second_team"
     t.integer "score_first_team"
     t.integer "score_second_team"
     t.integer "game_winner"
