@@ -3,16 +3,16 @@
 .home-container {
   text-align: center;
   margin: 0 auto;
-  background-color: $blue;
+  background-color: $yellow;
   height: 100vh;
   padding-top: 90px;
 
 
   h1 {
-    font-size: 45px;
+    font-size: 45px!important;
     font-style: italic;
-    font-weight: 900;
-    color: $yellow;
+    font-weight: 900!important;
+    color: $blue;
     line-height: 45px;
   }
 }

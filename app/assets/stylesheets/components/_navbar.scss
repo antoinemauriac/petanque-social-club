@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $yellow;
+  background: $blue;
   color: $blue;
 }
 
@@ -18,16 +18,21 @@
   padding-top: 10px;
 
   h4 {
-    font-size: 15px;
+    font-size: 15px!important;
     font-style: italic;
-    color: $blue;
-    font-weight: 800;
+    color: $yellow;
+    font-weight: 800!important;
     line-height: 0.6;
   }
 }
 
-.navbar-nav .nav-link {
-  color: $blue;
+.nav-pills .nav-link.active {
+  color: $blue!important;
   font-family: $body-font;
-  font-weight: 600;
+  font-weight: 800!important;
+  background-color: $yellow!important;
+}
+
+.nav-item-navabar a {
+  color: $yellow!important;
 }

@@ -45,8 +45,13 @@ class GamesController < ApplicationController
     @team2.points_for += @game.score_second_team
     @team2.points_against += @game.score_first_team
     @team2.games_played += 1
-    save
-raise
+
+    @team2.save
+    @team1.save
+    @game.status = false
+    @game.save
+
+    redirect_to league_path(@game.league)
   end
 
   private
