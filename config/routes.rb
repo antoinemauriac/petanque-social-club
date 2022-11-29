@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'games/index'
-  get 'games/new'
-  get 'games/create'
-  get 'games/show'
-  get 'games/edit'
-  get 'games/update'
   devise_for :users
   root to: "pages#home"
 
