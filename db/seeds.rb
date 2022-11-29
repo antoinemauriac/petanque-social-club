@@ -19,6 +19,9 @@
     User.create!(email: Faker::Internet.email, username: Faker::Internet.username, password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   end
 
+  User.create!(email: "toto@gmail.com", username: "toto", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+
+
   10.times do
     Game.create!(league: League.first)
   end
@@ -71,7 +74,6 @@
   GameTeam.create!(team: Team.all[3], game: Game.all[9])
   GameTeam.create!(team: Team.all[4], game: Game.all[9])
 
-
 #renvoie les DEUX players d'une team donnée
 
 TeamUser.where(team: Team.all[2]).map { |t| t.user }
@@ -84,9 +86,10 @@ TeamUser.where(team: Team.all[2]).map { |t| t.user }
 
 GameTeam.where(game: Game.all[4]).map { |g| g.team }
 
-#renvoie UNE team donnée d'un game donné
+#renvoie UNE team donnée d'un game donné // la 1er ou la deuxieme
 
 
+GameTeam.where(game: Game.all[4]).map { |g| g.team }.first
 
 #renvoie TOUTES les teams d'une ligue donnée
 
