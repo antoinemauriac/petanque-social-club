@@ -1,0 +1,14 @@
+<% @fields.each do |field|%>
+  <% if field.photos.attached? %>
+    <%= cl_image_tag field.photos.first.key%>
+  <% else %>
+    <p>coucouc</p>
+  <% end %>
+  <h2> <%= field.address %> - <%= field.name %></h2>
+<% end %>
+
+---------------------------------------------------------
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
