@@ -4,3 +4,13 @@
 .col-left {
   text-align: left;
 }
+
+.row-game {
+  width:95%;
+  margin-bottom:30px;
+  border-bottom: 2px solid $blue;
+
+  p {
+    font-size: 14px!important;
+  }
+}
