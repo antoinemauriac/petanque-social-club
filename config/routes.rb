@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :leagues, only: %i[new create show index] do
     resources :games, only: %i[new create show edit update index]
   end
+  resources :team_users, only: %i[create]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
