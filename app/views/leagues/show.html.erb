@@ -88,7 +88,7 @@
         <ul class="card-chat">
           <li >
             <div class="message-avatar-date">
-               <span class="message-avatar"><%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><%= message.user.username.upcase %></span>
+               <span class="message-avatar"><%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yttj-bqOaciY3Zew0IBI0gHaEK%26pid%3DApi&f=1&ipt=550194c28a08d54d4e90c955368ff885cc4b7e012806cbd03977d01ea779fb5e&ipo=images", :gravity=>"face", :height=>150, :width=>150, :crop=>"thumb" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><%= message.user.username.upcase %></span>
               <p class="text-light-grey"> <%= message.created_at.strftime("%A"+" "+"%d" +"/" + "%m" +"/" + "%Y") %>
                                           <%= message.created_at.strftime("%H"+":"+ "%M"+ ":"+"%S") %></p>
             </div>
