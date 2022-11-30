@@ -12,5 +12,18 @@
 
   p {
     font-size: 14px!important;
+    color: $blue;
   }
 }
+
+.score-color {
+  color: $blue;
+}
+
+.current-player {
+  color: red!important;
+}
+
+// #ol-classement {
+//   list-style: auto!important;
+// }
