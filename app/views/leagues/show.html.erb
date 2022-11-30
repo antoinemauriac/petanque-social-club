@@ -1,6 +1,85 @@
-<h2>hello la shoooow d'une league</h2>
+<h2 class="flexy light-blue-bar">
+  <%= @league.name.upcase %>
+</h2>
 
+<div data-controller="display">
+  <ul class="nav nav-pills nav-fill" style="margin-bottom:20px">
+    <li class="nav-item" data-action="click->display#classements">
+      <a class="nav-link active" data-display-target="classement" href="#">CLASSEMENT</a>
+    </li>
+    <li class="nav-item" data-action="click->display#matchs">
+      <a class="nav-link" data-display-target="match" href="#">MATCHS</a>
+    </li>
+    <li class="nav-item" data-action="click->display#murs">
+      <a class="nav-link" data-display-target="mur" href="#">MUR</a>
+    </li>
+  </ul>
 
-<%= @league.name %>
+  <div data-display-target="classements">
+  <h3>Hello from classement</h3>
+  </div>
 
- <%= link_to "matchs", league_games_path(@league)  %>
+  <div class="d-none flexy" data-display-target="matchs">
+    <% @league.games.each do |game| %>
+        <% game_players = game.teams.map { |team| team.users }.flatten %>
+        <% if game_players.include?(current_user) %>
+      <div class="row row-game">
+        <div class="col-5 col-left">
+          <% if current_user == game_players[0] || current_user == game_players[1] %>
+          <p><strong><%= game_players[0].username.upcase %></strong></p>
+          <p><strong><%= game_players[1].username.upcase %></strong></p>
+          <% else %>
+          <p><%= game_players[0].username.upcase %></p>
+          <p><%= game_players[1].username.upcase %></p>
+          <% end %>
+        </div>
+        <div class="col-2" style="text-align:center">
+        <% if game.status == false %>
+          <%= game.score_first_team %> - <%= game.score_second_team %>
+          <% else %>
+          <%= link_to "SCORE ?", league_game_path(@league, game.id), class:"btn-small btn-score" %>
+        <% end %>
+        </div>
+        <div class="col-5 col-right">
+          <% if current_user == game_players[2] || current_user == game_players[3] %>
+          <p><strong><%= game_players[2].username.upcase %></strong></p>
+          <p><strong><%= game_players[3].username.upcase %></strong></p>
+          <% else %>
+          <p><%= game_players[2].username.upcase %></p>
+          <p><%= game_players[3].username.upcase %></p>
+          <% end %>
+        </div>
+      </div>
+        <% end %>
+      <% end %>
+
+      <h1>-------------------------</h1>
+
+    <% @league.games.each do |game| %>
+      <ul>
+        <li>
+        <% game_players = game.teams.map { |team| team.users }.flatten %>
+        <% if game_players.exclude?(current_user) %>
+        <%= game_players[0].username %> <%= game_players[1].username %>
+        <% if game.status = false %> <%= "8-13" %><% else %> <%= " - "%>
+        <% end %>
+        <%= game_players[2].username %> <%= game_players[3].username %>
+        <% end %>
+        </li>
+      </ul>
+      <% end %>
+      <h3>
+      <%= link_to "retour à mes ligues", leagues_path %>
+      </h3>
+  </div>
+
+  <div class="d-none" data-display-target="murs">
+  <h3>Hello from mur</h3>
+  </div>
+
+<!--<h2>classement</h2>
+<h2> <%= link_to "matchs", league_games_path(@league)  %></h2>
+<h2>mur</h2>
+<h3><%= link_to "retour à mes ligues", leagues_path %></h3>-->
+
+</div>
