@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :leagues, only: %i[new create show index] do
     resources :games, only: %i[new create show edit index]
+    resources :messages, only: :create
     resources :team_users, only: %i[new create]
   end
 
