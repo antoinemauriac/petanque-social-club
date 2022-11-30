@@ -1,9 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
       <div class="logo-home">
-        <h4>PETANQUE</h4>
-        <h4>SOCIAL</h4>
-        <h4>CLUB</h4>
+    <a href="/"><h4>
+    <span data-controller="typed-js"></span></h4></a>
       </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -18,14 +17,15 @@
           <li class="nav-item nav-item-navabar active">
             <%= link_to "Mes Ligues", leagues_path, class: "nav-link" %>
           </li>
-          <li class="nav-item nav-item-navabar">
+          <!--<li class="nav-item nav-item-navabar">
             <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
+          </li>-->
           <li class="nav-item nav-item-navabar">
             <%= link_to "Profil", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%# <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yttj-bqOaciY3Zew0IBI0gHaEK%26pid%3DApi&f=1&ipt=550194c28a08d54d4e90c955368ff885cc4b7e012806cbd03977d01ea779fb5e&ipo=images", :gravity=>"face", :height=>150, :width=>150, :crop=>"thumb" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <!--<%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>-->

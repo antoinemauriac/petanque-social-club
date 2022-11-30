@@ -6,16 +6,20 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find(params[:id])
-    # @leagues = League.all
+    @leagues = League.all
+    @message = Message.new
   end
 
   def new
     @league = League.new
+
+
   end
 
   def create
-    @league = League.new(league_params)
-    @league.user = current_user
+    @league = League.create!(league_params)
+    @league.admin_user = current_user
+    redirect_to new_league_team_user_path(@league)
   end
 
   # def edit

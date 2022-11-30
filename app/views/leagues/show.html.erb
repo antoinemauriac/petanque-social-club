@@ -95,13 +95,37 @@
         <% end %>
   </div>
 
-  <div class="d-none" data-display-target="murs">
-    <h3>Hello from mur</h3>
+
+  <div class="d-none flexy chatroom" data-display-target="murs">
+    <div class="chatroom-item chatroom-form">
+      <%= simple_form_for [@league, @message] do |f| %>
+        <span class="form-style">
+          <%= f.input :comment, placeholder: "“The cave you fear to enter holds the treasure that you seek.” Joseph Campbell" %>
+          <%= f.button :submit, value:'ENVOYER', class:"btn-small envoi" %>
+        </span>
+      <% end %>
+    </div>
+
+    <div class="chatroom-item chatroom-display">
+      <% @league.messages.each do |message| %>
+        <ul class="card-chat">
+          <li >
+            <div class="message-avatar-date">
+               <span class="message-avatar"><%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yttj-bqOaciY3Zew0IBI0gHaEK%26pid%3DApi&f=1&ipt=550194c28a08d54d4e90c955368ff885cc4b7e012806cbd03977d01ea779fb5e&ipo=images", :gravity=>"face", :height=>150, :width=>150, :crop=>"thumb" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><%= message.user.username.upcase %></span>
+              <p class="text-light-grey"> <%= message.created_at.strftime("%A"+" "+"%d" +"/" + "%m" +"/" + "%Y") %>
+                                          <%= message.created_at.strftime("%H"+":"+ "%M"+ ":"+"%S") %></p>
+            </div>
+            <p class="message-content-blue"><%= message.comment %></p>
+          </li>
+        </ul>
+      <% end %>
+    </div>
   </div>
+</div>
+
+
 
 <!--<h2>classement</h2>
 <h2> <%= link_to "matchs", league_games_path(@league)  %></h2>
 <h2>mur</h2>
 <h3><%= link_to "retour à mes ligues", leagues_path %></h3>-->
-
-</div>

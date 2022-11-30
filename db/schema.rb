@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_170434) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_131304) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +44,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_170434) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "fields", force: :cascade do |t|
+    t.string "name"
+    t.text "address"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+  end
+
   create_table "game_teams", force: :cascade do |t|
     t.bigint "game_id", null: false
     t.bigint "team_id", null: false
@@ -69,6 +81,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_170434) do
     t.bigint "admin_user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "league_id", null: false
+    t.bigint "user_id", null: false
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_messages_on_league_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "team_users", force: :cascade do |t|
@@ -110,6 +132,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_170434) do
   add_foreign_key "game_teams", "games"
   add_foreign_key "game_teams", "teams"
   add_foreign_key "games", "leagues"
+  add_foreign_key "messages", "leagues"
+  add_foreign_key "messages", "users"
   add_foreign_key "team_users", "teams"
   add_foreign_key "team_users", "users"
   add_foreign_key "teams", "leagues"
