@@ -6,26 +6,57 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-  TeamUser.destroy_all
-  User.destroy_all
-  GameTeam.destroy_all
-  Team.destroy_all
-  Game.destroy_all
-  League.destroy_all
 
-  League.create(name: "La premier league")
+# Field.destroy_all
+TeamUser.destroy_all
+User.destroy_all
+GameTeam.destroy_all
+Team.destroy_all
+Game.destroy_all
+League.destroy_all
+
+  league1 = League.create(name: "La premier league")
+  league2 = League.create(name: "Con de tes morts")
 
   10.times do
     User.create!(email: Faker::Internet.email, username: Faker::Internet.username, password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   end
 
-  10.times do
-    Game.create!(league: League.first)
-  end
 
-  5.times do
-    Team.create!(league: League.first)
-  end
+
+  game1 = Game.create!(league: league1)
+  game2 = Game.create!(league: league1)
+  game3 = Game.create!(league: league1)
+  game4 = Game.create!(league: league1)
+  game5 = Game.create!(league: league1)
+  game6 = Game.create!(league: league1)
+  game7 = Game.create!(league: league1)
+  game8 = Game.create!(league: league1)
+  game9 = Game.create!(league: league1)
+  game10 = Game.create!(league: league1)
+
+  team1 = Team.create!(league: league1)
+  team2 = Team.create!(league: league1)
+  team3 = Team.create!(league: league1)
+  team4 = Team.create!(league: league1)
+  team5 = Team.create!(league: league1)
+
+  game11 = Game.create!(league: league2)
+  game12 = Game.create!(league: league2)
+  game13 = Game.create!(league: league2)
+  game14 = Game.create!(league: league2)
+  game15 = Game.create!(league: league2)
+  game16 = Game.create!(league: league2)
+  game17 = Game.create!(league: league2)
+  game18 = Game.create!(league: league2)
+  game19 = Game.create!(league: league2)
+  game20 = Game.create!(league: league2)
+
+  team6 = Team.create!(league: league2)
+  team7 = Team.create!(league: league2)
+  team8 = Team.create!(league: league2)
+  team9 = Team.create!(league: league2)
+  team10 = Team.create!(league: league2)
 
   # def create_team_user
   #   k = -2
@@ -39,37 +70,548 @@
 
   # create_team_user
 
-  TeamUser.create!(user: User.all[0], team: Team.all[0])
-  TeamUser.create!(user: User.all[9], team: Team.all[0])
-  TeamUser.create!(user: User.all[2], team: Team.all[1])
-  TeamUser.create!(user: User.all[3], team: Team.all[1])
-  TeamUser.create!(user: User.all[4], team: Team.all[2])
-  TeamUser.create!(user: User.all[7], team: Team.all[2])
-  TeamUser.create!(user: User.all[6], team: Team.all[3])
-  TeamUser.create!(user: User.all[5], team: Team.all[3])
-  TeamUser.create!(user: User.all[8], team: Team.all[4])
-  TeamUser.create!(user: User.all[1], team: Team.all[4])
+  TeamUser.create!(user: User.all[0], team: team1)
+  TeamUser.create!(user: User.all[1], team: team1)
+  TeamUser.create!(user: User.all[2], team: team2)
+  TeamUser.create!(user: User.all[3], team: team2)
+  TeamUser.create!(user: User.all[4], team: team3)
+  TeamUser.create!(user: User.all[5], team: team3)
+  TeamUser.create!(user: User.all[6], team: team4)
+  TeamUser.create!(user: User.all[7], team: team4)
+  TeamUser.create!(user: User.all[8], team: team5)
+  TeamUser.create!(user: User.all[9], team: team5)
 
-  GameTeam.create!(team: Team.all[0], game: Game.all[0])
-  GameTeam.create!(team: Team.all[4], game: Game.all[0])
-  GameTeam.create!(team: Team.all[0], game: Game.all[1])
-  GameTeam.create!(team: Team.all[2], game: Game.all[1])
-  GameTeam.create!(team: Team.all[0], game: Game.all[2])
-  GameTeam.create!(team: Team.all[3], game: Game.all[2])
-  GameTeam.create!(team: Team.all[0], game: Game.all[3])
-  GameTeam.create!(team: Team.all[1], game: Game.all[3])
-  GameTeam.create!(team: Team.all[1], game: Game.all[4])
-  GameTeam.create!(team: Team.all[4], game: Game.all[4])
-  GameTeam.create!(team: Team.all[1], game: Game.all[5])
-  GameTeam.create!(team: Team.all[3], game: Game.all[5])
-  GameTeam.create!(team: Team.all[1], game: Game.all[6])
-  GameTeam.create!(team: Team.all[2], game: Game.all[6])
-  GameTeam.create!(team: Team.all[2], game: Game.all[7])
-  GameTeam.create!(team: Team.all[4], game: Game.all[7])
-  GameTeam.create!(team: Team.all[2], game: Game.all[8])
-  GameTeam.create!(team: Team.all[3], game: Game.all[8])
-  GameTeam.create!(team: Team.all[3], game: Game.all[9])
-  GameTeam.create!(team: Team.all[4], game: Game.all[9])
+  GameTeam.create!(team: team1, game: game1)
+  GameTeam.create!(team: team2, game: game1)
+  GameTeam.create!(team: team1, game: game2)
+  GameTeam.create!(team: team3, game: game2)
+  GameTeam.create!(team: team1, game: game3)
+  GameTeam.create!(team: team4, game: game3)
+  GameTeam.create!(team: team1, game: game4)
+  GameTeam.create!(team: team5, game: game4)
+  GameTeam.create!(team: team2, game: game5)
+  GameTeam.create!(team: team3, game: game5)
+  GameTeam.create!(team: team2, game: game6)
+  GameTeam.create!(team: team4, game: game6)
+  GameTeam.create!(team: team2, game: game7)
+  GameTeam.create!(team: team5, game: game7)
+  GameTeam.create!(team: team3, game: game8)
+  GameTeam.create!(team: team4, game: game8)
+  GameTeam.create!(team: team3, game: game9)
+  GameTeam.create!(team: team5, game: game9)
+  GameTeam.create!(team: team4, game: game10)
+  GameTeam.create!(team: team5, game: game10)
+
+  TeamUser.create!(user: User.all[0], team: team6)
+  TeamUser.create!(user: User.all[2], team: team6)
+  TeamUser.create!(user: User.all[5], team: team7)
+  TeamUser.create!(user: User.all[8], team: team7)
+  TeamUser.create!(user: User.all[1], team: team8)
+  TeamUser.create!(user: User.all[4], team: team8)
+  TeamUser.create!(user: User.all[6], team: team9)
+  TeamUser.create!(user: User.all[7], team: team9)
+  TeamUser.create!(user: User.all[3], team: team10)
+  TeamUser.create!(user: User.all[9], team: team10)
+
+  GameTeam.create!(team: team6, game: game11)
+  GameTeam.create!(team: team7, game: game11)
+  GameTeam.create!(team: team6, game: game12)
+  GameTeam.create!(team: team8, game: game12)
+  GameTeam.create!(team: team6, game: game13)
+  GameTeam.create!(team: team9, game: game13)
+  GameTeam.create!(team: team6, game: game14)
+  GameTeam.create!(team: team10, game: game14)
+  GameTeam.create!(team: team7, game: game15)
+  GameTeam.create!(team: team8, game: game15)
+  GameTeam.create!(team: team7, game: game16)
+  GameTeam.create!(team: team9, game: game16)
+  GameTeam.create!(team: team7, game: game17)
+  GameTeam.create!(team: team10, game: game17)
+  GameTeam.create!(team: team8, game: game18)
+  GameTeam.create!(team: team9, game: game18)
+  GameTeam.create!(team: team8, game: game19)
+  GameTeam.create!(team: team10, game: game19)
+  GameTeam.create!(team: team9, game: game20)
+  GameTeam.create!(team: team10, game: game20)
+
+
+  #MATCH1 - LEAGUE 1
+
+    game1.score_first_team = 13
+    game1.score_second_team = rand(0..12)
+
+    game1.game_winner = team1.id
+
+    team1.points_for += game1.score_first_team
+    team1.points_against += game1.score_second_team
+    team1.games_played += 1
+    team1.number_of_wins += 1
+
+    team2.points_for += game1.score_second_team
+    team2.points_against += game1.score_first_team
+    team2.games_played += 1
+
+    team1.save
+    team2.save
+    game1.status = false
+    game1.save
+
+  #MATCH2
+
+    game2.score_first_team = 13
+    game2.score_second_team = rand(0..12)
+
+    game2.game_winner = team1.id
+
+    team1.points_for += game2.score_first_team
+    team1.points_against += game2.score_second_team
+    team1.games_played += 1
+    team1.number_of_wins += 1
+
+    team3.points_for += game2.score_second_team
+    team3.points_against += game2.score_first_team
+    team3.games_played += 1
+
+    team1.save
+    team3.save
+    game2.status = false
+    game2.save
+
+  #MATCH3
+
+    game3.score_first_team = 13
+    game3.score_second_team = rand(0..12)
+
+    game3.game_winner = team1.id
+
+    team1.points_for += game3.score_first_team
+    team1.points_against += game3.score_second_team
+    team1.games_played += 1
+    team1.number_of_wins += 1
+
+    team4.points_for += game3.score_second_team
+    team4.points_against += game3.score_first_team
+    team4.games_played += 1
+
+    team1.save
+    team4.save
+    game3.status = false
+    game3.save
+
+  #MATCH4
+
+    game4.score_first_team = 13
+    game4.score_second_team = rand(0..12)
+
+    game4.game_winner = team1.id
+
+    team1.points_for += game4.score_first_team
+    team1.points_against += game4.score_second_team
+    team1.games_played += 1
+    team1.number_of_wins += 1
+
+    team5.points_for += game4.score_second_team
+    team5.points_against += game4.score_first_team
+    team5.games_played += 1
+
+    team1.save
+    team5.save
+    game4.status = false
+    game4.save
+
+  #MATCH5
+
+    game5.score_first_team = 13
+    game5.score_second_team = rand(0..12)
+
+    game5.game_winner = team2.id
+
+    team2.points_for += game5.score_first_team
+    team2.points_against += game5.score_second_team
+    team2.games_played += 1
+    team2.number_of_wins += 1
+
+    team3.points_for += game5.score_second_team
+    team3.points_against += game5.score_first_team
+    team3.games_played += 1
+
+    team2.save
+    team3.save
+    game5.status = false
+    game5.save
+
+  #MATCH6
+
+    game6.score_first_team = 13
+    game6.score_second_team = rand(0..12)
+
+    game6.game_winner = team2.id
+
+    team2.points_for += game6.score_first_team
+    team2.points_against += game6.score_second_team
+    team2.games_played += 1
+    team2.number_of_wins += 1
+
+    team4.points_for += game6.score_second_team
+    team4.points_against += game6.score_first_team
+    team4.games_played += 1
+
+    team2.save
+    team4.save
+    game6.status = false
+    game6.save
+
+  #MATCH7
+
+    game7.score_first_team = 13
+    game7.score_second_team = rand(0..12)
+
+    game7.game_winner = team2.id
+
+    team2.points_for += game7.score_first_team
+    team2.points_against += game7.score_second_team
+    team2.games_played += 1
+    team2.number_of_wins += 1
+
+    team5.points_for += game7.score_second_team
+    team5.points_against += game7.score_first_team
+    team5.games_played += 1
+
+    team2.save
+    team5.save
+    game7.status = false
+    game7.save
+
+  #MATCH8
+
+    game8.score_first_team = 13
+    game8.score_second_team = rand(0..12)
+
+    game8.game_winner = team3.id
+
+    team3.points_for += game8.score_first_team
+    team3.points_against += game8.score_second_team
+    team3.games_played += 1
+    team3.number_of_wins += 1
+
+    team4.points_for += game8.score_second_team
+    team4.points_against += game8.score_first_team
+    team4.games_played += 1
+
+    team3.save
+    team4.save
+    game8.status = false
+    game8.save
+
+  #MATCH9
+
+    game9.score_first_team = 13
+    game9.score_second_team = rand(0..12)
+
+    game9.game_winner = team3.id
+
+    team3.points_for += game9.score_first_team
+    team3.points_against += game9.score_second_team
+    team3.games_played += 1
+    team3.number_of_wins += 1
+
+    team5.points_for += game9.score_second_team
+    team5.points_against += game9.score_first_team
+    team5.games_played += 1
+
+    team3.save
+    team5.save
+    game9.status = false
+    game9.save
+
+  #MATCH10
+
+    game10.score_first_team = 13
+    game10.score_second_team = rand(0..12)
+
+    game10.game_winner = team4.id
+
+    team4.points_for += game10.score_first_team
+    team4.points_against += game10.score_second_team
+    team4.games_played += 1
+    team4.number_of_wins += 1
+
+    team5.points_for += game10.score_second_team
+    team5.points_against += game10.score_first_team
+    team5.games_played += 1
+
+    team4.save
+    team5.save
+    game10.status = false
+    game10.save
+
+
+#MATCH11 - LEAGUE 2
+
+    game11.score_first_team = 13
+    game11.score_second_team = rand(0..12)
+
+    game11.game_winner = team6.id
+
+    team6.points_for += game11.score_first_team
+    team6.points_against += game11.score_second_team
+    team6.games_played += 1
+    team6.number_of_wins += 1
+
+    team7.points_for += game11.score_second_team
+    team7.points_against += game11.score_first_team
+    team7.games_played += 1
+
+    team6.save
+    team7.save
+    game11.status = false
+    game11.save
+
+  #MATCH12
+
+    game12.score_first_team = 13
+    game12.score_second_team = rand(0..12)
+
+    game12.game_winner = team6.id
+
+    team6.points_for += game12.score_first_team
+    team6.points_against += game12.score_second_team
+    team6.games_played += 1
+    team6.number_of_wins += 1
+
+    team8.points_for += game12.score_second_team
+    team8.points_against += game12.score_first_team
+    team8.games_played += 1
+
+    team6.save
+    team8.save
+    game12.status = false
+    game12.save
+
+  #MATCH13
+
+    game13.score_first_team = 13
+    game13.score_second_team = rand(0..12)
+
+    game13.game_winner = team6.id
+
+    team6.points_for += game13.score_first_team
+    team6.points_against += game13.score_second_team
+    team6.games_played += 1
+    team6.number_of_wins += 1
+
+    team9.points_for += game13.score_second_team
+    team9.points_against += game13.score_first_team
+    team9.games_played += 1
+
+    team6.save
+    team9.save
+    game13.status = false
+    game13.save
+
+  #MATCH14
+
+    game14.score_first_team = 13
+    game14.score_second_team = rand(0..12)
+
+    game14.game_winner = team6.id
+
+    team6.points_for += game14.score_first_team
+    team6.points_against += game14.score_second_team
+    team6.games_played += 1
+    team6.number_of_wins += 1
+
+    team10.points_for += game14.score_second_team
+    team10.points_against += game14.score_first_team
+    team10.games_played += 1
+
+    team6.save
+    team10.save
+    game14.status = false
+    game14.save
+
+  #MATCH15
+
+    game15.score_first_team = 13
+    game15.score_second_team = rand(0..12)
+
+    game15.game_winner = team7.id
+
+    team7.points_for += game15.score_first_team
+    team7.points_against += game15.score_second_team
+    team7.games_played += 1
+    team7.number_of_wins += 1
+
+    team8.points_for += game15.score_second_team
+    team8.points_against += game15.score_first_team
+    team8.games_played += 1
+
+    team7.save
+    team8.save
+    game15.status = false
+    game15.save
+
+  #MATCH16
+
+    game16.score_first_team = 13
+    game16.score_second_team = rand(0..12)
+
+    game16.game_winner = team7.id
+
+    team7.points_for += game16.score_first_team
+    team7.points_against += game16.score_second_team
+    team7.games_played += 1
+    team7.number_of_wins += 1
+
+    team9.points_for += game16.score_second_team
+    team9.points_against += game16.score_first_team
+    team9.games_played += 1
+
+    team7.save
+    team9.save
+    game16.status = false
+    game16.save
+
+  #MATCH17
+
+    game17.score_first_team = 13
+    game17.score_second_team = rand(0..12)
+
+    game17.game_winner = team7.id
+
+    team7.points_for += game17.score_first_team
+    team7.points_against += game17.score_second_team
+    team7.games_played += 1
+    team7.number_of_wins += 1
+
+    team10.points_for += game17.score_second_team
+    team10.points_against += game17.score_first_team
+    team10.games_played += 1
+
+    team7.save
+    team10.save
+    game17.status = false
+    game17.save
+
+  #MATCH18
+
+    game18.score_first_team = 13
+    game18.score_second_team = rand(0..12)
+
+    game18.game_winner = team8.id
+
+    team8.points_for += game18.score_first_team
+    team8.points_against += game18.score_second_team
+    team8.games_played += 1
+    team8.number_of_wins += 1
+
+    team9.points_for += game18.score_second_team
+    team9.points_against += game18.score_first_team
+    team9.games_played += 1
+
+    team8.save
+    team9.save
+    game18.status = false
+    game18.save
+
+  #MATCH19
+
+    game19.score_first_team = 13
+    game19.score_second_team = rand(0..12)
+
+    game19.game_winner = team8.id
+
+    team8.points_for += game19.score_first_team
+    team8.points_against += game19.score_second_team
+    team8.games_played += 1
+    team8.number_of_wins += 1
+
+    team10.points_for += game19.score_second_team
+    team10.points_against += game19.score_first_team
+    team10.games_played += 1
+
+    team8.save
+    team10.save
+    game19.status = false
+    game19.save
+
+  #MATCH20
+
+    game20.score_first_team = 13
+    game20.score_second_team = rand(0..12)
+
+    game20.game_winner = team9.id
+
+    team9.points_for += game20.score_first_team
+    team9.points_against += game20.score_second_team
+    team9.games_played += 1
+    team9.number_of_wins += 1
+
+    team10.points_for += game20.score_second_team
+    team10.points_against += game20.score_first_team
+    team10.games_played += 1
+
+    team9.save
+    team10.save
+    game20.status = false
+    game20.save
+
+
+
+    # field1 = Field.create(name: "La Bretagne, ça vous gagne", address: "Av. Robert Schuman, 13002 Marseille", rating: 3)
+    # photo1 = File.open('app/assets/images/terrain1.jpeg')
+
+    # field1.photos.attach(io: photo1, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+    # field1.save
+
+    # field2 = Field.create(name: "Terrain du bonheur", address: "50 Rue Monte Cristo, 13005 Marseille", rating: 2)
+    # photo2 = File.open('app/assets/images/terrain2.jpeg')
+
+    # field2.photos.attach(io: photo2, filename: 'terrain2.jpeg', content_type: 'image/jpeg')
+    # field2.save
+
+    # field3 = Field.create(name: "Paris, ça vous gagne", address: "5 Rue de Ste Hélène, 75013 Paris", rating: 5)
+    # photo3 = File.open('app/assets/images/terrain1.jpeg')
+
+    # field3.photos.attach(io: photo3, filename: 'terrain3.jpeg', content_type: 'image/jpeg')
+    # field3.save
+
+    # field4 = Field.create(name: "Terrain bonne humeur", address: "19 Rte des Fortifications, 75012 Paris", rating: 2)
+    # photo4 = File.open('app/assets/images/terrain2.jpeg')
+
+    # field4.photos.attach(io: photo4, filename: 'terrain4.jpeg', content_type: 'image/jpeg')
+    # field4.save
+
+    # field5 = Field.create(name: "luxe en boulle", address: "19 Rte des Fortifications, 75012 Paris", rating: 2)
+    # photo5 = File.open('app/assets/images/terrain2.jpeg')
+
+    # field5.photos.attach(io: photo5, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+    # field5.save
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  # p Game.all[0].score_first_team
 
 
 #renvoie les DEUX players d'une team donnée
@@ -94,17 +636,17 @@
 
 #renvoie TOUTES les teams d'une ligue donnée
 
-# Team.where(league: League.first)
+# Team.where(league: league1)
 
 
 
 #renvoie UNE team donnée d'une ligue donnée
 
-# Team.where(league: League.first).find(Team.all[3].id)
+# Team.where(league: league1).find(Team.all[3].id)
 
 #renvoie tous les players d'une ligue donnée
 
-# Team.where(league: League.first).map { |team| TeamUser.where(team: team).map { |t| t.user }}.flatten
+# Team.where(league: league1).map { |team| TeamUser.where(team: team).map { |t| t.user }}.flatten
 
 
 # teams_game_array  = GameTeam.where(game: game1).map { |gt| TeamUser.where(team: gt.team)}
