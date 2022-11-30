@@ -3,7 +3,64 @@
   text-align: left;
 }
 
+.card-chat {
+  border-style:solid;
+  border-color: $blue;
+  background-color: $light-blue;
+  border-radius: 15px;
+}
+
 .text-light-grey {
   color:$light-grey;
   font-size: smaller;
+  text-align: right;
+}
+
+.message-content-blue {
+  color:$blue;
+}
+
+// POUR TESTER DANS L'INSPECTEUR !!
+.chatroom {
+  display:flex;
+  justify-content:center;
+  align-items: stretch;
+  margin: 24px 50px;
+}
+
+.message-avatar-date {
+  display:flex;
+  justify-content: space-between;
+  margin:2px 8px;
+}
+
+.message-avatar {
+  padding-right: 8px;
+}
+
+.message-content-blue {
+  margin-left: 16px;
+}
+
+.form-style {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.envoi {
+  margin-top:0;
+  margin-bottom: 20px;
+  display:flex;
+  justify-content: center;
+  margin-left: 120px;
+  margin-right: 120px;
+  align-items: center ;
+}
+
+.form-label {
+  display:none;
 }

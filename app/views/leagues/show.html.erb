@@ -73,23 +73,28 @@
       </h3>
   </div>
 
-  <div class="d-none flexy" id="chatroom" data-display-target="murs">
+  <div class="d-none flexy chatroom" data-display-target="murs">
     <div class="chatroom-item chatroom-form">
       <%= simple_form_for [@league, @message] do |f| %>
-        <%= f.input :comment, placeholder: "write here..." %>
-        <%= f.button :submit, value:'ENVOYER', class:"btn-small" %>
+        <span class="form-style">
+          <%= f.input :comment, placeholder: "“The cave you fear to enter holds the treasure that you seek.” Joseph Campbell" %>
+          <%= f.button :submit, value:'ENVOYER', class:"btn-small envoi" %>
+        </span>
       <% end %>
     </div>
 
     <div class="chatroom-item chatroom-display">
       <% @league.messages.each do |message| %>
-      </ul><li>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><%= message.user.username %>
-        <p class="text-light-grey"> <%= message.created_at.strftime("%A"+" "+"%d" +"/" + "%m" +"/" "%Y") %>
-         <%= message.created_at.strftime("%H"+":"+ "%M"+ ":"+"%S") %></p>
-        <p><%= message.comment %></p>
-      </li>
-      <ul>
+        <ul class="card-chat">
+          <li >
+            <div class="message-avatar-date">
+               <span class="message-avatar"><%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><%= message.user.username.upcase %></span>
+              <p class="text-light-grey"> <%= message.created_at.strftime("%A"+" "+"%d" +"/" + "%m" +"/" + "%Y") %>
+                                          <%= message.created_at.strftime("%H"+":"+ "%M"+ ":"+"%S") %></p>
+            </div>
+            <p class="message-content-blue"><%= message.comment %></p>
+          </li>
+        </ul>
       <% end %>
     </div>
   </div>
