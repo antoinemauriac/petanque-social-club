@@ -3,10 +3,26 @@
 <%# trouver tout les users %>
 
 
-<%= simple_form_for @team_user do |f| %>
-  <%= f.input :user, as: :check_boxes, collection: User.all.map { |user| user.username}, wrapper: :horizontal_collection_inline %>
+<%= simple_form_for @league do |f| %>
+  <%= f.input :name %>
   <%= f.button :submit %>
 <% end %>
 
+
+
+
+
+
+
+
+<% 5.times do %>
+<%= simple_form_for @team_user do |f| %>
+  <%= f.input :user, as: :check_boxes, collection: @users.map { |user| user.username}, wrapper: :horizontal_collection_inline %>
+  <%# <%  f.input :title, :as => :hidden, :input_html => { :value => "some value" }  %>
+  <%   %>
+  <%= f.hidden_field :team, :value => Team.create!(league: @league).id %>
+  <%= f.button :submit %>
+<% end %>
+<% end %>
 
 <%# what i want at the end ? a dropdown %>
