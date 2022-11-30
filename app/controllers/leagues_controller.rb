@@ -11,13 +11,14 @@ class LeaguesController < ApplicationController
 
   def new
     @league = League.new
-    @team_user = TeamUser.new
-    @users = User.all
+
+
   end
 
   def create
-    @league = League.new(league_params)
+    @league = League.create!(league_params)
     @league.admin_user = current_user
+    redirect_to new_league_team_user_path(@league)
   end
 
   # def edit

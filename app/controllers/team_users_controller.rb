@@ -1,11 +1,23 @@
 class TeamUsersController < ApplicationController
+
+  def new
+    @team_user = TeamUser.new
+    @users = User.all
+    @league = League.find(params[:league_id])
+  end
+
   def create
-    params[:team_user][:user].flatten.drop(1).each do |selected|
-      user = User.find_by(username: selected)
-      team = Team.find(params[:team_user][:team])
-      TeamUser.create!(user: user, team: team)
+    @league = League.find(params[:league_id])
+    @users = params[:team_user][:user].reject { |c| c.empty? }
+    @users = @users.each_slice(2).to_a
+    @users.each do |two_user|
+      @team = Team.new(league: @league)
+      @team.save!
+      two_user.each do |selected|
+        user = User.find_by(username: selected)
+        TeamUser.create!(user: user, team: @team)
+      end
     end
-    
   end
 
   private
