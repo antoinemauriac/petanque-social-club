@@ -73,27 +73,31 @@
       </h3>
   </div>
 
-  <div class="d-none flexy" data-display-target="murs">
-    <%= simple_form_for [@league, @message] do |f| %>
-      <%= f.input :comment, placeholder: "write here..." %>
-      <%= f.submit class:"btn-small" %>
-    <% end %>
+  <div class="d-none flexy" id="chatroom" data-display-target="murs">
+    <div class="chatroom-item chatroom-form">
+      <%= simple_form_for [@league, @message] do |f| %>
+        <%= f.input :comment, placeholder: "write here..." %>
+        <%= f.button :submit, value:'ENVOYER', class:"btn-small" %>
+      <% end %>
+    </div>
 
-    <% @league.messages.each do |message| %>
-    </ul>
-    <li>
-    <%=  message.user.username %>-
-    <%= message.comment %>-
-    <%= message.created_at %>
-    </li>
-    <ul>
-    <% end %>
+    <div class="chatroom-item chatroom-display">
+      <% @league.messages.each do |message| %>
+      </ul><li>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><%= message.user.username %>
+        <p class="text-light-grey"> <%= message.created_at.strftime("%A"+" "+"%d" +"/" + "%m" +"/" "%Y") %>
+         <%= message.created_at.strftime("%H"+":"+ "%M"+ ":"+"%S") %></p>
+        <p><%= message.comment %></p>
+      </li>
+      <ul>
+      <% end %>
+    </div>
   </div>
+</div>
+
 
 
 <!--<h2>classement</h2>
 <h2> <%= link_to "matchs", league_games_path(@league)  %></h2>
 <h2>mur</h2>
 <h3><%= link_to "retour à mes ligues", leagues_path %></h3>-->
-
-</div>
