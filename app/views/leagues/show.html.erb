@@ -73,9 +73,23 @@
       </h3>
   </div>
 
-  <div class="d-none" data-display-target="murs">
-  <h3>Hello from mur</h3>
+  <div class="d-none flexy" data-display-target="murs">
+    <%= simple_form_for [@league, @message] do |f| %>
+      <%= f.input :comment, placeholder: "write here..." %>
+      <%= f.submit class:"btn-small" %>
+    <% end %>
+
+    <% @league.messages.each do |message| %>
+    </ul>
+    <li>
+    <%=  message.user.username %>-
+    <%= message.comment %>-
+    <%= message.created_at %>
+    </li>
+    <ul>
+    <% end %>
   </div>
+
 
 <!--<h2>classement</h2>
 <h2> <%= link_to "matchs", league_games_path(@league)  %></h2>

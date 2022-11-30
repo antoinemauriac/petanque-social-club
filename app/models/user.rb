@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :date_of_birth, presence: true
   has_many :team_users
   has_many :teams, through: :team_users
+  has_many :messages
 end
