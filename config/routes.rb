@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :games, only: %i[new create show edit index]
   end
   resources :games, only: :update
+  resources :fields, only: :index
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

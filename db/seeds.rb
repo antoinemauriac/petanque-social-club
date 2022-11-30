@@ -71,42 +71,74 @@
   GameTeam.create!(team: Team.all[3], game: Game.all[9])
   GameTeam.create!(team: Team.all[4], game: Game.all[9])
 
-
-#renvoie les DEUX players d'une team donnée
+# renvoie les DEUX players d'une team donnée
 
 # TeamUser.where(team: Team.all[2]).map { |team| team.user }
 
 # team.users
 
-#renvoie UN player donné d'une team donnée
+# renvoie UN player donné d'une team donnée
 
 # TeamUser.where(team: Team.all[2]).map { |team| team.user }.select { |user| user = User.find(765) }
 
-#renvoie les DEUX teams d'un game donné
+# renvoie les DEUX teams d'un game donné
 
 # GameTeam.where(game: Game.all[4]).map { |game| game.team }
 
 # Game.all[4].teams
 
-#renvoie UNE team donnée d'un game donné
+# renvoie UNE team donnée d'un game donné
 
 # GameTeam.where(game: Game.all[4]).map { |game| game.team }.select { |team| team.id = Team.all[2].id }
 
-#renvoie TOUTES les teams d'une ligue donnée
+# renvoie TOUTES les teams d'une ligue donnée
 
 # Team.where(league: League.first)
 
-
-
-#renvoie UNE team donnée d'une ligue donnée
+# renvoie UNE team donnée d'une ligue donnée
 
 # Team.where(league: League.first).find(Team.all[3].id)
 
-#renvoie tous les players d'une ligue donnée
+# renvoie tous les players d'une ligue donnée
 
 # Team.where(league: League.first).map { |team| TeamUser.where(team: team).map { |t| t.user }}.flatten
-
 
 # teams_game_array  = GameTeam.where(game: game1).map { |gt| TeamUser.where(team: gt.team)}
 # game_players = teams_game_array.map { |t| t.map { |u| u.user.username} }
 # p game_players
+
+# ------------------------------------------------------------
+
+ # fields seeds :
+
+  Field.destroy_all
+
+  field1 = Field.create(name: "La Bretagne, ça vous gagne", address: "Av. Robert Schuman, 13002 Marseille", rating: 3)
+  photo1 = File.open('app/assets/images/terrain1.jpeg')
+
+  field1.photos.attach(io: photo1, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+  field1.save
+
+  field2 = Field.create(name: "Terrain du bonheur", address: "50 Rue Monte Cristo, 13005 Marseille", rating: 2)
+  photo2 = File.open('app/assets/images/terrain2.jpeg')
+
+  field2.photos.attach(io: photo2, filename: 'terrain2.jpeg', content_type: 'image/jpeg')
+  field2.save
+
+  field3 = Field.create(name: "Paris, ça vous gagne", address: "5 Rue de Ste Hélène, 75013 Paris", rating: 5)
+  photo3 = File.open('app/assets/images/terrain1.jpeg')
+
+  field3.photos.attach(io: photo3, filename: 'terrain3.jpeg', content_type: 'image/jpeg')
+  field3.save
+
+  field4 = Field.create(name: "Terrain bonne humeur", address: "19 Rte des Fortifications, 75012 Paris", rating: 2)
+  photo4 = File.open('app/assets/images/terrain2.jpeg')
+
+  field4.photos.attach(io: photo4, filename: 'terrain4.jpeg', content_type: 'image/jpeg')
+  field4.save
+
+  field5 = Field.create(name: "luxe en boulle", address: "19 Rte des Fortifications, 75012 Paris", rating: 2)
+  photo5 = File.open('app/assets/images/terrain2.jpeg')
+
+  field5.photos.attach(io: photo5, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+  field5.save
