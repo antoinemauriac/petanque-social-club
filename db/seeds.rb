@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
-# Field.destroy_all
+Field.destroy_all
 Message.destroy_all
 TeamUser.destroy_all
 User.destroy_all
@@ -31,11 +31,11 @@ League.destroy_all
   user10 = User.create(email: "trytry@gmail.com", username: "Georges Abitboule", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user11 = User.create(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
 
-  photo1 = URI.open('app/assets/images/avatar1.png')
-  photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669912215/development/8ih7oc9prtesjpjv382alws8ha1k.png')
-  photo3 = URI.open('app/assets/images/avatar3.png')
-  photo4 = URI.open('app/assets/images/avatar4.png')
-  photo5 = URI.open('app/assets/images/avatar5.png')
+  photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913797/development/vjg4d9s3kj9zs12stprg8lino87v.png')
+  photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913805/development/uoicv7gzwgywzvnamlc2v22f25j5.png')
+  photo3 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913802/development/ylvmvvd7ciard1xd9xm949s6t1fv.png')
+  photo4 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913799/development/zer3jed4v30atrbsly3uadhua4pi.png')
+  photo5 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913803/development/a8eq9m7gto20lkviiay7efks6ssc.png')
   photo6 = URI.open('app/assets/images/avatar6.png')
   photo7 = URI.open('app/assets/images/avatar7.png')
   photo8 = URI.open('app/assets/images/avatar8.png')
@@ -45,7 +45,7 @@ League.destroy_all
 
 
 
-    user1.photo.attach(io: photo1, filename: 'avatar1.png', content_type: 'image/png')
+    user1.photo.attach(io: photo1, filename: 'avatar1', content_type: 'image/png')
     user2.photo.attach(io: photo2, filename: 'avatar2.png', content_type: 'image/png')
     user3.photo.attach(io: photo3, filename: 'avatar3.png', content_type: 'image/png')
     user4.photo.attach(io: photo4, filename: 'avatar4.png', content_type: 'image/png')
@@ -603,35 +603,35 @@ League.destroy_all
 
 
 
-    # field1 = Field.create(name: "La Bretagne, ça vous gagne", address: "Av. Robert Schuman, 13002 Marseille", rating: 3)
-    # photo1 = File.open('app/assets/images/terrain1.jpeg')
+    field1 = Field.create(name: "La Bretagne, ça vous gagne", address: "Av. Robert Schuman, 13002 Marseille", rating: 3)
+    photo1 = File.open('app/assets/images/terrain1.jpeg')
 
-    # field1.photos.attach(io: photo1, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    # field1.save
+    field1.photos.attach(io: photo1, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+    field1.save
 
-    # field2 = Field.create(name: "Terrain du bonheur", address: "50 Rue Monte Cristo, 13005 Marseille", rating: 2)
-    # photo2 = File.open('app/assets/images/terrain2.jpeg')
+    field2 = Field.create(name: "Terrain du bonheur", address: "50 Rue Monte Cristo, 13005 Marseille", rating: 2)
+    photo2 = File.open('app/assets/images/terrain2.jpeg')
 
-    # field2.photos.attach(io: photo2, filename: 'terrain2.jpeg', content_type: 'image/jpeg')
-    # field2.save
+    field2.photos.attach(io: photo2, filename: 'terrain2.jpeg', content_type: 'image/jpeg')
+    field2.save
 
-    # field3 = Field.create(name: "Paris, ça vous gagne", address: "5 Rue de Ste Hélène, 75013 Paris", rating: 5)
-    # photo3 = File.open('app/assets/images/terrain1.jpeg')
+    field3 = Field.create(name: "Paris, ça vous gagne", address: "5 Rue de Ste Hélène, 75013 Paris", rating: 5)
+    photo3 = File.open('app/assets/images/terrain1.jpeg')
 
-    # field3.photos.attach(io: photo3, filename: 'terrain3.jpeg', content_type: 'image/jpeg')
-    # field3.save
+    field3.photos.attach(io: photo3, filename: 'terrain3.jpeg', content_type: 'image/jpeg')
+    field3.save
 
-    # field4 = Field.create(name: "Terrain bonne humeur", address: "19 Rte des Fortifications, 75012 Paris", rating: 2)
-    # photo4 = File.open('app/assets/images/terrain2.jpeg')
+    field4 = Field.create(name: "Terrain bonne humeur", address: "19 Rte des Fortifications, 75012 Paris", rating: 2)
+    photo4 = File.open('app/assets/images/terrain2.jpeg')
 
-    # field4.photos.attach(io: photo4, filename: 'terrain4.jpeg', content_type: 'image/jpeg')
-    # field4.save
+    field4.photos.attach(io: photo4, filename: 'terrain4.jpeg', content_type: 'image/jpeg')
+    field4.save
 
-    # field5 = Field.create(name: "luxe en boulle", address: "19 Rte des Fortifications, 75012 Paris", rating: 2)
-    # photo5 = File.open('app/assets/images/terrain2.jpeg')
+    field5 = Field.create(name: "luxe en boulle", address: "19 Rte des Fortifications, 75012 Paris", rating: 2)
+    photo5 = File.open('app/assets/images/terrain2.jpeg')
 
-    # field5.photos.attach(io: photo5, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
-    # field5.save
+    field5.photos.attach(io: photo5, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+    field5.save
 
 
 

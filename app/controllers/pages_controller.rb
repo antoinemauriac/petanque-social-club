@@ -23,6 +23,11 @@ class PagesController < ApplicationController
     end
 
     @number_of_leagues_played = @leagues.count
+    @user1 = User.order('RANDOM()')[0]
+    @user2 = User.order('RANDOM()')[1]
+  end
+
+  def accueil
   end
 
 end

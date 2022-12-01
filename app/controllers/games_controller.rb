@@ -3,19 +3,8 @@ class GamesController < ApplicationController
     @league = League.find(params[:league_id])
   end
 
-  # def new
-  #   @game = Game.new
-  #   @game = League.find(params[:league_id])
-  # end
-
-  # def create
-  #   @league = League.find(params[:league_id])
-  #   @game = Game.new(game_params)
-  # end
-
   def show
     @game = Game.find(params[:id])
-    # @games = Game.all
     @team1 = @game.teams.first
     @team2 = @game.teams.last
   end
@@ -49,7 +38,7 @@ class GamesController < ApplicationController
     @team2.save
     @team1.save
 
-    @game.status = false
+    @game.status = true
     @game.save
     redirect_to league_path(@game.league)
   end
