@@ -5,9 +5,10 @@ import Typed from "typed.js"
 export default class extends Controller {
   connect() {
     new Typed(this.element, {
-      strings: ["PETANQUE", "SOCIAL", "CLUB"],
+      strings: [ "SOCIAL", "CLUB", "PETANQUE" ],
       typeSpeed: 200,
-      loop: true
+      loop: false,
+      loopCount: 2
     })
   }
 }
