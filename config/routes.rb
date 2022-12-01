@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  get "profile", to: "pages#profile"
 
   resources :leagues, only: %i[new create show index] do
     resources :team_users, only: %i[new create]

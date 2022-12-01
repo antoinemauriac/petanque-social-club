@@ -1,14 +1,43 @@
-<% @fields.each do |field|%>
-  <% if field.photos.attached? %>
-    <%= cl_image_tag field.photos.first.key%>
-  <% else %>
-    <p>coucouc</p>
-  <% end %>
-  <h2> <%= field.address %> - <%= field.name %></h2>
-<% end %>
 
----------------------------------------------------------
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div data-controller="terrain">
+      <ul class="nav nav-pills nav-fill" style="margin-bottom:10px">
+        <li class="nav-item" data-action="click->terrain#showfields">
+          <a class="nav-link active" data-terrain-target="field" href="#">FIELDS</a>
+        </li>
+        <li class="nav-item" data-action="click->terrain#showcartes">
+          <a class="nav-link" data-terrain-target="carte" href="#">MAP</a>
+        </li>
+      </ul>
+
+
+
+
+
+      <div class="card-product" data-terrain-target="fields">
+        <h4>Les terrains de pértanques devant chez vous</h4>
+            <% @fields.each do | field | %>
+                <div class="main-card">
+                  <div class="main-card-img">
+                    <% if field.photos.attached? %>
+                        <%= cl_image_tag field.photos.first.key%>
+                    <% else %>
+                        <h1>nothing</h1>
+                    <% end %>
+                  </div>
+                    <div class="card-product-infos">
+                      <h2><%= "#{field.name}" %></h2>
+                      <p><%= "#{field.address}" %></p>
+                    </div>
+                </div>
+            <% end %>
+      </div>
+
+
+      <div style="width: 100%; height: 600px;"
+        data-controller="map"
+        data-terrain-target="cartes"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        class= "d-none">
+      </div>
+</div>

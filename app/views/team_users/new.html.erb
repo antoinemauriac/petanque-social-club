@@ -1,3 +1,7 @@
+<% User.all.each do |user| %>
+<div class="user-<%= user.username.gsub(/\s+/, "_") %>">
+<%= user.username %></div>
+<% end %>
 
 <%= simple_form_for [@league, @team_user] do |f| %>
 <% i = 0 %>
