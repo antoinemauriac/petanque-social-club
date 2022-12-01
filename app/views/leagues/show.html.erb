@@ -106,12 +106,12 @@
   </div>
 
 
-  <div class="d-none flexy chatroom" data-display-target="murs">
+  <div class="d-none flexy chatroom" data-display-target="murs" >
     <div class="chatroom-item chatroom-form">
       <%= simple_form_for [@league, @message] do |f| %>
         <span id="form-style">
           <%= f.input :comment, placeholder: "“The cave you fear to enter holds the treasure that you seek.” Joseph Campbell" %>
-          <%= f.button :submit, value:'ENVOYER', class:"btn-smally envoi" %>
+          <%= f.button :submit, value:'ENVOYER', class:"btn-smally envoi"%>
         </span>
       <% end %>
     </div>

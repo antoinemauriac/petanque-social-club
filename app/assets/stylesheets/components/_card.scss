@@ -1,0 +1,23 @@
+.card-field p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-field .card-field-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-field:hover {
+  background: $blue!important;
+  color:$white;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+a {
+  text-decoration: none!important;
+}
