@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :leagues, only: %i[new create show index] do
+    resources :team_users, only: %i[new create]
     resources :games, only: %i[new create show edit index]
     resources :messages, only: :create
-    resources :team_users, only: %i[new create]
   end
 
-# get '/leagues/:id/team_users/new', to: 'team_users#new'   --- could be a path to any custom mehtod 
+# get '/leagues/:id/team_users/new', to: 'team_users#new'   --- could be a path to any custom mehtod
 
   resources :games, only: :update
   resources :fields, only: :index

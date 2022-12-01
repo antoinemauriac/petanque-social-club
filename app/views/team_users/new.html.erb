@@ -1,8 +1,11 @@
+
 <%= simple_form_for [@league, @team_user] do |f| %>
+<% i = 0 %>
 <% 5.times do %>
 <%= simple_fields_for :team_user do |f| %>
-<h1>each team</h1>
-  <%= f.input :user, as: :select, multiple: true, collection: @users.map { |user| user.username}, wrapper: :horizontal_collection_inline %>
+<% i += 1 %>
+<h1>team <%= i %></h1>
+  <%= f.input :user, as: :check_boxes, multiple: true, collection: @users.map { |user| user.username}, wrapper: :horizontal_collection_inline, label: false %>
 <% end %>
 <% end %>
   <%= f.button :submit %>
