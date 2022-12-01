@@ -198,7 +198,7 @@ League.destroy_all
 
     # team1.save
     # team2.save
-    # game1.status = false
+    # game1.status = true
     # game1.save
 
   #MATCH2
@@ -219,7 +219,7 @@ League.destroy_all
 
     # team1.save
     # team3.save
-    # game2.status = false
+    # game2.status = true
     # game2.save
 
   #MATCH3
@@ -240,7 +240,7 @@ League.destroy_all
 
     team1.save
     team4.save
-    game3.status = false
+    game3.status = true
     game3.save
 
   #MATCH4
@@ -261,7 +261,7 @@ League.destroy_all
 
     team1.save
     team5.save
-    game4.status = false
+    game4.status = true
     game4.save
 
   #MATCH5
@@ -282,7 +282,7 @@ League.destroy_all
 
     team2.save
     team3.save
-    game5.status = false
+    game5.status = true
     game5.save
 
   #MATCH6
@@ -303,7 +303,7 @@ League.destroy_all
 
     team2.save
     team4.save
-    game6.status = false
+    game6.status = true
     game6.save
 
   #MATCH7
@@ -324,29 +324,29 @@ League.destroy_all
 
     team2.save
     team5.save
-    game7.status = false
+    game7.status = true
     game7.save
 
   #MATCH8
 
-    game8.score_first_team = 13
-    game8.score_second_team = rand(0..12)
+    # game8.score_first_team = 13
+    # game8.score_second_team = rand(0..12)
 
-    game8.game_winner = team3.id
+    # game8.game_winner = team3.id
 
-    team3.points_for += game8.score_first_team
-    team3.points_against += game8.score_second_team
-    team3.games_played += 1
-    team3.number_of_wins += 1
+    # team3.points_for += game8.score_first_team
+    # team3.points_against += game8.score_second_team
+    # team3.games_played += 1
+    # team3.number_of_wins += 1
 
-    team4.points_for += game8.score_second_team
-    team4.points_against += game8.score_first_team
-    team4.games_played += 1
+    # team4.points_for += game8.score_second_team
+    # team4.points_against += game8.score_first_team
+    # team4.games_played += 1
 
-    team3.save
-    team4.save
-    game8.status = false
-    game8.save
+    # team3.save
+    # team4.save
+    # game8.status = true
+    # game8.save
 
   #MATCH9
 
@@ -366,7 +366,7 @@ League.destroy_all
 
     team3.save
     team5.save
-    game9.status = false
+    game9.status = true
     game9.save
 
   #MATCH10
@@ -387,7 +387,7 @@ League.destroy_all
 
     team4.save
     team5.save
-    game10.status = false
+    game10.status = true
     game10.save
 
 
@@ -409,7 +409,7 @@ League.destroy_all
 
     team6.save
     team7.save
-    game11.status = false
+    game11.status = true
     game11.save
 
   #MATCH12
@@ -430,7 +430,7 @@ League.destroy_all
 
     team6.save
     team8.save
-    game12.status = false
+    game12.status = true
     game12.save
 
   #MATCH13
@@ -451,7 +451,7 @@ League.destroy_all
 
     team6.save
     team9.save
-    game13.status = false
+    game13.status = true
     game13.save
 
   #MATCH14
@@ -472,7 +472,7 @@ League.destroy_all
 
     team6.save
     team10.save
-    game14.status = false
+    game14.status = true
     game14.save
 
   #MATCH15
@@ -493,7 +493,7 @@ League.destroy_all
 
     team7.save
     team8.save
-    game15.status = false
+    game15.status = true
     game15.save
 
   #MATCH16
@@ -514,7 +514,7 @@ League.destroy_all
 
     team7.save
     team9.save
-    game16.status = false
+    game16.status = true
     game16.save
 
   #MATCH17
@@ -535,7 +535,7 @@ League.destroy_all
 
     team7.save
     team10.save
-    game17.status = false
+    game17.status = true
     game17.save
 
   #MATCH18
@@ -556,7 +556,7 @@ League.destroy_all
 
     team8.save
     team9.save
-    game18.status = false
+    game18.status = true
     game18.save
 
   #MATCH19
@@ -577,7 +577,7 @@ League.destroy_all
 
     team8.save
     team10.save
-    game19.status = false
+    game19.status = true
     game19.save
 
   #MATCH20
@@ -598,7 +598,7 @@ League.destroy_all
 
     team9.save
     team10.save
-    game20.status = false
+    game20.status = true
     game20.save
 
 

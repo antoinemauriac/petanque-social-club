@@ -7,15 +7,15 @@
     <button class="navbar-toggler border-0" onclick="this.blur();" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <% if current_user %>
       <span><%= cl_image_tag current_user.photo.key, :gravity=>"face", :height=>150, :width=>150, :crop=>"thumb" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-</span>
-<% end %>
+      </span>
+    <% end %>
     </button>
 
     <div class="collapse navbar-collapse padding_right" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto align-items-end pr-5">
         <% if user_signed_in? %>
           <li class="nav-item nav-item-navabar">
-            <%= link_to "Profil", "profile", class: "nav-link" %>
+            <%= link_to "Profile", profile_path, class: "nav-link" %>
           </li>
             <li class="nav-item nav-item-navabar">
             <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>

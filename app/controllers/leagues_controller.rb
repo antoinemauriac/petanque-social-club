@@ -13,8 +13,8 @@ class LeaguesController < ApplicationController
   def show
     @league = League.find(params[:id])
     @games = @league.games
-    @leagues = League.all
-    @message = Message.new
+    # @leagues = League.all
+    # @message = Message.new
   end
 
   def new
