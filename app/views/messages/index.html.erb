@@ -1,0 +1,32 @@
+ <div class="d-none flexy chatroom" data-display-target="murs">
+    <div class="chatroom-item chatroom-form">
+      <%= simple_form_for [@league, @message] do |f| %>
+        <span id="form-style">
+          <%= f.input :comment, placeholder: "“The cave you fear to enter holds the treasure that you seek.” Joseph Campbell" %>
+          <%= f.button :submit, value:'ENVOYER', class:"btn-smally envoi" %>
+        </span>
+      <% end %>
+    </div>
+
+    <div class="chatroom-item chatroom-display">
+      <% @league.messages.reverse.each do |message| %>
+        <div class="card-chat">
+            <% if message.user == current_user %>
+            <div class="message-avatar-date-reverse">
+               <span class="message-avatar"><%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yttj-bqOaciY3Zew0IBI0gHaEK%26pid%3DApi&f=1&ipt=550194c28a08d54d4e90c955368ff885cc4b7e012806cbd03977d01ea779fb5e&ipo=images", :gravity=>"face", :height=>150, :width=>150, :crop=>"thumb" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></span><span class="blaze-comment-reverse"><%= message.user.username.upcase%></span>
+              <p class="text-light-grey-reverse"> <%= message.created_at.strftime("%d" +"/" + "%m" +"/" + "%Y") %>
+                                          <%= message.created_at.strftime("%H"+":"+ "%M") %></p>
+            </div>
+            <% else %>
+            <div class="message-avatar-date">
+               <span class="message-avatar"><%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yttj-bqOaciY3Zew0IBI0gHaEK%26pid%3DApi&f=1&ipt=550194c28a08d54d4e90c955368ff885cc4b7e012806cbd03977d01ea779fb5e&ipo=images", :gravity=>"face", :height=>150, :width=>150, :crop=>"thumb" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></span><span class="blaze-comment"><%= message.user.username.upcase%></span>
+              <p class="text-light-grey"> <%= message.created_at.strftime("%d" +"/" + "%m" +"/" + "%Y") %>
+                                          <%= message.created_at.strftime("%H"+":"+ "%M") %></p>
+            </div>
+            <% end %>
+            <p class="message-content-blue"><%= message.comment %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
