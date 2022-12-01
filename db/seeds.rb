@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+require "open-uri"
 
 Field.destroy_all
 Message.destroy_all
@@ -19,19 +19,55 @@ League.destroy_all
   league1 = League.create(name: "Les boulistes du dimanche")
   league2 = League.create(name: "Sporting Club Familial")
 
-  User.create!(email: "toto@gmail.com", username: "Uncle Moh", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "titi@gmail.com", username: "Bouliste anonyme", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tata@gmail.com", username: "Nina Patulacci", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "bibi@gmail.com", username: "Cathy du 13", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tutu@gmail.com", username: "Lucien l'ancien", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tete@gmail.com", username: "Patoche la bidoche", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tyty@gmail.com", username: "Zizou", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "trotro@gmail.com", username: "Lucienne l'ancienne", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tratra@gmail.com", username: "Léo le minot", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "trytry@gmail.com", username: "Georges Abitboule", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user1 = User.create(email: "titi@gmail.com", username: "Bouliste anonyme", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user2 = User.create(email: "toto@gmail.com", username: "Uncle Moh", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user3 = User.create(email: "tata@gmail.com", username: "Nina Patulacci", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user4 = User.create(email: "bibi@gmail.com", username: "Cathy du 13", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user5 = User.create(email: "tutu@gmail.com", username: "Lucien l'ancien", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user6 = User.create(email: "tete@gmail.com", username: "Patoche la bidoche", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user7 = User.create(email: "tyty@gmail.com", username: "Zizou", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user8 = User.create(email: "trotro@gmail.com", username: "Lucienne l'ancienne", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user9 = User.create(email: "tratra@gmail.com", username: "Léo le minot", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user10 = User.create(email: "trytry@gmail.com", username: "Georges Abitboule", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user11 = User.create(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+
+  photo1 = URI.open('app/assets/images/avatar1.png')
+  photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669912215/development/8ih7oc9prtesjpjv382alws8ha1k.png')
+  photo3 = URI.open('app/assets/images/avatar3.png')
+  photo4 = URI.open('app/assets/images/avatar4.png')
+  photo5 = URI.open('app/assets/images/avatar5.png')
+  photo6 = URI.open('app/assets/images/avatar6.png')
+  photo7 = URI.open('app/assets/images/avatar7.png')
+  photo8 = URI.open('app/assets/images/avatar8.png')
+  photo9 = URI.open('app/assets/images/avatar9.png')
+  photo10 = URI.open('app/assets/images/avatar10.png')
+  photo11 = URI.open('app/assets/images/avatar11.png')
 
 
+
+    user1.photo.attach(io: photo1, filename: 'avatar1.png', content_type: 'image/png')
+    user2.photo.attach(io: photo2, filename: 'avatar2.png', content_type: 'image/png')
+    user3.photo.attach(io: photo3, filename: 'avatar3.png', content_type: 'image/png')
+    user4.photo.attach(io: photo4, filename: 'avatar4.png', content_type: 'image/png')
+    user5.photo.attach(io: photo5, filename: 'avatar5.png', content_type: 'image/png')
+    user6.photo.attach(io: photo6, filename: 'avatar6.png', content_type: 'image/png')
+    user7.photo.attach(io: photo7, filename: 'avatar7.png', content_type: 'image/png')
+    user8.photo.attach(io: photo8, filename: 'avatar8.png', content_type: 'image/png')
+    user9.photo.attach(io: photo9, filename: 'avatar9.png', content_type: 'image/png')
+    user10.photo.attach(io: photo10, filename: 'avatar10.png', content_type: 'image/png')
+    user11.photo.attach(io: photo11, filename: 'avatar11.png', content_type: 'image/png')
+
+    user1.save
+    user2.save
+    user3.save
+    user4.save
+    user5.save
+    user6.save
+    user7.save
+    user8.save
+    user9.save
+    user10.save
+    user11.save
 
   game1 = Game.create!(league: league1)
   game2 = Game.create!(league: league1)

@@ -4,16 +4,18 @@
     <a href="/"><h4>
     <span data-controller="typed-js"></span></h4></a>
       </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span><%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yttj-bqOaciY3Zew0IBI0gHaEK%26pid%3DApi&f=1&ipt=550194c28a08d54d4e90c955368ff885cc4b7e012806cbd03977d01ea779fb5e&ipo=images", :gravity=>"face", :height=>150, :width=>150, :crop=>"thumb" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <button class="navbar-toggler border-0" onclick="this.blur();" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <% if current_user %>
+      <span><%= cl_image_tag current_user.photo.key, :gravity=>"face", :height=>150, :width=>150, :crop=>"thumb" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 </span>
+<% end %>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto align-items-end">
+    <div class="collapse navbar-collapse padding_right" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto align-items-end pr-5">
         <% if user_signed_in? %>
           <li class="nav-item nav-item-navabar">
-            <%= link_to "Profil", "#", class: "nav-link" %>
+            <%= link_to "Profil", "profile", class: "nav-link" %>
           </li>
             <li class="nav-item nav-item-navabar">
             <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
