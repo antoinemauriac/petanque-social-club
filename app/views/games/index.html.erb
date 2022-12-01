@@ -1,4 +1,4 @@
-<h2><%= link_to @league.name, league_path(@league) %></h2>
+<!--<h2><%= link_to @league.name, league_path(@league) %></h2>
 <div class="flexy">
   <% @league.games.each do |game| %>
   <ul>
@@ -28,3 +28,61 @@
   <h3>
   <%= link_to "retour à mes ligues", leagues_path %></h3>
 </div>
+-->
+  <div class="d-none flexy" data-display-target="matchs">
+    <% @league.games.each do |game| %>
+        <% game_players = game.teams.map { |team| team.users }.flatten %>
+        <% if game_players.include?(current_user) %>
+      <div class="row row-game">
+        <div class="col-4 col-left">
+          <% if current_user == game_players[0] || current_user == game_players[1] %>
+          <p class="current-player"><%= game_players[0].username.upcase %></p>
+          <p class="current-player"><%= game_players[1].username.upcase %></p>
+          <% else %>
+          <p><%= game_players[0].username.upcase %></p>
+          <p><%= game_players[1].username.upcase %></p>
+          <% end %>
+        </div>
+        <div class="col-4 score-color" style="text-align:center">
+        <% if game.status == false %>
+          <%= game.score_first_team %> - <%= game.score_second_team %>
+          <% else %>
+          <%= link_to "SCORE ?", league_game_path(@league, game.id), class:"btn-small btn-score" %>
+        <% end %>
+        </div>
+        <div class="col-4 col-right">
+          <% if current_user == game_players[2] || current_user == game_players[3] %>
+          <p class="current-player"><%= game_players[2].username.upcase %></p>
+          <p class="current-player"><%= game_players[3].username.upcase %></p>
+          <% else %>
+          <p><%= game_players[2].username.upcase %></p>
+          <p><%= game_players[3].username.upcase %></p>
+          <% end %>
+        </div>
+      </div>
+        <% end %>
+      <% end %>
+
+    <% @league.games.each do |game| %>
+        <% game_players = game.teams.map { |team| team.users }.flatten %>
+        <% if game_players.exclude?(current_user) %>
+          <div class="row row-game">
+            <div class="col-4 col-left">
+              <p><%= game_players[0].username.upcase %></p>
+              <p><%= game_players[1].username.upcase %></p>
+            </div>
+            <div class="col-4 score-color" style="text-align:center">
+            <% if game.status == false %>
+              <%= game.score_first_team %> - <%= game.score_second_team %>
+              <% else %>
+              <%= "-" %>
+            <% end %>
+            </div>
+            <div class="col-4 col-right">
+              <p><%= game_players[2].username.upcase %></p>
+              <p><%= game_players[3].username.upcase %></p>
+            </div>
+          </div>
+            <% end %>
+        <% end %>
+  </div>
