@@ -66,8 +66,12 @@
   align-items: center ;
 }
 
-// .form-label {
-//   display:none;
+.form-label .text .optionnal {
+  display:none;
+}
+
+// .form-label .integer .optional {
+//   display: ;
 // }
 
 .form-control {
@@ -87,4 +91,10 @@
   margin-left: 5px;
   margin-top: 10px;
   font-size: 15px;
+}
+
+.chatroom-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
