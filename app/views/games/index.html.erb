@@ -32,6 +32,7 @@
 <h2 class="flexy light-blue-bar">
   <%= @league.name.upcase %>
 </h2>
+
 <ul class="nav nav-pills nav-fill" >
   <li class="nav-item yellow-box" >
     <%# <a class="nav-link "  href="#"> %>
@@ -80,6 +81,7 @@
     </div>
       <% end %>
     <% end %>
+
 
   <% @league.games.each do |game| %>
       <% game_players = game.teams.map { |team| team.users }.flatten %>

@@ -25,6 +25,9 @@ class PagesController < ApplicationController
     @number_of_leagues_played = @leagues.count
   end
 
+  def accueil
+  end
+
 end
 
 # @teammates = @users.teams
