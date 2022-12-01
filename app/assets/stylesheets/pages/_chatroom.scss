@@ -13,6 +13,15 @@
   min-height: 110px;
   width: 340px;
 }
+.card-chat-reverse {
+  border-style:solid;
+  border-color: $blue;
+  background-color: white;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  min-height: 110px;
+  width: 340px;
+}
 
 .text-light-grey {
   color:$light-grey;
@@ -21,8 +30,19 @@
   margin-top: 5px;
 }
 
+.text-light-grey-reverse {
+  color:$light-grey;
+  text-align: left;
+  font-size: 10px!important;
+  margin-top: 5px;
+}
+
 .message-content-blue {
   color:$blue;
+}
+
+.message-content-green {
+  color:$green;
 }
 
 // POUR TESTER DANS L'INSPECTEUR !!
@@ -36,6 +56,13 @@
   display:flex;
   justify-content: space-between;
   margin:2px 8px;
+}
+
+.message-avatar-date-reverse {
+  display:flex;
+  justify-content:space-between;
+  margin:2px 8px;
+  flex-direction: row-reverse;
 }
 
 .message-avatar {
@@ -92,6 +119,14 @@
   margin-top: 10px;
   font-size: 15px;
 }
+
+.blaze-comment-reverse {
+  color: $blue;
+  width: -webkit-fill-available;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 15px;
+  text-align: right;
 
 .chatroom-item {
   display: flex;
