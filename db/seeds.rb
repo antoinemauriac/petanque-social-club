@@ -16,20 +16,20 @@ Team.destroy_all
 Game.destroy_all
 League.destroy_all
 
-  league1 = League.create(name: "La premier league")
-  league2 = League.create(name: "Con de tes morts")
+  league1 = League.create(name: "Les boulistes du dimanche")
+  league2 = League.create(name: "Sporting Club Familial")
 
   User.create!(email: "toto@gmail.com", username: "Uncle Moh", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   User.create!(email: "titi@gmail.com", username: "Bouliste anonyme", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tata@gmail.com", username: "Passe Partout", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  User.create!(email: "tata@gmail.com", username: "Nina Patulacci", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   User.create!(email: "bibi@gmail.com", username: "Cathy du 13", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tutu@gmail.com", username: "Joe l'indien", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  User.create!(email: "tutu@gmail.com", username: "Lucien l'ancien", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   User.create!(email: "tete@gmail.com", username: "Patoche la bidoche", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   User.create!(email: "tyty@gmail.com", username: "Zizou", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "trotro@gmail.com", username: "Liliane la tireuse", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tratra@gmail.com", username: "Lulu l'apero", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  User.create!(email: "trotro@gmail.com", username: "Lucienne l'ancienne", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  User.create!(email: "tratra@gmail.com", username: "Léo le minot", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   User.create!(email: "trytry@gmail.com", username: "Georges Abitboule", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  User.create!(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
 
 
 
@@ -146,24 +146,24 @@ League.destroy_all
 
   #MATCH1 - LEAGUE 1
 
-    game1.score_first_team = 13
-    game1.score_second_team = rand(0..12)
+    # game1.score_first_team = 13
+    # game1.score_second_team = rand(0..12)
 
-    game1.game_winner = team1.id
+    # game1.game_winner = team1.id
 
-    team1.points_for += game1.score_first_team
-    team1.points_against += game1.score_second_team
-    team1.games_played += 1
-    team1.number_of_wins += 1
+    # team1.points_for += game1.score_first_team
+    # team1.points_against += game1.score_second_team
+    # team1.games_played += 1
+    # team1.number_of_wins += 1
 
-    team2.points_for += game1.score_second_team
-    team2.points_against += game1.score_first_team
-    team2.games_played += 1
+    # team2.points_for += game1.score_second_team
+    # team2.points_against += game1.score_first_team
+    # team2.games_played += 1
 
-    team1.save
-    team2.save
-    game1.status = false
-    game1.save
+    # team1.save
+    # team2.save
+    # game1.status = false
+    # game1.save
 
   #MATCH2
 

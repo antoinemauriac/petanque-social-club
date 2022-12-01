@@ -3,7 +3,7 @@
 </h2>
 
 <div data-controller="display">
-  <ul class="nav nav-pills nav-fill" style="margin-bottom:20px">
+  <ul class="nav nav-pills nav-fill" style="margin-bottom:10px">
     <li class="nav-item" data-action="click->display#classements">
       <a class="nav-link active" data-display-target="classement" href="#">CLASSEMENT</a>
     </li>
@@ -26,7 +26,11 @@
         </tr>
       <% teams_sorted.each do |team| %>
         <tr>
+          <% if team.users.include?(current_user) %>
+          <td class="team-right current-player"><%= team.users.first.username.upcase %><br><%= team.users.last.username.upcase %><br></td>
+          <% else %>
           <td class="team-right"><%= team.users.first.username.upcase %><br><%= team.users.last.username.upcase %><br></td>
+          <% end %>
           <td><%= team.number_of_wins %></td>
           <td><%= team.games_played %></td>
           <td><%= team.number_of_wins %></td>
@@ -43,7 +47,6 @@
     </div>
   </div>
 
-<br>
   <div class="d-none flexy" data-display-target="matchs">
     <% @league.games.each do |game| %>
         <% game_players = game.teams.map { |team| team.users }.flatten %>
@@ -117,7 +120,7 @@
       <% @league.messages.reverse.each do |message| %>
         <div class="card-chat">
             <div class="message-avatar-date">
-               <span class="message-avatar"><%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yttj-bqOaciY3Zew0IBI0gHaEK%26pid%3DApi&f=1&ipt=550194c28a08d54d4e90c955368ff885cc4b7e012806cbd03977d01ea779fb5e&ipo=images", :gravity=>"face", :height=>150, :width=>150, :crop=>"thumb" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><%= message.user.username.upcase%></span>
+               <span class="message-avatar"><%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yttj-bqOaciY3Zew0IBI0gHaEK%26pid%3DApi&f=1&ipt=550194c28a08d54d4e90c955368ff885cc4b7e012806cbd03977d01ea779fb5e&ipo=images", :gravity=>"face", :height=>150, :width=>150, :crop=>"thumb" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></span><span class="blaze-comment"><%= message.user.username.upcase%></span>
               <p class="text-light-grey"> <%= message.created_at.strftime("%A"+" "+"%d" +"/" + "%m" +"/" + "%Y") %>
                                           <%= message.created_at.strftime("%H"+":"+ "%M"+ ":"+"%S") %></p>
             </div>

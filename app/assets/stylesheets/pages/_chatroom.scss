@@ -39,9 +39,8 @@
 }
 
 .message-avatar {
-  padding-right: 8px;
-  color: $blue;
-  font-size: 13px;
+  // padding-right: 3px;
+  margin-top: 4px;
 }
 
 .message-content-blue {
@@ -67,9 +66,9 @@
   align-items: center ;
 }
 
-.form-label {
-  display:none;
-}
+// .form-label {
+//   display:none;
+// }
 
 .form-control {
   height: 110px;
@@ -80,4 +79,12 @@
 
 .username-chat {
   color: $blue;
+}
+
+.blaze-comment {
+  color: $blue;
+  width: -webkit-fill-available;
+  margin-left: 5px;
+  margin-top: 10px;
+  font-size: 15px;
 }
