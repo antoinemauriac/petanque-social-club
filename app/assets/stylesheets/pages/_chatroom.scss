@@ -1,6 +1,7 @@
 .chatroom-display {
-  list-style:none ;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-chat {
@@ -8,12 +9,16 @@
   border-color: $blue;
   background-color: $light-blue;
   border-radius: 15px;
+  margin-bottom: 10px;
+  min-height: 110px;
+  width: 340px;
 }
 
 .text-light-grey {
   color:$light-grey;
-  font-size: smaller;
   text-align: right;
+  font-size: 10px!important;
+  margin-top: 5px;
 }
 
 .message-content-blue {
@@ -25,7 +30,6 @@
   display:flex;
   justify-content:center;
   align-items: stretch;
-  margin: 24px 50px;
 }
 
 .message-avatar-date {
@@ -35,7 +39,8 @@
 }
 
 .message-avatar {
-  padding-right: 8px;
+  // padding-right: 3px;
+  margin-top: 4px;
 }
 
 .message-content-blue {
@@ -46,7 +51,7 @@
   display:flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
   align-content: center;
   flex-wrap: wrap;
 }
@@ -64,3 +69,22 @@
 // .form-label {
 //   display:none;
 // }
+
+.form-control {
+  height: 110px;
+  width: 340px;
+  border-radius: 10px;
+  border: 2px solid $blue;
+}
+
+.username-chat {
+  color: $blue;
+}
+
+.blaze-comment {
+  color: $blue;
+  width: -webkit-fill-available;
+  margin-left: 5px;
+  margin-top: 10px;
+  font-size: 15px;
+}

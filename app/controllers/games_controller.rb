@@ -51,7 +51,6 @@ class GamesController < ApplicationController
 
     @game.status = false
     @game.save
-
     redirect_to league_path(@game.league)
   end
 

@@ -1,5 +1,5 @@
  <%= simple_form_for @game do |f| %>
-    <%= f.input :score_first_team, label: "#{@team1.users.first.username} - #{@team1.users.last.username}"  %>
-    <%= f.input :score_second_team, label: "#{@team2.users.first.username} - #{@team2.users.last.username}" %>
+    <%= f.input :score_first_team, class:"display-label", label: "#{@team1.users.first.username.upcase} - #{@team1.users.last.username.upcase}"  %>
+    <%= f.input :score_second_team, label: "#{@team2.users.first.username.upcase} - #{@team2.users.last.username.upcase}" %>
     <%= f.button :submit, class: "btn btn-info button-trouve" %>
   <% end %>
