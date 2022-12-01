@@ -1,10 +1,8 @@
-<h2><%= field.name %></h2>
-<p><%= field.address %></p>
 
 
   <div class="card-field">
       <% if field.photos.attached? %>
-        <%= cl_image_tag field.photos.first.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag field.photos.first.key, height: 100, width: 210, crop: :fill %>
       <% else %>
         <%= image_tag "terrain1.jpeg", alt: "Le Wagon" %>
       <% end %>
