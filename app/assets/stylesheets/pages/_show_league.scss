@@ -1,8 +1,8 @@
 .col-right {
-  text-align: right;
+  text-align: center;
 }
 .col-left {
-  text-align: left;
+  text-align: center;
 }
 
 .row-game {
@@ -18,12 +18,36 @@
 
 .score-color {
   color: $blue;
+  margin-top: 25px;
 }
 
 .current-player {
-  color: red!important;
+  text-shadow: $yellow 1px 0 3px;
 }
 
+table {
+  margin-left: 30px;
+  margin-right: 30px;
+  color: $blue;
+  font-size: smaller;
+}
+
+th, td {
+  border-bottom: 1px solid $blue;
+  padding: 0 5px;
+}
+
+.show-ranking {
+  text-align: center;
+  // align-items: inherit!important;
+}
+
+.team-right {
+  text-align: right!important;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 // #ol-classement {
 //   list-style: auto!important;
 // }
