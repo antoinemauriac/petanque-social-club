@@ -1,0 +1,36 @@
+<h2 class="flexy light-blue-bar">
+  <%= @user.username.upcase %>
+</h2>
+
+<div data-controller="profile">
+  <ul class="nav nav-pills nav-fill" style="margin-bottom:10px">
+    <li class="nav-item" data-action="click->profile#stats">
+      <a class="nav-link active" data-profile-target="stat" href="#">STATS</a>
+    </li>
+    <li class="nav-item" data-action="click->profile#badges">
+      <a class="nav-link" data-profile-target="badge" href="#">BADGES</a>
+    </li>
+    <li class="nav-item" data-action="click->profile#collegues">
+      <a class="nav-link" data-profile-target="collegue" href="#">COLLEGUES</a>
+    </li>
+  </ul>
+
+
+
+  <div data-profile-target="stats">
+    <%= @number_of_games %>
+    <%= @number_of_wins %>
+    <%= @number_of_points_for %>
+    <%= @number_of_points_against %>
+  </div>
+
+  <div class="d-none" data-profile-target="badges">
+    <h1>Hello from badges</h1>
+  </div>
+
+
+  <div class="d-none" data-profile-target="collegues">
+    <h1>hello from collegues</h1>
+  </div>
+
+</div>
