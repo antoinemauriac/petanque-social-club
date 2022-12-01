@@ -27,8 +27,8 @@ class TeamUsersController < ApplicationController
       if @teams.any?
         @teams.each do |team|
           @game = Game.create!(league: @league)
-          first_Gameteam = GameTeam.create!(team: team, game: @game)
-          second_Gameteam = GameTeam.create!(team: @team, game: @game)
+          GameTeam.create!(team: team, game: @game)
+          GameTeam.create!(team: @team, game: @game)
         end
       end
       @teams << @team
