@@ -18,6 +18,7 @@ class TeamUsersController < ApplicationController
         TeamUser.create!(user: user, team: @team)
       end
     end
+    redirect_to league_path(@league)
   end
 
   private

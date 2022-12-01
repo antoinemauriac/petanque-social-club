@@ -12,8 +12,6 @@ class LeaguesController < ApplicationController
 
   def new
     @league = League.new
-
-
   end
 
   def create
@@ -34,6 +32,6 @@ class LeaguesController < ApplicationController
   private
 
   def league_params
-    params.require(:league).permit(:name, :status, :league_winner, :admin_user)
+    params.require(:league).permit(:league_id, :name, :status, :league_winner, :admin_user)
   end
 end
