@@ -2,6 +2,22 @@
   <%= @league.name.upcase %>
 </h2>
 
+<div >
+  <ul class="nav nav-pills nav-fill" style="margin-bottom:10px">
+    <li class="nav-item yellow-box active" >
+     <%# <a class="nav-link active"  href="#"> %>
+      <%= link_to "CLASSEMENT", league_path(@league) %>
+    </li>
+    <li class="nav-item yellow-box" >
+     <%# <a class="nav-link" href="#"> %>
+      <%= link_to "MATCHS", league_games_path(@league) %>
+    </li>
+    <li class="nav-item yellow-box">
+     <%# <a class="nav-link"  href="#"> %>
+      <%= link_to "MUR", league_messages_path(@league) %>
+    </li>
+  </ul>
+<!--
 <div data-controller="display">
   <ul class="nav nav-pills nav-fill" style="margin-bottom:10px">
     <li class="nav-item" data-action="click->display#classements">
@@ -14,10 +30,9 @@
       <a class="nav-link" data-display-target="mur" href="#">MUR</a>
     </li>
   </ul>
-
-
-<!--
-  <div data-display-target="classements">
+<div class="flexy">
+-->
+  <div>
     <div class="flexy show-ranking" id="ol-classement">
       <% teams_sorted = @league.teams.sort_by { |team| -(team.points_for - team.points_against) && -team.number_of_wins }  %>
       <table>
@@ -46,7 +61,7 @@
       </table>
     </div>
   </div>
-
+<!--
   <div class="d-none flexy" data-display-target="matchs">
     <% @league.games.each do |game| %>
         <% game_players = game.teams.map { |team| team.users }.flatten %>
@@ -122,7 +137,7 @@
             <% if message.user == current_user %>
             <div class="message-avatar-date-reverse">
                <span class="message-avatar"><%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yttj-bqOaciY3Zew0IBI0gHaEK%26pid%3DApi&f=1&ipt=550194c28a08d54d4e90c955368ff885cc4b7e012806cbd03977d01ea779fb5e&ipo=images", :gravity=>"face", :height=>150, :width=>150, :crop=>"thumb" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></span><span class="blaze-comment-reverse"><%= message.user.username.upcase%></span>
-              <p class="text-light-grey-reverse"> <%= message.created_at.strftime("%d" +"/" + "%m" +"/" + "%Y") %>
+              <p class="text-light-grey-reverse "> <%= message.created_at.strftime("%d" +"/" + "%m" +"/" + "%Y") %>
                                           <%= message.created_at.strftime("%H"+":"+ "%M") %></p>
             </div>
             <% else %>
@@ -138,11 +153,12 @@
     </div>
   </div>
 </div>
+
 -->
 
-
-
+</div>
 <!--<h2>classement</h2>
 <h2> <%= link_to "matchs", league_games_path(@league)  %></h2>
 <h2>mur</h2>
 <h3><%= link_to "retour à mes ligues", leagues_path %></h3>-->
+<%# <i class="fa-solid fa-user"></i> %>

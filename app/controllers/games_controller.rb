@@ -5,7 +5,7 @@ class GamesController < ApplicationController
 
   # def new
   #   @game = Game.new
-  #   @league = League.find(params[:league_id])
+  #   @game = League.find(params[:league_id])
   # end
 
   # def create

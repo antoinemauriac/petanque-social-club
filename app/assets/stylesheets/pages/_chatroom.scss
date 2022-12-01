@@ -93,12 +93,12 @@
   align-items: center ;
 }
 
-.form-label .text .optionnal {
-  display:none;
-}
+// .form-label .text .optionnal {
+//   display:none;
+// }
 
 // .form-label .integer .optional {
-//   display: ;
+//   display: none;
 // }
 
 .form-control {
@@ -133,4 +133,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#current-user-avatar {
+  background: white!important;
 }
