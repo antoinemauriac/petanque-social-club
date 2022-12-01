@@ -48,14 +48,14 @@
     <div class="flexy">
     <div class="card-player">
       <h4>C'est le sang !</h4>
-      <%= image_tag "intilaqueen.png", alt: "inti", class: "avatar-poto" %><span>Inti la Queen</span>
+      <%= cl_image_tag @user1.photo.key, class: "avatar-poto" %><span><%= @user1.username.upcase %></span>
       <p>73% de victoires avec Inti La Queen comme collègue. On peut dire que c’est une affaire qui roule entre vous deux !</p>
     </div>
     </div>
     <div class="flexy">
     <div class="card-player">
       <h4>Oh misère...</h4>
-      <%= image_tag "bobby.png", alt: "inti", class: "avatar-poto" %><span>Bobby le Pirate</span>
+      <%= cl_image_tag @user2.photo.key, class: "avatar-poto" %><span><%= @user2.username.upcase %></span>
       <p>85% de défaites avec Bobby le Pirate comme collègue. Il serait temps de se rendre à l’évidence....</p>
     </div>
     </div>

@@ -31,11 +31,11 @@ League.destroy_all
   user10 = User.create(email: "trytry@gmail.com", username: "Georges Abitboule", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user11 = User.create(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
 
-  photo1 = URI.open('app/assets/images/avatar1.png')
-  photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669912215/development/8ih7oc9prtesjpjv382alws8ha1k.png')
-  photo3 = URI.open('app/assets/images/avatar3.png')
-  photo4 = URI.open('app/assets/images/avatar4.png')
-  photo5 = URI.open('app/assets/images/avatar5.png')
+  photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913797/development/vjg4d9s3kj9zs12stprg8lino87v.png')
+  photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913805/development/uoicv7gzwgywzvnamlc2v22f25j5.png')
+  photo3 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913802/development/ylvmvvd7ciard1xd9xm949s6t1fv.png')
+  photo4 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913799/development/zer3jed4v30atrbsly3uadhua4pi.png')
+  photo5 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913803/development/a8eq9m7gto20lkviiay7efks6ssc.png')
   photo6 = URI.open('app/assets/images/avatar6.png')
   photo7 = URI.open('app/assets/images/avatar7.png')
   photo8 = URI.open('app/assets/images/avatar8.png')
@@ -45,7 +45,7 @@ League.destroy_all
 
 
 
-    user1.photo.attach(io: photo1, filename: 'avatar1.png', content_type: 'image/png')
+    user1.photo.attach(io: photo1, filename: 'avatar1', content_type: 'image/png')
     user2.photo.attach(io: photo2, filename: 'avatar2.png', content_type: 'image/png')
     user3.photo.attach(io: photo3, filename: 'avatar3.png', content_type: 'image/png')
     user4.photo.attach(io: photo4, filename: 'avatar4.png', content_type: 'image/png')
