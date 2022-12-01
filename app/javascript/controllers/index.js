@@ -10,9 +10,11 @@ application.register("display", DisplayController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import TypedJsController from "./typed_js_controller"
-application.register("typed-js", TypedJsController)
-
 import MapController from "./map_controller"
 application.register("map", MapController)
 
+import ProfileController from "./profile_controller"
+application.register("profile", ProfileController)
+
+import TypedJsController from "./typed_js_controller"
+application.register("typed-js", TypedJsController)
