@@ -95,3 +95,22 @@
     color: $blue;
     background-color: $yellow;
   }
+
+  .btn-big {
+    margin: 10px 0px;
+    width: 80%;
+    height: 85px;
+    border-radius: 15px;
+    background-color: $blue;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+      a {
+      font-size: 16px;
+      color: $white;
+      font-weight: 800;
+      padding: 10px 5px;
+    }
+  }

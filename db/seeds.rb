@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
 
-
-# Field.destroy_all
+Field.destroy_all
 Message.destroy_all
 TeamUser.destroy_all
 User.destroy_all
@@ -19,19 +19,55 @@ League.destroy_all
   league1 = League.create(name: "Les boulistes du dimanche")
   league2 = League.create(name: "Sporting Club Familial")
 
-  User.create!(email: "toto@gmail.com", username: "Uncle Moh", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "titi@gmail.com", username: "Bouliste anonyme", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tata@gmail.com", username: "Nina Patulacci", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "bibi@gmail.com", username: "Cathy du 13", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tutu@gmail.com", username: "Lucien l'ancien", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tete@gmail.com", username: "Patoche la bidoche", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tyty@gmail.com", username: "Zizou", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "trotro@gmail.com", username: "Lucienne l'ancienne", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tratra@gmail.com", username: "Léo le minot", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "trytry@gmail.com", username: "Georges Abitboule", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  User.create!(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user1 = User.create(email: "titi@gmail.com", username: "Bouliste anonyme", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user2 = User.create(email: "toto@gmail.com", username: "Uncle Moh", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user3 = User.create(email: "tata@gmail.com", username: "Nina Patulacci", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user4 = User.create(email: "bibi@gmail.com", username: "Cathy du 13", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user5 = User.create(email: "tutu@gmail.com", username: "Lucien l'ancien", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user6 = User.create(email: "tete@gmail.com", username: "Patoche la bidoche", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user7 = User.create(email: "tyty@gmail.com", username: "Zizou", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user8 = User.create(email: "trotro@gmail.com", username: "Lucienne l'ancienne", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user9 = User.create(email: "tratra@gmail.com", username: "Léo le minot", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user10 = User.create(email: "trytry@gmail.com", username: "Georges Abitboule", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user11 = User.create(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+
+  photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913797/development/vjg4d9s3kj9zs12stprg8lino87v.png')
+  photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913805/development/uoicv7gzwgywzvnamlc2v22f25j5.png')
+  photo3 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913802/development/ylvmvvd7ciard1xd9xm949s6t1fv.png')
+  photo4 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913799/development/zer3jed4v30atrbsly3uadhua4pi.png')
+  photo5 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913803/development/a8eq9m7gto20lkviiay7efks6ssc.png')
+  photo6 = URI.open('app/assets/images/avatar6.png')
+  photo7 = URI.open('app/assets/images/avatar7.png')
+  photo8 = URI.open('app/assets/images/avatar8.png')
+  photo9 = URI.open('app/assets/images/avatar9.png')
+  photo10 = URI.open('app/assets/images/avatar10.png')
+  photo11 = URI.open('app/assets/images/avatar11.png')
 
 
+
+    user1.photo.attach(io: photo1, filename: 'avatar1', content_type: 'image/png')
+    user2.photo.attach(io: photo2, filename: 'avatar2.png', content_type: 'image/png')
+    user3.photo.attach(io: photo3, filename: 'avatar3.png', content_type: 'image/png')
+    user4.photo.attach(io: photo4, filename: 'avatar4.png', content_type: 'image/png')
+    user5.photo.attach(io: photo5, filename: 'avatar5.png', content_type: 'image/png')
+    user6.photo.attach(io: photo6, filename: 'avatar6.png', content_type: 'image/png')
+    user7.photo.attach(io: photo7, filename: 'avatar7.png', content_type: 'image/png')
+    user8.photo.attach(io: photo8, filename: 'avatar8.png', content_type: 'image/png')
+    user9.photo.attach(io: photo9, filename: 'avatar9.png', content_type: 'image/png')
+    user10.photo.attach(io: photo10, filename: 'avatar10.png', content_type: 'image/png')
+    user11.photo.attach(io: photo11, filename: 'avatar11.png', content_type: 'image/png')
+
+    user11.save
+    user10.save
+    user9.save
+    user8.save
+    user7.save
+    user6.save
+    user5.save
+    user4.save
+    user3.save
+    user2.save
+    user1.save
 
   game1 = Game.create!(league: league1)
   game2 = Game.create!(league: league1)
@@ -162,7 +198,7 @@ League.destroy_all
 
     # team1.save
     # team2.save
-    # game1.status = false
+    # game1.status = true
     # game1.save
 
   #MATCH2
@@ -183,7 +219,7 @@ League.destroy_all
 
     # team1.save
     # team3.save
-    # game2.status = false
+    # game2.status = true
     # game2.save
 
   #MATCH3
@@ -204,7 +240,7 @@ League.destroy_all
 
     team1.save
     team4.save
-    game3.status = false
+    game3.status = true
     game3.save
 
   #MATCH4
@@ -225,7 +261,7 @@ League.destroy_all
 
     team1.save
     team5.save
-    game4.status = false
+    game4.status = true
     game4.save
 
   #MATCH5
@@ -246,7 +282,7 @@ League.destroy_all
 
     team2.save
     team3.save
-    game5.status = false
+    game5.status = true
     game5.save
 
   #MATCH6
@@ -267,7 +303,7 @@ League.destroy_all
 
     team2.save
     team4.save
-    game6.status = false
+    game6.status = true
     game6.save
 
   #MATCH7
@@ -288,29 +324,29 @@ League.destroy_all
 
     team2.save
     team5.save
-    game7.status = false
+    game7.status = true
     game7.save
 
   #MATCH8
 
-    game8.score_first_team = 13
-    game8.score_second_team = rand(0..12)
+    # game8.score_first_team = 13
+    # game8.score_second_team = rand(0..12)
 
-    game8.game_winner = team3.id
+    # game8.game_winner = team3.id
 
-    team3.points_for += game8.score_first_team
-    team3.points_against += game8.score_second_team
-    team3.games_played += 1
-    team3.number_of_wins += 1
+    # team3.points_for += game8.score_first_team
+    # team3.points_against += game8.score_second_team
+    # team3.games_played += 1
+    # team3.number_of_wins += 1
 
-    team4.points_for += game8.score_second_team
-    team4.points_against += game8.score_first_team
-    team4.games_played += 1
+    # team4.points_for += game8.score_second_team
+    # team4.points_against += game8.score_first_team
+    # team4.games_played += 1
 
-    team3.save
-    team4.save
-    game8.status = false
-    game8.save
+    # team3.save
+    # team4.save
+    # game8.status = true
+    # game8.save
 
   #MATCH9
 
@@ -330,7 +366,7 @@ League.destroy_all
 
     team3.save
     team5.save
-    game9.status = false
+    game9.status = true
     game9.save
 
   #MATCH10
@@ -351,7 +387,7 @@ League.destroy_all
 
     team4.save
     team5.save
-    game10.status = false
+    game10.status = true
     game10.save
 
 
@@ -373,7 +409,7 @@ League.destroy_all
 
     team6.save
     team7.save
-    game11.status = false
+    game11.status = true
     game11.save
 
   #MATCH12
@@ -394,7 +430,7 @@ League.destroy_all
 
     team6.save
     team8.save
-    game12.status = false
+    game12.status = true
     game12.save
 
   #MATCH13
@@ -415,7 +451,7 @@ League.destroy_all
 
     team6.save
     team9.save
-    game13.status = false
+    game13.status = true
     game13.save
 
   #MATCH14
@@ -436,7 +472,7 @@ League.destroy_all
 
     team6.save
     team10.save
-    game14.status = false
+    game14.status = true
     game14.save
 
   #MATCH15
@@ -457,7 +493,7 @@ League.destroy_all
 
     team7.save
     team8.save
-    game15.status = false
+    game15.status = true
     game15.save
 
   #MATCH16
@@ -478,7 +514,7 @@ League.destroy_all
 
     team7.save
     team9.save
-    game16.status = false
+    game16.status = true
     game16.save
 
   #MATCH17
@@ -499,7 +535,7 @@ League.destroy_all
 
     team7.save
     team10.save
-    game17.status = false
+    game17.status = true
     game17.save
 
   #MATCH18
@@ -520,7 +556,7 @@ League.destroy_all
 
     team8.save
     team9.save
-    game18.status = false
+    game18.status = true
     game18.save
 
   #MATCH19
@@ -541,7 +577,7 @@ League.destroy_all
 
     team8.save
     team10.save
-    game19.status = false
+    game19.status = true
     game19.save
 
   #MATCH20
@@ -562,8 +598,9 @@ League.destroy_all
 
     team9.save
     team10.save
-    game20.status = false
+    game20.status = true
     game20.save
+
 
 
 

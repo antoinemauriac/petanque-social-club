@@ -1,0 +1,62 @@
+.stats {
+  margin-top: 5px;
+  width: 350px;
+  margin: 0 auto;
+  text-align: center;
+  color: $blue;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+
+  h3 {
+    font-size: 20px!important;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  .p-border-bottom {
+    border-bottom: 2px solid $blue;
+    padding-bottom: 15px;
+  }
+}
+
+.victoires-defaites {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.barre-pourcentage {
+  width: 350px;
+}
+
+.p-without-margin {
+  margin: 0!important;
+}
+
+.card-player {
+  border: 3px solid $blue;
+  border-radius: 10px;
+  width: 300px;
+  height: 270px;
+  margin-bottom: 10px;
+
+  p {
+  margin: 0 5px;
+  line-height: 35px;
+  }
+
+  h4 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+}
+
+.avatar-poto {
+  width: 30%;
+}

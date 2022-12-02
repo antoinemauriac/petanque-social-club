@@ -2,22 +2,22 @@
   <%= @league.name.upcase %>
 </h2>
 
-<div data-controller="display">
+<div >
   <ul class="nav nav-pills nav-fill" style="margin-bottom:10px">
-    <li class="nav-item" data-action="click->display#classements">
-      <a class="nav-link active" data-display-target="classement" href="#">CLASSEMENT</a>
+    <li class="nav-item yellow-box active" >
+     <%# <a class="nav-link active"  href="#"> %>
+      <%= link_to "CLASSEMENT", league_path(@league) %>
     </li>
-    <li class="nav-item" data-action="click->display#matchs">
-      <a class="nav-link" data-display-target="match" href="#">MATCHS</a>
+    <li class="nav-item yellow-box" >
+     <%# <a class="nav-link" href="#"> %>
+      <%= link_to "MATCHS", league_games_path(@league) %>
     </li>
-    <li class="nav-item" data-action="click->display#murs">
-      <a class="nav-link" data-display-target="mur" href="#">MUR</a>
+    <li class="nav-item yellow-box">
+     <%# <a class="nav-link"  href="#"> %>
+      <%= link_to "MUR", league_messages_path(@league) %>
     </li>
   </ul>
-
-
-
-  <div data-display-target="classements">
+  <div>
     <div class="flexy show-ranking" id="ol-classement">
       <% teams_sorted = @league.teams.sort_by { |team| -(team.points_for - team.points_against) && -team.number_of_wins }  %>
       <table>
@@ -46,102 +46,4 @@
       </table>
     </div>
   </div>
-
-  <div class="d-none flexy" data-display-target="matchs">
-    <% @league.games.each do |game| %>
-        <% game_players = game.teams.map { |team| team.users }.flatten %>
-        <% if game_players.include?(current_user) %>
-      <div class="row row-game">
-        <div class="col-4 col-left">
-          <% if current_user == game_players[0] || current_user == game_players[1] %>
-          <p class="current-player"><%= game_players[0].username.upcase %></p>
-          <p class="current-player"><%= game_players[1].username.upcase %></p>
-          <% else %>
-          <p><%= game_players[0].username.upcase %></p>
-          <p><%= game_players[1].username.upcase %></p>
-          <% end %>
-        </div>
-        <div class="col-4 score-color" style="text-align:center">
-        <% if game.status == false %>
-          <%= game.score_first_team %> - <%= game.score_second_team %>
-          <% else %>
-          <%= link_to "SCORE ?", league_game_path(@league, game.id), class:"btn-small btn-score" %>
-        <% end %>
-        </div>
-        <div class="col-4 col-right">
-          <% if current_user == game_players[2] || current_user == game_players[3] %>
-          <p class="current-player"><%= game_players[2].username.upcase %></p>
-          <p class="current-player"><%= game_players[3].username.upcase %></p>
-          <% else %>
-          <p><%= game_players[2].username.upcase %></p>
-          <p><%= game_players[3].username.upcase %></p>
-          <% end %>
-        </div>
-      </div>
-        <% end %>
-      <% end %>
-
-    <% @league.games.each do |game| %>
-        <% game_players = game.teams.map { |team| team.users }.flatten %>
-        <% if game_players.exclude?(current_user) %>
-          <div class="row row-game">
-            <div class="col-4 col-left">
-              <p><%= game_players[0].username.upcase %></p>
-              <p><%= game_players[1].username.upcase %></p>
-            </div>
-            <div class="col-4 score-color" style="text-align:center">
-            <% if game.status == false %>
-              <%= game.score_first_team %> - <%= game.score_second_team %>
-              <% else %>
-              <%= "-" %>
-            <% end %>
-            </div>
-            <div class="col-4 col-right">
-              <p><%= game_players[2].username.upcase %></p>
-              <p><%= game_players[3].username.upcase %></p>
-            </div>
-          </div>
-            <% end %>
-        <% end %>
-  </div>
-
-
-  <div class="d-none flexy chatroom" data-display-target="murs" >
-    <div class="chatroom-item chatroom-form">
-      <%= simple_form_for [@league, @message] do |f| %>
-        <span id="form-style">
-          <%= f.input :comment, placeholder: "“The cave you fear to enter holds the treasure that you seek.” Joseph Campbell" %>
-          <%= f.button :submit, value:'ENVOYER', class:"btn-smally envoi"%>
-        </span>
-      <% end %>
-    </div>
-
-    <div class="chatroom-item chatroom-display">
-      <% @league.messages.reverse.each do |message| %>
-        <div class="card-chat">
-            <% if message.user == current_user %>
-            <div class="message-avatar-date-reverse">
-               <span class="message-avatar"><%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yttj-bqOaciY3Zew0IBI0gHaEK%26pid%3DApi&f=1&ipt=550194c28a08d54d4e90c955368ff885cc4b7e012806cbd03977d01ea779fb5e&ipo=images", :gravity=>"face", :height=>150, :width=>150, :crop=>"thumb" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></span><span class="blaze-comment-reverse"><%= message.user.username.upcase%></span>
-              <p class="text-light-grey-reverse"> <%= message.created_at.strftime("%d" +"/" + "%m" +"/" + "%Y") %>
-                                          <%= message.created_at.strftime("%H"+":"+ "%M") %></p>
-            </div>
-            <% else %>
-            <div class="message-avatar-date">
-               <span class="message-avatar"><%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yttj-bqOaciY3Zew0IBI0gHaEK%26pid%3DApi&f=1&ipt=550194c28a08d54d4e90c955368ff885cc4b7e012806cbd03977d01ea779fb5e&ipo=images", :gravity=>"face", :height=>150, :width=>150, :crop=>"thumb" , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></span><span class="blaze-comment"><%= message.user.username.upcase%></span>
-              <p class="text-light-grey"> <%= message.created_at.strftime("%d" +"/" + "%m" +"/" + "%Y") %>
-                                          <%= message.created_at.strftime("%H"+":"+ "%M") %></p>
-            </div>
-            <% end %>
-            <p class="message-content-blue"><%= message.comment %></p>
-        </div>
-      <% end %>
-    </div>
-  </div>
 </div>
-
-
-
-<!--<h2>classement</h2>
-<h2> <%= link_to "matchs", league_games_path(@league)  %></h2>
-<h2>mur</h2>
-<h3><%= link_to "retour à mes ligues", leagues_path %></h3>-->

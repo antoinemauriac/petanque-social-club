@@ -8,10 +8,10 @@ class TeamUsersController < ApplicationController
 
   def create
     @league = League.find(params[:league_id])
-    @teams = []
+    @teams_all = []
 
     # this is returning an array of all user selected in the view
-    @users = params[:team_user][:user].reject { |c| c.empty? }
+    @users = params[:teams][:user]
     # this is returning an array of arrays of 2 users
     @users = @users.each_slice(2).to_a
 
@@ -21,17 +21,17 @@ class TeamUsersController < ApplicationController
       @team.save!
     # this associate users and team to team user
       two_user.each do |selected|
-        user = User.find_by(username: selected)
+        user = User.find(selected)
         TeamUser.create!(user: user, team: @team)
       end
-      if @teams.any?
-        @teams.each do |team|
+      if @teams_all.any?
+        @teams_all.each do |team|
           @game = Game.create!(league: @league)
-          first_Gameteam = GameTeam.create!(team: team, game: @game)
-          second_Gameteam = GameTeam.create!(team: @team, game: @game)
+          GameTeam.create!(team: team, game: @game)
+          GameTeam.create!(team: @team, game: @game)
         end
       end
-      @teams << @team
+      @teams_all << @team
     end
     redirect_to league_path(@league)
   end

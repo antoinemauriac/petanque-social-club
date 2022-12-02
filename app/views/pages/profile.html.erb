@@ -17,11 +17,62 @@
 
 
 
-  <div data-profile-target="stats">
-    <%= @number_of_games %>
-    <%= @number_of_wins %>
-    <%= @number_of_points_for %>
-    <%= @number_of_points_against %>
+  <div class="stats" data-profile-target="stats">
+<%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
+    <h3>LE BILAN DE <%= @user.username.upcase %></h3>
+    <h4>TOTAL MATCHS : <%= @number_of_games %></h4>
+    <div class="victoires-defaites">
+      <div>
+        <p class="p-without-margin">VICTOIRES : <%= @number_of_wins %></p>
+        <p class="p-without-margin"><%= @pourcentage_of_wins %>%</p>
+      </div>
+      <div>
+        <p class="p-without-margin">DEFAITES : <%= @number_of_loses %></p>
+        <p class="p-without-margin"><%= @pourcentage_of_loses %>%</p>
+      </div>
+    </div>
+      <%= image_tag "pourcentage.png", alt: "pourcentage", class: "barre-pourcentage" %>
+
+    <p>Message de la direction : </p>
+    <% if @pourcentage_of_wins > 70 %>
+    <p class="p-border-bottom"> "T'es vraiment un patron <%= @user.username.upcase %>"</p>
+    <% elsif @pourcentage_of_wins > 50 %>
+    <p class="p-border-bottom"> "C'est pas si mal <%= @user.username.upcase %>, mais tu sais au fond de toi que t'es capable de mieux" </p>
+    <% elsif @pourcentage_of_wins > 30 %>
+    <p class="p-border-bottom"> "Ooooh minot <%= @user.username.upcase %>, il s'agirait de te réveiller !" </p>
+    <% else %>
+    <p class="p-border-bottom"> "Aïe aïe aïe, change de sport <%= @user.username.upcase %>" </p>
+    <% end %>
+
+
+    <h3>CONSEIL DE CLASSE</h3>
+    <div class="flexy">
+    <div class="card-player">
+      <h4>C'est le sang !</h4>
+      <%= cl_image_tag @user1.photo.key, class: "avatar-poto" %><span><%= @user1.username.upcase %></span>
+      <p>73% de victoires avec <%= @user1.username.upcase %> comme collègue. On peut dire que c’est une affaire qui roule entre vous deux !</p>
+    </div>
+    </div>
+    <div class="flexy">
+    <div class="card-player">
+      <h4>Oh misère...</h4>
+      <%= cl_image_tag @user2.photo.key, class: "avatar-poto" %><span><%= @user2.username.upcase %></span>
+      <p>85% de défaites avec <%= @user2.username.upcase %> comme collègue. Il serait temps de se rendre à l’évidence....</p>
+    </div>
+    </div>
+
+    <h3>CONSEIL DE CLASSE</h3>
+    <p>Nombre de points marqués : <%= @number_of_points_for %></p>
+    <p>Nombre de points encaissés : <%= @number_of_points_against %></p>
+      <% if (@number_of_points_for - @number_of_points_against) > 0 %>
+      <p>Différence de buts : + <%= @number_of_points_for - @number_of_points_against %></p>
+      <% else %>
+      <p>Différence de buts : <%= (@number_of_points_for - @number_of_points_against) %></p>
+      <% end %>
+    <p>Nombre de ligues jouées : <%= @number_of_leagues_played %></p>
+    <p>Nombre de ligues gagnées : ?????</p>
+
+
   </div>
 
   <div class="d-none" data-profile-target="badges">

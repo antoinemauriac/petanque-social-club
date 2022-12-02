@@ -51,3 +51,15 @@ th, td {
 // #ol-classement {
 //   list-style: auto!important;
 // }
+.active {
+  background: $yellow!important;
+}
+
+.yellow-box {
+  height:44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
