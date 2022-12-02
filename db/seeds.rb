@@ -57,17 +57,17 @@ League.destroy_all
     user10.photo.attach(io: photo10, filename: 'avatar10.png', content_type: 'image/png')
     user11.photo.attach(io: photo11, filename: 'avatar11.png', content_type: 'image/png')
 
-    user1.save
-    user2.save
-    user3.save
-    user4.save
-    user5.save
-    user6.save
-    user7.save
-    user8.save
-    user9.save
-    user10.save
     user11.save
+    user10.save
+    user9.save
+    user8.save
+    user7.save
+    user6.save
+    user5.save
+    user4.save
+    user3.save
+    user2.save
+    user1.save
 
   game1 = Game.create!(league: league1)
   game2 = Game.create!(league: league1)
