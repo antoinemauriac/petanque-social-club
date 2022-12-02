@@ -18,7 +18,7 @@
 
 
   <div class="stats" data-profile-target="stats">
-<%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
+    <%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
     <h3>LE BILAN DE <%= @user.username.upcase %></h3>
     <h4>TOTAL MATCHS : <%= @number_of_games %></h4>
     <div class="victoires-defaites">
