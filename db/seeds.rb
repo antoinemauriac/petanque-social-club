@@ -44,30 +44,29 @@ League.destroy_all
   # photo11 = URI.open('app/assets/images/avatar11.png')
 
 
+    # user1.photo.attach(io: photo1, filename: 'avatar1', content_type: 'image/png')
+    # user2.photo.attach(io: photo2, filename: 'avatar2.png', content_type: 'image/png')
+    # user3.photo.attach(io: photo3, filename: 'avatar3.png', content_type: 'image/png')
+    # user4.photo.attach(io: photo4, filename: 'avatar4.png', content_type: 'image/png')
+    # user5.photo.attach(io: photo5, filename: 'avatar5.png', content_type: 'image/png')
+    # user6.photo.attach(io: photo6, filename: 'avatar6.png', content_type: 'image/png')
+    # user7.photo.attach(io: photo7, filename: 'avatar7.png', content_type: 'image/png')
+    # user8.photo.attach(io: photo8, filename: 'avatar8.png', content_type: 'image/png')
+    # user9.photo.attach(io: photo9, filename: 'avatar9.png', content_type: 'image/png')
+    # user10.photo.attach(io: photo10, filename: 'avatar10.png', content_type: 'image/png')
+    # user11.photo.attach(io: photo11, filename: 'avatar11.png', content_type: 'image/png')
 
-  #   user1.photo.attach(io: photo1, filename: 'avatar1', content_type: 'image/png')
-  #   user2.photo.attach(io: photo2, filename: 'avatar2.png', content_type: 'image/png')
-  #   user3.photo.attach(io: photo3, filename: 'avatar3.png', content_type: 'image/png')
-  #   user4.photo.attach(io: photo4, filename: 'avatar4.png', content_type: 'image/png')
-  #   user5.photo.attach(io: photo5, filename: 'avatar5.png', content_type: 'image/png')
-  #   user6.photo.attach(io: photo6, filename: 'avatar6.png', content_type: 'image/png')
-  #   user7.photo.attach(io: photo7, filename: 'avatar7.png', content_type: 'image/png')
-  #   user8.photo.attach(io: photo8, filename: 'avatar8.png', content_type: 'image/png')
-  #   user9.photo.attach(io: photo9, filename: 'avatar9.png', content_type: 'image/png')
-  #   user10.photo.attach(io: photo10, filename: 'avatar10.png', content_type: 'image/png')
-  #   user11.photo.attach(io: photo11, filename: 'avatar11.png', content_type: 'image/png')
-
-  #   user11.save
-  #   user10.save
-  #   user9.save
-  #   user8.save
-  #   user7.save
-  #   user6.save
-  #   user5.save
-  #   user4.save
-  #   user3.save
-  #   user2.save
-  #   user1.save
+    user11.save
+    user10.save
+    user9.save
+    user8.save
+    user7.save
+    user6.save
+    user5.save
+    user4.save
+    user3.save
+    user2.save
+    user1.sav
 
   game1 = Game.create!(league: league1)
   game2 = Game.create!(league: league1)

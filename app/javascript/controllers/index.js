@@ -24,3 +24,6 @@ application.register("tom-select", TomSelectController)
 
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)
+
+import FooterController from "./footer_controller"
+application.register("footer", FooterController)
