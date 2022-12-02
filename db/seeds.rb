@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
+puts "cleaning DB"
+
 Field.destroy_all
 Message.destroy_all
 TeamUser.destroy_all
@@ -16,8 +18,12 @@ Team.destroy_all
 Game.destroy_all
 League.destroy_all
 
+puts "creating Leagues"
+
   league1 = League.create(name: "Les boulistes du dimanche")
   league2 = League.create(name: "Sporting Club Familial")
+
+puts "creating Users"
 
   user1 = User.create(email: "titi@gmail.com", username: "Bouliste anonyme", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user2 = User.create(email: "toto@gmail.com", username: "Uncle Moh", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
@@ -66,7 +72,9 @@ League.destroy_all
     user4.save
     user3.save
     user2.save
-    user1.sav
+    user1.save
+
+puts "creating Games"
 
   game1 = Game.create!(league: league1)
   game2 = Game.create!(league: league1)
@@ -113,6 +121,8 @@ League.destroy_all
   # end
 
   # create_team_user
+
+puts "creating Teams"
 
   TeamUser.create!(user: User.all[0], team: team1)
   TeamUser.create!(user: User.all[1], team: team1)
@@ -178,6 +188,8 @@ League.destroy_all
   GameTeam.create!(team: team9, game: game20)
   GameTeam.create!(team: team10, game: game20)
 
+
+puts "creating Matchs & Scores"
 
   #MATCH1 - LEAGUE 1
 
@@ -600,8 +612,7 @@ League.destroy_all
     game20.status = true
     game20.save
 
-
-
+    puts "creating Fields"
 
     field1 = Field.create(name: "Robert Shuman", address: "Av. Robert Schuman, 13002 Marseille", rating: 3)
     photo1 = File.open('app/assets/images/terrain1.jpeg')
@@ -717,7 +728,7 @@ League.destroy_all
      field19.photos.attach(io: photo19, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
      field19.save
 
-
+      puts "Seeds OK"
 
 
 
