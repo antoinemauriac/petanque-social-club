@@ -17,6 +17,25 @@
       <%= link_to "MUR", league_messages_path(@league) %>
     </li>
   </ul>
+
+  <% if @league.status == true %>
+    <div class="flexy">
+      <%= image_tag "crown-victory.png", alt: "Le Wagon", id: "crown-winner" %>
+    </div>
+    <div class="flexy" id="flex-avatar">
+        <% if @first_winner.photo.attached? %>
+         <%= cl_image_tag @first_winner.photo.key, class: "avatar-vainqueur" %>
+        <% else %>
+          <%= image_tag "avatar13.png", class: "avatar-vainqueur"%>
+        <% end %>
+        <% if @second_winner.photo.attached? %>
+         <%= cl_image_tag @second_winner.photo.key, class: "avatar-vainqueur" %>
+        <% else %>
+          <%= image_tag "avatar12.png", class: "avatar-vainqueur"%>
+        <% end %>
+    </div>
+  <% end %>
+
   <div>
     <div class="flexy show-ranking" id="ol-classement">
       <% teams_sorted = @league.teams.sort_by { |team| -(team.points_for - team.points_against) && -team.number_of_wins }  %>
