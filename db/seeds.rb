@@ -19,11 +19,11 @@ League.destroy_all
   league1 = League.create(name: "Les boulistes du dimanche")
   league2 = League.create(name: "Sporting Club Familial")
 
-  user1 = User.create(email: "titi@gmail.com", username: "Bouliste anonyme", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  user2 = User.create(email: "toto@gmail.com", username: "Uncle Moh", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user1 = User.create(email: "titi@gmail.com", username: "Uncle Moh", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user2 = User.create(email: "toto@gmail.com", username: "Bouliste anonyme", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user3 = User.create(email: "tata@gmail.com", username: "Nina Patulacci", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  user4 = User.create(email: "bibi@gmail.com", username: "Cathy du 13", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  user5 = User.create(email: "tutu@gmail.com", username: "Lucien l'ancien", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user4 = User.create(email: "bibi@gmail.com", username: "Lucien l'ancien", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user5 = User.create(email: "tutu@gmail.com", username: "Cathy du 13", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user6 = User.create(email: "tete@gmail.com", username: "Patoche la bidoche", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user7 = User.create(email: "tyty@gmail.com", username: "Zizou", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user8 = User.create(email: "trotro@gmail.com", username: "Lucienne l'ancienne", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
@@ -31,43 +31,43 @@ League.destroy_all
   user10 = User.create(email: "trytry@gmail.com", username: "Georges Abitboule", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user11 = User.create(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
 
-  photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913797/development/vjg4d9s3kj9zs12stprg8lino87v.png')
-  photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913805/development/uoicv7gzwgywzvnamlc2v22f25j5.png')
-  photo3 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913802/development/ylvmvvd7ciard1xd9xm949s6t1fv.png')
-  photo4 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913799/development/zer3jed4v30atrbsly3uadhua4pi.png')
-  photo5 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913803/development/a8eq9m7gto20lkviiay7efks6ssc.png')
-  photo6 = URI.open('app/assets/images/avatar6.png')
-  photo7 = URI.open('app/assets/images/avatar7.png')
-  photo8 = URI.open('app/assets/images/avatar8.png')
-  photo9 = URI.open('app/assets/images/avatar9.png')
-  photo10 = URI.open('app/assets/images/avatar10.png')
-  photo11 = URI.open('app/assets/images/avatar11.png')
+  photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar17_qtsqti.png')
+  photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar15_rhbfga.png')
+  photo3 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar16_rrnegl.png')
+  photo4 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar13_fsnstx.png')
+  photo5 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar12_xtsruw.png')
+  photo6 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar1_fk25i8.png')
+  photo7 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar11_iqgvrx.png')
+  photo8 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar3_upsa1a.png')
+  photo9 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar14_lvvi2o.png')
+  photo10 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar8_ropll8.png')
+  photo11 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar9_qaofir.png')
 
 
 
     user1.photo.attach(io: photo1, filename: 'avatar1', content_type: 'image/png')
-  #   user2.photo.attach(io: photo2, filename: 'avatar2.png', content_type: 'image/png')
-  #   user3.photo.attach(io: photo3, filename: 'avatar3.png', content_type: 'image/png')
-  #   user4.photo.attach(io: photo4, filename: 'avatar4.png', content_type: 'image/png')
-  #   user5.photo.attach(io: photo5, filename: 'avatar5.png', content_type: 'image/png')
-  #   user6.photo.attach(io: photo6, filename: 'avatar6.png', content_type: 'image/png')
-  #   user7.photo.attach(io: photo7, filename: 'avatar7.png', content_type: 'image/png')
-  #   user8.photo.attach(io: photo8, filename: 'avatar8.png', content_type: 'image/png')
-  #   user9.photo.attach(io: photo9, filename: 'avatar9.png', content_type: 'image/png')
-  #   user10.photo.attach(io: photo10, filename: 'avatar10.png', content_type: 'image/png')
-  #   user11.photo.attach(io: photo11, filename: 'avatar11.png', content_type: 'image/png')
+    user2.photo.attach(io: photo2, filename: 'avatar2.png', content_type: 'image/png')
+    user3.photo.attach(io: photo3, filename: 'avatar3.png', content_type: 'image/png')
+    user4.photo.attach(io: photo4, filename: 'avatar4.png', content_type: 'image/png')
+    user5.photo.attach(io: photo5, filename: 'avatar5.png', content_type: 'image/png')
+    user6.photo.attach(io: photo6, filename: 'avatar6.png', content_type: 'image/png')
+    user7.photo.attach(io: photo7, filename: 'avatar7.png', content_type: 'image/png')
+    user8.photo.attach(io: photo8, filename: 'avatar8.png', content_type: 'image/png')
+    user9.photo.attach(io: photo9, filename: 'avatar9.png', content_type: 'image/png')
+    user10.photo.attach(io: photo10, filename: 'avatar10.png', content_type: 'image/png')
+    user11.photo.attach(io: photo11, filename: 'avatar11.png', content_type: 'image/png')
 
-  #   user11.save
-  #   user10.save
-  #   user9.save
-  #   user8.save
-  #   user7.save
-  #   user6.save
-  #   user5.save
-  #   user4.save
-  #   user3.save
-  #   user2.save
-  #   user1.save
+    user11.save
+    user10.save
+    user9.save
+    user8.save
+    user7.save
+    user6.save
+    user5.save
+    user4.save
+    user3.save
+    user2.save
+    user1.save
 
   game1 = Game.create!(league: league1)
   game2 = Game.create!(league: league1)
