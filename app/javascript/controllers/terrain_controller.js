@@ -3,8 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["fields", "cartes", "field", "carte"]
 
-  connect(event) {
-    event.preventDefault
+  connect() {
   }
 
   showfields(event) {

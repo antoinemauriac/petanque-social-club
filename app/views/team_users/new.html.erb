@@ -1,20 +1,14 @@
-<% User.all.each do |user| %>
-<div class="user-<%= user.username.gsub(/\s+/, "_") %>">
-<%= user.username %></div>
+<%= form_with url: league_team_users_path(@league), method: :post do |f| %>
+  <% 5.times do |i|%>
+    <h1>team <%= i + 1%></h1>
+    <select  name="teams[user][]" data-controller="tom-select" multiple placeholder="Select a state...">
+      <% @users.each do |user| %>
+        <option value="<%= user.id %>" data-src="https://cdn1.iconfinder.com/data/icons/logotypes/32/chrome-32.png"><%= user.username %></option><%=  %>
+      <% end %>
+    </select>
+  <% end %>
+
+    <%= f.button :submit %>
 <% end %>
 
-<%= simple_form_for [@league, @team_user] do |f| %>
-<% i = 0 %>
-<% 5.times do %>
-<%= simple_fields_for :team_user do |f| %>
-<% i += 1 %>
-<h1>team <%= i %></h1>
-  <%= f.input :user, as: :check_boxes, multiple: true, collection: @users.map { |user| user.username}, wrapper: :horizontal_collection_inline, label: false %>
-<% end %>
-<% end %>
-  <%= f.button :submit %>
-<% end %>
-
-  <%# <%= f.select :user, options_for_select(@users.map { |user| user.username}), input_html: {multiple: true} %>
-  <%# <%= f.select :user, options_for_select(@users.map { |user| user.username}),  %>
-  <%# <%= f.input :user, :collection => @users.map { |user| user.username}, input_html: {multiple: true} %>
+<% console %>

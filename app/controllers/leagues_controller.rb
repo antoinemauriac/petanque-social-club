@@ -13,6 +13,10 @@ class LeaguesController < ApplicationController
   def show
     @league = League.find(params[:id])
     @games = @league.games
+    if @league.status == true
+    @first_winner = Team.find(@league.league_winner).team_users.map { |tu| tu.user }.first
+    @second_winner = Team.find(@league.league_winner).team_users.map { |tu| tu.user }.last
+    end
     # @leagues = League.all
     # @message = Message.new
   end

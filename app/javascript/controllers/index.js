@@ -7,9 +7,6 @@ import { application } from "./application"
 import DisplayController from "./display_controller"
 application.register("display", DisplayController)
 
-import TerrainController from "./terrain_controller"
-application.register("terrain", TerrainController)
-
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
@@ -18,6 +15,12 @@ application.register("map", MapController)
 
 import ProfileController from "./profile_controller"
 application.register("profile", ProfileController)
+
+import TerrainController from "./terrain_controller"
+application.register("terrain", TerrainController)
+
+import TomSelectController from "./tom_select_controller"
+application.register("tom-select", TomSelectController)
 
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)
