@@ -603,13 +603,14 @@ League.destroy_all
 
 
 
-    field1 = Field.create(name: "La Bretagne, ça vous gagne", address: "Av. Robert Schuman, 13002 Marseille", rating: 3)
+
+    field1 = Field.create(name: "Robert Shuman", address: "Av. Robert Schuman, 13002 Marseille", rating: 3)
     photo1 = File.open('app/assets/images/terrain1.jpeg')
 
     field1.photos.attach(io: photo1, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
     field1.save
 
-    field2 = Field.create(name: "Terrain du bonheur", address: "50 Rue Monte Cristo, 13005 Marseille", rating: 2)
+    field2 = Field.create(name: "Monte cristo du bonheur", address: "50 Rue Monte Cristo, 13005 Marseille", rating: 2)
     photo2 = File.open('app/assets/images/terrain2.jpeg')
 
     field2.photos.attach(io: photo2, filename: 'terrain2.jpeg', content_type: 'image/jpeg')
@@ -633,15 +634,89 @@ League.destroy_all
     field5.photos.attach(io: photo5, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
     field5.save
 
+     field6 = Field.create(name: "luxe en boulle", address: "Parc du 26ème Centenaire, 13010 Marseille", rating: 2)
+     photo6 = File.open('app/assets/images/terrain2.jpeg')
 
+     field6.photos.attach(io: photo6, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field6.save
 
+     field7 = Field.create(name: "luxe en boulle", address: "Av. de la Pointe Rouge, 13008 Marseille", rating: 2)
+     photo7 = File.open('app/assets/images/terrain2.jpeg')
 
+     field7.photos.attach(io: photo7, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field7.save
 
+     field8 = Field.create(name: "luxe en boulle", address: "1 Av. Beau Pin, 13008 Marseille", rating: 2)
+     photo8 = File.open('app/assets/images/terrain2.jpeg')
 
+     field8.photos.attach(io: photo8, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field8.save
 
+     field9 = Field.create(name: "luxe en boulle", address: "Parc du 26ème Centenaire, 13010 Marseille", rating: 2)
+     photo9 = File.open('app/assets/images/terrain2.jpeg')
 
+     field9.photos.attach(io: photo9, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field9.save
 
+     field10 = Field.create(name: "luxe en boulle", address: "26 Rue d'Hozier, 13002 Marseille", rating: 2)
+     photo10 = File.open('app/assets/images/terrain2.jpeg')
 
+     field10.photos.attach(io: photo10, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field10.save
+
+     field11 = Field.create(name: "luxe en boulle", address: "Bd Sakakini, 13004 Marseille", rating: 2)
+     photo11 = File.open('app/assets/images/terrain2.jpeg')
+
+     field11.photos.attach(io: photo11, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field11.save
+
+     field12 = Field.create(name: "Montolivet", address: "394 Av. de Montolivet, 13012 Marseille", rating: 2)
+     photo12 = File.open('app/assets/images/terrain2.jpeg')
+
+     field12.photos.attach(io: photo12, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field12.save
+
+     field13 = Field.create(name: "castellane en feu", address: "4 Av. de Corinthe, 13006 Marseille", rating: 2)
+     photo13 = File.open('app/assets/images/terrain2.jpeg')
+
+     field13.photos.attach(io: photo13, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field13.save
+
+     field14 = Field.create(name: "castellane en feu", address: "13 Av. du Lac Marion, 64200 Biarritz", rating: 2)
+     photo14 = File.open('app/assets/images/terrain2.jpeg')
+
+     field14.photos.attach(io: photo14, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field14.save
+
+     field15 = Field.create(name: "castellane en feu", address: "13 Quai des Belges, 67000 Strasbourg", rating: 2)
+     photo15 = File.open('app/assets/images/terrain2.jpeg')
+
+     field15.photos.attach(io: photo15, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field15.save
+
+     field16 = Field.create(name: "castellane en feu", address: "13 Quai des Belges, 67000 Strasbourg", rating: 2)
+     photo16 = File.open('app/assets/images/terrain2.jpeg')
+
+     field16.photos.attach(io: photo16, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field16.save
+
+     field17 = Field.create(name: "castellane en feu", address: "Rue du Progrès, 34000 Montpellier", rating: 2)
+     photo17 = File.open('app/assets/images/terrain2.jpeg')
+
+     field17.photos.attach(io: photo17, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field17.save
+
+     field18 = Field.create(name: "castellane en feu", address: "All. du Chemin de Fer, 69006 Lyon", rating: 2)
+     photo18 = File.open('app/assets/images/terrain2.jpeg')
+
+     field18.photos.attach(io: photo18, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field18.save
+
+     field19 = Field.create(name: "castellane en feu", address: "HLM St Jean, 20090 Ajaccio", rating: 2)
+     photo19 = File.open('app/assets/images/terrain2.jpeg')
+
+     field19.photos.attach(io: photo19, filename: 'terrain5.jpeg', content_type: 'image/jpeg')
+     field19.save
 
 
 
