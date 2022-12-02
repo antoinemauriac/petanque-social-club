@@ -9,13 +9,14 @@ class GamesController < ApplicationController
     @team2 = @game.teams.last
   end
 
-  # def edit
-  #   @game = Game.find(params[:id])
-  # end
+  def edit
+    @game = Game.find(params[:id])
+  end
 
   def update
-    # @league = League.find(params[:league_id])
+
     @game = Game.find(params[:id])
+    @league = @game.league
     @team1 = @game.teams.first
     @team2 = @game.teams.last
     @game.update(game_params)
@@ -41,8 +42,23 @@ class GamesController < ApplicationController
 
     @game.status = true
     @game.save
-    redirect_to league_games_path(@game.league)
+
+    # fin_de_league
+      @number_of_games_finished = @league.games.select { |game| game.status == true }.count
+      @number_total_of_games = @league.games.count
+      if @number_of_games_finished == @number_total_of_games
+        @league.league_winner = @league.teams.sort_by { |team| -(team.points_for - team.points_against) && -team.number_of_wins }.first.id
+        @league.status = true
+        @league.save
+      end
+
+    if @league.status == true
+      redirect_to league_path(@league)
+    else
+      redirect_to league_games_path(@game.league)
+    end
   end
+
 
   private
 
