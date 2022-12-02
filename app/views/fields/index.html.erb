@@ -9,10 +9,6 @@
         </li>
       </ul>
 
-
-
-
-
       <div class="card-product" data-terrain-target="fields">
         <h4>Les terrains de pértanques devant chez vous</h4>
             <% @fields.each do | field | %>
@@ -33,11 +29,13 @@
       </div>
 
 
-      <div style="width: 100%; height: 600px;"
-        data-controller="map"
-        data-terrain-target="cartes"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-        class= "d-none">
-      </div>
+          <div style="height: 100vh;"
+            data-controller="map"
+            data-terrain-target="cartes"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+            class= " map-field"
+            id= "map">
+          </div>
+
 </div>
