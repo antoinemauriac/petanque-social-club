@@ -1,5 +1,6 @@
- <%= simple_form_for @game do |f| %>
-    <%= f.input :score_first_team, class:"display-label", label: "#{@team1.users.first.username.upcase} - #{@team1.users.last.username.upcase}"  %>
-    <%= f.input :score_second_team, label: "#{@team2.users.first.username.upcase} - #{@team2.users.last.username.upcase}" %>
+
+ <%= simple_form_for @game, html: { class: "flexy mt-2" } do |f| %>
+    <%= f.input :score_first_team, class:"display-label", input_html: { class: "score-input" }, label: "#{@team1.users.first.username.upcase} - #{@team1.users.last.username.upcase}"  %>
+    <%= f.input :score_second_team, input_html: { class: "score-input" }, label: "#{@team2.users.first.username.upcase} - #{@team2.users.last.username.upcase}" %>
     <%= f.button :submit, class: "btn btn-info button-trouve" %>
   <% end %>
