@@ -11,7 +11,7 @@ class TeamUsersController < ApplicationController
     @teams = []
 
     # this is returning an array of all user selected in the view
-    @users = params[:team_user][:user].reject { |c| c.empty? }
+    @users = params[:team_users][:user].reject { |c| c.empty? }
     # this is returning an array of arrays of 2 users
     @users = @users.each_slice(2).to_a
 
