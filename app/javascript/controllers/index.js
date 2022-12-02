@@ -19,5 +19,5 @@ application.register("profile", ProfileController)
 import TerrainController from "./terrain_controller"
 application.register("terrain", TerrainController)
 
-// import TomSelectController from "./tom_select_controller"
-// application.register("tom-select", TomSelectController)
+import TomSelectController from "./tom_select_controller"
+application.register("tom-select", TomSelectController)
