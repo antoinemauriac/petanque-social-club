@@ -66,7 +66,7 @@ League.destroy_all
     user4.save
     user3.save
     user2.save
-    user1.sav
+    user1.save
 
   game1 = Game.create!(league: league1)
   game2 = Game.create!(league: league1)

@@ -1,0 +1,72 @@
+// In bootstrap 5 legend floats left and requires the following element
+// to be cleared. In a radio button or checkbox group the element after
+// the legend will be the automatically generated hidden input; the fix
+// in https://github.com/twbs/bootstrap/pull/30345 applies to the hidden
+// input and has no visual effect. Here we try to fix matters by
+// applying the clear to the div wrapping the first following radio button
+// or checkbox
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+legend ~ div.form-check:first-of-type {
+  clear: left;
+}
+
+.form-wrapper form {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+#game_score_first_team {
+  border: 0px;
+  border-radius: 4px;
+  border: solid $blue;
+  border-radius: 4px;
+  padding: 20px !important;
+  margin: 20px !important;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  resize:none;
+}
+
+#game_score_second_team:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#game_score_second_team {
+  border: 0px;
+  border-radius: 4px;
+  border: solid $blue;
+  border-radius: 4px;
+  padding: 20px !important;
+  margin: 20px !important;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  resize:none;
+}
+
+#game_score_second_team:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+textarea:focus, input:focus{
+  outline: none;
+  color: $yellow;
+  text-align: center;
+}
+
+input {
+  border: none;
+  background-color: $blue !important;
+  color: $yellow;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: $font-family-sans-serif;
+  font-size: 16px;
+}
