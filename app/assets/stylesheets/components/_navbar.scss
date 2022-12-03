@@ -2,6 +2,7 @@
   justify-content: space-between;
   background: $blue;
   color: $blue;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -45,6 +46,13 @@
   padding-right: 22px;
 }
 
+.navbar {
+  position:sticky;
+
+  margin:0;
+  top:0!important;
+
+}
   // .navbar-expand-sm, .navbar-toggler {
   //     display: block!important;
   // }

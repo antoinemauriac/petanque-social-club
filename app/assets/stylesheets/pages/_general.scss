@@ -13,3 +13,22 @@ ul, ol {
   justify-content: center;
   align-items: center;
 }
+
+// html, body {
+//   height: 100vh;
+//   min-height: 100%;
+//   // max-width: 1200vw;
+// }
+
+html, body {
+  height: 100vh;
+  min-height: 100%;
+
+}
+.content {
+  min-height: 100%;
+}
+.content-inside {
+  padding: 0px;
+  // padding-bottom: 50px;
+}
