@@ -21,10 +21,12 @@
   margin-top: 25px;
 }
 
-.current-player {
-  text-shadow: $yellow 1px 0 3px;
+// .current-player {
+//   text-shadow: $yellow 1px 0 3px;
+// }
+.background-user {
+  background-color: $yellow;
 }
-
 table {
   margin-left: 30px;
   margin-right: 30px;
@@ -65,7 +67,7 @@ th, td {
 }
 
 #crown-winner {
-  width: 200px;
+  width: 70px;
 }
 
 #flex-avatar {
@@ -73,7 +75,8 @@ th, td {
 }
 
 .avatar-vainqueur {
-  width: 90px;
+  width: 70px;
+  margin-bottom: 20px;
 }
 
 // .flexy-right {

@@ -36,6 +36,7 @@ puts "creating Users"
   user9 = User.create(email: "tratra@gmail.com", username: "Léo le minot", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user10 = User.create(email: "trytry@gmail.com", username: "Georges Abitboule", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user11 = User.create(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user12 = User.create(email: "blabla@gmail.com", username: "Toto", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
 
   photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar17_qtsqti.png')
   photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar15_rhbfga.png')
@@ -62,6 +63,7 @@ puts "creating Users"
     user10.photo.attach(io: photo10, filename: 'avatar10.png', content_type: 'image/png')
     user11.photo.attach(io: photo11, filename: 'avatar11.png', content_type: 'image/png')
 
+    user12.save
     user11.save
     user10.save
     user9.save
@@ -124,16 +126,16 @@ puts "creating Games"
 
 puts "creating Teams"
 
-  TeamUser.create!(user: User.all[0], team: team1)
-  TeamUser.create!(user: User.all[1], team: team1)
-  TeamUser.create!(user: User.all[2], team: team2)
-  TeamUser.create!(user: User.all[3], team: team2)
-  TeamUser.create!(user: User.all[4], team: team3)
-  TeamUser.create!(user: User.all[5], team: team3)
-  TeamUser.create!(user: User.all[6], team: team4)
-  TeamUser.create!(user: User.all[7], team: team4)
-  TeamUser.create!(user: User.all[8], team: team5)
-  TeamUser.create!(user: User.all[9], team: team5)
+  TeamUser.create!(user: user1, team: team1)
+  TeamUser.create!(user: user2, team: team1)
+  TeamUser.create!(user: user3, team: team2)
+  TeamUser.create!(user: user4, team: team2)
+  TeamUser.create!(user: user5, team: team3)
+  TeamUser.create!(user: user6, team: team3)
+  TeamUser.create!(user: user7, team: team4)
+  TeamUser.create!(user: user8, team: team4)
+  TeamUser.create!(user: user9, team: team5)
+  TeamUser.create!(user: user10, team: team5)
 
   GameTeam.create!(team: team1, game: game1)
   GameTeam.create!(team: team2, game: game1)
@@ -156,16 +158,16 @@ puts "creating Teams"
   GameTeam.create!(team: team4, game: game10)
   GameTeam.create!(team: team5, game: game10)
 
-  TeamUser.create!(user: User.all[0], team: team6)
-  TeamUser.create!(user: User.all[2], team: team6)
-  TeamUser.create!(user: User.all[5], team: team7)
-  TeamUser.create!(user: User.all[8], team: team7)
-  TeamUser.create!(user: User.all[1], team: team8)
-  TeamUser.create!(user: User.all[4], team: team8)
-  TeamUser.create!(user: User.all[6], team: team9)
-  TeamUser.create!(user: User.all[7], team: team9)
-  TeamUser.create!(user: User.all[3], team: team10)
-  TeamUser.create!(user: User.all[9], team: team10)
+  TeamUser.create!(user: user1, team: team6)
+  TeamUser.create!(user: user3, team: team6)
+  TeamUser.create!(user: user6, team: team7)
+  TeamUser.create!(user: user9, team: team7)
+  TeamUser.create!(user: user2, team: team8)
+  TeamUser.create!(user: user5, team: team8)
+  TeamUser.create!(user: user7, team: team9)
+  TeamUser.create!(user: user8, team: team9)
+  TeamUser.create!(user: user4, team: team10)
+  TeamUser.create!(user: user10, team: team10)
 
   GameTeam.create!(team: team6, game: game11)
   GameTeam.create!(team: team7, game: game11)
@@ -404,24 +406,24 @@ puts "creating Matchs & Scores"
 
 #MATCH11 - LEAGUE 2
 
-    game11.score_first_team = 13
-    game11.score_second_team = rand(0..12)
+    # game11.score_first_team = 13
+    # game11.score_second_team = rand(0..12)
 
-    game11.game_winner = team6.id
+    # game11.game_winner = team6.id
 
-    team6.points_for += game11.score_first_team
-    team6.points_against += game11.score_second_team
-    team6.games_played += 1
-    team6.number_of_wins += 1
+    # team6.points_for += game11.score_first_team
+    # team6.points_against += game11.score_second_team
+    # team6.games_played += 1
+    # team6.number_of_wins += 1
 
-    team7.points_for += game11.score_second_team
-    team7.points_against += game11.score_first_team
-    team7.games_played += 1
+    # team7.points_for += game11.score_second_team
+    # team7.points_against += game11.score_first_team
+    # team7.games_played += 1
 
-    team6.save
-    team7.save
-    game11.status = true
-    game11.save
+    # team6.save
+    # team7.save
+    # game11.status = true
+    # game11.save
 
   #MATCH12
 
