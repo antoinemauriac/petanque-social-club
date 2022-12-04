@@ -1,4 +1,4 @@
-#ou trouvver la valeur d'un score
+# ou trouvver la valeur d'un score
 
 # p game = Game.last
 # p ""
