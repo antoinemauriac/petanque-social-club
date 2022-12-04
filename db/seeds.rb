@@ -50,7 +50,7 @@ puts "creating Users"
   photo11 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar9_qaofir.png')
 
 
-    user1.photo.attach(io: photo1, filename: 'avatar1', content_type: 'image/png')
+    user1.photo.attach(io: photo1, filename: 'avatar1.png', content_type: 'image/png')
     user2.photo.attach(io: photo2, filename: 'avatar2.png', content_type: 'image/png')
     user3.photo.attach(io: photo3, filename: 'avatar3.png', content_type: 'image/png')
     user4.photo.attach(io: photo4, filename: 'avatar4.png', content_type: 'image/png')
