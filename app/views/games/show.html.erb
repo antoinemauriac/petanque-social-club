@@ -4,16 +4,21 @@
 
 <div class="form-wrapper">
 <%= form_with model: @game do |form| %>
-
+<div class="team-display first-team">
 <% @team1.users.each do |user| %>
 <%= user.username %>
+<br>
 <% end %>
+</div>
 
   <%= form.text_area :score_first_team, :html => { :class => 'all-forms' } %>
 
+<div class="team-display second-team">
 <% @team2.users.each do |user| %>
 <%= user.username %>
+<br>
 <% end %>
+</div>
 
   <%= form.text_area :score_second_team, :html => { :class => 'all-forms' } %>
   <%= form.submit "POINT" %>
