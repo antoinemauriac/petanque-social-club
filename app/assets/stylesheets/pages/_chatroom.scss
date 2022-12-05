@@ -8,10 +8,11 @@
   border-style:solid;
   border-color: $blue;
   background-color: $light-blue;
-  border-radius: 15px;
-  margin-bottom: 10px;
+  border-radius: 6px;
+  margin-bottom: 33px;
   min-height: 110px;
   width: 340px;
+  position: relative;
 }
 .card-chat-reverse {
   border-style:solid;
@@ -28,6 +29,7 @@
   text-align: right;
   font-size: 10px!important;
   margin-top: 5px;
+  width: 50%;
 }
 
 .text-light-grey-reverse {
@@ -35,6 +37,7 @@
   text-align: left;
   font-size: 10px!important;
   margin-top: 5px;
+  width: 50%;
 }
 
 .message-content-blue {
@@ -49,7 +52,8 @@
 .chatroom {
   display:flex;
   justify-content:center;
-  align-items: stretch;
+  flex-direction: column;
+  align-items: center;
 }
 
 .message-avatar-date {
@@ -83,7 +87,7 @@
   flex-wrap: wrap;
 }
 
-.envoi {
+.envoi, .envoi:hover {
   margin-top:0;
   margin-bottom: 20px;
   display:flex;
@@ -115,17 +119,17 @@
 .blaze-comment {
   color: $blue;
   width: -webkit-fill-available;
-  margin-left: 5px;
-  margin-top: 10px;
-  font-size: 15px;
+  margin-left: 45px;
+  margin-top: 0px;
+  font-size: 12px;
 }
 
 .blaze-comment-reverse {
   color: $blue;
   width: -webkit-fill-available;
-  margin-right: 10px;
-  margin-top: 10px;
-  font-size: 15px;
+  margin-right: 45px;
+  margin-top: 0px;
+  font-size: 12px;
   text-align: right;
 }
 
@@ -139,6 +143,21 @@
   background: white!important;
 }
 
+.avatar-poto-message-reverse {
+  width: 60px;
+  position: absolute;
+  right: -17px;
+  top: -35px;
+}
+
 .avatar-poto-message {
-  width: 25%;
+  width: 60px;
+  position: absolute;
+  right: 295px;
+  top: -35px;
+}
+
+.message_comment {
+  display: flex;
+  justify-content: center;
 }

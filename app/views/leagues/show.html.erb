@@ -26,12 +26,12 @@
         <% if @first_winner.photo.attached? %>
          <%= cl_image_tag @first_winner.photo.key, class: "avatar-vainqueur" %>
         <% else %>
-          <%= image_tag "avatar13.png", class: "avatar-vainqueur"%>
+          <%= image_tag "bobby.png", class: "avatar-vainqueur"%>
         <% end %>
         <% if @second_winner.photo.attached? %>
          <%= cl_image_tag @second_winner.photo.key, class: "avatar-vainqueur" %>
         <% else %>
-          <%= image_tag "avatar12.png", class: "avatar-vainqueur"%>
+          <%= image_tag "bobby.png", class: "avatar-vainqueur"%>
         <% end %>
     </div>
   <% end %>
@@ -41,27 +41,39 @@
       <% teams_sorted = @league.teams.sort_by { |team| -(team.points_for - team.points_against) && -team.number_of_wins }  %>
       <table>
         <tr>
-          <th class="team-right">TEAM</th><th>PTS</th><th>J</th><th>G</th><th>P</th><th>+</th><th>-</th><th>DIF</th>
+          <th style="padding-right:30px;"></th><th>CLASSEMENT</th><th>PTS</th><th>J</th><th>G/P</th><th>+/-</th><th>DIF</th>
         </tr>
-      <% teams_sorted.each do |team| %>
-        <tr>
+      <% teams_sorted.each_with_index do |team, index| %>
           <% if team.users.include?(current_user) %>
-          <td class="team-right current-player"><%= team.users.first.username.upcase %><br><%= team.users.last.username.upcase %><br></td>
-          <% else %>
-          <td class="team-right"><%= team.users.first.username.upcase %><br><%= team.users.last.username.upcase %><br></td>
+            <tr class="background-user">
+              <td><%= index + 1 %></td>
+              <td><%= team.users.first.username.upcase %><br><%= team.users.last.username.upcase %><br></td>
+              <td><%= team.number_of_wins %></td>
+              <td><%= team.games_played %></td>
+              <td><%= team.number_of_wins %>/<%= (team.games_played - team.number_of_wins) %></td>
+              <td><%= team.points_for %>/<%= team.points_against %></td>
+              <% if (team.points_for - team.points_against) > 0 %>
+              <td>+<%= (team.points_for - team.points_against) %></td>
+              <% else %>
+              <td><%= (team.points_for - team.points_against) %></td>
+              <% end %>
+            </tr>
+            <% else %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= team.users.first.username.upcase %><br><%= team.users.last.username.upcase %><br></td>
+              <td><%= team.number_of_wins %></td>
+              <td><%= team.games_played %></td>
+              <td><%= team.number_of_wins %>/<%= (team.games_played - team.number_of_wins) %></td>
+              <td><%= team.points_for %>/<%= team.points_against %></td>
+              <% if (team.points_for - team.points_against) > 0 %>
+              <td>+<%= (team.points_for - team.points_against) %></td>
+              <% else %>
+              <td><%= (team.points_for - team.points_against) %></td>
+              <% end %>
+            </tr>
           <% end %>
-          <td><%= team.number_of_wins %></td>
-          <td><%= team.games_played %></td>
-          <td><%= team.number_of_wins %></td>
-          <td><%= (team.games_played - team.number_of_wins) %></td>
-          <td><%= team.points_for %></td><td><%= team.points_against %></td>
-          <% if (team.points_for - team.points_against) > 0 %>
-          <td>+<%= (team.points_for - team.points_against) %></td>
-          <% else %>
-          <td><%= (team.points_for - team.points_against) %></td>
-          <% end %>
-        </tr>
-      <% end %>
+        <% end %>
       </table>
     </div>
   </div>
