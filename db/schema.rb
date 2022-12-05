@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_03_160058) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_092556) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_03_160058) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.boolean "first_league_winner", default: false, null: false
+    t.boolean "three_league_winner", default: false, null: false
+    t.boolean "five_league_winner", default: false, null: false
+    t.boolean "generation", default: false, null: false
+    t.boolean "first_fanny", default: false, null: false
+    t.boolean "three_fanny", default: false, null: false
+    t.boolean "wood_ball", default: false, null: false
+    t.boolean "silver_ball", default: false, null: false
+    t.boolean "gold_ball", default: false, null: false
+    t.boolean "fire_ball", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_badges_on_user_id"
   end
 
   create_table "badges_sashes", force: :cascade do |t|
@@ -180,6 +197,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_03_160058) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "badges", "users"
   add_foreign_key "game_teams", "games"
   add_foreign_key "game_teams", "teams"
   add_foreign_key "games", "leagues"
