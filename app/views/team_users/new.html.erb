@@ -1,14 +1,39 @@
-<%= form_with url: league_team_users_path(@league), method: :post do |f| %>
-  <% 5.times do |i|%>
-    <h1>team <%= i + 1%></h1>
-    <select  name="teams[user][]" data-controller="tom-select" multiple placeholder="Select a state...">
-      <% @users.each do |user| %>
-        <option value="<%= user.id %>" data-src="https://cdn1.iconfinder.com/data/icons/logotypes/32/chrome-32.png"><%= user.username %></option><%=  %>
-      <% end %>
-    </select>
-  <% end %>
+<% all_username = [] %>
+<% @users.each do |user| %>
+<% all_username << user.username %>
+<% end %>
+<% i = 0 %>
 
-    <%= f.button :submit %>
+
+<%= form_with model: [@league, @team_user] do |f| %>
+  <div class="form-league">
+
+    <% 5.times do %>
+      <% i += 1 %>
+      <div class="each-team">
+        <%= "team #{i}" %>
+        <div class="selection">
+          <%= f.collection_select "team#{i}user1", @users, :id, :username, {prompt: "choose a player"} %>
+          <%= f.collection_select "team#{i}user2", @users, :id, :username, {prompt: "choose a player"} %>
+        </div>
+      </div>
+    <% end %>
+    <%= f.submit "ok" %>
+  </div>
 <% end %>
 
-<% console %>
+
+<%# <div class="holder">
+  <div class="checkbox">
+    <input type="checkbox" class="check" id="check3" />
+    <label for="check3" class="label" style="position:absolute;left:0;margin-top:20px">
+      <svg width="500" height="50" viewBox="0 0 500 100">
+        <rect x="-220" y="0" width="50" height="50" stroke="black" fill="none" />
+        <g transform="translate(0,-972.36216)">
+          <path d="m 230,980 -166,5 c -709,22 289,89 215,18 -37,-36 -537,-46 -478,23" stroke="black" fill="none" class="path2" stroke-width="3" />
+        </g>
+      </svg>
+      <span style="margin-top:-50px;margin-left:50px">Checkbox style 3</span>
+    </label>
+  </div>
+</div> %>

@@ -9,9 +9,8 @@ class TeamUsersController < ApplicationController
   def create
     @league = League.find(params[:league_id])
     @teams_all = []
-
     # this is returning an array of all user selected in the view
-    @users = params[:teams][:user]
+    @users = params[:team_user].values
     # this is returning an array of arrays of 2 users
     @users = @users.each_slice(2).to_a
 

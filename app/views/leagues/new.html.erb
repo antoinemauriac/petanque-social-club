@@ -1,7 +1,10 @@
 <h1>new league</h1>
 <h1>creer ma nouvelle ligue</h1>
 
-<%= simple_form_for @league do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
+<div class="form-wrapper">
+<%= form_with model: @league do |form| %>
+  <%= form.text_area :name %>
+    <%= form.submit "random", name: 'rand' %>
+    <%= form.submit "do your team", name: 'rand' %>
 <% end %>
+</div>
