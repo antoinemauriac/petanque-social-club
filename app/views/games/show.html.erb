@@ -2,33 +2,33 @@
 <div class="form-wrapper flexy">
   <%= form_with model: @game do |form| %>
     <div class="team-display first-team">
-    <% @team1.users.each do |user| %>
-    <span class ="message-avatar-date score-avatar">
-      <% if user.photo.attached? %>
-      <%= cl_image_tag user.photo.key %>
-      <% else %>
-      <%= image_tag "bobby.png"%>
+      <% @team1.users.each do |user| %>
+      <span class ="message-avatar-date score-avatar">
+        <% if user.photo.attached? %>
+          <%= cl_image_tag user.photo.key %>
+        <% else %>
+          <%= image_tag "bobby.png"%>
+        <% end %>
+      </span>
+      <span class="score-text"><%= user.username %></span>
+      <br>
       <% end %>
-    </span>
-    <span class="score-text"><%= user.username %></span>
-    <br>
-    <% end %>
     </div>
 
   <%= form.text_area :score_first_team, :html => { :class => 'all-forms' } %>
 
     <div class="team-display second-team">
     <% @team2.users.each do |user| %>
-    <span class="message-avatar-date-reverse score-avatar">
-      <% if user.photo.attached? %>
-      <%= cl_image_tag user.photo.key %>
-      <% else %>
-      <%= image_tag "bobby.png"%>
+        <span class="message-avatar-date-reverse score-avatar">
+            <% if user.photo.attached? %>
+          <%= cl_image_tag user.photo.key %>
+          <% else %>
+            <%= image_tag "bobby.png"%>
+          <% end %>
+        </span>
+        <span class="score-text"><%= user.username %></span>
+        <br>
       <% end %>
-    </span>
-    <span class="score-text"><%= user.username %></span>
-    <br>
-    <% end %>
     </div>
 
   <%= form.text_area :score_second_team, :html => { :class => 'all-forms' } %>
