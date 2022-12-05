@@ -25,3 +25,8 @@
   flex-direction: column-reverse;
   justify-content: space-evenly;
 }
+
+#game_score_first_team, #game_score_second_team {
+  width:80px!important;
+  height:60px!important;
+}
