@@ -7,14 +7,14 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
 
-    @number_of_games = @user.teams.map { |team| team.games_played }.flatten.sum
+    @number_of_games_played = @user.teams.map { |team| team.games_played }.flatten.sum
     @number_of_wins = @user.teams.map { |team| team.number_of_wins }.sum
-    @number_of_loses = (@number_of_games - @number_of_wins)
+    @number_of_loses = (@number_of_games_played - @number_of_wins)
     @number_of_points_for = @user.teams.map { |team| team.points_for }.sum
     @number_of_points_against = @user.teams.map { |team| team.points_against }.sum
 
     if @number_of_wins > 0
-      @pourcentage_of_wins = ((@number_of_wins.to_f / @number_of_games).round(2) * 100).to_i
+      @pourcentage_of_wins = ((@number_of_wins.to_f / @number_of_games_played).round(2) * 100).to_i
       @pourcentage_of_loses = 100 - @pourcentage_of_wins
     else
       @pourcentage_of_wins = 0
@@ -29,12 +29,12 @@ class PagesController < ApplicationController
     end
 
     @number_of_leagues_played = @leagues.count
-    @user1 = User.all[rand(0..5)]
-    @user2 = User.all[rand(6..10)]
 
     @finished_leagues = @leagues.select { |league| league.status == true }
     @number_of_leagues_wins = @finished_leagues.map { |league| league.league_winner }.map { |id| Team.find(id) }.map { |team| team.users }.flatten.select { |u| u == current_user }.count
 
+    @user1 = User.all[rand(0..5)]
+    @user2 = User.all[rand(6..10)]
   end
 
   def accueil

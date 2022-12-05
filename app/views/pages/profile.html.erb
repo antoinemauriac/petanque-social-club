@@ -18,9 +18,12 @@
 
 
   <div class="stats" data-profile-target="stats">
-    <%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
-    <h3 class="bar-profile">TON BILAN</h3>
-    <h4>TOTAL MATCHS : <%= @number_of_games %></h4>
+    <% if current_user.photo.attached? %>
+       <%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
+    <% else %>
+      <%= image_tag "bobby.png", class: "avatar-poto"%>
+    <% end %>
+    <h3>TOTAL MATCHS : <%= @number_of_games_played %></h3>
     <div class="victoires-defaites">
       <div>
         <p class="p-without-margin">VICTOIRES : <%= @number_of_wins %></p>
@@ -34,14 +37,16 @@
       <%= image_tag "pourcentage.png", alt: "pourcentage", class: "barre-pourcentage" %>
 
     <p style="margin-top:20px;">Message de la direction : </p>
-    <% if @pourcentage_of_wins > 70 %>
-    <p class="p-margin-bottom"> "T'es vraiment un patron <%= @user.username.upcase %>"</p>
+    <% if @pourcentage_of_wins > 90 %>
+    <p class="p-margin-bottom"> "Alors là, chapeau <%= @user.username.upcase %>, on a rarement vu un bouliste de ta trempe"</p>
+    <% elsif @pourcentage_of_wins > 70 %>
+    <p class="p-margin-bottom"> "Belles perf' <%= @user.username.upcase %>, tu fais partie des tout meilleurs" </p>
     <% elsif @pourcentage_of_wins > 50 %>
-    <p class="p-margin-bottom"> "C'est pas si mal <%= @user.username.upcase %>, mais tu sais au fond de toi que t'es capable de mieux" </p>
+    <p class="p-margin-bottom"> "C'est pas si mal <%= @user.username.upcase %>, mais tu sais au fond de toi que t'es capable de mieux. Attention à ne pas basculer dans le rouge" </p>
     <% elsif @pourcentage_of_wins > 30 %>
     <p class="p-margin-bottom"> "Ooooh minot <%= @user.username.upcase %>, il s'agirait de te réveiller !" </p>
     <% else %>
-    <p class="p-margin-bottom"> "Aïe aïe aïe, change de sport <%= @user.username.upcase %>" </p>
+    <p class="p-margin-bottom"> "Aïe aïe aïe, ton bilan est catastrophique, il va falloir songer à changer de sport <%= @user.username.upcase %>" </p>
     <% end %>
 
 
@@ -49,14 +54,22 @@
     <div class="flexy">
     <div class="card-player">
       <h4>C'est le sang !</h4>
+      <% if @user1.photo.attached? %>
       <%= cl_image_tag @user1.photo.key, class: "avatar-poto"%><span><%= @user1.username.upcase %></span>
+      <% else %>
+      <%= image_tag "bobby.png", class: "avatar-poto"%><span><%= @user1.username.upcase %></span>
+      <% end %>
       <p>73% de victoires avec <%= @user1.username.upcase %> comme collègue. On peut dire que c’est une affaire qui roule entre vous deux !</p>
     </div>
     </div>
     <div class="flexy">
     <div class="card-player">
       <h4>Oh misère...</h4>
+      <% if @user2.photo.attached? %>
       <%= cl_image_tag @user2.photo.key, class: "avatar-poto"%><span><%= @user2.username.upcase %></span>
+      <% else %>
+      <%= image_tag "bobby.png", class: "avatar-poto"%><span><%= @user2.username.upcase %></span>
+      <% end %>
       <p>85% de défaites avec <%= @user2.username.upcase %> comme collègue. Il serait temps de se rendre à l’évidence....</p>
     </div>
     </div>
