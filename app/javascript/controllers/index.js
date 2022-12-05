@@ -19,8 +19,8 @@ application.register("map", MapController)
 import ProfileController from "./profile_controller"
 application.register("profile", ProfileController)
 
-import TeamSelectionController from "./team_selection_controller"
-application.register("team-selection", TeamSelectionController)
+// import TeamSelectionController from "./team_selection_controller"
+// application.register("team-selection", TeamSelectionController)
 
 import TerrainController from "./terrain_controller"
 application.register("terrain", TerrainController)
