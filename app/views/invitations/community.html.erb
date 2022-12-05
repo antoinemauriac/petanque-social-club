@@ -1,0 +1,26 @@
+<h1>coucou de la cummutiyi</h1>
+<p>Invite un ami :</p>
+<% current_user.friends.each do |friend| %>
+<%= friend.username %>
+<% end %>
+<%= simple_form_for @invitation do |f| %>
+  <%= f.select :friend_id, User.all.map{|u| u.username}%>
+  <%= f.submit %>
+<% end %>
+
+<p>Mes amis en attends de validation de l'amitié validé</p>
+<% current_user.friends_unconfirmed.each do |friend| %>
+  <%= friend.username %>
+<% end %>
+
+<%= form_with url: "/community", method: :get do %>
+  <%= text_field_tag :query,
+  params[:query],
+  placeholder: "rechercher votre collègue"%>
+  <button class="btn-big" type="submit"></button>
+  <% end %>
+
+
+  <% @users.each do |user| %>
+  <%=  user.username %>
+  <% end %>
