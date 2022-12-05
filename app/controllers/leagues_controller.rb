@@ -25,7 +25,6 @@ class LeaguesController < ApplicationController
 
   def create
     @league = League.create!(league_params)
-    raise
 
     if params[:rand] == "random"
       @teams_all = []
