@@ -34,7 +34,12 @@
         <p class="p-without-margin"><%= @pourcentage_of_loses %>%</p>
       </div>
     </div>
-      <%= image_tag "pourcentage.png", alt: "pourcentage", class: "barre-pourcentage" %>
+      <%# <%= image_tag "pourcentage.png", alt: "pourcentage", class: "barre-pourcentage" %>
+
+      <div class="progress-container">
+        <div style="width:<%= @pourcentage_of_wins %>%" class="green-bar"></div>
+        <div style="width:<%= @pourcentage_of_loses %>%" class="red-bar"></div>
+      </div>
 
     <p style="margin-top:20px;">Message de la direction : </p>
     <% if @pourcentage_of_wins > 90 %>
