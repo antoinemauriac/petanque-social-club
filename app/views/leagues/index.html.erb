@@ -5,7 +5,12 @@
 </div>
 
 <ul class="flexy">
-  <% @leagues.each do |league| %>
+  <% @leagues.reject { |league| league.status == true }.each do |league| %>
   <li class="btn-medium"><%= link_to league.name.upcase , league_path(league) %></li>
+  <% end %>
+</ul>
+<ul class="flexy">
+  <% @leagues.select { |league| league.status == true }.each do |league| %>
+  <li class="btn-medium btn-medium-grey"><%= link_to league.name.upcase , league_path(league) %></li>
   <% end %>
 </ul>

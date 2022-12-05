@@ -16,12 +16,12 @@
   </li>
 </ul>
 
-<div class="flexy chatroom">
+<div class="chatroom">
 
     <div class="chatroom-item chatroom-form">
       <%= simple_form_for [@league, @message] do |f| %>
         <span id="form-style">
-          <%= f.input :comment, placeholder: "Passion, plaisir et mauvaise foi ..." %>
+          <%= f.input :comment, placeholder: "Passion, plaisir et mauvaise foi ...", label: false %>
           <%= f.button :submit, value:'ENVOYER', class:"btn-smally envoi" %>
         </span>
       <% end %>
@@ -33,7 +33,7 @@
             <% if message.user == current_user %>
             <div class="message-avatar-date-reverse" id="current-user-chat">
             <%# <i class="fa-solid fa-user"></i> %>
-              <%= cl_image_tag message.user.photo.key, class: "avatar-poto-message" %><span class="blaze-comment-reverse"><%= message.user.username.upcase%></span>
+              <%= cl_image_tag message.user.photo.key, class: "avatar-poto-message-reverse" %><span class="blaze-comment-reverse"><%= message.user.username.upcase%></span>
               <p class="text-light-grey-reverse"> <%= message.created_at.strftime("%d" +"/" + "%m" +"/" + "%Y") %>
                                                   <%= message.created_at.strftime("%H"+":"+ "%M") %></p>
             </div>

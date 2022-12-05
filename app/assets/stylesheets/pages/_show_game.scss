@@ -1,3 +1,27 @@
 .display-label {
   display: inline!important;
 }
+
+.score-avatar {
+  color:$blue;
+  width:40px;
+  height: 40px;
+}
+
+.first-team {
+  display:flex;
+  margin-top:20px;
+}
+
+.second-team {
+  display:flex;
+  // flex-direction: row-reverse;
+  margin-top:20px;
+}
+
+.score-text {
+  color:$blue;
+  display:flex;
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
+}

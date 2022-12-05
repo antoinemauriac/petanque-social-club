@@ -27,8 +27,32 @@ class LeaguesController < ApplicationController
 
   def create
     @league = League.create!(league_params)
-    @league.admin_user = current_user
-    redirect_to new_league_team_user_path(@league)
+    raise
+
+    if params[:rand] == "random"
+      @teams_all = []
+      @users = User.all.shuffle().slice(0..9).each_slice(2).to_a
+      @users.each do |two_user|
+        @team = Team.new(league: @league)
+        @team.save!
+      # this associate users and team to team user
+        two_user.each do |selected|
+          user = selected
+          TeamUser.create!(user: user, team: @team)
+        end
+        if @teams_all.any?
+          @teams_all.each do |team|
+            @game = Game.create!(league: @league)
+            GameTeam.create!(team: team, game: @game)
+            GameTeam.create!(team: @team, game: @game)
+          end
+        end
+        @teams_all << @team
+      end
+      redirect_to league_path(@league)
+    else
+      redirect_to new_league_team_user_path(@league)
+    end
   end
 
   # def edit
