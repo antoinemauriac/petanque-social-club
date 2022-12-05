@@ -66,3 +66,20 @@
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+.badge-ok {
+  width: 90px;
+}
+
+.badge-nok {
+  width: 90px;
+  opacity: 0.3;
+}
+
+.badge-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 370px;
+  margin: 0 auto;
+}
