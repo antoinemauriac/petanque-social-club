@@ -1,5 +1,26 @@
- <%= simple_form_for @game do |f| %>
-    <%= f.input :score_first_team, class:"display-label", label: "#{@team1.users.first.username.upcase} - #{@team1.users.last.username.upcase}"  %>
-    <%= f.input :score_second_team, label: "#{@team2.users.first.username.upcase} - #{@team2.users.last.username.upcase}" %>
-    <%= f.button :submit, class: "btn btn-info button-trouve" %>
-  <% end %>
+
+
+
+
+<div class="form-wrapper">
+<%= form_with model: @game do |form| %>
+<div class="team-display first-team">
+<% @team1.users.each do |user| %>
+<%= user.username %>
+<br>
+<% end %>
+</div>
+
+  <%= form.text_area :score_first_team, :html => { :class => 'all-forms' } %>
+
+<div class="team-display second-team">
+<% @team2.users.each do |user| %>
+<%= user.username %>
+<br>
+<% end %>
+</div>
+
+  <%= form.text_area :score_second_team, :html => { :class => 'all-forms' } %>
+  <%= form.submit "POINT" %>
+<% end %>
+</div>
