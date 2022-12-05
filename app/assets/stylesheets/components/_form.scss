@@ -76,20 +76,24 @@ textarea:focus, input:focus{
   outline: none;
   color: $blue;
   font-size: x-large;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center!important;
+  background-color: white !important;
+  
 }
 
 input, button, select, optgroup, textarea {
-  font-weight:900;
   color: $blue;
+  font-weight:900;
   text-align: center!important;
+  font-size: xx-large;
 }
+
 
 input {
   border: none;
-  background-color: $blue !important;
-  color: $yellow;
+  background-color: white !important;
+  color: $blue;
   border-radius: 8px;
   padding: 12px;
   font-family: $font-family-sans-serif;

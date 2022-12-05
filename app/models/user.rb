@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one_attached :photo
+  has_one :badge
 
   include PgSearch::Model
   pg_search_scope :global_search,
@@ -16,6 +17,7 @@ class User < ApplicationRecord
   has_many :team_users
   has_many :teams, through: :team_users
   has_many :messages
+
   # friendship-system
   has_many :invitations
   has_many :friends, through: :invitations
@@ -41,4 +43,5 @@ class User < ApplicationRecord
   def send_invitation(user)
     invitations.create(friend_id: user.id)
   end
+
 end

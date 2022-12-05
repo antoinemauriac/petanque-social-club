@@ -16,7 +16,7 @@
                     <% if field.photos.attached? %>
                         <%= cl_image_tag field.photos.first.key%>
                     <% else %>
-                        <h1>nothing</h1>
+                        <%= image_tag "bobby.png"%>
                     <% end %>
                   </div>
                     <div class="card-product-infos">
