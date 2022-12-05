@@ -9,6 +9,7 @@ require "open-uri"
 
 puts "cleaning DB"
 
+Invitation.destroy_all
 Badge.destroy_all
 Field.destroy_all
 Message.destroy_all
@@ -38,6 +39,8 @@ puts "creating Users"
   user10 = User.create(email: "trytry@gmail.com", username: "Georges Abitboule", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user11 = User.create(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user12 = User.create(email: "blabla@gmail.com", username: "Toto", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+
+  Invitation.create(user: user1, friend_id: user2.id, confirmed: true)
 
   photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar17_qtsqti.png')
   photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar15_rhbfga.png')
