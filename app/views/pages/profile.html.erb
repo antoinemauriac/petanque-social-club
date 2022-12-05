@@ -18,7 +18,9 @@
 
 
   <div class="stats" data-profile-target="stats">
-<%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
+    <% end %>
     <h3>LE BILAN DE <%= @user.username.upcase %></h3>
     <h4>TOTAL MATCHS : <%= @number_of_games %></h4>
     <div class="victoires-defaites">
@@ -49,14 +51,18 @@
     <div class="flexy">
     <div class="card-player">
       <h4>C'est le sang !</h4>
-      <%= cl_image_tag @user1.photo.key, class: "avatar-poto" %><span><%= @user1.username.upcase %></span>
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag @user1.photo.key, class: "avatar-poto" %><span><%= @user1.username.upcase %></span>
+      <% end %>
       <p>73% de victoires avec <%= @user1.username.upcase %> comme collègue. On peut dire que c’est une affaire qui roule entre vous deux !</p>
     </div>
     </div>
     <div class="flexy">
     <div class="card-player">
       <h4>Oh misère...</h4>
-      <%= cl_image_tag @user2.photo.key, class: "avatar-poto" %><span><%= @user2.username.upcase %></span>
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag @user2.photo.key, class: "avatar-poto" %><span><%= @user2.username.upcase %></span>
+      <% end %>
       <p>85% de défaites avec <%= @user2.username.upcase %> comme collègue. Il serait temps de se rendre à l’évidence....</p>
     </div>
     </div>

@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
+
+Invitation.destroy_all
 Field.destroy_all
 Message.destroy_all
 TeamUser.destroy_all
@@ -30,6 +32,7 @@ League.destroy_all
   user9 = User.create(email: "tratra@gmail.com", username: "Léo le minot", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user10 = User.create(email: "trytry@gmail.com", username: "Georges Abitboule", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user11 = User.create(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  Invitation.create(user: user1, friend_id: user2.id)
 
   # photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913797/development/vjg4d9s3kj9zs12stprg8lino87v.png')
   # photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669913805/development/uoicv7gzwgywzvnamlc2v22f25j5.png')
