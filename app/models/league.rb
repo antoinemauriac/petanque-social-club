@@ -3,4 +3,5 @@ class League < ApplicationRecord
   has_many :games
   has_many :teams
   has_many :messages
+  has_many :selected_users
 end
