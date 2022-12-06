@@ -11,7 +11,7 @@
       <a class="nav-link" data-profile-target="badge" href="#">BADGES</a>
     </li>
     <li class="nav-item" data-action="click->profile#collegues">
-      <a class="nav-link" data-profile-target="collegue" href="#">COLLEGUES</a>
+      <a class="nav-link" data-profile-target="collegue" href="#">COLLÈGUES</a>
     </li>
   </ul>
 
@@ -148,13 +148,39 @@
         <p>Fanny Boss</p>
       </div>
     </div>
+    <div class="badge-div" style="margin-top:30px">
+      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Le sang" data-bs-content="Tu es le sang de la veine mamène !">
+        <% if @user.badge.wood_ball == true %>
+          <%= image_tag "badge1.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge1.png", class: "badge-nok"%>
+        <% end %>
+        <p>Le sang</p>
+      </div>
+      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Sniper" data-bs-content="Tyé un sacré tireur Manu !">
+        <% if @user.badge.silver_ball == true %>
+          <%= image_tag "badge2.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge2.png", class: "badge-nok"%>
+        <% end %>
+        <p>Sniper</p>
+      </div>
+      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Bobby" data-bs-content="Bobby le pointeur :) !">
+        <% if @user.badge.gold_ball == true %>
+          <%= image_tag "badge3.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge3.png", class: "badge-nok"%>
+        <% end %>
+        <p>Bobby</p>
+      </div>
+    </div>
   </div>
 
 
   <div class="d-none" data-profile-target="collegues">
     <div class="row div-collegues">
       <% current_user.friends.each do |friend| %>
-      <div class="flexy col-5" style="margin-bottom:30px">
+      <div class="flexy col-5" style="margin-bottom:30px;flex-grow:1">
           <% if friend.photo.attached? %>
             <%= cl_image_tag friend.photo.key, class: "avatar-poto" %>
           <% else %>

@@ -3,9 +3,10 @@
   padding: 5px;
   border: solid $blue;
   border-radius: 6px;
-  width: 90vw;
+  width: 300px;
   margin: 10px;
   align-self: center;
+  align-items: center;
 }
 
 .card-info {
@@ -15,9 +16,14 @@
   flex-grow: 1;
 }
 
+.card-username {
+  color: $blue;
+}
+
 .add-btn{
   align-self: flex-end;
   padding-right: 10px;
+
   button {
     font-size: 16px;
     background-color: $yellow;
@@ -30,4 +36,24 @@
 
 .search-btn {
   color: $yellow;
+}
+
+.searchbar {
+  margin-top: 20px;
+  border: 1px solid;
+}
+
+.btn-search-user {
+  align-items: center;
+  background-color: $blue!important;
+  text-align: center;
+  border-radius: 10px;
+  color: $yellow!important;
+  font-size: 20px;
+  width: 240px;
+  margin: 10px 0;
+
+  a {
+    color: $yellow!important;
+  }
 }

@@ -86,6 +86,11 @@
   align-items: center;
   max-width: 370px;
   margin: 0 auto;
+
+  p {
+    color: $blue;
+    margin-top: 10px;
+  }
 }
 
 .friends-list {
