@@ -29,4 +29,18 @@
 #game_score_first_team, #game_score_second_team {
   width:80px!important;
   height:60px!important;
+  border: none;
+}
+
+.all-forms {
+
+  textarea:focus, input:focus{
+    outline: none;
+    color: $blue;
+    font-size: x-large;
+    font-weight: 600;
+    text-align: center!important;
+    background-color: white !important;
+
+  }
 }
