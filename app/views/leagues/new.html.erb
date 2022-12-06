@@ -2,9 +2,20 @@
 <h1>creer ma nouvelle ligue</h1>
 
 <div class="form-wrapper">
-<%= form_with model: @league do |form| %>
+<%= form_with model: [@league] do |form| %>
   <%= form.text_area :name %>
-    <%= form.submit "random", name: 'rand' %>
-    <%= form.submit "do your team", name: 'rand' %>
+  <% i = 0 %>
+  <%# <%= form.check_box "users", as: :check_boxes, multiple: :true, collection: User.all %>
+  <% @users.each do |user|  %>
+    <label for="<%= user.id %>"><%= user.username %></label>
+    <input type="checkbox" name="user[<%= user.id%>]" id="<%=  user.id%>" value=<%= user%> />
+
+  <% end %>
+
+
+  <%# <%  check_box("puppy", "commands", {:multiple => true}, "sit", nil) %>
+  <%# <%= form.collection_select(:users, User.all, :id, :username) %>
+    <%= form.submit "create"%>
+    <%= form.submit "random"%>
 <% end %>
 </div>

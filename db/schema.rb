@@ -117,6 +117,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_085757) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "selected_users", force: :cascade do |t|
+    t.bigint "league_id", null: false
+    t.string "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_selected_users_on_league_id"
+  end
+  
+  create_table "sashes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "team_users", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "team_id", null: false
@@ -160,6 +173,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_085757) do
   add_foreign_key "invitations", "users"
   add_foreign_key "messages", "leagues"
   add_foreign_key "messages", "users"
+  add_foreign_key "selected_users", "leagues"
   add_foreign_key "team_users", "teams"
   add_foreign_key "team_users", "users"
   add_foreign_key "teams", "leagues"
