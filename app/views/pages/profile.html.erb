@@ -178,17 +178,21 @@
   </div>
   <div class="flexy">
     <div class="d-none" data-profile-target="collegues">
-      <ul>
-      <li >
-      <% current_user.friends.each do |friend| %>
-      <% if friend.photo.attached? %>
-      <span class="friends-list"><%= cl_image_tag friend.photo.key, class: "avatar-poto-list"%><h2><%= friend.username.upcase %></h2></span>
-      <% else %>
-      <span class="friends-list"><%= image_tag "bobby.png", class: "avatar-poto-list"%><span><h2><%= friend.username.upcase %></h2></span>
-      </li>
-      </ul>
-      <% end %>
-      <% end %>
+     <% current_user.friends.each do |friend| %>
+    <div class="user-card">
+      <div class="pics">
+          <% if friend.photo.attached? %>
+            <%= cl_image_tag friend.photo.key, class: "avatar" %>
+          <% else %>
+            <%= image_tag "bobby.png", class: "avatar" %>
+          <% end %>
+        </div>
+        <div class="card-info">
+        <div class="card-username">
+      <%= friend.username %>
+      </div>
+      </div>
     </div>
+<% end %>
   </div>
 </div>
