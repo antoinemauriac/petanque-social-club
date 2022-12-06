@@ -115,7 +115,7 @@
 
 .form-control {
   height: 110px;
-  width: 340px;
+  width: 100%;
   border-radius: 10px;
   border: 2px solid $blue;
 }
@@ -163,4 +163,12 @@
 .message_comment {
   display: flex;
   justify-content: center;
+  outline: none;
+  color: $blue;
+  font-size: x-large;
+  font-weight: 600;
+  text-align: center!important;
+  background-color: white !important;
+  border-radius:10px;
+  width:100%;
 }
