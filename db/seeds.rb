@@ -664,7 +664,7 @@ puts "creating Matchs & Scores"
     field14.save
 
     field15 = Field.create(name: "Le terrain du quai", address: "13 Quai des Belges, 67000 Strasbourg", rating: 2)
-    photo15 = URI.open('ahttps://res.cloudinary.com/dushuxqmj/image/upload/v1670338694/development/p%C3%A9tanque-social-club/terrains/terrain9_o9mgkz.jpg')
+    photo15 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338694/development/p%C3%A9tanque-social-club/terrains/terrain9_o9mgkz.jpg')
     field15.photos.attach(io: photo15, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
     field15.save
 
