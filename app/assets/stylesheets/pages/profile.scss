@@ -58,7 +58,11 @@
 }
 
 .avatar-poto {
-  width: 30%;
+  width: 90px;
+}
+.avatar-poto-list {
+  width: 20%;
+  height: 20%;
 }
 
 .bar-profile {
@@ -82,4 +86,10 @@
   align-items: center;
   max-width: 370px;
   margin: 0 auto;
+}
+
+.friends-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }

@@ -36,7 +36,7 @@ class LeaguesController < ApplicationController
 
 
 
-      if params[:commit] == "random"
+      if params[:commit] == "LAISSE LE HASARD FAIRE"
         @teams_all = []
         @users = @selected_friends.shuffle().each_slice(2).to_a
         @users.each do |two_user|
@@ -56,7 +56,7 @@ class LeaguesController < ApplicationController
               GameTeam.create!(team: team, game: @game)
               GameTeam.create!(team: @team, game: @game)
             end
-           
+
           end
           @teams_all << @team
 

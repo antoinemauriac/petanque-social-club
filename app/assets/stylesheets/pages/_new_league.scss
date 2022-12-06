@@ -1,0 +1,76 @@
+.flexy-create {
+max-width: 300px;
+justify-content: space-between;
+
+}
+
+.select-player {
+  display: flex;
+  padding: 10px;
+  border: 2px solid $blue;
+  margin: 5px;
+  text-align: center;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.avatar-selection {
+  width: 40px;
+}
+
+.container-create {
+  text-align: center;
+}
+
+.title-create {
+  color: $blue;
+  font-size: 15px;
+}
+
+.text-create {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#league_name {
+  border: 2px solid $blue;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  max-width: 245px;
+  max-height: 50px;
+}
+
+.username-create {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: $blue;
+}
+
+.background-blue {
+  background-color: $blue;
+  color: $yellow;
+  border: 2px solid $yellow;
+
+  .username-create
+  {
+    color: $yellow;
+  }
+}
+
+.btn-create-team {
+  align-items: center;
+  color: $yellow;
+  background-color: $blue!important;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 10px;
+  color: $yellow!important;
+  font-size: 14px;
+  width: 240px;
+  margin: 10px 0;
+
+  a {
+    color: $yellow!important;
+  }
+}

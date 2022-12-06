@@ -5,21 +5,22 @@
 <% end %>
 <% i = 0 %>
 
-
-<%= form_with model: [@league, @team_user] do |f| %>
-  <div class="form-league">
-  <% x = @selected_users.length / 2 %>
-    <% x.times do %>
-      <% i += 1 %>
-      <div class="each-team">
-        <%= "team #{i}" %>
-        <div class="selection">
-          <%= f.collection_select "team#{i}user1", all_username, :id, :username %>
-          <%= f.collection_select "team#{i}user2", all_username, :id, :username %>
-          <%# <%= f.collection_select "team#{i}user2", all_username, :id, :username, {prompt: "choose a player"} %>
+<div class="container-create">
+  <%= form_with model: [@league, @team_user] do |f| %>
+    <div class="form-league">
+    <% x = @selected_users.length / 2 %>
+      <% x.times do %>
+        <% i += 1 %>
+        <div class="each-team">
+          <%= "team #{i}" %>
+          <div class="selection">
+            <%= f.collection_select "team#{i}user1", all_username, :id, :username %>
+            <%= f.collection_select "team#{i}user2", all_username, :id, :username %>
+            <%# <%= f.collection_select "team#{i}user2", all_username, :id, :username, {prompt: "choose a player"} %>
+          </div>
         </div>
-      </div>
-    <% end %>
-    <%= f.submit "ok" %>
-  </div>
-<% end %>
+      <% end %>
+      <%= f.submit "VALIDER", class: "btn-create-team" %>
+    </div>
+  <% end %>
+</div>
