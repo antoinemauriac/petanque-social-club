@@ -11,6 +11,7 @@ puts "cleaning DB"
 
 Invitation.destroy_all
 Badge.destroy_all
+SelectedUser.destroy_all
 Field.destroy_all
 Message.destroy_all
 TeamUser.destroy_all
@@ -27,20 +28,19 @@ puts "creating Leagues"
 
 puts "creating Users"
 
-  user1 = User.create(email: "titi@gmail.com", username: "Bouliste anonyme", password: "123456", date_of_birth: "1930-01-01")
+  user1 = User.create(email: "titi@gmail.com", username: "Maaaarc", password: "123456", date_of_birth: "1930-01-01")
   user2 = User.create(email: "toto@gmail.com", username: "Uncle Moh", password: "123456", date_of_birth: "2000-01-01")
   user3 = User.create(email: "tata@gmail.com", username: "Nina Patulacci", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user4 = User.create(email: "bibi@gmail.com", username: "Lucien l'ancien", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user5 = User.create(email: "tutu@gmail.com", username: "Cathy du 13", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  user6 = User.create(email: "tete@gmail.com", username: "Patoche la bidoche", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user6 = User.create(email: "tete@gmail.com", username: "Patoche", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user7 = User.create(email: "tyty@gmail.com", username: "Zizou", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  user8 = User.create(email: "trotro@gmail.com", username: "Lucienne l'ancienne", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user8 = User.create(email: "trotro@gmail.com", username: "Lucienne", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user9 = User.create(email: "tratra@gmail.com", username: "Léo le minot", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  user10 = User.create(email: "trytry@gmail.com", username: "Georges Abitboule", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user10 = User.create(email: "trytry@gmail.com", username: "Georges A", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user11 = User.create(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user12 = User.create(email: "blabla@gmail.com", username: "Toto", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
 
-  Invitation.create(user: user1, friend_id: user2.id, confirmed: true)
 
   photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar17_qtsqti.png')
   photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar15_rhbfga.png')
