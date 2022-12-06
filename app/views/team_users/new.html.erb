@@ -9,6 +9,7 @@
   <%= form_with model: [@league, @team_user] do |f| %>
     <div class="form-league">
     <% x = @selected_users.length / 2 %>
+    
       <% x.times do %>
         <% i += 1 %>
         <div class="each-team">
