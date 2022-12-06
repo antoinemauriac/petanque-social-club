@@ -18,6 +18,8 @@
 
 
   <div class="stats" data-profile-target="stats">
+    <h3>LE BILAN DE <%= @user.username.upcase %></h3>
+    <h4>TOTAL MATCHS : <%= @number_of_games %></h4>
     <% if current_user.photo.attached? %>
        <%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
     <% else %>
@@ -34,7 +36,12 @@
         <p class="p-without-margin"><%= @pourcentage_of_loses %>%</p>
       </div>
     </div>
-      <%= image_tag "pourcentage.png", alt: "pourcentage", class: "barre-pourcentage" %>
+      <%# <%= image_tag "pourcentage.png", alt: "pourcentage", class: "barre-pourcentage" %>
+
+      <div class="progress-container">
+        <div style="width:<%= @pourcentage_of_wins %>%" class="green-bar"></div>
+        <div style="width:<%= @pourcentage_of_loses %>%" class="red-bar"></div>
+      </div>
 
     <p style="margin-top:20px;">Message de la direction : </p>
     <% if @pourcentage_of_wins > 90 %>
@@ -90,8 +97,85 @@
 
   </div>
 
-  <div class="d-none" data-profile-target="badges">
-    <h1>Hello from badges</h1>
+  <div class="d-none" data-profile-target="badges" style="margin-top:20px;">
+    <div class="badge-div">
+      <div class="flexy">
+        <% if @user.badge.first_fanny == true %>
+          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
+        <% end %>
+        <p>Fanny</p>
+      </div>
+      <div class="flexy">
+        <% if @user.badge.first_fanny == true %>
+          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
+        <% end %>
+        <p>Fanny</p>
+      </div>
+      <div class="flexy">
+        <% if @user.badge.first_fanny == true %>
+          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
+        <% end %>
+        <p>Fanny</p>
+      </div>
+    </div>
+    <div class="badge-div">
+      <div class="flexy">
+        <% if @user.badge.first_fanny == true %>
+          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
+        <% end %>
+        <p>Fanny</p>
+      </div>
+      <div class="flexy">
+        <% if @user.badge.first_fanny == true %>
+          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
+        <% end %>
+        <p>Fanny</p>
+      </div>
+      <div class="flexy">
+        <% if @user.badge.first_fanny == true %>
+          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
+        <% end %>
+        <p>Fanny</p>
+      </div>
+    </div>
+    <div class="badge-div">
+      <div class="flexy">
+        <% if @user.badge.first_fanny == true %>
+          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
+        <% end %>
+        <p>Fanny</p>
+      </div>
+      <div class="flexy">
+        <% if @user.badge.first_fanny == true %>
+          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
+        <% end %>
+        <p>Fanny</p>
+      </div>
+      <div class="flexy">
+        <% if @user.badge.first_fanny == true %>
+          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
+        <% end %>
+        <p>Fanny</p>
+      </div>
+    </div>
   </div>
 
 

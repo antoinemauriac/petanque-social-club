@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     resources :messages, only: %i[create index]
   end
 
+  get "/community", to: "invitations#community", as: :community
+  resources :invitations, only: :create
+
 # get '/leagues/:id/team_users/new', to: 'team_users#new'   --- could be a path to any custom mehtod
 
   resources :games, only: :update

@@ -14,11 +14,9 @@ class LeaguesController < ApplicationController
     @league = League.find(params[:id])
     @games = @league.games
     if @league.status == true
-    @first_winner = Team.find(@league.league_winner).team_users.map { |tu| tu.user }.first
-    @second_winner = Team.find(@league.league_winner).team_users.map { |tu| tu.user }.last
+      @first_winner = Team.find(@league.league_winner).users.first
+      @second_winner = Team.find(@league.league_winner).users.last
     end
-    # @leagues = League.all
-    # @message = Message.new
   end
 
   def new
@@ -58,7 +56,7 @@ class LeaguesController < ApplicationController
               GameTeam.create!(team: team, game: @game)
               GameTeam.create!(team: @team, game: @game)
             end
-            
+           
           end
           @teams_all << @team
 

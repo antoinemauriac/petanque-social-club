@@ -9,6 +9,8 @@ require "open-uri"
 
 puts "cleaning DB"
 
+Invitation.destroy_all
+Badge.destroy_all
 Field.destroy_all
 Message.destroy_all
 TeamUser.destroy_all
@@ -25,8 +27,8 @@ puts "creating Leagues"
 
 puts "creating Users"
 
-  user1 = User.create(email: "titi@gmail.com", username: "Bouliste anonyme", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  user2 = User.create(email: "toto@gmail.com", username: "Uncle Moh", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user1 = User.create(email: "titi@gmail.com", username: "Bouliste anonyme", password: "123456", date_of_birth: "1930-01-01")
+  user2 = User.create(email: "toto@gmail.com", username: "Uncle Moh", password: "123456", date_of_birth: "2000-01-01")
   user3 = User.create(email: "tata@gmail.com", username: "Nina Patulacci", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user4 = User.create(email: "bibi@gmail.com", username: "Lucien l'ancien", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user5 = User.create(email: "tutu@gmail.com", username: "Cathy du 13", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
@@ -37,6 +39,8 @@ puts "creating Users"
   user10 = User.create(email: "trytry@gmail.com", username: "Georges Abitboule", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user11 = User.create(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user12 = User.create(email: "blabla@gmail.com", username: "Toto", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+
+  Invitation.create(user: user1, friend_id: user2.id, confirmed: true)
 
   photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar17_qtsqti.png')
   photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar15_rhbfga.png')
@@ -62,6 +66,19 @@ puts "creating Users"
     user9.photo.attach(io: photo9, filename: 'avatar9.png', content_type: 'image/png')
     user10.photo.attach(io: photo10, filename: 'avatar10.png', content_type: 'image/png')
     user11.photo.attach(io: photo11, filename: 'avatar11.png', content_type: 'image/png')
+
+    Badge.create!(user: user1)
+    Badge.create!(user: user2)
+    Badge.create!(user: user3)
+    Badge.create!(user: user4)
+    Badge.create!(user: user5)
+    Badge.create!(user: user6)
+    Badge.create!(user: user7)
+    Badge.create!(user: user8)
+    Badge.create!(user: user9)
+    Badge.create!(user: user10)
+    Badge.create!(user: user11)
+    Badge.create!(user: user12)
 
     user12.save
     user11.save
@@ -196,7 +213,7 @@ puts "creating Matchs & Scores"
   #MATCH1 - LEAGUE 1
 
     # game1.score_first_team = 13
-    # game1.score_second_team = rand(0..12)
+    # game1.score_second_team = rand(1..12)
 
     # game1.game_winner = team1.id
 
@@ -217,7 +234,7 @@ puts "creating Matchs & Scores"
   #MATCH2
 
     # game2.score_first_team = 13
-    # game2.score_second_team = rand(0..12)
+    # game2.score_second_team = rand(1..12)
 
     # game2.game_winner = team1.id
 
@@ -238,7 +255,7 @@ puts "creating Matchs & Scores"
   #MATCH3
 
     game3.score_first_team = 13
-    game3.score_second_team = rand(0..12)
+    game3.score_second_team = rand(1..12)
 
     game3.game_winner = team1.id
 
@@ -259,7 +276,7 @@ puts "creating Matchs & Scores"
   #MATCH4
 
     game4.score_first_team = 13
-    game4.score_second_team = rand(0..12)
+    game4.score_second_team = rand(1..12)
 
     game4.game_winner = team1.id
 
@@ -280,7 +297,7 @@ puts "creating Matchs & Scores"
   #MATCH5
 
     game5.score_first_team = 13
-    game5.score_second_team = rand(0..12)
+    game5.score_second_team = rand(1..12)
 
     game5.game_winner = team2.id
 
@@ -301,7 +318,7 @@ puts "creating Matchs & Scores"
   #MATCH6
 
     game6.score_first_team = 13
-    game6.score_second_team = rand(0..12)
+    game6.score_second_team = rand(1..12)
 
     game6.game_winner = team2.id
 
@@ -322,7 +339,7 @@ puts "creating Matchs & Scores"
   #MATCH7
 
     game7.score_first_team = 13
-    game7.score_second_team = rand(0..12)
+    game7.score_second_team = rand(1..12)
 
     game7.game_winner = team2.id
 
@@ -343,7 +360,7 @@ puts "creating Matchs & Scores"
   #MATCH8
 
     game8.score_first_team = 13
-    game8.score_second_team = rand(0..12)
+    game8.score_second_team = rand(1..12)
 
     game8.game_winner = team3.id
 
@@ -364,7 +381,7 @@ puts "creating Matchs & Scores"
   #MATCH9
 
     game9.score_first_team = 13
-    game9.score_second_team = rand(0..12)
+    game9.score_second_team = rand(1..12)
 
     game9.game_winner = team3.id
 
@@ -385,7 +402,7 @@ puts "creating Matchs & Scores"
   #MATCH10
 
     game10.score_first_team = 13
-    game10.score_second_team = rand(0..12)
+    game10.score_second_team = rand(1..12)
 
     game10.game_winner = team4.id
 
@@ -407,7 +424,7 @@ puts "creating Matchs & Scores"
 #MATCH11 - LEAGUE 2
 
     # game11.score_first_team = 13
-    # game11.score_second_team = rand(0..12)
+    # game11.score_second_team = rand(1..12)
 
     # game11.game_winner = team6.id
 
@@ -428,7 +445,7 @@ puts "creating Matchs & Scores"
   #MATCH12
 
     game12.score_first_team = 13
-    game12.score_second_team = rand(0..12)
+    game12.score_second_team = rand(1..12)
 
     game12.game_winner = team6.id
 
@@ -449,7 +466,7 @@ puts "creating Matchs & Scores"
   #MATCH13
 
     game13.score_first_team = 13
-    game13.score_second_team = rand(0..12)
+    game13.score_second_team = rand(1..12)
 
     game13.game_winner = team6.id
 
@@ -470,7 +487,7 @@ puts "creating Matchs & Scores"
   #MATCH14
 
     game14.score_first_team = 13
-    game14.score_second_team = rand(0..12)
+    game14.score_second_team = rand(1..12)
 
     game14.game_winner = team6.id
 
@@ -491,7 +508,7 @@ puts "creating Matchs & Scores"
   #MATCH15
 
     game15.score_first_team = 13
-    game15.score_second_team = rand(0..12)
+    game15.score_second_team = rand(1..12)
 
     game15.game_winner = team7.id
 
@@ -512,7 +529,7 @@ puts "creating Matchs & Scores"
   #MATCH16
 
     game16.score_first_team = 13
-    game16.score_second_team = rand(0..12)
+    game16.score_second_team = rand(1..12)
 
     game16.game_winner = team7.id
 
@@ -533,7 +550,7 @@ puts "creating Matchs & Scores"
   #MATCH17
 
     game17.score_first_team = 13
-    game17.score_second_team = rand(0..12)
+    game17.score_second_team = rand(1..12)
 
     game17.game_winner = team7.id
 
@@ -554,7 +571,7 @@ puts "creating Matchs & Scores"
   #MATCH18
 
     game18.score_first_team = 13
-    game18.score_second_team = rand(0..12)
+    game18.score_second_team = rand(1..12)
 
     game18.game_winner = team8.id
 
@@ -575,7 +592,7 @@ puts "creating Matchs & Scores"
   #MATCH19
 
     game19.score_first_team = 13
-    game19.score_second_team = rand(0..12)
+    game19.score_second_team = rand(1..12)
 
     game19.game_winner = team8.id
 
@@ -596,7 +613,7 @@ puts "creating Matchs & Scores"
   #MATCH20
 
     game20.score_first_team = 13
-    game20.score_second_team = rand(0..12)
+    game20.score_second_team = rand(1..12)
 
     game20.game_winner = team9.id
 

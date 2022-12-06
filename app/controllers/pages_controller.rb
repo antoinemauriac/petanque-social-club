@@ -35,6 +35,7 @@ class PagesController < ApplicationController
 
     @user1 = User.all[rand(0..5)]
     @user2 = User.all[rand(6..10)]
+
   end
 
   def accueil
