@@ -1,21 +1,29 @@
-<h1>new league</h1>
-<h1>creer ma nouvelle ligue</h1>
+<h2 class="flexy light-blue-bar">CRÉATION DE LIGUE</h2>
+<div class="flexy container-create">
+  <h4 class="title-create" style="text-align:center;margin-top:10px;">CHOISIS UN NOM</h4>
+  <div class="form-wrapper">
+  <%= form_with model: [@league] do |form| %>
+    <%= form.text_area :name, class: "text-create" %>
 
-<div class="form-wrapper">
-<%= form_with model: [@league] do |form| %>
-  <%= form.text_area :name %>
-  <% i = 0 %>
-  <%# <%= form.check_box "users", as: :check_boxes, multiple: :true, collection: User.all %>
-  <% @users.each do |user|  %>
-    <label for="<%= user.id %>"><%= user.username %></label>
-    <input type="checkbox" name="user[<%= user.id%>]" id="<%=  user.id%>" value=<%= user%> />
+  <h4 class="title-create">SÉLECTIONNE DES COLLÈGUES</h4>
 
+  <div class="flexy-create">
+    <% @users.each do |user|  %>
+      <div class="select-player"  data-controller="selection" data-selection-target="player">
+        <% if user.photo.attached? %>
+          <%= cl_image_tag user.photo.key, class: "avatar-selection" %>
+        <% else %>
+          <%= image_tag "bobby.png", class: "avatar-selection"%>
+        <% end %>
+        <label class="username-create" data-action="click->selection#background" for="<%= user.id %>"><%= user.username.upcase %></label>
+        <input type="checkbox" class="d-none" name="user[<%= user.id%>]" id="<%= user.id%>" value=<%= user%> />
+      </div>
+    <% end %>
+  </div>
+
+      <%= form.submit "CHOISIS LES DOUBLETTES", class: "btn-create-team" %>
+      <h4 class="title-create" style="text-style:none;">OU</h4>
+      <%= form.submit "LAISSE LE HASARD FAIRE", class: "btn-create-team"%>
   <% end %>
-
-
-  <%# <%  check_box("puppy", "commands", {:multiple => true}, "sit", nil) %>
-  <%# <%= form.collection_select(:users, User.all, :id, :username) %>
-    <%= form.submit "create"%>
-    <%= form.submit "random"%>
-<% end %>
+  </div>
 </div>

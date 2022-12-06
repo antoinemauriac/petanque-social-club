@@ -18,33 +18,33 @@
   <% @league.games.each do |game| %>
       <% game_players = game.teams.map { |team| team.users }.flatten %>
       <% if game_players.include?(current_user) %>
-    <div class="row row-game">
-      <div class="col-4 col-left">
-        <% if current_user == game_players[0] || current_user == game_players[1] %>
-        <p class="current-player"><%= game_players[0].username.upcase %></p>
-        <p class="current-player"><%= game_players[1].username.upcase %></p>
-        <% else %>
-        <p><%= game_players[0].username.upcase %></p>
-        <p><%= game_players[1].username.upcase %></p>
-        <% end %>
-      </div>
-      <div class="col-4 score-color" style="text-align:center">
-      <% if game.status == true %>
-        <%= game.score_first_team %> - <%= game.score_second_team %>
-        <% else %>
-        <%= link_to "SCORE ?", league_game_path(@league, game.id), class:"btn-small btn-score" %>
-      <% end %>
-      </div>
-      <div class="col-4 col-right">
-        <% if current_user == game_players[2] || current_user == game_players[3] %>
-        <p class="current-player"><%= game_players[2].username.upcase %></p>
-        <p class="current-player"><%= game_players[3].username.upcase %></p>
-        <% else %>
-        <p><%= game_players[2].username.upcase %></p>
-        <p><%= game_players[3].username.upcase %></p>
-        <% end %>
-      </div>
-    </div>
+        <div class="row row-game">
+          <div class="col-4 col-left">
+            <% if current_user == game_players[0] || current_user == game_players[1] %>
+              <p class="current-player"><%= game_players[0].username.upcase %></p>
+              <p class="current-player"><%= game_players[1].username.upcase %></p>
+            <% else %>
+              <p class="other-player"><%= game_players[0].username.upcase %></p>
+              <p class="other-player"><%= game_players[1].username.upcase %></p>
+            <% end %>
+          </div>
+          <div class="col-4 score-color" style="text-align:center">
+          <% if game.status == true %>
+            <%= game.score_first_team %> - <%= game.score_second_team %>
+            <% else %>
+            <%= link_to "SCORE ?", league_game_path(@league, game.id), class:"btn-small btn-score" %>
+          <% end %>
+          </div>
+          <div class="col-4 col-right">
+            <% if current_user == game_players[2] || current_user == game_players[3] %>
+              <p class="current_user"><%= game_players[2].username.upcase %></p>
+              <p class="current_user"><%= game_players[3].username.upcase %></p>
+            <% else %>
+              <p class="other-player"><%= game_players[2].username.upcase %></p>
+              <p class="other-player"><%= game_players[3].username.upcase %></p>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     <% end %>
 
@@ -54,8 +54,8 @@
       <% if game_players.exclude?(current_user) %>
         <div class="row row-game">
           <div class="col-4 col-left">
-            <p><%= game_players[0].username.upcase %></p>
-            <p><%= game_players[1].username.upcase %></p>
+            <p class="other-player"><%= game_players[0].username.upcase %></p>
+            <p class="other-player"><%= game_players[1].username.upcase %></p>
           </div>
           <div class="col-4 score-color" style="text-align:center">
           <% if game.status == true %>
@@ -65,8 +65,8 @@
           <% end %>
           </div>
           <div class="col-4 col-right">
-            <p><%= game_players[2].username.upcase %></p>
-            <p><%= game_players[3].username.upcase %></p>
+            <p class="other-player"><%= game_players[2].username.upcase %></p>
+            <p class="other-player"><%= game_players[3].username.upcase %></p>
           </div>
         </div>
           <% end %>
