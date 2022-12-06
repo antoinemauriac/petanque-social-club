@@ -18,18 +18,20 @@
 
 .card-username {
   color: $blue;
+  align-self: center;
 }
 
 .add-btn{
   align-self: flex-end;
   padding-right: 10px;
-  
+
   button {
-    font-size: 16px;
+    font-size: 25px;
     background-color: $yellow;
     border: none;
     border-radius: 2px;
     padding: 2px 12px;
+    border-radius: 12px;
 
   }
 }
@@ -49,13 +51,11 @@
   background-color: $blue!important;
   text-align: center;
   border-radius: 10px;
-  color: $yellow!important;
+  border: none!important;
+  font-weight: 600;
   font-size: 20px;
   width: 240px;
   margin: 10px 0;
+  color: $yellow!important;
 
-  a {
-    color: $yellow!important;
-  }
 }
-

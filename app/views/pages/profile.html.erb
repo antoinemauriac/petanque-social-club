@@ -139,16 +139,6 @@
         <% end %>
         <p>Fanny</p>
       </div>
-      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Fanny Boss" data-bs-content="Tu as gagné un math 13-0 !">
-        <% if @user.badge.three_fanny == true %>
-          <%= image_tag "badge_five_fanny.png", class: "badge-ok"%>
-        <% else %>
-          <%= image_tag "badge_five_fanny.png", class: "badge-nok"%>
-        <% end %>
-        <p>Fanny Boss</p>
-      </div>
-    </div>
-    <div class="badge-div" style="margin-top:30px">
       <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Le sang" data-bs-content="Tu es le sang de la veine mamène !">
         <% if @user.badge.wood_ball == true %>
           <%= image_tag "badge1.png", class: "badge-ok"%>
@@ -157,6 +147,8 @@
         <% end %>
         <p>Le sang</p>
       </div>
+    </div>
+    <div class="badge-div" style="margin-top:30px">
       <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Sniper" data-bs-content="Tyé un sacré tireur Manu !">
         <% if @user.badge.silver_ball == true %>
           <%= image_tag "badge2.png", class: "badge-ok"%>
@@ -172,6 +164,14 @@
           <%= image_tag "badge3.png", class: "badge-nok"%>
         <% end %>
         <p>Bobby</p>
+      </div>
+      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Fanny Boss" data-bs-content="Tu as gagné un math 13-0 !">
+        <% if @user.badge.three_fanny == true %>
+          <%= image_tag "badge_five_fanny.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge_five_fanny.png", class: "badge-nok"%>
+        <% end %>
+        <p>Fanny Boss</p>
       </div>
     </div>
   </div>
