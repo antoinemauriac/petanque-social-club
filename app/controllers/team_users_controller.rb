@@ -4,6 +4,7 @@ class TeamUsersController < ApplicationController
     @team_user = TeamUser.new
     @users = User.all
     @league = League.find(params[:league_id])
+    @selected_users = @league.selected_users
   end
 
   def create
