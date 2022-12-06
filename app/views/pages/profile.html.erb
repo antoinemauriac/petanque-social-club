@@ -68,6 +68,7 @@
         <p>73% de victoires avec <%= @user1.username.upcase %> comme collègue. On peut dire que c’est une affaire qui roule entre vous deux !</p>
       </div>
     </div>
+
     <div class="flexy">
       <div class="card-player">
         <h4>Oh misère...</h4>
@@ -92,107 +93,74 @@
       <p>Nombre de ligues jouées : <%= @number_of_leagues_played %></p>
       <p>Nombre de ligues gagnées : <%= @number_of_leagues_wins %></p>
     </div>
-
-
   </div>
 
   <div class="d-none" data-profile-target="badges" style="margin-top:20px;">
     <div class="badge-div">
-      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Fanny" data-bs-content="Pour débloquer ce badge il faut que tu gagnes un math 13-0 !">
-        <% if @user.badge.first_fanny == true %>
-          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Generation" data-bs-content="Tu as gagné une ligue avec un collègue qui a au moins 30 ans d'écart avec toi !">
+        <% if @user.badge.generation == true %>
+          <%= image_tag "badge_generation.png", class: "badge-ok"%>
         <% else %>
-          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
+          <%= image_tag "badge_generation.png", class: "badge-nok"%>
         <% end %>
-        <p>Fanny</p>
+        <p>Generation</p>
       </div>
-      <div class="flexy">
-        <% if @user.badge.first_fanny == true %>
-          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Ligue🌟" data-bs-content="Tu as gagné une ligue, c'est déjà ça minot !">
+        <% if @user.badge.first_league_winner == true %>
+          <%= image_tag "badge_first_league.png", class: "badge-ok"%>
         <% else %>
-          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
+          <%= image_tag "badge_first_league.png", class: "badge-nok"%>
         <% end %>
-        <p>Fanny</p>
+        <p>Minot</p>
       </div>
-      <div class="flexy">
-        <% if @user.badge.first_fanny == true %>
-          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Ligue🌟🌟" data-bs-content="Tu as gagné 2 ligues, ça commence à être sérieux !">
+        <% if @user.badge.three_league_winner == true %>
+          <%= image_tag "badge_three_league.png", class: "badge-ok"%>
         <% else %>
-          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
+          <%= image_tag "badge_three_league.png", class: "badge-nok"%>
         <% end %>
-        <p>Fanny</p>
-      </div>
-    </div>
-    <div class="badge-div">
-      <div class="flexy">
-        <% if @user.badge.first_fanny == true %>
-          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
-        <% else %>
-          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
-        <% end %>
-        <p>Fanny</p>
-      </div>
-      <div class="flexy">
-        <% if @user.badge.first_fanny == true %>
-          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
-        <% else %>
-          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
-        <% end %>
-        <p>Fanny</p>
-      </div>
-      <div class="flexy">
-        <% if @user.badge.first_fanny == true %>
-          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
-        <% else %>
-          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
-        <% end %>
-        <p>Fanny</p>
+        <p>Expert</p>
       </div>
     </div>
-    <div class="badge-div">
-      <div class="flexy">
+    <div class="badge-div" style="margin-top:30px">
+      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Ligue🌟🌟🌟" data-bs-content="Tu as gagné 3 ligues, gros respect !">
+        <% if @user.badge.five_league_winner == true %>
+          <%= image_tag "badge_five_league.png", class: "badge-ok"%>
+        <% else %>
+          <%= image_tag "badge_five_league.png", class: "badge-nok"%>
+        <% end %>
+        <p>Zizou</p>
+      </div>
+      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Fanny" data-bs-content="Tu as gagné un math 13-0 !">
         <% if @user.badge.first_fanny == true %>
-          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+          <%= image_tag "badge_first_fanny.png", class: "badge-ok"%>
         <% else %>
           <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
         <% end %>
         <p>Fanny</p>
       </div>
-      <div class="flexy">
-        <% if @user.badge.first_fanny == true %>
-          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
+      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Fanny Boss" data-bs-content="Tu as gagné un math 13-0 !">
+        <% if @user.badge.three_fanny == true %>
+          <%= image_tag "badge_five_fanny.png", class: "badge-ok"%>
         <% else %>
-          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
+          <%= image_tag "badge_five_fanny.png", class: "badge-nok"%>
         <% end %>
-        <p>Fanny</p>
-      </div>
-      <div class="flexy">
-        <% if @user.badge.first_fanny == true %>
-          <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
-        <% else %>
-          <%= image_tag "badge_first_fanny.png", class: "badge-nok"%>
-        <% end %>
-        <p>Fanny</p>
+        <p>Fanny Boss</p>
       </div>
     </div>
   </div>
-  <div class="flexy">
-    <div class="d-none" data-profile-target="collegues">
-     <% current_user.friends.each do |friend| %>
-    <div class="user-card">
-      <div class="pics">
+
+  <div class="d-none" data-profile-target="collegues">
+    <div class="badge-div">
+      <div class="flexy">
+          <% current_user.friends.each do |friend| %>
           <% if friend.photo.attached? %>
-            <%= cl_image_tag friend.photo.key, class: "avatar" %>
+            <span class="friends-list"><%= cl_image_tag friend.photo.key, class: "avatar-poto-list"%><h2><%= friend.username.upcase %></h2></span>
           <% else %>
-            <%= image_tag "bobby.png", class: "avatar" %>
-          <% end %>
-        </div>
-        <div class="card-info">
-        <div class="card-username">
-      <%= friend.username %>
-      </div>
+            <span class="friends-list"><%= image_tag "bobby.png", class: "avatar-poto-list"%><span><h2><%= friend.username.upcase %></h2></span>
       </div>
     </div>
-<% end %>
+          <% end %>
+          <% end %>
   </div>
 </div>

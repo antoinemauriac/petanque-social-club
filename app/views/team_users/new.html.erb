@@ -5,17 +5,17 @@
 <% end %>
 <% i = 0 %>
 
-<div class="container-create">
+<div class="container-new">
   <%= form_with model: [@league, @team_user] do |f| %>
     <div class="form-league">
     <% x = @selected_users.length / 2 %>
       <% x.times do %>
         <% i += 1 %>
         <div class="each-team">
-          <%= "team #{i}" %>
+          <%= "Doublette n°#{i}" %>
           <div class="selection">
-            <%= f.collection_select "team#{i}user1", all_username, :id, :username %>
-            <%= f.collection_select "team#{i}user2", all_username, :id, :username %>
+            <%= f.collection_select "team#{i}user1", all_username, :id, :username, class: "team-selection" %>
+            <%= f.collection_select "team#{i}user2", all_username, :id, :username, class: "team-selection" %>
             <%# <%= f.collection_select "team#{i}user2", all_username, :id, :username, {prompt: "choose a player"} %>
           </div>
         </div>
