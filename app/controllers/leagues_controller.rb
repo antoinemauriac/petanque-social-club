@@ -21,7 +21,11 @@ class LeaguesController < ApplicationController
 
   def new
     @league = League.new
-    @users = User.all
+    @users = []
+    @users.push(current_user)
+    current_user.friends.each do |friend|
+      @users.push(friend)
+    end
   end
 
   def create
@@ -32,9 +36,6 @@ class LeaguesController < ApplicationController
     @selected_users.keys.each do |f|
       @selected_friends << SelectedUser.create(league: @league, user_id: User.find(f).id)
     end
-
-
-
 
       if params[:commit] == "LAISSE LE HASARD FAIRE"
         @teams_all = []
