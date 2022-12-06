@@ -19,7 +19,6 @@
 
   <div class="stats" data-profile-target="stats">
     <h3>LE BILAN DE <%= @user.username.upcase %></h3>
-    <h4>TOTAL MATCHS : <%= @number_of_games %></h4>
     <% if current_user.photo.attached? %>
        <%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
     <% else %>

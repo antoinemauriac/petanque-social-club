@@ -39,6 +39,10 @@ legend ~ div.form-check:first-of-type {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+#game_score_second_team:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 #game_score_second_team {
   border: 0px;
   border-radius: 4px;
@@ -52,9 +56,6 @@ legend ~ div.form-check:first-of-type {
   // align-self: flex-end;
 }
 
-#game_score_second_team:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
 
 #league_name {
   border: 0px;
@@ -72,15 +73,15 @@ legend ~ div.form-check:first-of-type {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-textarea:focus, input:focus{
-  outline: none;
-  color: $blue;
-  font-size: x-large;
-  font-weight: 600;
-  text-align: center!important;
-  background-color: white !important;
-  
-}
+// textarea:focus, input:focus{
+//   outline: none;
+//   color: $blue;
+//   font-size: x-large;
+//   font-weight: 600;
+//   text-align: center!important;
+//   background-color: white !important;
+
+// }
 
 input, button, select, optgroup, textarea {
   color: $blue;
@@ -126,4 +127,8 @@ select {
   background: $yellow;
   padding: 2px;
   margin: 4px;
+}
+
+.form-input {
+  color:$blue;
 }
