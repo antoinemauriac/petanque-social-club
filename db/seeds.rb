@@ -634,7 +634,7 @@ puts "creating Matchs & Scores"
     puts "creating Fields"
 
     field1 = Field.create(name: "Robert Shuman", address: "Av. Robert Schuman, 13002 Marseille", rating: 3)
-    photo1 = File.open('app/assets/images/terrain1.jpeg')
+    photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338694/development/p%C3%A9tanque-social-club/terrains/terrain11_gvgti4.jpg')
 
     field1.photos.attach(io: photo1, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
     field1.save
