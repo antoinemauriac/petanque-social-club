@@ -176,19 +176,19 @@
       </div>
     </div>
   </div>
-  <div class="flexy">
-    <div class="d-none" data-profile-target="collegues">
-      <ul>
-      <li >
-      <% current_user.friends.each do |friend| %>
-      <% if friend.photo.attached? %>
-      <span class="friends-list"><%= cl_image_tag friend.photo.key, class: "avatar-poto-list"%><h2><%= friend.username.upcase %></h2></span>
-      <% else %>
-      <span class="friends-list"><%= image_tag "bobby.png", class: "avatar-poto-list"%><span><h2><%= friend.username.upcase %></h2></span>
-      </li>
-      </ul>
-      <% end %>
-      <% end %>
+
+
+  <div class="d-none" data-profile-target="collegues">
+    <div class="badge-div">
+      <div class="flexy">
+          <% current_user.friends.each do |friend| %>
+          <% if friend.photo.attached? %>
+            <span class="friends-list"><%= cl_image_tag friend.photo.key, class: "avatar-poto-list"%><h2><%= friend.username.upcase %></h2></span>
+          <% else %>
+            <span class="friends-list"><%= image_tag "bobby.png", class: "avatar-poto-list"%><span><h2><%= friend.username.upcase %></h2></span>
+      </div>
     </div>
+          <% end %>
+          <% end %>
   </div>
 </div>
