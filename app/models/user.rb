@@ -12,8 +12,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  # validates :username, presence: true, uniqueness: true, length: { in: 3..18 }
+  validates :username, presence: true, uniqueness: true, length: { in: 3..15 }
   validates :date_of_birth, presence: true
+  validates :username, presence: true
   has_many :team_users
   has_many :teams, through: :team_users
   has_many :messages
@@ -43,5 +44,4 @@ class User < ApplicationRecord
   def send_invitation(user)
     invitations.create(friend_id: user.id)
   end
-
 end

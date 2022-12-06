@@ -137,6 +137,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_085757) do
     t.datetime "updated_at", null: false
   end
 
+
   create_table "team_users", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "team_id", null: false
