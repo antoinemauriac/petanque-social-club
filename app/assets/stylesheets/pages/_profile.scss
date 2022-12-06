@@ -93,3 +93,16 @@
   align-items: center;
   justify-content: flex-start;
 }
+
+.div-collegues {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 370px;
+  margin: 0 auto;
+
+  p {
+    color: $blue;
+    margin-top: 10px;
+  }
+}

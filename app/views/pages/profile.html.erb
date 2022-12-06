@@ -18,7 +18,7 @@
 
 
   <div class="stats" data-profile-target="stats">
-    <h3>LE BILAN DE <%= @user.username.upcase %></h3>
+    <h3>LE BILAN</h3>
     <% if current_user.photo.attached? %>
        <%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
     <% else %>
@@ -152,16 +152,18 @@
 
 
   <div class="d-none" data-profile-target="collegues">
-    <div class="badge-div">
-      <div class="flexy">
-          <% current_user.friends.each do |friend| %>
+    <div class="row div-collegues">
+      <% current_user.friends.each do |friend| %>
+      <div class="flexy col-5" style="margin-bottom:30px">
           <% if friend.photo.attached? %>
-            <span class="friends-list"><%= cl_image_tag friend.photo.key, class: "avatar-poto-list"%><h2><%= friend.username.upcase %></h2></span>
+            <%= cl_image_tag friend.photo.key, class: "avatar-poto" %>
           <% else %>
-            <span class="friends-list"><%= image_tag "bobby.png", class: "avatar-poto-list"%><span><h2><%= friend.username.upcase %></h2></span>
+            <%= image_tag "bobby.png", class: "avatar-poto"%>
           <% end %>
-        <% end %>
+          <p><%= friend.username.upcase %></p>
       </div>
+      <% end %>
     </div>
   </div>
+
 </div>
