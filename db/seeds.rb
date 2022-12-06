@@ -653,7 +653,7 @@ puts "creating Matchs & Scores"
     field6.photos.attach(io: photo6, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
     field6.save
 
-    field7 = Field.create(name: "Terrain de Montredon", address: "Av. de la Pointe Rouge, 13008 Marseille", rating: 2)
+    field7 = Field.create(name: "Chez Dédé", address: "Av. de la Pointe Rouge, 13008 Marseille", rating: 4)
     photo7 = File.open('app/assets/images/terrain1.jpeg')
     field7.photos.attach(io: photo7, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
     field7.save

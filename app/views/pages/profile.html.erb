@@ -98,7 +98,7 @@
 
   <div class="d-none" data-profile-target="badges" style="margin-top:20px;">
     <div class="badge-div">
-      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Fanny" data-bs-content="Pour débloquer ce badge il faut que tu gagnes un math 13-0 !">
+      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-trigger="focus" data-bs-trigger="click" data-bs-placement="auto" title="Fanny" data-bs-content="Pour débloquer ce badge il faut que tu gagnes un math 13-0 !">
         <% if @user.badge.first_fanny == true %>
           <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
         <% else %>
