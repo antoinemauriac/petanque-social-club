@@ -1,19 +1,34 @@
 <h1>coucou de la cummutiyi</h1>
 <p>Invite un ami :</p>
-<% current_user.friends.each do |friend| %>
-<%= friend.username %>
-<% end %>
 
 <%= form_with url: "/community", method: :get do %>
   <%= text_field_tag :query,
   params[:query],
   placeholder: "rechercher votre collègue"%>
-  <button class="btn-medium" type="submit" label="search"></button>
+  <button class="btn-medium search-btn" type="submit" label="search">Search</button>
   <% end %>
 
 
   <% @users.each do |user| %>
-    <%= form_with model: [@invitation] do |form| %>
-    <%= form.button "#{user.username}", name: "invitation", value: user.id %>
-    <% end %>
+    <div class="user-card">
+      <div class="pics">
+          <% if user.photo.attached? %>
+            <%= cl_image_tag user.photo.key, class: "avatar" %>
+          <% else %>
+            <%= image_tag "bobby.png", class: "avatar" %>
+          <% end %>
+        </div>
+        <div class="card-info">
+        <div class="card-username">
+      <%= user.username %>
+      </div>
+
+
+      <div class="add-btn">
+      <%= form_with model: [@invitation] do |form| %>
+        <%= form.button "add", name: "invitation", value: user.id %>
+      <% end %>
+      </div>
+      </div>
+    </div>
   <% end %>
