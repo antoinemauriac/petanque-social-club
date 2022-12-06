@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_160757) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_085757) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,16 +60,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_160757) do
     t.index ["user_id"], name: "index_badges_on_user_id"
   end
 
-  create_table "badges_sashes", force: :cascade do |t|
-    t.integer "badge_id"
-    t.integer "sash_id"
-    t.boolean "notified_user", default: false
-    t.datetime "created_at"
-    t.index ["badge_id", "sash_id"], name: "index_badges_sashes_on_badge_id_and_sash_id"
-    t.index ["badge_id"], name: "index_badges_sashes_on_badge_id"
-    t.index ["sash_id"], name: "index_badges_sashes_on_sash_id"
-  end
-
   create_table "fields", force: :cascade do |t|
     t.string "name"
     t.text "address"
@@ -102,9 +93,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_160757) do
   create_table "invitations", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "friend_id"
-    t.boolean "confirmed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "confirmed", default: true
     t.index ["user_id"], name: "index_invitations_on_user_id"
   end
 
@@ -115,42 +106,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_160757) do
     t.bigint "admin_user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "merit_actions", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "action_method"
-    t.integer "action_value"
-    t.boolean "had_errors", default: false
-    t.string "target_model"
-    t.integer "target_id"
-    t.text "target_data"
-    t.boolean "processed", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["processed"], name: "index_merit_actions_on_processed"
-  end
-
-  create_table "merit_activity_logs", force: :cascade do |t|
-    t.integer "action_id"
-    t.string "related_change_type"
-    t.integer "related_change_id"
-    t.string "description"
-    t.datetime "created_at"
-  end
-
-  create_table "merit_score_points", force: :cascade do |t|
-    t.bigint "score_id"
-    t.bigint "num_points", default: 0
-    t.string "log"
-    t.datetime "created_at"
-    t.index ["score_id"], name: "index_merit_score_points_on_score_id"
-  end
-
-  create_table "merit_scores", force: :cascade do |t|
-    t.bigint "sash_id"
-    t.string "category", default: "default"
-    t.index ["sash_id"], name: "index_merit_scores_on_sash_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -167,13 +122,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_160757) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
+  
   create_table "selected_users", force: :cascade do |t|
     t.bigint "league_id", null: false
     t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["league_id"], name: "index_selected_users_on_league_id"
+  end
+
+  
+  create_table "sashes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "team_users", force: :cascade do |t|
@@ -206,8 +167,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_160757) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.date "date_of_birth"
-    t.integer "sash_id"
-    t.integer "level", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

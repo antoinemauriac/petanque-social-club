@@ -19,7 +19,6 @@
 
   <div class="stats" data-profile-target="stats">
     <h3>LE BILAN DE <%= @user.username.upcase %></h3>
-    <h4>TOTAL MATCHS : <%= @number_of_games %></h4>
     <% if current_user.photo.attached? %>
        <%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
     <% else %>
@@ -99,7 +98,7 @@
 
   <div class="d-none" data-profile-target="badges" style="margin-top:20px;">
     <div class="badge-div">
-      <div class="flexy">
+      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Fanny" data-bs-content="Pour débloquer ce badge il faut que tu gagnes un math 13-0 !">
         <% if @user.badge.first_fanny == true %>
           <%= image_tag "badge_first_fanny_ok.png", class: "badge-ok"%>
         <% else %>

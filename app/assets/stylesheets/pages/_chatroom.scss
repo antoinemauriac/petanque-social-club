@@ -1,3 +1,17 @@
+.chatroom {
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
+  align-items: center;
+  z-index:-1;
+}
+
+.chatroom-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .chatroom-display {
   display: flex;
   flex-direction: column;
@@ -49,13 +63,6 @@
   color:$green;
 }
 
-// POUR TESTER DANS L'INSPECTEUR !!
-.chatroom {
-  display:flex;
-  justify-content:center;
-  flex-direction: column;
-  align-items: center;
-}
 
 .message-avatar-date {
   display:flex;
@@ -134,11 +141,6 @@
   text-align: right;
 }
 
-.chatroom-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 #current-user-avatar {
   background: white!important;

@@ -39,6 +39,10 @@ legend ~ div.form-check:first-of-type {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+#game_score_second_team:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 #game_score_second_team {
   border: 0px;
   border-radius: 4px;
@@ -52,9 +56,6 @@ legend ~ div.form-check:first-of-type {
   // align-self: flex-end;
 }
 
-#game_score_second_team:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
 
 
 #league_name:hover {
@@ -115,4 +116,8 @@ select {
   background: $yellow;
   padding: 2px;
   margin: 4px;
+}
+
+.form-input {
+  color:$blue;
 }

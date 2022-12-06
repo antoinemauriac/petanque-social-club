@@ -16,6 +16,9 @@ application.register("hello", HelloController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
+import PopoverController from "./popover_controller"
+application.register("popover", PopoverController)
+
 import ProfileController from "./profile_controller"
 application.register("profile", ProfileController)
 

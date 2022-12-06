@@ -1,7 +1,6 @@
 class InvitationsController < ApplicationController
   def create
-    @invited = params[:invitation][:friend_id]
-    @invited = User.find_by(username: @invited)
+    @invited = User.find(params[:invitation])
     @invitation = Invitation.new(user_id: current_user.id, friend_id: @invited.id)
     @invitation.save
     redirect_to accueil_path
