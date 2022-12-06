@@ -22,6 +22,9 @@ application.register("popover", PopoverController)
 import ProfileController from "./profile_controller"
 application.register("profile", ProfileController)
 
+import SelectionController from "./selection_controller"
+application.register("selection", SelectionController)
+
 import TerrainController from "./terrain_controller"
 application.register("terrain", TerrainController)
 
