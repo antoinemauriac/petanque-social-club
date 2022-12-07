@@ -98,24 +98,6 @@ th, td {
 
 #crown-winner {
   width: 70px;
-  animation: 7s test 0s ease-out forwards;
-}
-
-@keyframes test {
-
-  0% {
-    right:-100%;
-
-  }
-
-  50% {
-    right:16px;
-  }
-
-  100% {
-    right:-100%;
-  }
-
 }
 
 #flex-avatar {

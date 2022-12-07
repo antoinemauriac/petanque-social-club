@@ -479,45 +479,45 @@ puts "creating Matchs & Scores"
 
   #MATCH12
 
-    game12.score_first_team = 13
-    game12.score_second_team = rand(1..12)
+    # game12.score_first_team = 13
+    # game12.score_second_team = rand(1..12)
 
-    game12.game_winner = team6.id
+    # game12.game_winner = team6.id
 
-    team6.points_for += game12.score_first_team
-    team6.points_against += game12.score_second_team
-    team6.games_played += 1
-    team6.number_of_wins += 1
+    # team6.points_for += game12.score_first_team
+    # team6.points_against += game12.score_second_team
+    # team6.games_played += 1
+    # team6.number_of_wins += 1
 
-    team8.points_for += game12.score_second_team
-    team8.points_against += game12.score_first_team
-    team8.games_played += 1
+    # team8.points_for += game12.score_second_team
+    # team8.points_against += game12.score_first_team
+    # team8.games_played += 1
 
-    team6.save
-    team8.save
-    game12.status = true
-    game12.save
+    # team6.save
+    # team8.save
+    # game12.status = true
+    # game12.save
 
   #MATCH13
 
-    game13.score_first_team = 13
-    game13.score_second_team = rand(1..12)
+    # game13.score_first_team = 13
+    # game13.score_second_team = rand(1..12)
 
-    game13.game_winner = team6.id
+    # game13.game_winner = team6.id
 
-    team6.points_for += game13.score_first_team
-    team6.points_against += game13.score_second_team
-    team6.games_played += 1
-    team6.number_of_wins += 1
+    # team6.points_for += game13.score_first_team
+    # team6.points_against += game13.score_second_team
+    # team6.games_played += 1
+    # team6.number_of_wins += 1
 
-    team9.points_for += game13.score_second_team
-    team9.points_against += game13.score_first_team
-    team9.games_played += 1
+    # team9.points_for += game13.score_second_team
+    # team9.points_against += game13.score_first_team
+    # team9.games_played += 1
 
-    team6.save
-    team9.save
-    game13.status = true
-    game13.save
+    # team6.save
+    # team9.save
+    # game13.status = true
+    # game13.save
 
   #MATCH14
 
