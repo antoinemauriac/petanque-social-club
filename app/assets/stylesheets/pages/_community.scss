@@ -2,7 +2,7 @@
   display: flex;
   padding: 5px;
   border: solid $blue;
-  border-radius: 6px;
+  border-radius: 16px;
   width: 300px;
   margin: 10px;
   align-self: center;
@@ -47,15 +47,16 @@
 }
 
 .btn-search-user {
+  font-style: italic;
+  width: 185px;
+  height: 40px;
+  border-radius: 20px;
   align-items: center;
   background-color: $blue!important;
   text-align: center;
-  border-radius: 10px;
   border: none!important;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 20px;
-  width: 240px;
-  margin: 10px 0;
+  margin: 15px 0;
   color: $yellow!important;
-
 }
