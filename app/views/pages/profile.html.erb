@@ -50,7 +50,7 @@
     <% elsif @pourcentage_of_wins > 50 %>
       <p class="p-margin-bottom"> "C'est pas si mal <%= @user.username.upcase %>, mais tu sais au fond de toi que t'es capable de mieux. Attention à ne pas basculer dans le rouge" </p>
     <% elsif @pourcentage_of_wins > 30 %>
-      <p class="p-margin-bottom"> "Ooooh minot <%= @user.username.upcase %>, il s'agirait de te réveiller !" </p>
+      <p class="p-margin-bottom"> "Ooooh minot <%= @user.username.upcase %>, il s'agirait de te réveiller, t'es capable de mieux !" </p>
     <% else %>
       <p class="p-margin-bottom"> "Aïe aïe aïe, ton bilan est catastrophique, il va falloir songer à changer de sport <%= @user.username.upcase %>" </p>
     <% end %>
@@ -65,7 +65,7 @@
         <% else %>
           <%= image_tag "bobby.png", class: "avatar-poto"%><span><%= @user1.username.upcase %></span>
         <% end %>
-        <p>73% de victoires avec <%= @user1.username.upcase %> comme collègue. On peut dire que c’est une affaire qui roule entre vous deux !</p>
+        <p>78% de victoires avec <%= @user1.username.upcase %> comme collègue. On peut dire que c’est une affaire qui roule entre vous deux !</p>
       </div>
     </div>
 
