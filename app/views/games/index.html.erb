@@ -20,28 +20,52 @@
       <% if game_players.include?(current_user) %>
         <div class="row row-game">
           <div class="col-4 col-left">
-            <% if current_user == game_players[0] || current_user == game_players[1] %>
-              <p class="player-actuel"><%= game_players[0].username.upcase %></p>
-              <p class="player-actuel"><%= game_players[1].username.upcase %></p>
-            <% else %>
-              <p class="other-player"><%= game_players[0].username.upcase %></p>
-              <p class="other-player"><%= game_players[1].username.upcase %></p>
-            <% end %>
+              <% if current_user == game_players[0] %>
+                <div class="flex-class-user">
+                  <p class="player-actuel"><%= game_players[0].username.upcase %>
+                  <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
+                </div>
+              <% else %>
+                <p class="player-actuel"><%= game_players[0].username.upcase %>
+              <% end %>
+              <% if current_user == game_players[1] %>
+                <div class="flex-class-user">
+                  <p class="player-actuel"><%= game_players[1].username.upcase %>
+                  <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
+                </div>
+              <% else %>
+                <p class="player-actuel"><%= game_players[1].username.upcase %>
+              <% end %>
+        <% else %>
+          <p class="other-player"><%= game_players[0].username.upcase %></p>
+          <p class="other-player"><%= game_players[1].username.upcase %></p>
+        <% end %>
           </div>
           <div class="col-4 score-color" style="text-align:center">
           <% if game.status == true %>
             <%= game.score_first_team %> - <%= game.score_second_team %>
-            <% else %>
+          <% else %>
             <%= link_to "SCORE ?", league_game_path(@league, game.id), class:"btn-small btn-score" %>
           <% end %>
           </div>
           <div class="col-4 col-right">
             <% if current_user == game_players[2] || current_user == game_players[3] %>
-            <div class="flex-class-user">
-              <p class="player-actuel"><%= game_players[2].username.upcase %>
-              <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
-            </div>
-              <p class="player-actuel"><%= game_players[3].username.upcase %></p>
+              <% if current_user == game_players[2] %>
+                <div class="flex-class-user">
+                  <p class="player-actuel"><%= game_players[2].username.upcase %>
+                  <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
+                </div>
+              <% else %>
+                <p class="player-actuel"><%= game_players[2].username.upcase %>
+              <% end %>
+              <% if current_user == game_players[3] %>
+                <div class="flex-class-user">
+                  <p class="player-actuel"><%= game_players[3].username.upcase %>
+                  <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
+                </div>
+              <% else %>
+                <p class="player-actuel"><%= game_players[3].username.upcase %>
+              <% end %>
             <% else %>
               <p class="other-player"><%= game_players[2].username.upcase %></p>
               <p class="other-player"><%= game_players[3].username.upcase %></p>
@@ -72,6 +96,6 @@
             <p class="other-player"><%= game_players[3].username.upcase %></p>
           </div>
         </div>
-          <% end %>
       <% end %>
+    <% end %>
 </div>
