@@ -9,3 +9,24 @@
   color: $blue;
   border: none!important;
 }
+
+.flashe {
+  animation: 7s flash 0s ease-out forwards;
+}
+
+@keyframes flash {
+
+  0% {
+    right:-100%;
+
+  }
+
+  50% {
+    right:16px;
+  }
+
+  100% {
+    right:-100%;
+  }
+
+}
