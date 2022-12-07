@@ -97,7 +97,7 @@
 
   <div class="d-none" data-profile-target="badges" style="margin-top:20px;">
     <div class="badge-div">
-      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Generation" data-bs-content="Tu as gagné une ligue avec un collègue qui a au moins 30 ans d'écart avec toi !">
+      <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Generation" data-bs-content="Tu as gagné une ligue avec un collègue qui a au moins 30 ans d'écart avec toi !">
         <% if @user.badge.generation == true %>
           <%= image_tag "badge_generation.png", class: "badge-ok"%>
         <% else %>
@@ -105,7 +105,7 @@
         <% end %>
         <p>Generation</p>
       </div>
-      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Ligue🌟" data-bs-content="Tu as gagné une ligue, c'est déjà ça minot !">
+      <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Ligue🌟" data-bs-content="Tu as gagné une ligue, c'est déjà ça minot !">
         <% if @user.badge.first_league_winner == true %>
           <%= image_tag "badge_first_league.png", class: "badge-ok"%>
         <% else %>
@@ -113,7 +113,7 @@
         <% end %>
         <p>Minot</p>
       </div>
-      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Ligue🌟🌟" data-bs-content="Tu as gagné 2 ligues, ça commence à être sérieux !">
+      <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Ligue🌟🌟" data-bs-content="Tu as gagné 2 ligues, ça commence à être sérieux !">
         <% if @user.badge.three_league_winner == true %>
           <%= image_tag "badge_three_league.png", class: "badge-ok"%>
         <% else %>
@@ -123,7 +123,7 @@
       </div>
     </div>
     <div class="badge-div" style="margin-top:30px">
-      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Ligue🌟🌟🌟" data-bs-content="Tu as gagné 3 ligues, gros respect !">
+      <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Ligue🌟🌟🌟" data-bs-content="Tu as gagné 3 ligues, gros respect !">
         <% if @user.badge.five_league_winner == true %>
           <%= image_tag "badge_five_league.png", class: "badge-ok"%>
         <% else %>
@@ -131,7 +131,7 @@
         <% end %>
         <p>Zizou</p>
       </div>
-      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Fanny" data-bs-content="Tu as gagné un math 13-0 !">
+      <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Fanny" data-bs-content="Tu as gagné un math 13-0 !">
         <% if @user.badge.first_fanny == true %>
           <%= image_tag "badge_first_fanny.png", class: "badge-ok"%>
         <% else %>
@@ -139,7 +139,7 @@
         <% end %>
         <p>Fanny</p>
       </div>
-      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Fanny Boss" data-bs-content="Tu as gagné un math 13-0 !">
+      <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Fanny Boss" data-bs-content="Tu as gagné un math 13-0 !">
         <% if @user.badge.three_fanny == true %>
           <%= image_tag "badge_five_fanny.png", class: "badge-ok"%>
         <% else %>
@@ -149,7 +149,7 @@
       </div>
     </div>
     <div class="badge-div" style="margin-top:30px">
-      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Le sang" data-bs-content="Tu es le sang de la veine mamène !">
+      <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Le sang" data-bs-content="Tu es le sang de la veine mamène !">
         <% if @user.badge.wood_ball == true %>
           <%= image_tag "badge1.png", class: "badge-ok"%>
         <% else %>
@@ -157,7 +157,7 @@
         <% end %>
         <p>Le sang</p>
       </div>
-      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Sniper" data-bs-content="Tyé un sacré tireur Manu !">
+      <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Sniper" data-bs-content="Tyé un sacré tireur Manu !">
         <% if @user.badge.silver_ball == true %>
           <%= image_tag "badge2.png", class: "badge-ok"%>
         <% else %>
@@ -165,7 +165,7 @@
         <% end %>
         <p>Sniper</p>
       </div>
-      <div class="flexy" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="click" data-bs-placement="auto" title="Bobby" data-bs-content="Bobby le pointeur :) !">
+      <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Bobby" data-bs-content="Bobby le pointeur :) !">
         <% if @user.badge.gold_ball == true %>
           <%= image_tag "badge3.png", class: "badge-ok"%>
         <% else %>
