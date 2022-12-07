@@ -14,12 +14,13 @@
   </li>
 </ul>
 
-<div class="flexy">
+<div class="flexy" style="margin-top:20px">
   <% @league.games.each do |game| %>
       <% game_players = game.teams.map { |team| team.users }.flatten %>
       <% if game_players.include?(current_user) %>
         <div class="row row-game">
           <div class="col-4 col-left">
+            <% if current_user == game_players[0] || current_user == game_players[1] %>
               <% if current_user == game_players[0] %>
                 <div class="flex-class-user">
                   <p class="player-actuel"><%= game_players[0].username.upcase %>
@@ -36,10 +37,10 @@
               <% else %>
                 <p class="player-actuel"><%= game_players[1].username.upcase %>
               <% end %>
-        <% else %>
-          <p class="other-player"><%= game_players[0].username.upcase %></p>
-          <p class="other-player"><%= game_players[1].username.upcase %></p>
-        <% end %>
+            <% else %>
+              <p class="other-player"><%= game_players[0].username.upcase %></p>
+              <p class="other-player"><%= game_players[1].username.upcase %></p>
+            <% end %>
           </div>
           <div class="col-4 score-color" style="text-align:center">
           <% if game.status == true %>
@@ -49,27 +50,27 @@
           <% end %>
           </div>
           <div class="col-4 col-right">
-            <% if current_user == game_players[2] || current_user == game_players[3] %>
-              <% if current_user == game_players[2] %>
-                <div class="flex-class-user">
-                  <p class="player-actuel"><%= game_players[2].username.upcase %>
-                  <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
-                </div>
-              <% else %>
+          <% if current_user == game_players[2] || current_user == game_players[3] %>
+            <% if current_user == game_players[2] %>
+              <div class="flex-class-user">
                 <p class="player-actuel"><%= game_players[2].username.upcase %>
-              <% end %>
-              <% if current_user == game_players[3] %>
-                <div class="flex-class-user">
-                  <p class="player-actuel"><%= game_players[3].username.upcase %>
-                  <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
-                </div>
-              <% else %>
-                <p class="player-actuel"><%= game_players[3].username.upcase %>
-              <% end %>
+                <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
+              </div>
             <% else %>
-              <p class="other-player"><%= game_players[2].username.upcase %></p>
-              <p class="other-player"><%= game_players[3].username.upcase %></p>
+              <p class="player-actuel"><%= game_players[2].username.upcase %>
             <% end %>
+            <% if current_user == game_players[3] %>
+              <div class="flex-class-user">
+                <p class="player-actuel"><%= game_players[3].username.upcase %>
+                <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
+              </div>
+            <% else %>
+              <p class="player-actuel"><%= game_players[3].username.upcase %>
+            <% end %>
+          <% else %>
+            <p class="other-player"><%= game_players[2].username.upcase %></p>
+            <p class="other-player"><%= game_players[3].username.upcase %></p>
+          <% end %>
           </div>
         </div>
       <% end %>
@@ -96,6 +97,6 @@
             <p class="other-player"><%= game_players[3].username.upcase %></p>
           </div>
         </div>
+          <% end %>
       <% end %>
-    <% end %>
 </div>
