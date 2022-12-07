@@ -21,8 +21,8 @@
         <div class="row row-game">
           <div class="col-4 col-left">
             <% if current_user == game_players[0] || current_user == game_players[1] %>
-              <p class="current-player"><%= game_players[0].username.upcase %></p>
-              <p class="current-player"><%= game_players[1].username.upcase %></p>
+              <p class="player-actuel"><%= game_players[0].username.upcase %></p>
+              <p class="player-actuel"><%= game_players[1].username.upcase %></p>
             <% else %>
               <p class="other-player"><%= game_players[0].username.upcase %></p>
               <p class="other-player"><%= game_players[1].username.upcase %></p>
@@ -37,8 +37,11 @@
           </div>
           <div class="col-4 col-right">
             <% if current_user == game_players[2] || current_user == game_players[3] %>
-              <p class="current_user"><%= game_players[2].username.upcase %></p>
-              <p class="current_user"><%= game_players[3].username.upcase %></p>
+            <div class="flex-class-user">
+              <p class="player-actuel"><%= game_players[2].username.upcase %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
+            </div>
+              <p class="player-actuel"><%= game_players[3].username.upcase %></p>
             <% else %>
               <p class="other-player"><%= game_players[2].username.upcase %></p>
               <p class="other-player"><%= game_players[3].username.upcase %></p>

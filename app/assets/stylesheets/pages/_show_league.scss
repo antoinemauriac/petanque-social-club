@@ -21,17 +21,36 @@
   margin-top: 25px;
 }
 
-// .current-player {
-//   text-shadow: $yellow 1px 0 3px;
+// .player-actuel {
+//   text-shadow: $yellow 4px 0 3px;
 // }
-.background-user {
-  background-color: rgb(218, 233, 246);
+
+.current-player td {
+  background-color: $light-blue;
 }
+
+.other-players td {
+  font-weight: 400;
+}
+
+.current-player td {
+  font-weight: 400;
+}
+
+.points-id, .diff-id, .classement-gras {
+  font-weight: 800!important;
+}
+
+// .back-grey {
+//   background-color: rgba(194, 193, 193, 0.5);
+// }
+
+
 table {
   margin-left: 5px;
   margin-right: 5px;
   color: $blue;
-  font-size: 15px;
+  font-size: 16px;
   font-style: normal!important;
 }
 
