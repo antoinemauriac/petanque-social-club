@@ -2,8 +2,8 @@ class InvitationsController < ApplicationController
   def create
     @invited = User.find(params[:invitation])
     @invitation = Invitation.new(user_id: current_user.id, friend_id: @invited.id)
-    @invitation.save
-    redirect_to accueil_path
+    @invitation.save!
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy

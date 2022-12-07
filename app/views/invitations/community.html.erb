@@ -1,34 +1,37 @@
-<h1>coucou de la cummutiyi</h1>
-<p>Invite un ami :</p>
 
-<%= form_with url: "/community", method: :get do %>
-  <%= text_field_tag :query,
-  params[:query],
-  placeholder: "rechercher votre collègue"%>
-  <button class="btn-medium search-btn" type="submit" label="search">Search</button>
-  <% end %>
-
-
-  <% @users.each do |user| %>
-    <div class="user-card">
-      <div class="pics">
-          <% if user.photo.attached? %>
-            <%= cl_image_tag user.photo.key, class: "avatar" %>
-          <% else %>
-            <%= image_tag "bobby.png", class: "avatar" %>
-          <% end %>
-        </div>
-        <div class="card-info">
-        <div class="card-username">
-      <%= user.username %>
-      </div>
-
-
-      <div class="add-btn">
-      <%= form_with model: [@invitation] do |form| %>
-        <%= form.button "add", name: "invitation", value: user.id %>
-      <% end %>
-      </div>
-      </div>
+<div class="flexy liste-search">
+  <%= form_with url: "/community", method: :get do %>
+    <%= text_field_tag :query, params[:query], placeholder: "Recherche un collègue !", class: "searchbar" %>
+    <div class="flexy">
+    <button class="btn-search-user" type="submit" label="search">RECHERCHER</button>
     </div>
   <% end %>
+
+  <% @users = @users.reject { |user| user == current_user } %>
+  <% current_user.friends.each do |already_friend| %>
+  <% @users = @users.reject { |user| user == already_friend } %>
+  <% end %>
+
+    <% @users.each do |user| %>
+      <div class="user-card">
+        <div class="pics">
+            <% if user.photo.attached? %>
+              <%= cl_image_tag user.photo.key, class: "avatar" %>
+            <% else %>
+              <%= image_tag "bobby.png", class: "avatar" %>
+            <% end %>
+        </div>
+
+        <div class="card-info">
+          <div class="card-username">
+            <%= user.username.upcase %>
+          </div>
+          <div class="add-btn">
+          <%= form_with model: [@invitation] do |form| %>
+            <%= form.button "+", name: "invitation", value: user.id %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>

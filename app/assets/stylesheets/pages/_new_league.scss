@@ -12,6 +12,7 @@ justify-content: space-between;
   text-align: center;
   justify-content: space-between;
   border-radius: 5px;
+  width: 190px;
 }
 
 .avatar-selection {
@@ -60,14 +61,12 @@ justify-content: space-between;
 
 .btn-create-team {
   align-items: center;
-  color: $yellow;
   background-color: $blue!important;
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
   border-radius: 10px;
   color: $yellow!important;
-  font-size: 14px;
-  width: 240px;
+  width: 270px;
   margin: 10px 0;
 
   a {

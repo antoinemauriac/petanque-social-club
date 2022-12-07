@@ -2,7 +2,6 @@
   justify-content: space-between;
   background: $blue;
   color: $blue;
-
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -33,6 +32,14 @@
   font-weight: 800!important;
   background-color: $yellow!important;
 }
+
+// .nav-link {
+//   background-color: $white!important;
+// }
+
+// .nav-link.active{
+//   background-color: $yellow!important;
+// }
 
 .nav-item-navabar a {
   color: $yellow!important;
