@@ -43,35 +43,33 @@
       <% teams_sorted = @league.teams.sort_by { |team| -(team.points_for - team.points_against) && -team.number_of_wins }  %>
       <table>
         <tr>
-          <th style="padding-right:30px;"></th><th>CLASSEMENT</th><th>PTS</th><th>J</th><th>G/P</th><th>+/-</th><th>DIF</th>
+          <th style="padding-right:30px;"></th><th>CLASSEMENT</th><th>PTS</th><th>J</th><th>G/P</th><th>DIF</th>
         </tr>
       <% teams_sorted.each_with_index do |team, index| %>
           <% if team.users.include?(current_user) %>
-            <tr class="background-user">
-              <td><%= index + 1 %></td>
-              <td><%= team.users.first.username.upcase %><br><%= team.users.last.username.upcase %><br></td>
-              <td><%= team.number_of_wins %></td>
+            <tr class="current-player">
+              <td class="classement-gras"><%= index + 1 %></td>
+              <td class="points-id back-grey"><%= team.users.first.username.upcase %><br><%= team.users.last.username.upcase %><br></td>
+              <td class="points-id"><%= team.number_of_wins %></td>
               <td><%= team.games_played %></td>
               <td><%= team.number_of_wins %>/<%= (team.games_played - team.number_of_wins) %></td>
-              <td><%= team.points_for %>/<%= team.points_against %></td>
               <% if (team.points_for - team.points_against) > 0 %>
-              <td>+<%= (team.points_for - team.points_against) %></td>
+              <td class="diff-id">+<%= (team.points_for - team.points_against) %></td>
               <% else %>
-              <td><%= (team.points_for - team.points_against) %></td>
+              <td class="diff-id"><%= (team.points_for - team.points_against) %></td>
               <% end %>
             </tr>
             <% else %>
-            <tr>
-              <td><%= index + 1 %></td>
+            <tr class="other-players">
+              <td class="classement-gras"><%= index + 1 %></td>
               <td><%= team.users.first.username.upcase %><br><%= team.users.last.username.upcase %><br></td>
-              <td><%= team.number_of_wins %></td>
+              <td class="points-id back-grey"><%= team.number_of_wins %></td>
               <td><%= team.games_played %></td>
               <td><%= team.number_of_wins %>/<%= (team.games_played - team.number_of_wins) %></td>
-              <td><%= team.points_for %>/<%= team.points_against %></td>
               <% if (team.points_for - team.points_against) > 0 %>
-              <td>+<%= (team.points_for - team.points_against) %></td>
+              <td class="diff-id">+<%= (team.points_for - team.points_against) %></td>
               <% else %>
-              <td><%= (team.points_for - team.points_against) %></td>
+              <td class="diff-id"><%= (team.points_for - team.points_against) %></td>
               <% end %>
             </tr>
           <% end %>
