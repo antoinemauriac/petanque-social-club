@@ -23,9 +23,7 @@ legend ~ div.form-check:first-of-type {
 
 
 #game_score_first_team {
-  border: 0px;
-  border-radius: 4px;
-  border: solid $blue;
+  border: 2px solid $blue!important;
   border-radius: 4px;
   padding: 6px !important;
   margin: 20px !important;
@@ -35,18 +33,16 @@ legend ~ div.form-check:first-of-type {
   // align-self: flex-start;
 }
 
-#game_score_second_team:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
+// #game_score_second_team:hover {
+//   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+// }
 
-#game_score_second_team:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
+// #game_score_second_team:hover {
+//   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+// }
 
 #game_score_second_team {
-  border: 0px;
-  border-radius: 4px;
-  border: solid $blue;
+  border: 2px solid $blue!important;
   border-radius: 4px;
   padding: 6px !important;
   margin: 20px !important;
@@ -56,11 +52,6 @@ legend ~ div.form-check:first-of-type {
   // align-self: flex-end;
 }
 
-
-
-#league_name:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
 
 // textarea:focus, input:focus{
 //   outline: none;
