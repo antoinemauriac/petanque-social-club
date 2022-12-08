@@ -5,9 +5,9 @@
       <% @team1.users.each do |user| %>
       <span class ="message-avatar-date score-avatar">
         <% if user.photo.attached? %>
-          <%= cl_image_tag user.photo.key, class: "avatar-poto" %>
+          <%= cl_image_tag user.photo.key, class: "avatar-poto-bis" %>
         <% else %>
-          <%= image_tag "bobby.png", class: "avatar-poto"%>
+          <%= image_tag "bobby.png", class: "avatar-poto-bis"%>
         <% end %>
       </span>
       <span class="score-text"><%= user.username.upcase %></span>
@@ -21,9 +21,9 @@
     <% @team2.users.each do |user| %>
         <span class="message-avatar-date-reverse score-avatar">
             <% if user.photo.attached? %>
-          <%= cl_image_tag user.photo.key, class: "avatar-poto" %>
+          <%= cl_image_tag user.photo.key, class: "avatar-poto-bis" %>
           <% else %>
-            <%= image_tag "bobby.png", class: "avatar-poto"%>
+            <%= image_tag "bobby.png", class: "avatar-poto-bis"%>
           <% end %>
         </span>
         <span class="score-text"><%= user.username.upcase %></span>
