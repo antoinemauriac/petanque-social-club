@@ -52,7 +52,7 @@ class GamesController < ApplicationController
     @number_of_games_finished = @league.games.select { |game| game.status == true }.count
     @number_total_of_games = @league.games.count
     if @number_of_games_finished == @number_total_of_games
-      @league.league_winner = @league.teams.sort_by { |team| -(team.points_for - team.points_against) && -team.number_of_wins }.first.id
+      @league.league_winner = @league.teams.sort_by { |team| [-team.number_of_wins, -(team.points_for - team.points_against)] }.first.id
       @league.status = true
       @league.save
     end
