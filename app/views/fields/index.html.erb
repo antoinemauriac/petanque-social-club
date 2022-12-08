@@ -9,6 +9,14 @@
         </li>
       </ul>
 
+      <div style="height: 100vh;"
+        data-controller="map"
+        data-terrain-target="cartes"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        class= "map-field d-none"
+        id= "map">
+      </div>
 
       <div class="card-product" data-terrain-target="fields">
             <% @fields.each do | field | %>
@@ -28,12 +36,4 @@
             <% end %>
       </div>
 
-      <div style="height: 100vh;"
-        data-controller="map"
-        data-terrain-target="cartes"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-        class= "map-field d-none"
-        id= "map">
-      </div>
 </div>
