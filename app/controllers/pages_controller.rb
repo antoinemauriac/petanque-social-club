@@ -33,7 +33,7 @@ class PagesController < ApplicationController
     @finished_leagues = @leagues.select { |league| league.status == true }
     @number_of_leagues_wins = @finished_leagues.map { |league| league.league_winner }.map { |id| Team.find(id) }.map { |team| team.users }.flatten.select { |u| u == current_user }.count
 
-    @user1 = User.where(username: "Jul 🙌").first
+    @user1 = User.where(username: "La Machine").first
     @user2 = User.where(username: "Le sécateur").first
 
   end
