@@ -7,7 +7,7 @@
         <% if user.photo.attached? %>
           <%= cl_image_tag user.photo.key, class: "avatar-poto" %>
         <% else %>
-          <%= image_tag "bobby.png", class: "avatar-poto" %>
+          <%= image_tag "bobby.png", class: "avatar-poto"%>
         <% end %>
       </span>
       <span class="score-text"><%= user.username.upcase %></span>

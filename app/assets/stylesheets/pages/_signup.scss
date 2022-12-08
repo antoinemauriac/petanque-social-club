@@ -1,0 +1,20 @@
+.new_user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.user_remember_me {
+  display: none!important;
+}
+
+.btn-login {
+  margin-bottom: 20px;
+}
+
+.flexy-signup {
+  max-width: 300px;
+  margin: 0 auto;
+}
