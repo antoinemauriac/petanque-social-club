@@ -1,24 +1,16 @@
 
 <div data-controller="terrain">
       <ul class="nav nav-pills nav-fill">
-        <li class="nav-item active" data-action="click->terrain#showcartes">
-          <a class="nav-link" data-terrain-target="carte" href="#">MAP</a>
+        <li class="nav-item active" data-action="click->terrain#showfields" data-terrain-target="field">
+          <a class="nav-link" href="#">FIELDS</a>
         </li>
-        <li class="nav-item" data-action="click->terrain#showfields">
-          <a class="nav-link" data-terrain-target="field" href="#">FIELDS</a>
+        <li class="nav-item" data-action="click->terrain#showcartes" data-terrain-target="carte">
+          <a class="nav-link" href="#">MAP</a>
         </li>
       </ul>
 
-      <div style="height: 100vh;"
-        data-controller="map"
-        data-terrain-target="cartes"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-        class= "map-field"
-        id= "map">
-      </div>
 
-      <div class="card-product d-none" data-terrain-target="fields">
+      <div class="card-product" data-terrain-target="fields">
             <% @fields.each do | field | %>
                 <div class="main-card">
                   <div class="main-card-img">
@@ -36,4 +28,12 @@
             <% end %>
       </div>
 
+      <div style="height: 100vh;"
+        data-controller="map"
+        data-terrain-target="cartes"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        class= "map-field d-none"
+        id= "map">
+      </div>
 </div>

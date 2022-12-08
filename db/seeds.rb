@@ -668,6 +668,16 @@ puts "creating Matchs & Scores"
 
     puts "creating Fields"
 
+    field19 = Field.create(name: "U Corsinu", address: "60 rue de l'archipel, 20000 Ajaccio", rating: 2)
+    photo19 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain4_kafmns.jpg')
+    field19.photos.attach(io: photo19, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+    field19.save
+
+    field14 = Field.create(name: "La boule du Lac", address: "13 Av. du Lac Marion, 64200 Biarritz", rating: 2)
+    photo14 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain6_eyyio1.jpg')
+    field14.photos.attach(io: photo14, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+    field14.save
+
     field1 = Field.create(name: "Le Robert Shuman", address: "Av. Robert Schuman, 13002 Marseille", rating: 3)
     photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338694/development/p%C3%A9tanque-social-club/terrains/terrain2_ei8q5c.jpg')
     field1.photos.attach(io: photo1, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
@@ -683,20 +693,7 @@ puts "creating Matchs & Scores"
     field3.photos.attach(io: photo3, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
     field3.save
 
-    field6 = Field.create(name: "Du luxe en boule", address: "Parc du 26ème Centenaire, 13010 Marseille", rating: 2)
-    photo6 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain5_orh1v2.jpg')
-    field6.photos.attach(io: photo6, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field6.save
 
-    field7 = Field.create(name: "Chez Dédé", address: "Av. de la Pointe Rouge, 13008 Marseille", rating: 4)
-    photo7 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain8_jbeagl.jpg')
-    field7.photos.attach(io: photo7, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field7.save
-
-    field14 = Field.create(name: "La boule du Lac", address: "13 Av. du Lac Marion, 64200 Biarritz", rating: 2)
-    photo14 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain6_eyyio1.jpg')
-    field14.photos.attach(io: photo14, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field14.save
 
     field15 = Field.create(name: "Le terrain du quai", address: "13 Quai des Belges, 67000 Strasbourg", rating: 2)
     photo15 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338694/development/p%C3%A9tanque-social-club/terrains/terrain9_o9mgkz.jpg')
@@ -713,11 +710,16 @@ puts "creating Matchs & Scores"
     field18.photos.attach(io: photo18, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
     field18.save
 
-    field19 = Field.create(name: "U Corsinu", address: "60 rue de l'archipel, 20000 Ajaccio", rating: 2)
-    photo19 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain4_kafmns.jpg')
-    field19.photos.attach(io: photo19, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field19.save
 
+    field6 = Field.create(name: "Du luxe en boule", address: "Parc du 26ème Centenaire, 13010 Marseille", rating: 2)
+    photo6 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain5_orh1v2.jpg')
+    field6.photos.attach(io: photo6, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+    field6.save
+
+    field7 = Field.create(name: "Chez Dédé", address: "Av. de la Pointe Rouge, 13008 Marseille", rating: 4)
+    photo7 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain8_jbeagl.jpg')
+    field7.photos.attach(io: photo7, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+    field7.save
     # field8 = Field.create(name: "luxe en boulle", address: "1 Av. Beau Pin, 13008 Marseille", rating: 2)
     # photo8 = File.open('app/assets/images/terrain1.jpeg')
     # field8.photos.attach(io: photo8, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
