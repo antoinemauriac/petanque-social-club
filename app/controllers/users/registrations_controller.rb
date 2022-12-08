@@ -7,11 +7,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   # def new
   #   super
+  #   raise
   # end
 
-  def create
-  raise
-  end
+  # def create
+  #   super
+  #   raise
+  #   Badge.create!(user: User.last)
+  # end
+
+
   # POST /resource
   # def create
   #   super

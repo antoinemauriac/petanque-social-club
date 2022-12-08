@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_one_attached :photo
   has_one :badge
+  after_commit :add_badge
 
   include PgSearch::Model
   pg_search_scope :global_search,
@@ -43,5 +44,9 @@ class User < ApplicationRecord
 
   def send_invitation(user)
     invitations.create(friend_id: user.id)
+  end
+
+  def add_badge
+    Badge.create!(user: self)
   end
 end

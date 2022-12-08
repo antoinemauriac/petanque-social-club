@@ -51,6 +51,8 @@
       <p class="p-margin-bottom"> "C'est pas si mal <%= @user.username.upcase %>, mais tu sais au fond de toi que t'es capable de mieux. Attention à ne pas basculer dans le rouge" </p>
     <% elsif @pourcentage_of_wins > 30 %>
       <p class="p-margin-bottom"> "Ooooh minot <%= @user.username.upcase %>, il s'agirait de te réveiller, t'es capable de mieux !" </p>
+    <% elsif @pourcentage_of_wins = 0 %>
+      <p class="p-margin-bottom"> "C'est le moment de nous montrer ce que tu as dans le vente <%= @user.username.upcase %> </p>
     <% else %>
       <p class="p-margin-bottom"> "Aïe aïe aïe, ton bilan est catastrophique, il va falloir songer à changer de sport <%= @user.username.upcase %>" </p>
     <% end %>
@@ -139,7 +141,7 @@
         <% end %>
         <p>SNIPER</p>
       </div>
-      <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Fanny" data-bs-content="Tu as gagné un math 13-0 !">
+      <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Fanny" data-bs-content="Tu as gagné un match 13-0 !">
         <% if @user.badge.first_fanny == true %>
           <%= image_tag "badge_first_fanny.png", class: "badge-ok"%>
         <% else %>
@@ -165,7 +167,7 @@
         <% end %>
         <p>BOBBY</p>
       </div>
-      <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Fanny Boss" data-bs-content="Tu as gagné un math 13-0 !">
+      <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Fanny Boss" data-bs-content="Tu as gagné 10 matchs 13-0 !">
         <% if @user.badge.three_fanny == true %>
           <%= image_tag "badge_five_fanny.png", class: "badge-ok"%>
         <% else %>

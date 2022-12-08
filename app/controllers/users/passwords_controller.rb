@@ -6,9 +6,10 @@ class Users::PasswordsController < Devise::PasswordsController
   #   super
   # end
 
-  # POST /resource/password
+  # # POST /resource/password
   # def create
   #   super
+  #   raise
   # end
 
   # GET /resource/password/edit?reset_password_token=abcdef
