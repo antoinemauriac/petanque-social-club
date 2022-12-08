@@ -20,6 +20,7 @@ class PagesController < ApplicationController
       @pourcentage_of_wins = 0
       @pourcentage_of_loses = 0
     end
+    raise
 
     @leagues = []
     League.all.each do |league|
