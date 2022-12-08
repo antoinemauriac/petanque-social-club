@@ -49,6 +49,8 @@
       <p class="p-margin-bottom"> "Belles perf' <%= @user.username.upcase %>, tu fais partie des tout meilleurs" </p>
     <% elsif @pourcentage_of_wins > 50 %>
       <p class="p-margin-bottom"> "C'est pas si mal <%= @user.username.upcase %>, mais tu sais au fond de toi que t'es capable de mieux. Attention à ne pas basculer dans le rouge" </p>
+    <% elsif @pourcentage_of_wins = 50 %>
+      <p class="p-margin-bottom"> "Ya du mieux, mais te repose pas sur tes acquis <%= @user.username.upcase %>!" </p>
     <% elsif @pourcentage_of_wins > 30 %>
       <p class="p-margin-bottom"> "Ooooh minot <%= @user.username.upcase %>, il s'agirait de te réveiller, t'es capable de mieux !" </p>
     <% elsif @pourcentage_of_wins = 0 %>

@@ -23,8 +23,8 @@ League.destroy_all
 
 puts "creating Leagues"
 
-  league1 = League.create(name: "Ligue Des Copains")
-  league2 = League.create(name: "Sporting Club Familial")
+  league1 = League.create(name: "Sporting Club Familial")
+  league2 = League.create(name: "Ligue Des Copains")
 
 puts "creating Users"
 
@@ -38,7 +38,7 @@ puts "creating Users"
   user8 = User.create(email: "trotro@gmail.com", username: "Lucienne", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user9 = User.create(email: "tratra@gmail.com", username: "Léo le minot", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user10 = User.create(email: "trytry@gmail.com", username: "Dwight S", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  user11 = User.create(email: "tretre@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user11 = User.create(email: "tretre@gmail.com", username: "Hasnia", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user12 = User.create(email: "blabla@gmail.com", username: "Lilalou", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user13 = User.create(email: "lyly@gmail.com", username: "Canto", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user14 = User.create(email: "lrolro@gmail.com", username: "Jul 🙌", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
@@ -47,7 +47,7 @@ puts "creating Users"
   user17 = User.create(email: "lrelre@gmail.com", username: "Mamad", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user18 = User.create(email: "tlatla@gmail.com", username: "Habibi", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user19 = User.create(email: "rere@gmail.com", username: "Habiba", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
-  user20 = User.create(email: "lala@gmail.com", username: "Hasnia", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user20 = User.create(email: "lala@gmail.com", username: "Inti la queen", password: "123456", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
 
 
   photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar17_qtsqti.png')
