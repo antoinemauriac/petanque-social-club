@@ -9,8 +9,8 @@ require "open-uri"
 
 puts "cleaning DB"
 
-Invitation.destroy_all
 Badge.destroy_all
+Invitation.destroy_all
 SelectedUser.destroy_all
 Field.destroy_all
 Message.destroy_all
@@ -94,26 +94,26 @@ puts "creating Users"
     user19.photo.attach(io: photo19, filename: 'avatar19.png', content_type: 'image/png')
     user20.photo.attach(io: photo20, filename: 'avatar20.png', content_type: 'image/png')
 
-    Badge.create!(user: user1)
-    Badge.create!(user: user2)
-    Badge.create!(user: user3)
-    Badge.create!(user: user4)
-    Badge.create!(user: user5)
-    Badge.create!(user: user6)
-    Badge.create!(user: user7)
-    Badge.create!(user: user8)
-    Badge.create!(user: user9)
-    Badge.create!(user: user10)
-    Badge.create!(user: user11)
-    Badge.create!(user: user12)
-    Badge.create!(user: user13)
-    Badge.create!(user: user14)
-    Badge.create!(user: user15)
-    Badge.create!(user: user16)
-    Badge.create!(user: user17)
-    Badge.create!(user: user18)
-    Badge.create!(user: user19)
-    Badge.create!(user: user20)
+    # Badge.create!(user: user1)
+    # Badge.create!(user: user2)
+    # Badge.create!(user: user3)
+    # Badge.create!(user: user4)
+    # Badge.create!(user: user5)
+    # Badge.create!(user: user6)
+    # Badge.create!(user: user7)
+    # Badge.create!(user: user8)
+    # Badge.create!(user: user9)
+    # Badge.create!(user: user10)
+    # Badge.create!(user: user11)
+    # Badge.create!(user: user12)
+    # Badge.create!(user: user13)
+    # Badge.create!(user: user14)
+    # Badge.create!(user: user15)
+    # Badge.create!(user: user16)
+    # Badge.create!(user: user17)
+    # Badge.create!(user: user18)
+    # Badge.create!(user: user19)
+    # Badge.create!(user: user20)
 
 
 

@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_one_attached :photo
   has_one :badge
-  after_commit :add_badge
+  after_create :add_badge
 
   include PgSearch::Model
   pg_search_scope :global_search,
