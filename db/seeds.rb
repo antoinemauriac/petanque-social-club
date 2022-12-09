@@ -30,7 +30,7 @@ puts "creating Users"
 
   user1 = User.create(email: "titi@gmail.com", username: "Dewey", password: "123123", date_of_birth: "1930-01-01")
   user2 = User.create(email: "toto@gmail.com", username: "Uncle Moh", password: "123123", date_of_birth: "2000-01-01")
-  user3 = User.create(email: "tata@gmail.com", username: "Tata Léa", password: "123123", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
+  user3 = User.create(email: "tata@gmail.com", username: "Josiane", password: "123123", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user4 = User.create(email: "bibi@gmail.com", username: "Maaaarc", password: "123123", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user5 = User.create(email: "tutu@gmail.com", username: "Cathydu13", password: "123123", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
   user6 = User.create(email: "tete@gmail.com", username: "Patoche", password: "123123", date_of_birth: Faker::Date.between(from: "1930-01-01", to: "2015-01-01"))
