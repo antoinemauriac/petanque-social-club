@@ -32,3 +32,19 @@ html, body {
   padding: 0px;
   // padding-bottom: 50px;
 }
+
+
+.test-container {
+  max-width: 450px;
+  margin: auto auto;
+  min-height: 100vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.container-background {
+  background-color: aqua;
+}
+
+.nav-link-login {
+  color: $yellow!important;
+}

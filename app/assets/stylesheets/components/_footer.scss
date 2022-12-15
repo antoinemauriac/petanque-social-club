@@ -33,7 +33,7 @@
   min-height:11vh;
   margin: 0 auto;
   padding: 20px;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   display: flex;
   width:100%;
@@ -43,6 +43,7 @@
   align-items: center;
   justify-content: center;
   background-color: $blue;
+  max-width: 450px;
 }
 
 .menu__item {

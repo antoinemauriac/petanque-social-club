@@ -1,8 +1,16 @@
 .container-new {
   text-align: center;
   max-width: 400px;
+  margin: 0 auto;
 }
 
-.team-selection {
-    color: red!important;
+
+  .selection select, option {
+    font-size: 16px;
+  }
+
+  .each-team h3 {
+    font-size: 20px;
+    color: $blue;
+    font-style: normal;
   }

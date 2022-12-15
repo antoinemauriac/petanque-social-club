@@ -13,11 +13,10 @@
       <% x.times do %>
         <% i += 1 %>
         <div class="each-team">
-          <%= "Doublette n°#{i}" %>
+          <h3><%= "Doublette n°#{i}" %></h3>
           <div class="selection">
             <%= f.collection_select "team#{i}user1", all_username, :id, :username, class: "team-selection" %>
             <%= f.collection_select "team#{i}user2", all_username, :id, :username, class: "team-selection" %>
-            <%# <%= f.collection_select "team#{i}user2", all_username, :id, :username, {prompt: "choose a player"} %>
           </div>
         </div>
       <% end %>
