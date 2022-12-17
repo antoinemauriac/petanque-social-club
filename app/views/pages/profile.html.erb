@@ -24,7 +24,7 @@
     <% else %>
       <%= image_tag "bobby.png", class: "avatar-poto"%>
     <% end %>
-    <h3>TOTAL MATCHS : <%= @number_of_games_played %></h3>
+    <h3>TOTAL MATCHS : <%= @user.number_of_games_played %></h3>
     <div class="victoires-defaites">
       <div>
         <p class="p-without-margin">VICTOIRES : <%= @number_of_wins %></p>
@@ -35,7 +35,6 @@
         <p class="p-without-margin"><%= @pourcentage_of_loses %>%</p>
       </div>
     </div>
-      <%# <%= image_tag "pourcentage.png", alt: "pourcentage", class: "barre-pourcentage" %>
 
       <div class="progress-container">
         <div style="width:<%= @pourcentage_of_wins %>%" class="green-bar"></div>

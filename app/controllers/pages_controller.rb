@@ -7,9 +7,9 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
 
-    @number_of_games_played = @user.teams.map { |team| team.games_played }.flatten.sum
+    # @number_of_games_played = @user.teams.map { |team| team.games_played }.flatten.sum
     @number_of_wins = @user.teams.map { |team| team.number_of_wins }.sum
-    @number_of_loses = (@number_of_games_played - @number_of_wins)
+    @number_of_loses = (@user.number_of_games_played - @number_of_wins)
     @number_of_points_for = @user.teams.map { |team| team.points_for }.sum
     @number_of_points_against = @user.teams.map { |team| team.points_against }.sum
 
