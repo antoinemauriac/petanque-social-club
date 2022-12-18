@@ -14,30 +14,13 @@ ul, ol {
   align-items: center;
 }
 
-// html, body {
-//   height: 100vh;
-//   min-height: 100%;
-//   // max-width: 1200vw;
-// }
-
-html, body {
-  height: 100%;
-  min-height: 100%;
-
-}
 .content {
-  min-height: 80%;
-}
-.content-inside {
-  padding: 0px;
-  // padding-bottom: 50px;
+  min-height: 80vh;
 }
 
-
-.test-container {
+.container-desktop {
   max-width: 450px;
   margin: auto auto;
-  min-height: 100vh;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 

@@ -29,7 +29,6 @@ class LeaguesController < ApplicationController
   end
 
   def create
-
     @league = League.create!(league_params)
     @selected_users = params[:user]
     @selected_friends = []
@@ -67,15 +66,6 @@ class LeaguesController < ApplicationController
         redirect_to new_league_team_user_path(@league)
       end
   end
-
-  # def edit
-  #   @league = League.find(params[:id])
-  # end
-
-  # def update
-  #  @league = League.find(params[:id])
-  #  @league.update(league_params)
-  # end
 
   private
 

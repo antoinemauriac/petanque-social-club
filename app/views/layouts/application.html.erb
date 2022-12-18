@@ -36,16 +36,13 @@
   </head>
 
   <body>
-    <div class="test-container">
+    <div class="container-desktop">
       <%= render "shared/navbar" %>
       <%= render "shared/flashes" %>
       <div class="content">
-        <div class="content-inside">
-      <%= yield %>
-        </div>
+        <%= yield %>
       </div>
       <%= render "shared/footer" %>
     </div>
   </body>
-
 </html>

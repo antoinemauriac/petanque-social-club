@@ -14,7 +14,7 @@ class PagesController < ApplicationController
     @number_of_points_against = @user.teams.map { |team| team.points_against }.sum
 
     if @number_of_wins > 0
-      @pourcentage_of_wins = ((@number_of_wins.to_f / @number_of_games_played).round(2) * 100).to_i
+      @pourcentage_of_wins = ((@number_of_wins.to_f / @user.number_of_games_played).round(2) * 100).to_i
       @pourcentage_of_loses = 100 - @pourcentage_of_wins
     else
       @pourcentage_of_wins = 0
