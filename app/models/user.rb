@@ -55,4 +55,5 @@ class User < ApplicationRecord
   def number_of_games_played
     self.teams.map { |team| team.games_played }.flatten.sum
   end
+
 end

@@ -1,2 +1,38 @@
-<h1>Games#edit</h1>
-<p>Find me in app/views/games/edit.html.erb</p>
+
+<div class="form-wrapper flexy">
+  <%= form_with model: @game do |form| %>
+    <div class="team-display first-team">
+      <% @team1.users.each do |user| %>
+      <span class ="message-avatar-date score-avatar">
+        <% if user.photo.attached? %>
+          <%= cl_image_tag user.photo.key, class: "avatar-poto-bis" %>
+        <% else %>
+          <%= image_tag "bobby.png", class: "avatar-poto-bis"%>
+        <% end %>
+      </span>
+      <span class="score-text"><%= user.username.upcase %></span>
+      <br>
+      <% end %>
+    </div>
+
+  <%= form.text_area :score_first_team, :html => { :class => 'all-forms' } %>
+
+    <div class="team-display second-team">
+    <% @team2.users.each do |user| %>
+        <span class="message-avatar-date-reverse score-avatar">
+            <% if user.photo.attached? %>
+          <%= cl_image_tag user.photo.key, class: "avatar-poto-bis" %>
+          <% else %>
+            <%= image_tag "bobby.png", class: "avatar-poto-bis"%>
+          <% end %>
+        </span>
+        <span class="score-text"><%= user.username.upcase %></span>
+        <br>
+      <% end %>
+    </div>
+
+  <%= form.text_area :score_second_team, class: 'all-forms'  %>
+
+  <%= form.submit "VALIDER", class: "btn btn-score btn-small" %>
+  <% end %>
+</div>

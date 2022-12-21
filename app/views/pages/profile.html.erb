@@ -17,85 +17,91 @@
 
 
 
+
   <div class="stats" data-profile-target="stats">
-    <h3>LE BILAN</h3>
-    <% if current_user.photo.attached? %>
-       <%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
+    <% if @user.number_of_games_played == 0 %>
+      <div class="container" style="text-align:center;margin-top:50px">
+        <h3>Joue des matchs et reviens voir tes stats !</h3>
+      </div>
     <% else %>
-      <%= image_tag "bobby.png", class: "avatar-poto"%>
+      <h3>LE BILAN</h3>
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
+      <% else %>
+        <%= image_tag "bobby.png", class: "avatar-poto"%>
+      <% end %>
+      <h3>TOTAL MATCHS : <%= @user.number_of_games_played %></h3>
+      <div class="victoires-defaites">
+        <div>
+          <p class="p-without-margin">VICTOIRES : <%= @number_of_wins %></p>
+          <p class="p-without-margin"><%= @pourcentage_of_wins %>%</p>
+        </div>
+        <div>
+          <p class="p-without-margin">DEFAITES : <%= @number_of_loses %></p>
+          <p class="p-without-margin"><%= @pourcentage_of_loses %>%</p>
+        </div>
+      </div>
+
+        <div class="progress-container">
+          <div style="width:<%= @pourcentage_of_wins %>%" class="green-bar"></div>
+          <div style="width:<%= @pourcentage_of_loses %>%" class="red-bar"></div>
+        </div>
+
+      <p style="margin-top:20px;">Message de la direction : </p>
+      <% if @pourcentage_of_wins > 90 %>
+        <p class="p-margin-bottom"> "Alors là, chapeau <%= @user.username.upcase %>, on a rarement vu un bouliste de ta trempe"</p>
+      <% elsif @pourcentage_of_wins > 70 %>
+        <p class="p-margin-bottom"> "Belles perf' <%= @user.username.upcase %>, tu fais partie des tout meilleurs" </p>
+      <% elsif @pourcentage_of_wins > 50 %>
+        <p class="p-margin-bottom"> "C'est pas si mal <%= @user.username.upcase %>, mais tu sais au fond de toi que t'es capable de mieux. Attention à ne pas basculer dans le rouge" </p>
+      <% elsif @pourcentage_of_wins == 50 %>
+        <p class="p-margin-bottom"> "Ya du mieux, mais te repose pas sur tes acquis <%= @user.username.upcase %>!" </p>
+      <% elsif @pourcentage_of_wins > 30 %>
+        <p class="p-margin-bottom"> "Ooooh minot <%= @user.username.upcase %>, il s'agirait de te réveiller, t'es capable de mieux !" </p>
+      <% elsif @pourcentage_of_wins == 0 %>
+        <p class="p-margin-bottom"> "C'est le moment de nous montrer ce que tu as dans le vente <%= @user.username.upcase %> </p>
+      <% else %>
+        <p class="p-margin-bottom"> "Aïe aïe aïe, ton bilan est catastrophique, il va falloir songer à changer de sport <%= @user.username.upcase %>" </p>
+      <% end %>
+
+
+      <h3 class="bar-profile">CONSEIL DE CLASSE</h3>
+      <div class="flexy">
+        <div class="card-player">
+          <h4>C'est le sang !</h4>
+          <% if @best_teammate.photo.attached? %>
+            <%= cl_image_tag @best_teammate.photo.key, class: "avatar-poto"%><span><%= @best_teammate.username.upcase %></span>
+          <% else %>
+            <%= image_tag "bobby.png", class: "avatar-poto"%><span><%= @best_teammate.username.upcase %></span>
+          <% end %>
+          <p><%=@perc_of_wins%>% de victoires avec <%= @best_teammate.username.upcase %> comme collègue. On peut dire que c’est une affaire qui roule entre vous deux !</p>
+        </div>
+      </div>
+      <div class="flexy">
+        <div class="card-player">
+          <h4>Oh misère...</h4>
+          <% if @worst_teammate.photo.attached? %>
+          <%= cl_image_tag @worst_teammate.photo.key, class: "avatar-poto"%><span><%= @worst_teammate.username.upcase %></span>
+          <% else %>
+          <%= image_tag "bobby.png", class: "avatar-poto"%><span><%= @worst_teammate.username.upcase %></span>
+          <% end %>
+          <p><%=@perc_of_loses%>% de défaites avec <%= @worst_teammate.username.upcase %> comme collègue. Il serait temps de se rendre à l’évidence....</p>
+        </div>
+      </div>
+
+      <h3 class="bar-profile">ENCORE DES STATS</h3>
+      <div style="text-align:left;">
+        <p>Nombre de points marqués : <%= @number_of_points_for %></p>
+        <p>Nombre de points encaissés : <%= @number_of_points_against %></p>
+          <% if (@number_of_points_for - @number_of_points_against) > 0 %>
+            <p>Différence de buts : + <%= @number_of_points_for - @number_of_points_against %></p>
+          <% else %>
+            <p>Différence de buts : <%= (@number_of_points_for - @number_of_points_against) %></p>
+          <% end %>
+        <p>Nombre de ligues jouées : <%= @number_of_leagues_played %></p>
+        <p>Nombre de ligues gagnées : <%= @number_of_leagues_wins %></p>
+      </div>
     <% end %>
-    <h3>TOTAL MATCHS : <%= @user.number_of_games_played %></h3>
-    <div class="victoires-defaites">
-      <div>
-        <p class="p-without-margin">VICTOIRES : <%= @number_of_wins %></p>
-        <p class="p-without-margin"><%= @pourcentage_of_wins %>%</p>
-      </div>
-      <div>
-        <p class="p-without-margin">DEFAITES : <%= @number_of_loses %></p>
-        <p class="p-without-margin"><%= @pourcentage_of_loses %>%</p>
-      </div>
-    </div>
-
-      <div class="progress-container">
-        <div style="width:<%= @pourcentage_of_wins %>%" class="green-bar"></div>
-        <div style="width:<%= @pourcentage_of_loses %>%" class="red-bar"></div>
-      </div>
-
-    <p style="margin-top:20px;">Message de la direction : </p>
-    <% if @pourcentage_of_wins > 90 %>
-      <p class="p-margin-bottom"> "Alors là, chapeau <%= @user.username.upcase %>, on a rarement vu un bouliste de ta trempe"</p>
-    <% elsif @pourcentage_of_wins > 70 %>
-      <p class="p-margin-bottom"> "Belles perf' <%= @user.username.upcase %>, tu fais partie des tout meilleurs" </p>
-    <% elsif @pourcentage_of_wins > 50 %>
-      <p class="p-margin-bottom"> "C'est pas si mal <%= @user.username.upcase %>, mais tu sais au fond de toi que t'es capable de mieux. Attention à ne pas basculer dans le rouge" </p>
-    <% elsif @pourcentage_of_wins == 50 %>
-      <p class="p-margin-bottom"> "Ya du mieux, mais te repose pas sur tes acquis <%= @user.username.upcase %>!" </p>
-    <% elsif @pourcentage_of_wins > 30 %>
-      <p class="p-margin-bottom"> "Ooooh minot <%= @user.username.upcase %>, il s'agirait de te réveiller, t'es capable de mieux !" </p>
-    <% elsif @pourcentage_of_wins == 0 %>
-      <p class="p-margin-bottom"> "C'est le moment de nous montrer ce que tu as dans le vente <%= @user.username.upcase %> </p>
-    <% else %>
-      <p class="p-margin-bottom"> "Aïe aïe aïe, ton bilan est catastrophique, il va falloir songer à changer de sport <%= @user.username.upcase %>" </p>
-    <% end %>
-
-
-    <h3 class="bar-profile">CONSEIL DE CLASSE</h3>
-    <div class="flexy">
-      <div class="card-player">
-        <h4>C'est le sang !</h4>
-        <% if @user1.photo.attached? %>
-          <%= cl_image_tag @user1.photo.key, class: "avatar-poto"%><span><%= @user1.username.upcase %></span>
-        <% else %>
-          <%= image_tag "bobby.png", class: "avatar-poto"%><span><%= @user1.username.upcase %></span>
-        <% end %>
-        <p>83% de victoires avec <%= @user1.username.upcase %> comme collègue. On peut dire que c’est une affaire qui roule entre vous deux !</p>
-      </div>
-    </div>
-
-    <div class="flexy">
-      <div class="card-player">
-        <h4>Oh misère...</h4>
-        <% if @user2.photo.attached? %>
-        <%= cl_image_tag @user2.photo.key, class: "avatar-poto"%><span><%= @user2.username.upcase %></span>
-        <% else %>
-        <%= image_tag "bobby.png", class: "avatar-poto"%><span><%= @user2.username.upcase %></span>
-        <% end %>
-        <p>75% de défaites avec <%= @user2.username.upcase %> comme collègue. Il serait temps de se rendre à l’évidence....</p>
-      </div>
-    </div>
-
-    <h3 class="bar-profile">ENCORE DES STATS</h3>
-    <div style="text-align:left;">
-      <p>Nombre de points marqués : <%= @number_of_points_for %></p>
-      <p>Nombre de points encaissés : <%= @number_of_points_against %></p>
-        <% if (@number_of_points_for - @number_of_points_against) > 0 %>
-          <p>Différence de buts : + <%= @number_of_points_for - @number_of_points_against %></p>
-        <% else %>
-          <p>Différence de buts : <%= (@number_of_points_for - @number_of_points_against) %></p>
-        <% end %>
-      <p>Nombre de ligues jouées : <%= @number_of_leagues_played %></p>
-      <p>Nombre de ligues gagnées : <%= @number_of_leagues_wins %></p>
-    </div>
   </div>
 
   <div class="d-none" data-profile-target="badges" style="margin-top:20px;">
