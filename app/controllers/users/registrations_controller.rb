@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -11,9 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # def create
-  #   super
-  #   raise
-  #   Badge.create!(user: User.last)
+  #   # Your custom code here. Make sure you copy devise's functionality
   # end
 
 
@@ -46,12 +44,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  # private
+
+  # Notice the name of the method
+  # def sign_up_params
+  #   params.require(:user).permit(:email, :password, :username, :date_of_birth, :password_confirmation, :photo)
+  # end
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:photo])
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params

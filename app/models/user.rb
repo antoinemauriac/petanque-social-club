@@ -52,6 +52,10 @@ class User < ApplicationRecord
     Badge.create!(user: self)
   end
 
+  def add_photo
+
+  end
+
   def number_of_games_played
     self.teams.map { |team| team.games_played }.flatten.sum
   end
