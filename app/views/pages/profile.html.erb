@@ -19,11 +19,6 @@
 
 
   <div class="stats" data-profile-target="stats">
-    <% if @user.number_of_games_played == 0 %>
-      <div class="container" style="text-align:center;margin-top:50px">
-        <h3>Joue des matchs et reviens voir tes stats !</h3>
-      </div>
-    <% else %>
       <h3>LE BILAN</h3>
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key, class: "avatar-poto" %>
@@ -64,7 +59,7 @@
         <p class="p-margin-bottom"> "Aïe aïe aïe, ton bilan est catastrophique, il va falloir songer à changer de sport <%= @user.username.upcase %>" </p>
       <% end %>
 
-
+    <% if @teammates.size >= 2 %>
       <h3 class="bar-profile">CONSEIL DE CLASSE</h3>
       <div class="flexy">
         <div class="card-player">
@@ -88,6 +83,7 @@
           <p><%=@perc_of_loses%>% de défaites avec <%= @worst_teammate.username.upcase %> comme collègue. Il serait temps de se rendre à l’évidence....</p>
         </div>
       </div>
+    <% end %>
 
       <h3 class="bar-profile">ENCORE DES STATS</h3>
       <div style="text-align:left;">
@@ -101,7 +97,6 @@
         <p>Nombre de ligues jouées : <%= @number_of_leagues_played %></p>
         <p>Nombre de ligues gagnées : <%= @number_of_leagues_wins %></p>
       </div>
-    <% end %>
   </div>
 
   <div class="d-none" data-profile-target="badges" style="margin-top:20px;">

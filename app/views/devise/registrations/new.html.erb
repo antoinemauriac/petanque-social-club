@@ -14,7 +14,6 @@
       <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
                                 end_year: Date.today.year, discard_day: true,
                                 order: [:day, :month, :year] %>
-      <%= f.input :photo, as: :file %>
 
       <%= f.input :password,
                   required: true,

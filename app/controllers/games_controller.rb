@@ -3,7 +3,6 @@ class GamesController < ApplicationController
     @league = League.find(params[:league_id])
   end
 
-
   def edit
     @game = Game.find(params[:id])
     @team1 = @game.teams.first
@@ -71,7 +70,6 @@ class GamesController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-
 
   def badge_first_league_winner
     @first_vainqueur = Team.find(@league.league_winner).users.first
