@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :username, presence: true
   has_many :team_users
   has_many :teams, through: :team_users
+  has_many :leagues, through: :teams
   has_many :messages
 
   include PgSearch::Model
@@ -52,12 +53,19 @@ class User < ApplicationRecord
     Badge.create!(user: self)
   end
 
-  def add_photo
-
-  end
-
   def number_of_games_played
-    self.teams.map { |team| team.games_played }.flatten.sum
+    teams.map(&:games_played).flatten.sum
   end
 
+  def number_of_wins_with(teammate)
+    teams.joins(team_users: :user).where(users: { id: teammate }).sum(:number_of_wins)
+  end
+
+  def number_of_played_with(teammate)
+    teams.joins(team_users: :user).where(users: { id: teammate }).sum(:games_played)
+  end
+
+  def number_of_loses_with(teammate)
+    number_of_played_with(teammate) - number_of_wins_with(teammate)
+  end
 end
