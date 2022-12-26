@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  get 'users/show'
   devise_for :users
   root to: "pages#home"
-  get "profile", to: "pages#profile"
   get "accueil", to: "pages#accueil"
 
   resources :leagues, only: %i[new create show index] do
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :games, only: %i[new show edit index]
     resources :messages, only: %i[create index]
   end
+
+  resources :users, only: %i[show]
 
   get "/community", to: "invitations#community", as: :community
   resources :invitations, only: :create

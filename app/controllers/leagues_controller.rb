@@ -1,22 +1,19 @@
 class LeaguesController < ApplicationController
 
   def index
-    @leagues = []
-    League.all.each do |league|
-      if Team.where(league: league).map { |team| TeamUser.where(team: team).map { |t| t.user }}.flatten.include?(current_user)
-        @leagues << league
-      end
-    end
-    return @leagues
+    @user = current_user
+    @leagues = @user.leagues
   end
 
   def show
     @league = League.find(params[:id])
     @games = @league.games
-    if @league.status == true
-      @first_winner = Team.find(@league.league_winner).users.first
-      @second_winner = Team.find(@league.league_winner).users.last
-    end
+    @teams_sorted = @league.teams.sort_by { |team| [-team.number_of_wins, -(team.points_for - team.points_against)] }
+
+    return unless @league.status == true
+
+    @first_winner = Team.find(@league.league_winner).users.first
+    @second_winner = Team.find(@league.league_winner).users.last
   end
 
   def new

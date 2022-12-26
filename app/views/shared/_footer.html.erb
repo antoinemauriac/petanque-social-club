@@ -1,16 +1,18 @@
 <div class="menu">
-  <a href="/leagues" class="menu__item">
+  <%= link_to leagues_path, class:"menu__item" do %>
     <i class="fa-solid fa-crown icones"></i>
-  </a>
-  <a href="/fields" class="menu__item">
+  <% end %>
+  <%= link_to fields_path, class:"menu__item" do %>
     <i class="fa-solid fa-map-location-dot icones"></i>
-  </a>
-  <a href="/profile" class="menu__item">
-    <i class="fa-solid fa-user icones"></i>
-  </a>
-  <a href="/community" class="menu__item">
+  <% end %>
+  <% if current_user %>
+    <%= link_to user_path(current_user), class:"menu__item" do %>
+      <i class="fa-solid fa-user icones"></i>
+    <% end %>
+  <% end %>
+  <%= link_to community_path, class:"menu__item" do %>
     <i class="fa-solid fa-globe icones"></i>
-  </a>
+  <% end %>
 </div>
 
 
