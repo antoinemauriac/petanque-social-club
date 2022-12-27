@@ -81,7 +81,6 @@ class LeaguesController < ApplicationController
 
   def choose_teams_create
     @league = League.find(params[:id])
-    @league.update(league_params)
     raise
   end
 
