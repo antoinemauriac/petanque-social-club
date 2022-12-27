@@ -14,7 +14,7 @@ class TeamUsersController < ApplicationController
     @users = params[:team_user].values
     # this is returning an array of arrays of 2 users
     @users = @users.each_slice(2).to_a
-
+raise
     # this create team for each 2 user
     @users.each do |two_user|
       @team = Team.new(league: @league)
