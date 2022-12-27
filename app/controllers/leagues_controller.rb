@@ -18,55 +18,76 @@ class LeaguesController < ApplicationController
 
   def new
     @league = League.new
-    @users = []
-    @users.push(current_user)
+    @friends = []
+    @friends.push(current_user)
     current_user.friends.each do |friend|
-      @users.push(friend)
+      @friends.push(friend)
     end
   end
 
   def create
-    @league = League.create!(league_params)
-    @selected_users = params[:user]
-    @selected_friends = []
-    @selected_users.keys.each do |f|
-      @selected_friends << SelectedUser.create(league: @league, user_id: User.find(f).id)
+    @league = League.new(league_params)
+    @players = params[:league][:user_ids].excluding("").map { |username| User.find_by(username: username) }
+    @players.each do |player|
+      SelectedUser.create(league: @league, user: player)
     end
+    if @league.save
+      redirect_to choose_mode_league_path(@league)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
-      if params[:commit] == "LAISSE LE HASARD FAIRE"
-        @teams_all = []
-        @users = @selected_friends.shuffle().each_slice(2).to_a
-        @users.each do |two_user|
-          @team = Team.new(league: @league)
-          @team.save!
-          # this associate users and team to team user
+  def choose_mode
+    @league = League.find(params[:id])
+  end
 
-          two_user.each do |selected|
-            user = User.find(selected.user_id)
-            TeamUser.create!(user: user, team: @team)
-          end
+  def choose_mode_create
+    @league = League.find(params[:id])
+    if params[:commit] == "Hasard"
+      random
+    else
+      redirect_to choose_teams_league_path(@league)
+    end
+  end
 
-          if @teams_all.any?
-
-            @teams_all.each do |team|
-              @game = Game.create!(league: @league)
-              GameTeam.create!(team: team, game: @game)
-              GameTeam.create!(team: @team, game: @game)
-            end
-
-          end
-          @teams_all << @team
-
-        end
-          redirect_to league_path(@league)
-      else
-        redirect_to new_league_team_user_path(@league)
+  def random
+    @league = League.find(params[:id])
+    @teams = []
+    @pairs_of_players = @league.selected_users.map(&:user).shuffle.each_slice(2).to_a
+    @pairs_of_players.each do |pair|
+      @team = Team.create(league: @league)
+      pair.each do |player|
+        TeamUser.create(user: player, team: @team)
       end
+      if @teams.any?
+        @teams.each do |team|
+          @game = Game.create(league: @league)
+          GameTeam.create!(team: team, game: @game)
+          GameTeam.create!(team: @team, game: @game)
+        end
+      end
+      @teams.push(@team)
+    end
+    redirect_to league_path(@league)
+  end
+
+  def choose_teams
+    @league = League.find(params[:id])
+    @players = @league.selected_users.map(&:user)
+    @usernames = @players.map(&:username)
+    @team_user = TeamUser.new
+  end
+
+  def choose_teams_create
+    @league = League.find(params[:id])
+    @league.update(league_params)
+    raise
   end
 
   private
 
   def league_params
-    params.require(:league).permit(:league_id, :name, :status, :league_winner, :admin_user, :rand)
+    params.require(:league).permit(:league_id, :name, :status, :league_winner, :admin_user, :rand, :users)
   end
 end
