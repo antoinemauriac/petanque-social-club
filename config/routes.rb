@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   get "accueil", to: "pages#accueil"
 
   resources :leagues, only: %i[new create show index] do
+    member do
+      get 'choose_mode'
+      post 'choose_mode_create'
+      get 'choose_teams'
+      post 'choose_teams_create'
+    end
     resources :team_users, only: %i[new create]
     resources :games, only: %i[new show edit index]
     resources :messages, only: %i[create index]
@@ -19,6 +25,7 @@ Rails.application.routes.draw do
 
   resources :games, only: :update
   resources :fields, only: :index
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

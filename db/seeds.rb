@@ -23,8 +23,8 @@ League.destroy_all
 
 puts "creating Leagues"
 
-  league1 = League.create(name: "Sporting Club Familial")
-  league2 = League.create(name: "Ligue Des Copains")
+  # league1 = League.create(name: "Sporting Club Familial")
+  # league2 = League.create(name: "Ligue Des Copains")
 
 puts "creating Users"
 
@@ -141,585 +141,585 @@ puts "creating Users"
 
 puts "creating Games"
 
-  game1 = Game.create!(league: league1)
-  game2 = Game.create!(league: league1)
-  game3 = Game.create!(league: league1)
-  game4 = Game.create!(league: league1)
-  game5 = Game.create!(league: league1)
-  game6 = Game.create!(league: league1)
-  game7 = Game.create!(league: league1)
-  game8 = Game.create!(league: league1)
-  game9 = Game.create!(league: league1)
-  game10 = Game.create!(league: league1)
-
-  team1 = Team.create!(league: league1)
-  team2 = Team.create!(league: league1)
-  team3 = Team.create!(league: league1)
-  team4 = Team.create!(league: league1)
-  team5 = Team.create!(league: league1)
-
-  game11 = Game.create!(league: league2)
-  game12 = Game.create!(league: league2)
-  game13 = Game.create!(league: league2)
-  game14 = Game.create!(league: league2)
-  game15 = Game.create!(league: league2)
-  game16 = Game.create!(league: league2)
-  game17 = Game.create!(league: league2)
-  game18 = Game.create!(league: league2)
-  game19 = Game.create!(league: league2)
-  game20 = Game.create!(league: league2)
-
-  team6 = Team.create!(league: league2)
-  team7 = Team.create!(league: league2)
-  team8 = Team.create!(league: league2)
-  team9 = Team.create!(league: league2)
-  team10 = Team.create!(league: league2)
-
-
-puts "creating Teams"
-
-  TeamUser.create!(user: user1, team: team1)
-  TeamUser.create!(user: user2, team: team1)
-  TeamUser.create!(user: user3, team: team2)
-  TeamUser.create!(user: user4, team: team2)
-  TeamUser.create!(user: user5, team: team3)
-  TeamUser.create!(user: user6, team: team3)
-  TeamUser.create!(user: user7, team: team4)
-  TeamUser.create!(user: user8, team: team4)
-  TeamUser.create!(user: user9, team: team5)
-  TeamUser.create!(user: user10, team: team5)
-
-  GameTeam.create!(team: team1, game: game1)
-  GameTeam.create!(team: team2, game: game1)
-  GameTeam.create!(team: team1, game: game2)
-  GameTeam.create!(team: team3, game: game2)
-  GameTeam.create!(team: team1, game: game3)
-  GameTeam.create!(team: team4, game: game3)
-  GameTeam.create!(team: team1, game: game4)
-  GameTeam.create!(team: team5, game: game4)
-  GameTeam.create!(team: team2, game: game5)
-  GameTeam.create!(team: team3, game: game5)
-  GameTeam.create!(team: team2, game: game6)
-  GameTeam.create!(team: team4, game: game6)
-  GameTeam.create!(team: team2, game: game7)
-  GameTeam.create!(team: team5, game: game7)
-  GameTeam.create!(team: team3, game: game8)
-  GameTeam.create!(team: team4, game: game8)
-  GameTeam.create!(team: team3, game: game9)
-  GameTeam.create!(team: team5, game: game9)
-  GameTeam.create!(team: team4, game: game10)
-  GameTeam.create!(team: team5, game: game10)
-
-  TeamUser.create!(user: user1, team: team6)
-  TeamUser.create!(user: user3, team: team6)
-  TeamUser.create!(user: user6, team: team7)
-  TeamUser.create!(user: user9, team: team7)
-  TeamUser.create!(user: user2, team: team8)
-  TeamUser.create!(user: user5, team: team8)
-  TeamUser.create!(user: user7, team: team9)
-  TeamUser.create!(user: user8, team: team9)
-  TeamUser.create!(user: user4, team: team10)
-  TeamUser.create!(user: user10, team: team10)
-
-  GameTeam.create!(team: team6, game: game11)
-  GameTeam.create!(team: team7, game: game11)
-  GameTeam.create!(team: team6, game: game12)
-  GameTeam.create!(team: team8, game: game12)
-  GameTeam.create!(team: team6, game: game13)
-  GameTeam.create!(team: team9, game: game13)
-  GameTeam.create!(team: team6, game: game14)
-  GameTeam.create!(team: team10, game: game14)
-  GameTeam.create!(team: team7, game: game15)
-  GameTeam.create!(team: team8, game: game15)
-  GameTeam.create!(team: team7, game: game16)
-  GameTeam.create!(team: team9, game: game16)
-  GameTeam.create!(team: team7, game: game17)
-  GameTeam.create!(team: team10, game: game17)
-  GameTeam.create!(team: team8, game: game18)
-  GameTeam.create!(team: team9, game: game18)
-  GameTeam.create!(team: team8, game: game19)
-  GameTeam.create!(team: team10, game: game19)
-  GameTeam.create!(team: team9, game: game20)
-  GameTeam.create!(team: team10, game: game20)
-
+#   game1 = Game.create!(league: league1)
+#   game2 = Game.create!(league: league1)
+#   game3 = Game.create!(league: league1)
+#   game4 = Game.create!(league: league1)
+#   game5 = Game.create!(league: league1)
+#   game6 = Game.create!(league: league1)
+#   game7 = Game.create!(league: league1)
+#   game8 = Game.create!(league: league1)
+#   game9 = Game.create!(league: league1)
+#   game10 = Game.create!(league: league1)
+
+#   team1 = Team.create!(league: league1)
+#   team2 = Team.create!(league: league1)
+#   team3 = Team.create!(league: league1)
+#   team4 = Team.create!(league: league1)
+#   team5 = Team.create!(league: league1)
+
+#   game11 = Game.create!(league: league2)
+#   game12 = Game.create!(league: league2)
+#   game13 = Game.create!(league: league2)
+#   game14 = Game.create!(league: league2)
+#   game15 = Game.create!(league: league2)
+#   game16 = Game.create!(league: league2)
+#   game17 = Game.create!(league: league2)
+#   game18 = Game.create!(league: league2)
+#   game19 = Game.create!(league: league2)
+#   game20 = Game.create!(league: league2)
+
+#   team6 = Team.create!(league: league2)
+#   team7 = Team.create!(league: league2)
+#   team8 = Team.create!(league: league2)
+#   team9 = Team.create!(league: league2)
+#   team10 = Team.create!(league: league2)
+
+
+# puts "creating Teams"
+
+#   TeamUser.create!(user: user1, team: team1)
+#   TeamUser.create!(user: user2, team: team1)
+#   TeamUser.create!(user: user3, team: team2)
+#   TeamUser.create!(user: user4, team: team2)
+#   TeamUser.create!(user: user5, team: team3)
+#   TeamUser.create!(user: user6, team: team3)
+#   TeamUser.create!(user: user7, team: team4)
+#   TeamUser.create!(user: user8, team: team4)
+#   TeamUser.create!(user: user9, team: team5)
+#   TeamUser.create!(user: user10, team: team5)
+
+#   GameTeam.create!(team: team1, game: game1)
+#   GameTeam.create!(team: team2, game: game1)
+#   GameTeam.create!(team: team1, game: game2)
+#   GameTeam.create!(team: team3, game: game2)
+#   GameTeam.create!(team: team1, game: game3)
+#   GameTeam.create!(team: team4, game: game3)
+#   GameTeam.create!(team: team1, game: game4)
+#   GameTeam.create!(team: team5, game: game4)
+#   GameTeam.create!(team: team2, game: game5)
+#   GameTeam.create!(team: team3, game: game5)
+#   GameTeam.create!(team: team2, game: game6)
+#   GameTeam.create!(team: team4, game: game6)
+#   GameTeam.create!(team: team2, game: game7)
+#   GameTeam.create!(team: team5, game: game7)
+#   GameTeam.create!(team: team3, game: game8)
+#   GameTeam.create!(team: team4, game: game8)
+#   GameTeam.create!(team: team3, game: game9)
+#   GameTeam.create!(team: team5, game: game9)
+#   GameTeam.create!(team: team4, game: game10)
+#   GameTeam.create!(team: team5, game: game10)
+
+#   TeamUser.create!(user: user1, team: team6)
+#   TeamUser.create!(user: user3, team: team6)
+#   TeamUser.create!(user: user6, team: team7)
+#   TeamUser.create!(user: user9, team: team7)
+#   TeamUser.create!(user: user2, team: team8)
+#   TeamUser.create!(user: user5, team: team8)
+#   TeamUser.create!(user: user7, team: team9)
+#   TeamUser.create!(user: user8, team: team9)
+#   TeamUser.create!(user: user4, team: team10)
+#   TeamUser.create!(user: user10, team: team10)
+
+#   GameTeam.create!(team: team6, game: game11)
+#   GameTeam.create!(team: team7, game: game11)
+#   GameTeam.create!(team: team6, game: game12)
+#   GameTeam.create!(team: team8, game: game12)
+#   GameTeam.create!(team: team6, game: game13)
+#   GameTeam.create!(team: team9, game: game13)
+#   GameTeam.create!(team: team6, game: game14)
+#   GameTeam.create!(team: team10, game: game14)
+#   GameTeam.create!(team: team7, game: game15)
+#   GameTeam.create!(team: team8, game: game15)
+#   GameTeam.create!(team: team7, game: game16)
+#   GameTeam.create!(team: team9, game: game16)
+#   GameTeam.create!(team: team7, game: game17)
+#   GameTeam.create!(team: team10, game: game17)
+#   GameTeam.create!(team: team8, game: game18)
+#   GameTeam.create!(team: team9, game: game18)
+#   GameTeam.create!(team: team8, game: game19)
+#   GameTeam.create!(team: team10, game: game19)
+#   GameTeam.create!(team: team9, game: game20)
+#   GameTeam.create!(team: team10, game: game20)
+
 
-puts "creating Matchs & Scores"
+# puts "creating Matchs & Scores"
 
-  #MATCH1 - LEAGUE 1
+#   #MATCH1 - LEAGUE 1
 
-    # game1.score_first_team = 13
-    # game1.score_second_team = rand(1..12)
+#     # game1.score_first_team = 13
+#     # game1.score_second_team = rand(1..12)
 
-    # game1.game_winner = team1.id
+#     # game1.game_winner = team1.id
 
-    # team1.points_for += game1.score_first_team
-    # team1.points_against += game1.score_second_team
-    # team1.games_played += 1
-    # team1.number_of_wins += 1
+#     # team1.points_for += game1.score_first_team
+#     # team1.points_against += game1.score_second_team
+#     # team1.games_played += 1
+#     # team1.number_of_wins += 1
 
-    # team2.points_for += game1.score_second_team
-    # team2.points_against += game1.score_first_team
-    # team2.games_played += 1
+#     # team2.points_for += game1.score_second_team
+#     # team2.points_against += game1.score_first_team
+#     # team2.games_played += 1
 
-    # team1.save
-    # team2.save
-    # game1.status = true
-    # game1.save
+#     # team1.save
+#     # team2.save
+#     # game1.status = true
+#     # game1.save
 
-  #MATCH2
+#   #MATCH2
 
-    # game2.score_first_team = 13
-    # game2.score_second_team = rand(1..12)
+#     # game2.score_first_team = 13
+#     # game2.score_second_team = rand(1..12)
 
-    # game2.game_winner = team1.id
+#     # game2.game_winner = team1.id
 
-    # team1.points_for += game2.score_first_team
-    # team1.points_against += game2.score_second_team
-    # team1.games_played += 1
-    # team1.number_of_wins += 1
+#     # team1.points_for += game2.score_first_team
+#     # team1.points_against += game2.score_second_team
+#     # team1.games_played += 1
+#     # team1.number_of_wins += 1
 
-    # team3.points_for += game2.score_second_team
-    # team3.points_against += game2.score_first_team
-    # team3.games_played += 1
+#     # team3.points_for += game2.score_second_team
+#     # team3.points_against += game2.score_first_team
+#     # team3.games_played += 1
 
-    # team1.save
-    # team3.save
-    # game2.status = true
-    # game2.save
+#     # team1.save
+#     # team3.save
+#     # game2.status = true
+#     # game2.save
 
-  #MATCH3
+#   #MATCH3
 
-    game3.score_first_team = 13
-    game3.score_second_team = rand(1..12)
+#     game3.score_first_team = 13
+#     game3.score_second_team = rand(1..12)
 
-    game3.game_winner = team1.id
+#     game3.game_winner = team1.id
 
-    team1.points_for += game3.score_first_team
-    team1.points_against += game3.score_second_team
-    team1.games_played += 1
-    team1.number_of_wins += 1
+#     team1.points_for += game3.score_first_team
+#     team1.points_against += game3.score_second_team
+#     team1.games_played += 1
+#     team1.number_of_wins += 1
 
-    team4.points_for += game3.score_second_team
-    team4.points_against += game3.score_first_team
-    team4.games_played += 1
+#     team4.points_for += game3.score_second_team
+#     team4.points_against += game3.score_first_team
+#     team4.games_played += 1
 
-    team1.save
-    team4.save
-    game3.status = true
-    game3.save
+#     team1.save
+#     team4.save
+#     game3.status = true
+#     game3.save
 
-  #MATCH4
+#   #MATCH4
 
-    game4.score_first_team = 13
-    game4.score_second_team = rand(1..12)
+#     game4.score_first_team = 13
+#     game4.score_second_team = rand(1..12)
 
-    game4.game_winner = team1.id
+#     game4.game_winner = team1.id
 
-    team1.points_for += game4.score_first_team
-    team1.points_against += game4.score_second_team
-    team1.games_played += 1
-    team1.number_of_wins += 1
+#     team1.points_for += game4.score_first_team
+#     team1.points_against += game4.score_second_team
+#     team1.games_played += 1
+#     team1.number_of_wins += 1
 
-    team5.points_for += game4.score_second_team
-    team5.points_against += game4.score_first_team
-    team5.games_played += 1
+#     team5.points_for += game4.score_second_team
+#     team5.points_against += game4.score_first_team
+#     team5.games_played += 1
 
-    team1.save
-    team5.save
-    game4.status = true
-    game4.save
+#     team1.save
+#     team5.save
+#     game4.status = true
+#     game4.save
 
-  #MATCH5
+#   #MATCH5
 
-    game5.score_first_team = 13
-    game5.score_second_team = rand(1..12)
+#     game5.score_first_team = 13
+#     game5.score_second_team = rand(1..12)
 
-    game5.game_winner = team2.id
+#     game5.game_winner = team2.id
 
-    team2.points_for += game5.score_first_team
-    team2.points_against += game5.score_second_team
-    team2.games_played += 1
-    team2.number_of_wins += 1
+#     team2.points_for += game5.score_first_team
+#     team2.points_against += game5.score_second_team
+#     team2.games_played += 1
+#     team2.number_of_wins += 1
 
-    team3.points_for += game5.score_second_team
-    team3.points_against += game5.score_first_team
-    team3.games_played += 1
+#     team3.points_for += game5.score_second_team
+#     team3.points_against += game5.score_first_team
+#     team3.games_played += 1
 
-    team2.save
-    team3.save
-    game5.status = true
-    game5.save
+#     team2.save
+#     team3.save
+#     game5.status = true
+#     game5.save
 
-  #MATCH6
+#   #MATCH6
 
-    game6.score_first_team = 13
-    game6.score_second_team = rand(1..12)
+#     game6.score_first_team = 13
+#     game6.score_second_team = rand(1..12)
 
-    game6.game_winner = team2.id
+#     game6.game_winner = team2.id
 
-    team2.points_for += game6.score_first_team
-    team2.points_against += game6.score_second_team
-    team2.games_played += 1
-    team2.number_of_wins += 1
+#     team2.points_for += game6.score_first_team
+#     team2.points_against += game6.score_second_team
+#     team2.games_played += 1
+#     team2.number_of_wins += 1
 
-    team4.points_for += game6.score_second_team
-    team4.points_against += game6.score_first_team
-    team4.games_played += 1
+#     team4.points_for += game6.score_second_team
+#     team4.points_against += game6.score_first_team
+#     team4.games_played += 1
 
-    team2.save
-    team4.save
-    game6.status = true
-    game6.save
+#     team2.save
+#     team4.save
+#     game6.status = true
+#     game6.save
 
-  #MATCH7
+#   #MATCH7
 
-    game7.score_first_team = 13
-    game7.score_second_team = rand(1..12)
+#     game7.score_first_team = 13
+#     game7.score_second_team = rand(1..12)
 
-    game7.game_winner = team2.id
+#     game7.game_winner = team2.id
 
-    team2.points_for += game7.score_first_team
-    team2.points_against += game7.score_second_team
-    team2.games_played += 1
-    team2.number_of_wins += 1
+#     team2.points_for += game7.score_first_team
+#     team2.points_against += game7.score_second_team
+#     team2.games_played += 1
+#     team2.number_of_wins += 1
 
-    team5.points_for += game7.score_second_team
-    team5.points_against += game7.score_first_team
-    team5.games_played += 1
+#     team5.points_for += game7.score_second_team
+#     team5.points_against += game7.score_first_team
+#     team5.games_played += 1
 
-    team2.save
-    team5.save
-    game7.status = true
-    game7.save
+#     team2.save
+#     team5.save
+#     game7.status = true
+#     game7.save
 
-  #MATCH8
+#   #MATCH8
 
-    game8.score_first_team = 13
-    game8.score_second_team = rand(1..12)
+#     game8.score_first_team = 13
+#     game8.score_second_team = rand(1..12)
 
-    game8.game_winner = team3.id
+#     game8.game_winner = team3.id
 
-    team3.points_for += game8.score_first_team
-    team3.points_against += game8.score_second_team
-    team3.games_played += 1
-    team3.number_of_wins += 1
+#     team3.points_for += game8.score_first_team
+#     team3.points_against += game8.score_second_team
+#     team3.games_played += 1
+#     team3.number_of_wins += 1
 
-    team4.points_for += game8.score_second_team
-    team4.points_against += game8.score_first_team
-    team4.games_played += 1
+#     team4.points_for += game8.score_second_team
+#     team4.points_against += game8.score_first_team
+#     team4.games_played += 1
 
-    team3.save
-    team4.save
-    game8.status = true
-    game8.save
+#     team3.save
+#     team4.save
+#     game8.status = true
+#     game8.save
 
-  #MATCH9
+#   #MATCH9
 
-    game9.score_first_team = 13
-    game9.score_second_team = rand(1..12)
+#     game9.score_first_team = 13
+#     game9.score_second_team = rand(1..12)
 
-    game9.game_winner = team3.id
+#     game9.game_winner = team3.id
 
-    team3.points_for += game9.score_first_team
-    team3.points_against += game9.score_second_team
-    team3.games_played += 1
-    team3.number_of_wins += 1
+#     team3.points_for += game9.score_first_team
+#     team3.points_against += game9.score_second_team
+#     team3.games_played += 1
+#     team3.number_of_wins += 1
 
-    team5.points_for += game9.score_second_team
-    team5.points_against += game9.score_first_team
-    team5.games_played += 1
+#     team5.points_for += game9.score_second_team
+#     team5.points_against += game9.score_first_team
+#     team5.games_played += 1
 
-    team3.save
-    team5.save
-    game9.status = true
-    game9.save
+#     team3.save
+#     team5.save
+#     game9.status = true
+#     game9.save
 
-  #MATCH10
+#   #MATCH10
 
-    game10.score_first_team = 13
-    game10.score_second_team = rand(1..12)
+#     game10.score_first_team = 13
+#     game10.score_second_team = rand(1..12)
 
-    game10.game_winner = team4.id
+#     game10.game_winner = team4.id
 
-    team4.points_for += game10.score_first_team
-    team4.points_against += game10.score_second_team
-    team4.games_played += 1
-    team4.number_of_wins += 1
+#     team4.points_for += game10.score_first_team
+#     team4.points_against += game10.score_second_team
+#     team4.games_played += 1
+#     team4.number_of_wins += 1
 
-    team5.points_for += game10.score_second_team
-    team5.points_against += game10.score_first_team
-    team5.games_played += 1
+#     team5.points_for += game10.score_second_team
+#     team5.points_against += game10.score_first_team
+#     team5.games_played += 1
 
-    team4.save
-    team5.save
-    game10.status = true
-    game10.save
+#     team4.save
+#     team5.save
+#     game10.status = true
+#     game10.save
 
 
-#MATCH11 - LEAGUE 2
+# #MATCH11 - LEAGUE 2
 
-    # game11.score_first_team = 13
-    # game11.score_second_team = rand(1..12)
+#     # game11.score_first_team = 13
+#     # game11.score_second_team = rand(1..12)
 
-    # game11.game_winner = team6.id
+#     # game11.game_winner = team6.id
 
-    # team6.points_for += game11.score_first_team
-    # team6.points_against += game11.score_second_team
-    # team6.games_played += 1
-    # team6.number_of_wins += 1
+#     # team6.points_for += game11.score_first_team
+#     # team6.points_against += game11.score_second_team
+#     # team6.games_played += 1
+#     # team6.number_of_wins += 1
 
-    # team7.points_for += game11.score_second_team
-    # team7.points_against += game11.score_first_team
-    # team7.games_played += 1
+#     # team7.points_for += game11.score_second_team
+#     # team7.points_against += game11.score_first_team
+#     # team7.games_played += 1
 
-    # team6.save
-    # team7.save
-    # game11.status = true
-    # game11.save
+#     # team6.save
+#     # team7.save
+#     # game11.status = true
+#     # game11.save
 
-  #MATCH12
+#   #MATCH12
 
-    # game12.score_first_team = 13
-    # game12.score_second_team = rand(1..12)
+#     # game12.score_first_team = 13
+#     # game12.score_second_team = rand(1..12)
 
-    # game12.game_winner = team6.id
+#     # game12.game_winner = team6.id
 
-    # team6.points_for += game12.score_first_team
-    # team6.points_against += game12.score_second_team
-    # team6.games_played += 1
-    # team6.number_of_wins += 1
+#     # team6.points_for += game12.score_first_team
+#     # team6.points_against += game12.score_second_team
+#     # team6.games_played += 1
+#     # team6.number_of_wins += 1
 
-    # team8.points_for += game12.score_second_team
-    # team8.points_against += game12.score_first_team
-    # team8.games_played += 1
+#     # team8.points_for += game12.score_second_team
+#     # team8.points_against += game12.score_first_team
+#     # team8.games_played += 1
 
-    # team6.save
-    # team8.save
-    # game12.status = true
-    # game12.save
+#     # team6.save
+#     # team8.save
+#     # game12.status = true
+#     # game12.save
 
-  #MATCH13
+#   #MATCH13
 
-    # game13.score_first_team = 13
-    # game13.score_second_team = rand(1..12)
+#     # game13.score_first_team = 13
+#     # game13.score_second_team = rand(1..12)
 
-    # game13.game_winner = team6.id
+#     # game13.game_winner = team6.id
 
-    # team6.points_for += game13.score_first_team
-    # team6.points_against += game13.score_second_team
-    # team6.games_played += 1
-    # team6.number_of_wins += 1
+#     # team6.points_for += game13.score_first_team
+#     # team6.points_against += game13.score_second_team
+#     # team6.games_played += 1
+#     # team6.number_of_wins += 1
 
-    # team9.points_for += game13.score_second_team
-    # team9.points_against += game13.score_first_team
-    # team9.games_played += 1
+#     # team9.points_for += game13.score_second_team
+#     # team9.points_against += game13.score_first_team
+#     # team9.games_played += 1
 
-    # team6.save
-    # team9.save
-    # game13.status = true
-    # game13.save
+#     # team6.save
+#     # team9.save
+#     # game13.status = true
+#     # game13.save
 
-  #MATCH14
+#   #MATCH14
 
-    game14.score_first_team = 13
-    game14.score_second_team = rand(1..12)
+#     game14.score_first_team = 13
+#     game14.score_second_team = rand(1..12)
 
-    game14.game_winner = team6.id
+#     game14.game_winner = team6.id
 
-    team6.points_for += game14.score_first_team
-    team6.points_against += game14.score_second_team
-    team6.games_played += 1
-    team6.number_of_wins += 1
+#     team6.points_for += game14.score_first_team
+#     team6.points_against += game14.score_second_team
+#     team6.games_played += 1
+#     team6.number_of_wins += 1
 
-    team10.points_for += game14.score_second_team
-    team10.points_against += game14.score_first_team
-    team10.games_played += 1
+#     team10.points_for += game14.score_second_team
+#     team10.points_against += game14.score_first_team
+#     team10.games_played += 1
 
-    team6.save
-    team10.save
-    game14.status = true
-    game14.save
+#     team6.save
+#     team10.save
+#     game14.status = true
+#     game14.save
 
-  #MATCH15
+#   #MATCH15
 
-    game15.score_first_team = 13
-    game15.score_second_team = rand(1..12)
+#     game15.score_first_team = 13
+#     game15.score_second_team = rand(1..12)
 
-    game15.game_winner = team7.id
+#     game15.game_winner = team7.id
 
-    team7.points_for += game15.score_first_team
-    team7.points_against += game15.score_second_team
-    team7.games_played += 1
-    team7.number_of_wins += 1
+#     team7.points_for += game15.score_first_team
+#     team7.points_against += game15.score_second_team
+#     team7.games_played += 1
+#     team7.number_of_wins += 1
 
-    team8.points_for += game15.score_second_team
-    team8.points_against += game15.score_first_team
-    team8.games_played += 1
+#     team8.points_for += game15.score_second_team
+#     team8.points_against += game15.score_first_team
+#     team8.games_played += 1
 
-    team7.save
-    team8.save
-    game15.status = true
-    game15.save
+#     team7.save
+#     team8.save
+#     game15.status = true
+#     game15.save
 
-  #MATCH16
+#   #MATCH16
 
-    game16.score_first_team = 13
-    game16.score_second_team = rand(1..12)
+#     game16.score_first_team = 13
+#     game16.score_second_team = rand(1..12)
 
-    game16.game_winner = team7.id
+#     game16.game_winner = team7.id
 
-    team7.points_for += game16.score_first_team
-    team7.points_against += game16.score_second_team
-    team7.games_played += 1
-    team7.number_of_wins += 1
+#     team7.points_for += game16.score_first_team
+#     team7.points_against += game16.score_second_team
+#     team7.games_played += 1
+#     team7.number_of_wins += 1
 
-    team9.points_for += game16.score_second_team
-    team9.points_against += game16.score_first_team
-    team9.games_played += 1
+#     team9.points_for += game16.score_second_team
+#     team9.points_against += game16.score_first_team
+#     team9.games_played += 1
 
-    team7.save
-    team9.save
-    game16.status = true
-    game16.save
+#     team7.save
+#     team9.save
+#     game16.status = true
+#     game16.save
 
-  #MATCH17
+#   #MATCH17
 
-    game17.score_first_team = 13
-    game17.score_second_team = rand(1..12)
+#     game17.score_first_team = 13
+#     game17.score_second_team = rand(1..12)
 
-    game17.game_winner = team7.id
+#     game17.game_winner = team7.id
 
-    team7.points_for += game17.score_first_team
-    team7.points_against += game17.score_second_team
-    team7.games_played += 1
-    team7.number_of_wins += 1
+#     team7.points_for += game17.score_first_team
+#     team7.points_against += game17.score_second_team
+#     team7.games_played += 1
+#     team7.number_of_wins += 1
 
-    team10.points_for += game17.score_second_team
-    team10.points_against += game17.score_first_team
-    team10.games_played += 1
+#     team10.points_for += game17.score_second_team
+#     team10.points_against += game17.score_first_team
+#     team10.games_played += 1
 
-    team7.save
-    team10.save
-    game17.status = true
-    game17.save
+#     team7.save
+#     team10.save
+#     game17.status = true
+#     game17.save
 
-  #MATCH18
+#   #MATCH18
 
-    game18.score_first_team = 13
-    game18.score_second_team = rand(1..12)
+#     game18.score_first_team = 13
+#     game18.score_second_team = rand(1..12)
 
-    game18.game_winner = team8.id
+#     game18.game_winner = team8.id
 
-    team8.points_for += game18.score_first_team
-    team8.points_against += game18.score_second_team
-    team8.games_played += 1
-    team8.number_of_wins += 1
+#     team8.points_for += game18.score_first_team
+#     team8.points_against += game18.score_second_team
+#     team8.games_played += 1
+#     team8.number_of_wins += 1
 
-    team9.points_for += game18.score_second_team
-    team9.points_against += game18.score_first_team
-    team9.games_played += 1
+#     team9.points_for += game18.score_second_team
+#     team9.points_against += game18.score_first_team
+#     team9.games_played += 1
 
-    team8.save
-    team9.save
-    game18.status = true
-    game18.save
+#     team8.save
+#     team9.save
+#     game18.status = true
+#     game18.save
 
-  #MATCH19
+#   #MATCH19
 
-    game19.score_first_team = 13
-    game19.score_second_team = rand(1..12)
+#     game19.score_first_team = 13
+#     game19.score_second_team = rand(1..12)
 
-    game19.game_winner = team8.id
+#     game19.game_winner = team8.id
 
-    team8.points_for += game19.score_first_team
-    team8.points_against += game19.score_second_team
-    team8.games_played += 1
-    team8.number_of_wins += 1
+#     team8.points_for += game19.score_first_team
+#     team8.points_against += game19.score_second_team
+#     team8.games_played += 1
+#     team8.number_of_wins += 1
 
-    team10.points_for += game19.score_second_team
-    team10.points_against += game19.score_first_team
-    team10.games_played += 1
+#     team10.points_for += game19.score_second_team
+#     team10.points_against += game19.score_first_team
+#     team10.games_played += 1
 
-    team8.save
-    team10.save
-    game19.status = true
-    game19.save
+#     team8.save
+#     team10.save
+#     game19.status = true
+#     game19.save
 
-  #MATCH20
+#   #MATCH20
 
-    game20.score_first_team = 13
-    game20.score_second_team = rand(1..12)
+#     game20.score_first_team = 13
+#     game20.score_second_team = rand(1..12)
 
-    game20.game_winner = team9.id
+#     game20.game_winner = team9.id
 
-    team9.points_for += game20.score_first_team
-    team9.points_against += game20.score_second_team
-    team9.games_played += 1
-    team9.number_of_wins += 1
+#     team9.points_for += game20.score_first_team
+#     team9.points_against += game20.score_second_team
+#     team9.games_played += 1
+#     team9.number_of_wins += 1
 
-    team10.points_for += game20.score_second_team
-    team10.points_against += game20.score_first_team
-    team10.games_played += 1
+#     team10.points_for += game20.score_second_team
+#     team10.points_against += game20.score_first_team
+#     team10.games_played += 1
 
-    team9.save
-    team10.save
-    game20.status = true
-    game20.save
+#     team9.save
+#     team10.save
+#     game20.status = true
+#     game20.save
 
-    puts "creating Fields"
+#     puts "creating Fields"
 
-    field19 = Field.create(name: "U Corsinu", address: "60 rue de l'archipel, 20000 Ajaccio", rating: 2)
-    photo19 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain4_kafmns.jpg')
-    field19.photos.attach(io: photo19, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field19.save
+#     field19 = Field.create(name: "U Corsinu", address: "60 rue de l'archipel, 20000 Ajaccio", rating: 2)
+#     photo19 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain4_kafmns.jpg')
+#     field19.photos.attach(io: photo19, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+#     field19.save
 
-    field14 = Field.create(name: "La boule du Lac", address: "13 Av. du Lac Marion, 64200 Biarritz", rating: 2)
-    photo14 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain6_eyyio1.jpg')
-    field14.photos.attach(io: photo14, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field14.save
+#     field14 = Field.create(name: "La boule du Lac", address: "13 Av. du Lac Marion, 64200 Biarritz", rating: 2)
+#     photo14 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain6_eyyio1.jpg')
+#     field14.photos.attach(io: photo14, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+#     field14.save
 
-    field1 = Field.create(name: "Le Robert Shuman", address: "Av. Robert Schuman, 13002 Marseille", rating: 3)
-    photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338694/development/p%C3%A9tanque-social-club/terrains/terrain2_ei8q5c.jpg')
-    field1.photos.attach(io: photo1, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field1.save
+#     field1 = Field.create(name: "Le Robert Shuman", address: "Av. Robert Schuman, 13002 Marseille", rating: 3)
+#     photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338694/development/p%C3%A9tanque-social-club/terrains/terrain2_ei8q5c.jpg')
+#     field1.photos.attach(io: photo1, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+#     field1.save
 
-    field2 = Field.create(name: "Monte cristo du bonheur", address: "50 Rue Monte Cristo, 13005 Marseille", rating: 2)
-    photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain7_corl79.png')
-    field2.photos.attach(io: photo2, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field2.save
+#     field2 = Field.create(name: "Monte cristo du bonheur", address: "50 Rue Monte Cristo, 13005 Marseille", rating: 2)
+#     photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain7_corl79.png')
+#     field2.photos.attach(io: photo2, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+#     field2.save
 
-    field3 = Field.create(name: "La boule d'Héléne", address: "5 Rue de Ste Hélène, 75013 Paris", rating: 5)
-    photo3 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338694/development/p%C3%A9tanque-social-club/terrains/terrain11_gvgti4.jpg')
-    field3.photos.attach(io: photo3, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field3.save
+#     field3 = Field.create(name: "La boule d'Héléne", address: "5 Rue de Ste Hélène, 75013 Paris", rating: 5)
+#     photo3 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338694/development/p%C3%A9tanque-social-club/terrains/terrain11_gvgti4.jpg')
+#     field3.photos.attach(io: photo3, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+#     field3.save
 
 
 
-    field15 = Field.create(name: "Le terrain du quai", address: "13 Quai des Belges, 67000 Strasbourg", rating: 2)
-    photo15 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338694/development/p%C3%A9tanque-social-club/terrains/terrain9_o9mgkz.jpg')
-    field15.photos.attach(io: photo15, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field15.save
+#     field15 = Field.create(name: "Le terrain du quai", address: "13 Quai des Belges, 67000 Strasbourg", rating: 2)
+#     photo15 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338694/development/p%C3%A9tanque-social-club/terrains/terrain9_o9mgkz.jpg')
+#     field15.photos.attach(io: photo15, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+#     field15.save
 
-    field17 = Field.create(name: "Club Héraultais", address: "Rue du Progrès, 34000 Montpellier", rating: 2)
-    photo17 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338694/development/p%C3%A9tanque-social-club/terrains/terrain10_dsjsso.jpg')
-    field17.photos.attach(io: photo17, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field17.save
+#     field17 = Field.create(name: "Club Héraultais", address: "Rue du Progrès, 34000 Montpellier", rating: 2)
+#     photo17 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338694/development/p%C3%A9tanque-social-club/terrains/terrain10_dsjsso.jpg')
+#     field17.photos.attach(io: photo17, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+#     field17.save
 
-    field18 = Field.create(name: "Le terrain de la gare", address: "All. du Chemin de Fer, 69006 Lyon", rating: 2)
-    photo18 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain3_zluqdz.jpg')
-    field18.photos.attach(io: photo18, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field18.save
+#     field18 = Field.create(name: "Le terrain de la gare", address: "All. du Chemin de Fer, 69006 Lyon", rating: 2)
+#     photo18 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain3_zluqdz.jpg')
+#     field18.photos.attach(io: photo18, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+#     field18.save
 
 
-    field6 = Field.create(name: "Du luxe en boule", address: "Parc du 26ème Centenaire, 13010 Marseille", rating: 2)
-    photo6 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain5_orh1v2.jpg')
-    field6.photos.attach(io: photo6, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field6.save
+#     field6 = Field.create(name: "Du luxe en boule", address: "Parc du 26ème Centenaire, 13010 Marseille", rating: 2)
+#     photo6 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain5_orh1v2.jpg')
+#     field6.photos.attach(io: photo6, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+#     field6.save
 
-    field7 = Field.create(name: "Chez Dédé", address: "Av. de la Pointe Rouge, 13008 Marseille", rating: 4)
-    photo7 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain8_jbeagl.jpg')
-    field7.photos.attach(io: photo7, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
-    field7.save
+#     field7 = Field.create(name: "Chez Dédé", address: "Av. de la Pointe Rouge, 13008 Marseille", rating: 4)
+#     photo7 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670338693/development/p%C3%A9tanque-social-club/terrains/terrain8_jbeagl.jpg')
+#     field7.photos.attach(io: photo7, filename: 'terrain1.jpeg', content_type: 'image/jpeg')
+#     field7.save
     # field8 = Field.create(name: "luxe en boulle", address: "1 Av. Beau Pin, 13008 Marseille", rating: 2)
     # photo8 = File.open('app/assets/images/terrain1.jpeg')
     # field8.photos.attach(io: photo8, filename: 'terrain1.jpeg', content_type: 'image/jpeg')

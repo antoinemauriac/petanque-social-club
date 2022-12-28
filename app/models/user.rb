@@ -8,8 +8,9 @@ class User < ApplicationRecord
   validates :username, presence: true
   has_many :team_users
   has_many :teams, through: :team_users
-  has_many :leagues, through: :teams
   has_many :messages
+  has_many :selected_users
+  has_many :leagues, through: :selected_users
 
   include PgSearch::Model
   pg_search_scope :global_search,

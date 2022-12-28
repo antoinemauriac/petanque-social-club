@@ -91,7 +91,7 @@
         <p>Nombre de points encaissés : <%= @number_of_points_against %></p>
           <% if @diff > 0 %>
             <p>Différence de buts : + <%= @diff %></p>
-          <% elsif @diff < 0> %>
+          <% elsif @diff < 0 %>
             <p>Différence de buts : <%= @diff %></p>
           <% else %>
             <p>Différence de buts : 0 </p>
@@ -100,26 +100,28 @@
         <p>Nombre de ligues gagnées : <%= @number_of_leagues_wins %></p>
       </div>
 
-      <h3 class="bar-profile">LES COLLÈGUES</h3>
-      <table>
-        <tr>
-          <th style="padding-right:30px;">COLLÈGUES</th><th>J</th><th>V</th><th>D</th><th>%V</th>
-        </tr>
-        <% @teammates_sorted.reverse.each do |teammate| %>
+      <% if @teammates.size >= 2 %>
+        <h3 class="bar-profile">LES COLLÈGUES</h3>
+        <table>
           <tr>
-            <td class="classement-gras">
-              <% if teammate.photo.attached? %>
-                <%= cl_image_tag teammate.photo.key, class: "avatar-vainqueur" %>
-              <% end %>
-              <%= teammate.username.upcase %>
-            </td>
-            <td class="points-id back-grey"><%= @user.number_of_played_with(teammate) %></td>
-            <td class="points-id"><%= @user.number_of_wins_with(teammate) %></td>
-            <td><%= @user.number_of_loses_with(teammate) %></td>
-            <td><%= ((@user.number_of_wins_with(teammate).to_f / @user.number_of_played_with(teammate)).round(2) * 100).to_i%>%</td>
+            <th style="padding-right:30px;">COLLÈGUES</th><th>J</th><th>V</th><th>D</th><th>%V</th>
           </tr>
-        <% end %>
-      </table>
+          <% @teammates_sorted.reverse.each do |teammate| %>
+            <tr>
+              <td class="classement-gras">
+                <% if teammate.photo.attached? %>
+                  <%= cl_image_tag teammate.photo.key, class: "avatar-vainqueur" %>
+                <% end %>
+                <%= teammate.username.upcase %>
+              </td>
+              <td class="points-id back-grey"><%= @user.number_of_played_with(teammate) %></td>
+              <td class="points-id"><%= @user.number_of_wins_with(teammate) %></td>
+              <td><%= @user.number_of_loses_with(teammate) %></td>
+              <td><%= ((@user.number_of_wins_with(teammate).to_f / @user.number_of_played_with(teammate)).round(2) * 100).to_i%>%</td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
     <% end %>
   </div>
 
