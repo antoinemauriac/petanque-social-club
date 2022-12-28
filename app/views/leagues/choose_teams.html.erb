@@ -1,9 +1,9 @@
 <p>choose teams</p>
 
-  <%= simple_form_for [@league], :url =>  choose_teams_create_league_path(@league), :html => {:method => :post} do |f| %>
-    <%= f.input :users, collection: @usernames %>
-    <%= f.input :users, collection: @usernames %>
-    <%= f.input :users, collection: @usernames %>
-    <%= f.input :users, collection: @usernames %>
-    <%= f.submit 'Suivant', class: "btn btn-primary" %>
+  <%= form_with model: [@league, @team_user], :url =>  choose_teams_create_league_path(@league), :html => {:method => :post} do |f| %>
+    <%= f.collection_select "team1user1", @league.users, :id, :username %>
+    <%= f.collection_select "team1user2", @league.users, :id, :username %>
+    <%= f.collection_select "team2user1", @league.users, :id, :username %>
+    <%= f.collection_select "team2user2", @league.users, :id, :username %>
+  <%= f.submit 'Suivant', class: "btn btn-primary" %>
   <% end %>
