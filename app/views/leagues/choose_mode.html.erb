@@ -1,0 +1,6 @@
+<h1>Hello</h1>
+
+<%= form_tag(:controller => "leagues", :action => "choose_mode_create", :method => "post", :class => "nifty_form") do %>
+  <%= submit_tag("Hasard") %>
+  <%= submit_tag("Choix") %>
+<% end %>
