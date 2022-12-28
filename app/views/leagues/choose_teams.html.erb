@@ -1,9 +1,12 @@
 <p>choose teams</p>
 
   <%= form_with model: [@league, @team_user], :url =>  choose_teams_create_league_path(@league), :html => {:method => :post} do |f| %>
-    <%= f.collection_select "team1user1", @league.users, :id, :username %>
-    <%= f.collection_select "team1user2", @league.users, :id, :username %>
-    <%= f.collection_select "team2user1", @league.users, :id, :username %>
-    <%= f.collection_select "team2user2", @league.users, :id, :username %>
+    <% i = 1 %>
+    <% @number_of_teams.times do %>
+      <p><%= "Doublette #{i}" %> </p>
+      <%= f.collection_select "team#{i}user1", @players, :id, :username %>
+      <%= f.collection_select "team#{i}user2", @players, :id, :username %>
+      <% i += 1 %>
+    <% end %>
   <%= f.submit 'Suivant', class: "btn btn-primary" %>
   <% end %>

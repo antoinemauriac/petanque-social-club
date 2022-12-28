@@ -77,11 +77,28 @@ class LeaguesController < ApplicationController
     @players = @league.selected_users.map(&:user)
     @usernames = @players.map(&:username)
     @team_user = TeamUser.new
+    @number_of_teams = @players.size / 2
   end
 
   def choose_teams_create
     @league = League.find(params[:id])
-    raise
+    @pairs_of_players = params[:team_user].values.map { |id| User.find(id) }.each_slice(2).to_a
+    @teams = []
+    @pairs_of_players.each do |pair|
+      @team = Team.create(league: @league)
+      pair.each do |player|
+        TeamUser.create(user: player, team: @team)
+      end
+      if @teams.any?
+        @teams.each do |team|
+          @game = Game.create(league: @league)
+          GameTeam.create!(team: team, game: @game)
+          GameTeam.create!(team: @team, game: @game)
+        end
+      end
+      @teams.push(@team)
+    end
+    redirect_to league_path(@league)
   end
 
   private
