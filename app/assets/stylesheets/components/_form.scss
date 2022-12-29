@@ -14,12 +14,12 @@ legend ~ div.form-check:first-of-type {
   clear: left;
 }
 
-.form-wrapper form {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+// .form-wrapper form {
+//   width: 100vw;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
 
 
 #game_score_first_team {
@@ -30,16 +30,8 @@ legend ~ div.form-check:first-of-type {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   resize:none;
-  // align-self: flex-start;
 }
 
-// #game_score_second_team:hover {
-//   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-// }
-
-// #game_score_second_team:hover {
-//   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-// }
 
 #game_score_second_team {
   border: 2px solid $blue!important;
@@ -49,36 +41,6 @@ legend ~ div.form-check:first-of-type {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   resize:none;
-  // align-self: flex-end;
-}
-
-
-// textarea:focus, input:focus{
-//   outline: none;
-//   color: $blue;
-//   font-size: x-large;
-//   font-weight: 600;
-//   text-align: center!important;
-//   background-color: white !important;
-// }
-
-
-input, button, select, optgroup, textarea {
-  color: $blue;
-  font-weight:900;
-  text-align: center!important;
-  font-size: xx-large;
-}
-
-
-input {
-  border: none;
-  background-color: white !important;
-  color: $blue;
-  border-radius: 8px;
-  padding: 12px;
-  font-family: $font-family-sans-serif;
-  font-size: 16px;
 }
 
 
@@ -86,7 +48,6 @@ input {
   display: flex;
   align-content: stretch;
   justify-content: space-evenly;
-  /* align-items: center; */
   flex-direction: column;
   padding: 18px;
 
@@ -98,18 +59,18 @@ input {
   align-items: center;
 }
 
-select {
-  text-align: center;
-  padding: 10px;
-  width: 156px;
-  background-color: $blue;
-  border-radius: 40px;
-  font-family: $body-font;
-  margin-top: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-  color: $yellow!important;
-}
+// select {
+//   text-align: center;
+//   padding: 10px;
+//   width: 156px;
+//   background-color: $blue;
+//   border-radius: 40px;
+//   font-family: $body-font;
+//   margin-top: 10px;
+//   margin-left: 5px;
+//   margin-right: 5px;
+//   color: $yellow!important;
+// }
 
 .form-input {
   color:$blue;

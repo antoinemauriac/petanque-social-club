@@ -1,0 +1,22 @@
+.bar {
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+.light-blue-bar {
+  background-color: $light-blue;
+  color: $blue;
+}
+
+.yellow-bar {
+  background-color: $yellow;
+  color: $blue;
+  margin-bottom: 20px;
+}
+
+#bar-inside {
+  width: 105%;
+  max-width: 450px;
+}

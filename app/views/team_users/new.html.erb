@@ -16,8 +16,8 @@
         <div class="each-team">
           <h3><%= "Doublette n°#{i}" %></h3>
           <div class="selection">
-            <%= f.collection_select "team#{i}user1", all_username, :id, :username, class: "team-selection" %>
-            <%= f.collection_select "team#{i}user2", all_username, :id, :username, class: "team-selection" %>
+            <%= f.collection_select "team#{i}user1", all_username, :id, :username %>
+            <%= f.collection_select "team#{i}user2", all_username, :id, :username %>
           </div>
         </div>
       <% end %>

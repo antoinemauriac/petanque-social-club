@@ -27,14 +27,14 @@ class LeaguesController < ApplicationController
 
   def create
     @league = League.new(league_params)
-    @players = params[:league][:user_ids].excluding("").map { |username| User.find_by(username: username) }
-    @players.each do |player|
-      SelectedUser.create(league: @league, user: player)
-    end
     if @league.save
+      @players = params[:user].keys.map { |username| User.find_by(username: username) }
+      @players.each do |player|
+        SelectedUser.create(league: @league, user: player)
+      end
       redirect_to choose_mode_league_path(@league)
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_league_path
     end
   end
 
@@ -44,7 +44,7 @@ class LeaguesController < ApplicationController
 
   def choose_mode_create
     @league = League.find(params[:id])
-    if params[:commit] == "Hasard"
+    if params[:commit] == "HASARD"
       random
     else
       redirect_to choose_teams_league_path(@league)
@@ -69,7 +69,7 @@ class LeaguesController < ApplicationController
       end
       @teams.push(@team)
     end
-    redirect_to league_path(@league)
+    redirect_to league_games_path(@league)
   end
 
   def choose_teams
@@ -98,7 +98,7 @@ class LeaguesController < ApplicationController
       end
       @teams.push(@team)
     end
-    redirect_to league_path(@league)
+    redirect_to league_games_path(@league)
   end
 
   private

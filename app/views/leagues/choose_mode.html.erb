@@ -1,6 +1,11 @@
-<h1>Hello</h1>
+<h2 class="bar light-blue-bar">CRÉATION DE LIGUE</h2>
+<h3 class="bar yellow-bar">3. ES-TU JOUEUR ?</h3>
 
-<%= form_tag(:controller => "leagues", :action => "choose_mode_create", :method => "post", :class => "nifty_form") do %>
-  <%= submit_tag("Hasard") %>
-  <%= submit_tag("Choix") %>
-<% end %>
+<div class="flexy choose-mode">
+  <%= form_tag(:controller => "leagues", :action => "choose_mode_create", :method => "post", :class => "nifty_form") do %>
+  <h3>”Non je ne suis pas zinzin, hors de question que je tombe avec tonton Nanard, il est nul. Je choisis moi même les doublettes”</h3>
+    <%= submit_tag("CHOIX", :class => "btn-small btn-smally") %>
+  <h3>”Oui j'aime l'aventure, la sauce pimentée, et jouer avec tonton Nanard ne me fait pas peur. Je laisse le hasard faire les doublettes”</h3>
+    <%= submit_tag("HASARD", :class => "btn-small btn-smally") %>
+  <% end %>
+</div>

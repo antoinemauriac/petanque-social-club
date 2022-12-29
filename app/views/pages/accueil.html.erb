@@ -1,18 +1,8 @@
-    <h2 class="flexy light-blue-bar">
-      LE MENU
-    </h2>
+<h2 class="bar light-blue-bar">LE MENU</h2>
 
-    <div class="flexy" style="margin-top:15px">
-      <p class="btn-big"><%= link_to "MES LIGUES" , leagues_path %></p>
-    </div>
-
-    <div class="flexy">
-      <p class="btn-big"><%= link_to "LES TERRAINS" , fields_path %></p>
-    </div>
-
-    <div class="flexy">
-      <p class="btn-big"><%= link_to "MON PROFIL" , user_path(current_user) %></p>
-    </div>
-    <div class="flexy">
-      <p class="btn-big"><%= link_to "LA COMMUNAUTÉ" , community_path %></p>
-    </div>
+<div class="flexy">
+  <%= link_to "MES LIGUES" , leagues_path, class:"btn-big" %>
+  <%= link_to "LES TERRAINS" , fields_path, class:"btn-big" %>
+  <%= link_to "MON PROFIL" , user_path(current_user), class:"btn-big" %>
+  <%= link_to "LA COMMUNAUTÉ" , community_path, class:"btn-big" %>
+</div>

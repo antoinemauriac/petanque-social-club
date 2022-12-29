@@ -1,8 +1,41 @@
-.flexy-create {
+.container-player-selection {
+  max-width: 95%;
+  text-align: center;
+  margin: auto auto;
+
+  h3 {
+    font-size: 20px;
+    margin: 15px 0px;
+  }
+}
+
+.league_name {
+  margin-bottom: 0!important;
+}
+.avatar-selection {
+  width: 40px;
+}
+
+.check-player {
+  position: absolute;
+  transform: scale(0);
+}
+
+.check-player + label {
+  cursor: pointer;
+}
+
+.check-player:checked + label {
+  cursor: pointer;
+}
+
+
+.player-selection {
 max-width: 350px;
 justify-content: space-between;
 display: flex;
 flex-wrap: wrap;
+margin: auto auto;
 
 }
 
@@ -12,35 +45,9 @@ flex-wrap: wrap;
   border: 2px solid $blue;
   margin: 5px;
   text-align: center;
-  justify-content: space-between;
+  justify-content: space-around;
   border-radius: 5px;
   width: 158px;
-}
-
-.avatar-selection {
-  width: 40px;
-}
-
-.container-create {
-  text-align: center;
-}
-
-.title-create {
-  color: $blue;
-  font-size: 15px;
-}
-
-.text-create {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-#league_name {
-  border: 2px solid $blue;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  max-width: 245px;
-  max-height: 50px;
 }
 
 .username-create {
@@ -61,17 +68,22 @@ flex-wrap: wrap;
   }
 }
 
-.btn-create-team {
-  align-items: center;
-  background-color: $blue!important;
-  text-align: center;
-  font-size: 17px;
-  border-radius: 40px;
-  color: $yellow!important;
-  width: 270px;
-  margin: 20px 0;
+.input-league-name {
+  border: 2px solid $blue;
+  font-family: $body-font;
+  color: $blue!important;
+  border-radius: 5px;
+  width: 300px;
+}
 
-  a {
-    color: $yellow!important;
-  }
+.form-new-league {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-bottom: 0;
+}
+
+label[for="league_name"] {
+    display:none;
 }

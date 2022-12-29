@@ -106,3 +106,27 @@
 #   <% end %>
 #   </div>
 # </div>
+
+# <h2 class="flexy light-blue-bar">CRÉATION DE LIGUE</h2>
+#   <%= simple_form_for [@league] do |f| %>
+#     <%= f.input :name %>
+#     <div class="player-selection">
+#       <% @friends.each do |friend| %>
+#         <input type="checkbox" name="user[<%= friend.username%>]" id="<%= friend.username%>" class="check-player" />
+#         <label for="<%= friend.username %>"><%= friend.username.upcase %><%= cl_image_tag friend.photo.key, class: "avatar-selection" %></label>
+#       <% end %>
+#     </div>
+#     <%= f.submit 'Suivant', class: "btn btn-primary" %>
+#   <% end %>
+
+  # <h2 class="flexy light-blue-bar">CRÉATION DE LIGUE</h2>
+  # <%= simple_form_for [@league] do |f| %>
+  #   <%= f.input :name %>
+  #   <%= f.input :users,
+  #                 as: :check_boxes,
+  #                 collection: @friends.map(&:username),
+  #                 input_html: { multiple: true, class: "tag-selector" },
+  #                 :label_method => lambda { |b| image_tag(User.find_by(username: b).photo.url) },
+  #                 item_wrapper_class: 'tag-item' %>
+  #   <%= f.submit 'Suivant', class: "btn btn-primary" %>
+  # <% end %>
