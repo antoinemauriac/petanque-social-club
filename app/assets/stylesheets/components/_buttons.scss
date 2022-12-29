@@ -5,7 +5,7 @@
   background-color: $blue;
   border-radius: 40px;
   font-family: $body-font;
-  font-weight: 900!important;
+  font-weight: 900;
   font-style: italic;
   margin-top: 60px;
   color: $yellow!important;
@@ -15,53 +15,12 @@
   }
 }
 
-.btn-smally, .btn-smally:hover {
-  text-align: center;
-  font-size: 18px;
-  width: 115px;
-  border-radius: 10px;
-  font-family: $body-font;
-  font-weight: 900!important;
-  font-style: italic;
-  margin-top: 60px;
-  color: $yellow!important;
-
-  a {
-    color: $yellow!important;
-  }
+.btn-smally {
+  font-size: 24px;
+  width: 150px;
+  margin: 20px 0px!important;
+  border: none;
 }
-
-
-
-.btn-small:hover{
-  text-align: center;
-  font-size: 30px;
-  width: 180px;
-  background-color: $blue!important;
-  border-radius: 40px;
-  font-family: $body-font;
-  font-weight: 900!important;
-  font-style: italic;
-  // margin-top: 60px;
-  color: $light-blue!important;
-}
-
-// .btn-smally:hover{
-//   text-align: center;
-//   font-size: 18px;
-//   width: 115px;
-//   background-color: $blue;
-//   border-radius: 10px;
-//   font-family: $body-font;
-//   font-weight: 900!important;
-//   font-style: italic;
-//   margin-top: 60px;
-//   color: $yellow!important;
-
-//   a {
-//     color: $yellow!important;
-//   }
-// }
 
 
 .btn-score {
@@ -82,22 +41,12 @@
   justify-content: center;
   max-width: 600px;
   align-items: center;
-
-    a {
-    font-size: 16px;
-    color: $white;
-    font-weight: 800;
-    padding: 10px 5px;
-  }
-}
-.btn-medium-grey {
-  background-color: #cfd1d3;
-
-    a {
-    color: $blue;
-  }
+  color: white;
 }
 
+.btn-medium:hover {
+  color: white!important;
+}
 
 .btn {
   background-color: $blue!important;
@@ -109,8 +58,12 @@
   background-color: $yellow;
 }
 
+#btn-create:hover {
+  color: $blue!important;
+}
+
 .btn-big {
-  margin-top: 10px;
+  margin-top: 25px;
   width: 80%;
   height: 85px;
   border-radius: 15px;
@@ -120,15 +73,25 @@
   justify-content: center;
   align-items: center;
   max-width: 600px;
-
-    a {
-    font-size: 16px;
-    color: $white;
-    font-weight: 800;
-    padding: 10px 5px;
-  }
+  color: white;
 }
 
-.btn, .btn:hover {
-  background-color: $blue!important;
+.btn-big:hover {
+  color: white!important;
+}
+
+.btn-doublette {
+  text-align: center;
+  font-size: 18px;
+  width: 155px;
+  background-color: $blue;
+  border-radius: 40px;
+  border: none!important;
+  font-family: $body-font;
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: $white;
+  height: 35px;
 }

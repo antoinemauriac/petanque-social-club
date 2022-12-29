@@ -1,6 +1,26 @@
-<h2 class="flexy light-blue-bar">CRÉATION DE LIGUE</h2>
-  <%= simple_form_for [@league] do |f| %>
-    <%= f.input :name %>
-    <%= f.association :users, as: :check_boxes, collection: @friends.map(&:username) %>
-    <%= f.submit 'Suivant', class: "btn btn-primary" %>
+<h2 class="bar light-blue-bar">CRÉATION DE LIGUE</h2>
+<h3 class="bar yellow-bar">1. CHOISIS UN NOM</h3>
+<div class="container-player-selection">
+  <%= simple_form_for @league, html: { class: "form-new-league"} do |f| %>
+    <%= f.input :name,
+                label: "Nom de la ligue",
+                height: 0,
+                input_html: { class: "input-league-name" },
+                placeholder: 'La ligue des copains' %>
+  <h3 class="bar yellow-bar" id="bar-inside">2. CHOISIS DES COLLÈGUES</h3>
+    <div class="player-selection">
+      <% @friends.each do |friend| %>
+      <div class="select-player"  data-controller="selection" data-selection-target="player">
+        <input type="checkbox" name="user[<%= friend.username%>]" id="<%= friend.username%>" class="check-player" />
+        <label class="username-create" data-action="click->selection#background" for="<%= friend.username %>"><%= friend.username.upcase %></label>
+        <% if friend.photo.attached? %>
+          <%= cl_image_tag friend.photo.key, class: "avatar-selection" %>
+        <% else %>
+          <%= image_tag "bobby.png", class: "avatar-selection"%>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+    <%= f.submit 'Suivant', class: "btn-small btn-smally" %>
   <% end %>
+</div>

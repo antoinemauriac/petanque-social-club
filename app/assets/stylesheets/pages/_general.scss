@@ -31,3 +31,9 @@ ul, ol {
 .nav-link-login {
   color: $yellow!important;
 }
+
+body, h1, h2, h3, h4 {
+  font-family: $body-font!important;
+  font-weight: 700!important;
+  font-style: italic;
+}

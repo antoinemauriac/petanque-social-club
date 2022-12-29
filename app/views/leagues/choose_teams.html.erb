@@ -1,12 +1,19 @@
-<p>choose teams</p>
+<h2 class="bar light-blue-bar">CRÉATION DE LIGUE</h2>
+<h3 class="bar yellow-bar">4. JE FORME LES DOUBLETTES</h3>
 
+<div class="flexy choose-teams">
   <%= form_with model: [@league, @team_user], :url =>  choose_teams_create_league_path(@league), :html => {:method => :post} do |f| %>
     <% i = 1 %>
     <% @number_of_teams.times do %>
-      <p><%= "Doublette #{i}" %> </p>
-      <%= f.collection_select "team#{i}user1", @players, :id, :username %>
-      <%= f.collection_select "team#{i}user2", @players, :id, :username %>
+      <h3><%= "Doublette #{i}" %></h3>
+      <div class="doublette-selection">
+        <%= f.collection_select "team#{i}user1", @players, :id, :username, {}, { class: "btn-doublette" } %>
+        <%= f.collection_select "team#{i}user2", @players, :id, :username, {}, { class: "btn-doublette" } %>
+      </div>
       <% i += 1 %>
     <% end %>
-  <%= f.submit 'Suivant', class: "btn btn-primary" %>
+  <div class="flexy">
+    <%= f.submit 'FINITO', class: "btn-small btn-smally" %>
+  </div>
+</div>
   <% end %>

@@ -1,18 +1,15 @@
 
-<h2 class="flexy light-blue-bar">
+<h2 class="bar light-blue-bar">
   <%= @league.name.upcase %>
 </h2>
 <ul class="nav nav-pills nav-fill" style="margin-bottom:10px">
   <li class="nav-item yellow-box" >
-    <%# <a class="nav-link "  href="#"> %>
     <%= link_to "CLASSEMENT", league_path(@league) %>
   </li>
   <li class="nav-item yellow-box" >
-    <%# <a class="nav-link" href="#"> %>
     <%= link_to "MATCHS", league_games_path(@league) %>
   </li>
   <li class="nav-item yellow-box active">
-    <%# <a class="nav-link active"  href="#"> %>
     <%= link_to "MUR", league_messages_path(@league) %>
   </li>
 </ul>

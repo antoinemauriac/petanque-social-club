@@ -1,16 +1,14 @@
-<h2 class= "light-blue-bar">MES LIGUES</h2>
+<h2 class= "bar light-blue-bar">MES LIGUES</h2>
 
 <div class="flexy create-league" style="margin-top:15px">
   <%= link_to "CRÉER UNE NOUVELLE LIGUE", new_league_path, class:"btn-medium", id:"btn-create" %>
 </div>
 
-<ul class="flexy">
+<div class="flexy">
   <% @leagues.reject { |league| league.status == true }.each do |league| %>
-  <li class="btn-medium"><%= link_to league.name.upcase , league_path(league) %></li>
+    <%= link_to league.name.upcase , league_path(league), class:"btn-medium" %>
   <% end %>
-<%# </ul>
-<ul class="flexy"> %>
   <% @leagues.select { |league| league.status == true }.each do |league| %>
-  <li class="btn-medium btn-medium-grey"><%= link_to league.name.upcase , league_path(league) %></li>
+    <%= link_to league.name.upcase , league_path(league), class:"btn-medium btn-medium-grey" %>
   <% end %>
-</ul>
+</div>
