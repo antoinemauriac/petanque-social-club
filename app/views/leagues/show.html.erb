@@ -5,20 +5,15 @@
 <div >
   <ul class="nav nav-pills nav-fill" style="margin-bottom:10px">
     <li class="nav-item yellow-box active" >
-     <%# <a class="nav-link active"  href="#"> %>
       <%= link_to "CLASSEMENT", league_path(@league) %>
     </li>
     <li class="nav-item yellow-box" >
-     <%# <a class="nav-link" href="#"> %>
       <%= link_to "MATCHS", league_games_path(@league) %>
     </li>
     <li class="nav-item yellow-box">
-     <%# <a class="nav-link"  href="#"> %>
       <%= link_to "MUR", league_messages_path(@league) %>
     </li>
   </ul>
-
-
 
   <% if @league.status == true %>
     <div class="flexy">

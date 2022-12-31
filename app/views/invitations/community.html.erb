@@ -1,9 +1,9 @@
-
+<h3 class="bar light-blue-bar">TROUVE TES COLLÈGUES</h3>
 <div class="flexy liste-search">
   <%= form_with url: "/community", method: :get do %>
     <%= text_field_tag :query, params[:query], placeholder: "Recherche un collègue !", class: "searchbar" %>
     <div class="flexy">
-    <button class="btn-search-user" type="submit" label="search">RECHERCHER</button>
+    <button class="btn-small btn-smally" id="btn-search" type="submit" label="search">RECHERCHER</button>
     </div>
   <% end %>
 
@@ -16,9 +16,9 @@
       <div class="user-card">
         <div class="pics">
             <% if user.photo.attached? %>
-              <%= cl_image_tag user.photo.key, class: "avatar" %>
+              <%= cl_image_tag user.photo.key, class: "avatar-community" %>
             <% else %>
-              <%= image_tag "bobby.png", class: "avatar" %>
+              <%= image_tag "bobby.png", class: "avatar-community" %>
             <% end %>
         </div>
 

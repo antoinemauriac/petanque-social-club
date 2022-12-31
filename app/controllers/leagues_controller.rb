@@ -17,10 +17,11 @@ class LeaguesController < ApplicationController
   end
 
   def new
+    @user = current_user
     @league = League.new
     @friends = []
-    @friends.push(current_user)
-    current_user.friends.each do |friend|
+    @friends.push(@user)
+    @user.friends.each do |friend|
       @friends.push(friend)
     end
   end

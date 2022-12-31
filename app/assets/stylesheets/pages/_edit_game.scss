@@ -1,0 +1,42 @@
+.edit-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 330px;
+  margin: auto auto;
+  text-align: center;
+}
+
+
+.team-display {
+  display:flex;
+  margin: 20px 0px;
+  justify-content: space-evenly;
+}
+
+.avatar-score {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.each-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 150px;
+}
+
+.score-team {
+  border: 2px solid $blue;
+  border-radius: 4px;
+  width: 70px;
+  font-size: 30px;
+  height: 50px;
+  text-align: center;
+  color: $blue;
+  font-weight: 900;
+}
+
+.edit-score-form {
+  width: 300px;
+}

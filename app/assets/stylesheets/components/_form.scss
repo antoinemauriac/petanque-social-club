@@ -14,64 +14,6 @@ legend ~ div.form-check:first-of-type {
   clear: left;
 }
 
-// .form-wrapper form {
-//   width: 100vw;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-
-#game_score_first_team {
-  border: 2px solid $blue!important;
-  border-radius: 4px;
-  padding: 6px !important;
-  margin: 20px !important;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  resize:none;
-}
-
-
-#game_score_second_team {
-  border: 2px solid $blue!important;
-  border-radius: 4px;
-  padding: 6px !important;
-  margin: 20px !important;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  resize:none;
-}
-
-
-.each-team {
-  display: flex;
-  align-content: stretch;
-  justify-content: space-evenly;
-  flex-direction: column;
-  padding: 18px;
-
-}
-
-.form-league {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-// select {
-//   text-align: center;
-//   padding: 10px;
-//   width: 156px;
-//   background-color: $blue;
-//   border-radius: 40px;
-//   font-family: $body-font;
-//   margin-top: 10px;
-//   margin-left: 5px;
-//   margin-right: 5px;
-//   color: $yellow!important;
-// }
-
 .form-input {
   color:$blue;
 }

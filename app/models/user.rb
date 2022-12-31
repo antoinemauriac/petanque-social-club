@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :username, presence: true
   has_many :team_users
   has_many :teams, through: :team_users
+  has_many :game_teams, through: :teams
+  has_many :games, through: :game_teams
   has_many :messages
   has_many :selected_users
   has_many :leagues, through: :selected_users

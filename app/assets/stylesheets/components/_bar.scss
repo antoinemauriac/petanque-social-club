@@ -6,17 +6,17 @@
 }
 
 .light-blue-bar {
-  background-color: $light-blue;
+  background-color: $yellow;
   color: $blue;
 }
 
 .yellow-bar {
-  background-color: $yellow;
-  color: $blue;
+  background-color: $blue;
+  color: $yellow;
   margin-bottom: 20px;
 }
 
-#bar-inside {
+.bar-inside {
   width: 105%;
   max-width: 450px;
 }
