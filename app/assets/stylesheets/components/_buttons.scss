@@ -16,10 +16,14 @@
 }
 
 .btn-smally {
-  font-size: 24px;
+  font-size: 20px;
   width: 150px;
   margin: 20px 0px!important;
   border: none;
+}
+
+#btn-message {
+  margin-top: 5px!important;
 }
 
 
@@ -74,6 +78,7 @@
   align-items: center;
   max-width: 600px;
   color: white;
+  font-size: 22px;
 }
 
 .btn-big:hover {
@@ -94,4 +99,8 @@
   margin-bottom: 15px;
   color: $white;
   height: 35px;
+}
+
+#btn-search {
+  width: 180px;
 }

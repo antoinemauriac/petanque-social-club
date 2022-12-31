@@ -1,164 +1,106 @@
-// .chatroom {
-//   display:flex;
-//   justify-content:center;
-//   flex-direction: column;
-//   align-items: center;
-//   z-index:-1;
-// }
+.chatroom {
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
+  align-items: center;
+  z-index:-1;
+}
 
-// .chatroom-item {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
+.chatroom-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-// .chatroom-display {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
+.chatroom-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-// .card-chat {
-//   border-style:solid;
-//   border-color: $blue;
-//   background-color: $light-blue;
-//   border-radius: 10px;
-//   margin-bottom: 33px;
-//   min-height: 110px;
-//   width: 340px;
-//   position: relative;
-// }
+.card-chat {
+  border-style:solid;
+  border-color: $blue;
+  background-color: $light-blue;
+  border-radius: 10px;
+  margin-bottom: 32px;
+  min-height: 80px;
+  width: 340px;
+  position: relative;
+}
 
-// .card-chat-reverse {
-//   border-style:solid;
-//   border-color: $blue;
-//   background-color: white;
-//   border-radius: 15px;
-//   margin-bottom: 10px;
-//   min-height: 110px;
-//   width: 340px;
-// }
+.card-chat-reverse {
+  background-color: white;
+}
 
-// .text-light-grey {
-//   color:$light-grey;
-//   text-align: right;
-//   font-size: 10px!important;
-//   margin-top: 5px;
-//   width: 50%;
-// }
+.message-light-grey {
+  color:$light-grey;
+  text-align: right;
+  font-size: 10px!important;
+  margin-top: 5px;
+  width: 50%;
+}
 
-// .text-light-grey-reverse {
-//   color:$light-grey;
-//   text-align: left;
-//   font-size: 10px!important;
-//   margin-top: 5px;
-//   width: 50%;
-// }
+.message-reverse {
+  text-align: left;
+}
 
-// .message-content-blue {
-//   color:$blue;
-// }
+.message-content-blue {
+  color:$blue;
+  margin-top: 0;
+  margin-right: 16px;
+  margin-left: 16px;
+  margin-bottom: 10px;
+}
 
-// .message-content-green {
-//   color:$green;
-// }
+.message-avatar-date {
+  display:flex;
+  justify-content: space-between;
+  margin:2px 8px;
+}
 
+.message-reverse {
+  flex-direction: row-reverse;
+}
 
-// .message-avatar-date {
-//   display:flex;
-//   justify-content: space-between;
-//   margin:2px 8px;
-// }
+#form-message {
+  border-radius: 10px;
+  border: 2px solid $blue;
+}
 
-// .message-avatar-date-reverse {
-//   display:flex;
-//   justify-content:space-between;
-//   margin:2px 8px;
-//   flex-direction: row-reverse;
-// }
+.username-chat {
+  color: $blue;
+}
 
-// .message-avatar {
-//   // padding-right: 3px;
-//   margin-top: 4px;
-// }
+.username-comment {
+  color: $blue;
+  width: -webkit-fill-available;
+  margin-left: 45px;
+  margin-top: 0px;
+  font-size: 12px;
+}
 
-// .message-content-blue {
-//   margin-left: 16px;
-// }
+.username-reverse {
+  text-align: right;
+  margin-right: 45px;
+}
 
-// .form-style {
-//   display:flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   align-items: center;
-//   align-content: center;
-//   flex-wrap: wrap;
-// }
+#current-user-chat {
+  background: white!important;
+}
 
-// .envoi, .envoi:hover {
-//   margin-top:0;
-//   margin-bottom: 20px;
-//   display:flex;
-//   justify-content: center;
-//   margin-left: 120px;
-//   margin-right: 120px;
-//   align-items: center ;
-// }
+.avatar-poto-message {
+  width: 60px;
+  position: absolute;
+  right: 295px;
+  top: -35px;
+}
+.avatar-reverse {
+  right: -17px;
+  top: -35px;
+}
 
-// .form-control {
-//   border-radius: 10px;
-//   border: 2px solid $blue;
-// }
-
-// .username-chat {
-//   color: $blue;
-// }
-
-// .blaze-comment {
-//   color: $blue;
-//   width: -webkit-fill-available;
-//   margin-left: 45px;
-//   margin-top: 0px;
-//   font-size: 12px;
-// }
-
-// .blaze-comment-reverse {
-//   color: $blue;
-//   width: -webkit-fill-available;
-//   margin-right: 45px;
-//   margin-top: 0px;
-//   font-size: 12px;
-//   text-align: right;
-// }
-
-
-// #current-user-avatar {
-//   background: white!important;
-// }
-
-// .avatar-poto-message-reverse {
-//   width: 60px;
-//   position: absolute;
-//   right: -17px;
-//   top: -35px;
-// }
-
-// .avatar-poto-message {
-//   width: 60px;
-//   position: absolute;
-//   right: 295px;
-//   top: -35px;
-// }
-
-// .message_comment {
-//   display: flex;
-//   justify-content: center;
-//   outline: none;
-//   color: $blue;
-//   font-size: x-large;
-//   font-weight: 600;
-//   text-align: center!important;
-//   background-color: white !important;
-//   border-radius:10px;
-//   width:100%;
-// }
+#new_message {
+  width: 300px;
+}

@@ -27,19 +27,11 @@
 }
 
 .nav-pills .nav-link.active {
-  color: $blue!important;
+  color: $yellow!important;
   font-family: $body-font;
   font-weight: 800!important;
-  background-color: $yellow!important;
+  background-color: $blue!important;
 }
-
-// .nav-link {
-//   background-color: $white!important;
-// }
-
-// .nav-link.active{
-//   background-color: $yellow!important;
-// }
 
 .nav-item-navabar a {
   color: $yellow!important;
@@ -60,7 +52,6 @@
   z-index:10;
 }
 
-
-  // .navbar-expand-sm, .navbar-toggler {
-  //     display: block!important;
-  // }
+.avatar-navbar {
+  width: 70px;
+}

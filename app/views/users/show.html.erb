@@ -10,18 +10,28 @@
     <li class="nav-item" data-action="click->profile#badges">
       <a class="nav-link" data-profile-target="badge" href="#">BADGES</a>
     </li>
+    <% if @user == current_user %>
     <li class="nav-item" data-action="click->profile#collegues">
-      <a class="nav-link" data-profile-target="collegue" href="#">COLLÈGUES</a>
+      <a class="nav-link" data-profile-target="collegue" href="#">MES COLLÈGUES</a>
     </li>
+    <% else %>
+    <li class="nav-item" data-action="click->profile#collegues">
+      <a class="nav-link" data-profile-target="collegue" href="#">SES COLLÈGUES</a>
+    </li>
+    <% end %>
   </ul>
 
   <div class="stats" data-profile-target="stats">
     <% if @user.number_of_games_played == 0 %>
       <p>Il faut jouer des matchs pour avoir des statistiques 🤓</p>
     <% else %>
-      <h3>LE BILAN</h3>
+    <% if @user == current_user %>
+      <h3>MON BILAN</h3>
+    <% else %>
+    <h3>LE BILAN DE <%= @user.username.upcase %> </h3>
+    <% end %>
       <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, class: "avatar-poto" %>
+        <%= cl_image_tag @user.photo.key, class: "avatar-poto"%>
       <% else %>
         <%= image_tag "bobby.png", class: "avatar-poto"%>
       <% end %>
@@ -60,7 +70,7 @@
       <% end %>
 
       <% if @teammates.size >= 2 %>
-        <h3 class="bar-profile">CONSEIL DE CLASSE</h3>
+        <h3 class="bar yellow-bar bar-inside">CONSEIL DE CLASSE</h3>
         <div class="flexy">
           <div class="card-player">
             <h4>C'est le sang !</h4>
@@ -85,7 +95,30 @@
         </div>
       <% end %>
 
-      <h3 class="bar-profile">ENCORE DES STATS</h3>
+      <% if @teammates.size >= 2 %>
+        <h3 class="bar yellow-bar bar-inside">LE DÉTAIL PAR COLLÈGUE</h3>
+        <table>
+          <tr>
+            <th style="padding-right:30px;">COLLÈGUES</th><th>J</th><th>V</th><th>D</th><th>%V</th>
+          </tr>
+          <% @teammates_sorted.reverse.each do |teammate| %>
+            <tr>
+              <td class="classement-gras">
+                <% if teammate.photo.attached? %>
+                  <%= cl_image_tag teammate.photo.key, class: "avatar-poto-list" %>
+                <% end %>
+                <%= teammate.username.upcase %>
+              </td>
+              <td class="points-id back-grey"><%= @user.number_of_played_with(teammate) %></td>
+              <td class="points-id"><%= @user.number_of_wins_with(teammate) %></td>
+              <td><%= @user.number_of_loses_with(teammate) %></td>
+              <td><%= ((@user.number_of_wins_with(teammate).to_f / @user.number_of_played_with(teammate)).round(2) * 100).to_i%>%</td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
+
+      <h3 class="bar yellow-bar bar-inside">ENCORE DES STATS</h3>
       <div style="text-align:left;">
         <p>Nombre de points marqués : <%= @number_of_points_for %></p>
         <p>Nombre de points encaissés : <%= @number_of_points_against %></p>
@@ -99,32 +132,8 @@
         <p>Nombre de ligues jouées : <%= @number_of_leagues_played %></p>
         <p>Nombre de ligues gagnées : <%= @number_of_leagues_wins %></p>
       </div>
-
-      <% if @teammates.size >= 2 %>
-        <h3 class="bar-profile">LES COLLÈGUES</h3>
-        <table>
-          <tr>
-            <th style="padding-right:30px;">COLLÈGUES</th><th>J</th><th>V</th><th>D</th><th>%V</th>
-          </tr>
-          <% @teammates_sorted.reverse.each do |teammate| %>
-            <tr>
-              <td class="classement-gras">
-                <% if teammate.photo.attached? %>
-                  <%= cl_image_tag teammate.photo.key, class: "avatar-vainqueur" %>
-                <% end %>
-                <%= teammate.username.upcase %>
-              </td>
-              <td class="points-id back-grey"><%= @user.number_of_played_with(teammate) %></td>
-              <td class="points-id"><%= @user.number_of_wins_with(teammate) %></td>
-              <td><%= @user.number_of_loses_with(teammate) %></td>
-              <td><%= ((@user.number_of_wins_with(teammate).to_f / @user.number_of_played_with(teammate)).round(2) * 100).to_i%>%</td>
-            </tr>
-          <% end %>
-        </table>
-      <% end %>
     <% end %>
   </div>
-
   <div class="d-none" data-profile-target="badges" style="margin-top:20px;">
     <div class="badge-div">
       <div class="flexy" tabindex="0" role="button" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="auto" title="Ligue🌟" data-bs-content="Tu as gagné une ligue, c'est déjà ça minot !">

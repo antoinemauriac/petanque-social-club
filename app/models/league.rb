@@ -1,5 +1,6 @@
 class League < ApplicationRecord
-  validates :name, presence: true, length: { in: 3..25 }
+  validates :name, presence: true
+  validates :name, length: { in: 3..25 }
   has_many :games
   has_many :teams
   has_many :team_users, through: :teams

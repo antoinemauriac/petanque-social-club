@@ -5,7 +5,6 @@
   border-radius: 16px;
   width: 300px;
   margin: 10px;
-  align-self: center;
   align-items: center;
 }
 
@@ -36,27 +35,12 @@
   }
 }
 
-.search-btn {
-  color: $yellow;
-}
-
 
 .searchbar {
   margin-top: 20px;
   border: 1px solid;
 }
 
-.btn-search-user {
-  font-style: italic;
-  width: 185px;
-  height: 40px;
-  border-radius: 20px;
-  align-items: center;
-  background-color: $blue!important;
-  text-align: center;
-  border: none!important;
-  font-weight: 700;
-  font-size: 20px;
-  margin: 15px 0;
-  color: $yellow!important;
+.avatar-community {
+  width: 60px;
 }

@@ -1,13 +1,14 @@
-<h2 class="bar light-blue-bar">CRÉATION DE LIGUE</h2>
+<h3 class="bar light-blue-bar">CRÉATION DE LIGUE</h3>
 <h3 class="bar yellow-bar">1. CHOISIS UN NOM</h3>
 <div class="container-player-selection">
   <%= simple_form_for @league, html: { class: "form-new-league"} do |f| %>
+  <%= f.error_notification %>
     <%= f.input :name,
                 label: "Nom de la ligue",
                 height: 0,
                 input_html: { class: "input-league-name" },
-                placeholder: 'La ligue des copains' %>
-  <h3 class="bar yellow-bar" id="bar-inside">2. CHOISIS DES COLLÈGUES</h3>
+                placeholder: '🚀 La ligue des copains 🚀' %>
+  <h3 class="bar yellow-bar bar-inside">2. CHOISIS DES COLLÈGUES</h3>
     <div class="player-selection">
       <% @friends.each do |friend| %>
       <div class="select-player"  data-controller="selection" data-selection-target="player">
@@ -21,6 +22,6 @@
       </div>
       <% end %>
     </div>
-    <%= f.submit 'Suivant', class: "btn-small btn-smally" %>
+    <%= f.submit 'SUIVANT', class: "btn-small btn-smally" %>
   <% end %>
 </div>

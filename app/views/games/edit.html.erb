@@ -1,37 +1,33 @@
-<div class="form-wrapper flexy">
-  <%= form_with model: @game do |form| %>
-    <div class="team-display first-team">
+<h3 class="bar light-blue-bar">ALORS C'EST QUOI LE SCORE ?</h3>
+<div class="edit-score">
+  <%= form_with model: @game, html: {class: "edit-score-form"} do |form| %>
+    <div class="team-display">
       <% @team1.users.each do |user| %>
-      <span class ="message-avatar-date score-avatar">
+      <div class="each-player">
         <% if user.photo.attached? %>
-          <%= cl_image_tag user.photo.key, class: "avatar-poto-bis" %>
+          <%= cl_image_tag user.photo.key, class: "avatar-score" %>
         <% else %>
-          <%= image_tag "bobby.png", class: "avatar-poto-bis"%>
+          <%= image_tag "bobby.png", class: "avatar-score"%>
         <% end %>
-      </span>
-      <span class="score-text"><%= user.username.upcase %></span>
-      <br>
+        <%= user.username.upcase %>
+      </div>
       <% end %>
     </div>
-
-  <%= form.text_area :score_first_team, :html => { :class => 'all-forms' } %>
-
-    <div class="team-display second-team">
-    <% @team2.users.each do |user| %>
-        <span class="message-avatar-date-reverse score-avatar">
-            <% if user.photo.attached? %>
-          <%= cl_image_tag user.photo.key, class: "avatar-poto-bis" %>
+  <%= form.text_area :score_first_team, class: 'score-team'  %>
+    <div class="team-display">
+      <% @team2.users.each do |user| %>
+      <div class="each-player">
+          <% if user.photo.attached? %>
+            <%= cl_image_tag user.photo.key, class: "avatar-score" %>
           <% else %>
-            <%= image_tag "bobby.png", class: "avatar-poto-bis"%>
+            <%= image_tag "bobby.png", class: "avatar-score"%>
           <% end %>
-        </span>
-        <span class="score-text"><%= user.username.upcase %></span>
-        <br>
-      <% end %>
+          <%= user.username.upcase %>
+      </div>
+        <% end %>
     </div>
-
-  <%= form.text_area :score_second_team, class: 'all-forms'  %>
-
-  <%= form.submit "VALIDER", class: "btn btn-score btn-small" %>
+    <%= form.text_area :score_second_team, class: 'score-team'  %>
+    <br>
+    <%= form.submit "VALIDER", class: "btn-small btn-smally" %>
   <% end %>
 </div>

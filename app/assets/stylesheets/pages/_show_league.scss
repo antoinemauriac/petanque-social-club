@@ -27,29 +27,18 @@
   margin-top: 10px;
 }
 
-// .player-actuel {
-//   text-shadow: $yellow 4px 0 3px;
-// }
 
 .current-player td {
-  background-color: $light-blue;
+  background-color: $yellow;
 }
 
 .other-players td {
   font-weight: 400;
 }
 
-.current-player td {
-  font-weight: 400;
-}
-
 .points-id, .diff-id, .classement-gras {
   font-weight: 800!important;
 }
-
-// .back-grey {
-//   background-color: rgba(194, 193, 193, 0.5);
-// }
 
 
 table {
@@ -64,14 +53,9 @@ th, td {
   padding: 20px 4px;
 }
 
-// tr {
-//   background-color: rgba(202, 223, 81, 0.5);
-
-// }
 
 .show-ranking {
   text-align: center;
-  // align-items: inherit!important;
 }
 
 .team-right {
@@ -80,11 +64,12 @@ th, td {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-// #ol-classement {
-//   list-style: auto!important;
-// }
+
 .active {
-  background: $yellow!important;
+  background: $blue!important;
+  a {
+    color: $yellow;
+  }
 }
 
 .yellow-box {
@@ -108,10 +93,3 @@ th, td {
   width: 70px;
   margin-bottom: 20px;
 }
-
-// .flexy-right {
-//   align-items: end!important;
-// }
-// .flexy-left {
-//   align-items: baseline!important;
-// }
