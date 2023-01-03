@@ -9,6 +9,8 @@ require "open-uri"
 
 puts "cleaning DB"
 
+ProfilePicture.destroy_all
+Avatar.destroy_all
 Badge.destroy_all
 Invitation.destroy_all
 SelectedUser.destroy_all
@@ -20,6 +22,15 @@ GameTeam.destroy_all
 Team.destroy_all
 Game.destroy_all
 League.destroy_all
+
+
+puts "creating Avatars"
+
+(1..5).each do |i|
+  Avatar.create(filename: "avatar#{i}.svg")
+end
+
+
 
 puts "creating Leagues"
 

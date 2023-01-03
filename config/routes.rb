@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  devise_for :users
+  devise_for :users, controllers: {
+    :sessions => "users/sessions",
+    :registrations => "users/registrations" }
+
+  resources :profile_pictures, only: %i[new create edit update]
+
   root to: "pages#home"
   get "accueil", to: "pages#accueil"
+
 
   resources :leagues, only: %i[new create show index] do
     member do

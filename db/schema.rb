@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_03_124049) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_03_141202) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -123,6 +123,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_03_124049) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "profile_pictures", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "avatar_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["avatar_id"], name: "index_profile_pictures_on_avatar_id"
+    t.index ["user_id"], name: "index_profile_pictures_on_user_id"
+  end
+
   create_table "selected_users", force: :cascade do |t|
     t.bigint "league_id", null: false
     t.datetime "created_at", null: false
@@ -162,7 +171,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_03_124049) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.date "date_of_birth"
-    t.bigint "avatar_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -176,6 +184,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_03_124049) do
   add_foreign_key "invitations", "users"
   add_foreign_key "messages", "leagues"
   add_foreign_key "messages", "users"
+  add_foreign_key "profile_pictures", "avatars"
+  add_foreign_key "profile_pictures", "users"
   add_foreign_key "selected_users", "leagues"
   add_foreign_key "selected_users", "users"
   add_foreign_key "team_users", "teams"
