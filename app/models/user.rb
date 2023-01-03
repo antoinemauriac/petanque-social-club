@@ -7,6 +7,9 @@ class User < ApplicationRecord
   has_one :badge
   after_create :add_badge
 
+  has_one :profile_picture
+  has_one :avatar, through: :profile_picture
+
   validates :username, presence: true, uniqueness: true, length: { in: 3..15 }
   validates :date_of_birth, presence: true
   validates :username, presence: true

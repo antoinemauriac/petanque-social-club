@@ -5,12 +5,26 @@
 
 .avatar-yellow {
   background-color: $yellow;
+  border-radius: 50%;
+}
+
+.avatar-small {
+  width: 50px;
+}
+
+.avatar-medium {
+  width: 70px;
 }
 
 .avatar-small {
   width: 80px;
 }
 
-.avatar-small {
-  width: 80px;
+.btn-avatar {
+  border: 0;
+  img {
+    background-color: $blue;
+    border-radius: 50%;
+    width: 80px;
+  }
 }
