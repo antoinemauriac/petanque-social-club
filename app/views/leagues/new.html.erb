@@ -14,11 +14,7 @@
       <div class="select-player"  data-controller="selection" data-selection-target="player">
         <input type="checkbox" name="user[<%= friend.username%>]" id="<%= friend.username%>" class="check-player" />
         <label class="username-create" data-action="click->selection#background" for="<%= friend.username %>"><%= friend.username.upcase %></label>
-        <% if friend.photo.attached? %>
-          <%= cl_image_tag friend.photo.key, class: "avatar-selection" %>
-        <% else %>
-          <%= image_tag "bobby.png", class: "avatar-selection"%>
-        <% end %>
+        <%= image_tag friend.profile_pic, class: "avatar-blue avatar-small", id: "avatar-background"%>
       </div>
       <% end %>
     </div>

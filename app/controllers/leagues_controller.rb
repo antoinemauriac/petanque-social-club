@@ -24,14 +24,19 @@ class LeaguesController < ApplicationController
 
   def create
     @league = League.new(league_params)
-    if @league.save
-      @players = params[:user].keys.map { |username| User.find_by(username: username) }
-      @players.each do |player|
-        SelectedUser.create(league: @league, user: player)
+    @players = params[:user].keys.map { |username| User.find_by(username: username) }
+    if @players.size.even?
+      if @league.save
+        @players.each do |player|
+          SelectedUser.create(league: @league, user: player)
+        end
+        redirect_to choose_mode_league_path(@league)
+      else
+        render :new, status: :unprocessable_entity
       end
-      redirect_to choose_mode_league_path(@league)
     else
       redirect_to new_league_path
+      flash[:notice] = 'Il faut un nombre pair de joueurs'
     end
   end
 

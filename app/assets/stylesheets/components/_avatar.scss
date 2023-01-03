@@ -9,22 +9,17 @@
 }
 
 .avatar-small {
-  width: 50px;
+  width: 40px;
 }
 
 .avatar-medium {
-  width: 70px;
+  width: 60px;
 }
 
-.avatar-small {
+.avatar-big {
   width: 80px;
 }
 
-.btn-avatar {
-  border: 0;
-  img {
-    background-color: $blue;
-    border-radius: 50%;
-    width: 80px;
-  }
+.avatar-mini {
+  width: 25px;
 }

@@ -4,11 +4,11 @@
     <div class="team-display">
       <% @team1.users.each do |user| %>
       <div class="each-player">
-        <% if user.photo.attached? %>
-          <%= cl_image_tag user.photo.key, class: "avatar-score" %>
-        <% else %>
-          <%= image_tag "bobby.png", class: "avatar-score"%>
-        <% end %>
+      <% if user == current_user %>
+        <%= image_tag user.profile_pic, class: "avatar-yellow avatar-medium avatar-score" %>
+      <% else %>
+      <%= image_tag user.profile_pic, class: "avatar-blue avatar-medium avatar-score" %>
+      <% end %>
         <%= user.username.upcase %>
       </div>
       <% end %>
@@ -17,12 +17,12 @@
     <div class="team-display">
       <% @team2.users.each do |user| %>
       <div class="each-player">
-          <% if user.photo.attached? %>
-            <%= cl_image_tag user.photo.key, class: "avatar-score" %>
-          <% else %>
-            <%= image_tag "bobby.png", class: "avatar-score"%>
-          <% end %>
-          <%= user.username.upcase %>
+      <% if user == current_user %>
+        <%= image_tag user.profile_pic, class: "avatar-yellow avatar-medium avatar-score" %>
+      <% else %>
+      <%= image_tag user.profile_pic, class: "avatar-blue avatar-medium avatar-score" %>
+      <% end %>
+        <%= user.username.upcase %>
       </div>
         <% end %>
     </div>

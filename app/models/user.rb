@@ -59,6 +59,14 @@ class User < ApplicationRecord
     Badge.create!(user: self)
   end
 
+  def profile_pic
+    if avatar.present?
+      "avatars/#{self.avatar.filename}"
+    else
+      "avatars/bobby.svg"
+    end
+  end
+
   def number_of_games_played
     teams.map(&:games_played).flatten.sum
   end

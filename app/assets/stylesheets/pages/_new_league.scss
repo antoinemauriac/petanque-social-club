@@ -12,9 +12,6 @@
 .league_name {
   margin-bottom: 0!important;
 }
-.avatar-selection {
-  width: 40px;
-}
 
 .check-player {
   position: absolute;
@@ -53,7 +50,7 @@ margin: auto auto;
 .username-create {
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 12px;
   color: $blue;
 }
 
@@ -65,6 +62,10 @@ margin: auto auto;
   .username-create
   {
     color: $yellow;
+  }
+
+  #avatar-background {
+    background-color: $yellow;
   }
 }
 

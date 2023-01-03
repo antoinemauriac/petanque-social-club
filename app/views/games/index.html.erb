@@ -24,11 +24,7 @@
               <% if current_user == game_players[0] %>
                 <div class="flex-class-user">
                   <p class="player-actuel"><%= game_players[0].username.upcase %>
-                  <% if current_user.photo.attached? %>
-                   <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
-                  <% else %>
-                   <%= image_tag "bobby.png", class: "avatar-bis"%></p>
-                  <% end %>
+                  <%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
                 </div>
               <% else %>
                 <p class="player-actuel"><%= game_players[0].username.upcase %>
@@ -36,11 +32,7 @@
               <% if current_user == game_players[1] %>
                 <div class="flex-class-user">
                   <p class="player-actuel"><%= game_players[1].username.upcase %>
-                  <% if current_user.photo.attached? %>
-                    <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
-                  <% else %>
-                    <%= image_tag "bobby.png", class: "avatar-bis"%></p>
-                  <% end %>
+                  <%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
                 </div>
               <% else %>
                 <p class="player-actuel"><%= game_players[1].username.upcase %>
@@ -62,11 +54,7 @@
             <% if current_user == game_players[2] %>
               <div class="flex-class-user">
                 <p class="player-actuel"><%= game_players[2].username.upcase %>
-                 <% if current_user.photo.attached? %>
-                    <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
-                  <% else %>
-                    <%= image_tag "bobby.png", class: "avatar-bis"%></p>
-                  <% end %>
+                <%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
               </div>
             <% else %>
               <p class="player-actuel"><%= game_players[2].username.upcase %>
@@ -74,11 +62,7 @@
             <% if current_user == game_players[3] %>
               <div class="flex-class-user">
                 <p class="player-actuel"><%= game_players[3].username.upcase %>
-                  <% if current_user.photo.attached? %>
-                    <%= cl_image_tag current_user.photo.key, class: "avatar-bis" %></p>
-                  <% else %>
-                    <%= image_tag "bobby.png", class: "avatar-bis"%></p>
-                  <% end %>
+                <%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
               </div>
             <% else %>
               <p class="player-actuel"><%= game_players[3].username.upcase %>
