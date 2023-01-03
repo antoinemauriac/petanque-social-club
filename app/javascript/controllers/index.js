@@ -19,6 +19,9 @@ application.register("popover", PopoverController)
 import ProfileController from "./profile_controller"
 application.register("profile", ProfileController)
 
+import ScrollController from "./scroll_controller"
+application.register("scroll", ScrollController)
+
 import SelectionController from "./selection_controller"
 application.register("selection", SelectionController)
 

@@ -27,18 +27,25 @@
   button {
     font-size: 25px;
     background-color: $yellow;
+    color: $blue;
     border: none;
     border-radius: 2px;
     padding: 2px 12px;
     border-radius: 12px;
-
+    font-weight: 900;
   }
 }
 
 
-.searchbar {
+#searchbar {
   margin-top: 20px;
-  border: 1px solid;
+  border: 3px solid $blue;
+  border-radius: 7px;
+  width: 210px;
+  text-align: center;
+  height: 40px;
+  color: $blue;
+  font-weight: 700;
 }
 
 .avatar-community {

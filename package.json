@@ -8,6 +8,7 @@
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "mapbox-gl": "^2.11.0",
+    "stimulus-scroll-to": "^4.1.0",
     "tom-select": "^2.2.2",
     "typed.js": "^2.0.12",
     "webpack": "^5.75.0",

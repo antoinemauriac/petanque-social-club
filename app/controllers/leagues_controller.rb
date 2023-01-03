@@ -19,11 +19,7 @@ class LeaguesController < ApplicationController
   def new
     @user = current_user
     @league = League.new
-    @friends = []
-    @friends.push(@user)
-    @user.friends.each do |friend|
-      @friends.push(friend)
-    end
+    @friends = @user.friends.to_a.push(@user).reverse
   end
 
   def create
