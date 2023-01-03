@@ -21,8 +21,6 @@
     <% end %>
   </ul>
 
-          <%= image_tag Avatar.first.filename, class: "badge-nok"%>
-
   <div class="stats" data-profile-target="stats">
     <% if @user.number_of_games_played == 0 %>
       <p>Il faut jouer des matchs pour avoir des statistiques 🤓</p>

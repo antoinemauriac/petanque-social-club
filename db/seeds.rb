@@ -34,65 +34,65 @@ puts "creating Users"
   user4 = User.create(email: "bibi@gmail.com", username: "Maaaarc", password: "123123", date_of_birth: "1930-01-01")
   user5 = User.create(email: "tutu@gmail.com", username: "Cathydu13", password: "123123", date_of_birth: "1930-01-01")
   user6 = User.create(email: "tete@gmail.com", username: "Patoche", password: "123123", date_of_birth: "1930-01-01")
-  # user7 = User.create(email: "tyty@gmail.com", username: "Brandao", password: "123123", date_of_birth: "1930-01-01")
-  # user8 = User.create(email: "trotro@gmail.com", username: "Lucienne", password: "123123", date_of_birth: "1930-01-01")
-  # user9 = User.create(email: "tratra@gmail.com", username: "Léo le minot", password: "123123", date_of_birth: "1930-01-01")
-  # user10 = User.create(email: "trytry@gmail.com", username: "Dwight S", password: "123123", date_of_birth: "1930-01-01")
-  # user11 = User.create(email: "tretre@gmail.com", username: "Hasnia", password: "123123", date_of_birth: "1930-01-01")
-  # user12 = User.create(email: "blabla@gmail.com", username: "Lilalou", password: "123123", date_of_birth: "1930-01-01")
-  # user13 = User.create(email: "lyly@gmail.com", username: "Canto", password: "123123", date_of_birth: "1930-01-01")
-  # user14 = User.create(email: "lrolro@gmail.com", username: "La Machine", password: "123123", date_of_birth: "1930-01-01")
-  # user15= User.create(email: "lralra@gmail.com", username: "Le sécateur", password: "123123", date_of_birth: "1930-01-01")
-  # user16 = User.create(email: "lrylry@gmail.com", username: "Beyoncé 💫", password: "123123", date_of_birth: "1930-01-01")
-  # user17 = User.create(email: "lrelre@gmail.com", username: "Mamad", password: "123123", date_of_birth: "1930-01-01")
-  # user18 = User.create(email: "tlatla@gmail.com", username: "Habibi", password: "123123", date_of_birth: "1930-01-01")
-  # user19 = User.create(email: "rere@gmail.com", username: "Habiba", password: "123123", date_of_birth: "1930-01-01")
-  # user20 = User.create(email: "lala@gmail.com", username: "Inti la queen", password: "123123", date_of_birth: "1930-01-01")
+  user7 = User.create(email: "tyty@gmail.com", username: "Brandao", password: "123123", date_of_birth: "1930-01-01")
+  user8 = User.create(email: "trotro@gmail.com", username: "Lucienne", password: "123123", date_of_birth: "1930-01-01")
+  user9 = User.create(email: "tratra@gmail.com", username: "Léo le minot", password: "123123", date_of_birth: "1930-01-01")
+  user10 = User.create(email: "trytry@gmail.com", username: "Dwight S", password: "123123", date_of_birth: "1930-01-01")
+  user11 = User.create(email: "tretre@gmail.com", username: "Hasnia", password: "123123", date_of_birth: "1930-01-01")
+  user12 = User.create(email: "blabla@gmail.com", username: "Lilalou", password: "123123", date_of_birth: "1930-01-01")
+  user13 = User.create(email: "lyly@gmail.com", username: "Canto", password: "123123", date_of_birth: "1930-01-01")
+  user14 = User.create(email: "lrolro@gmail.com", username: "La Machine", password: "123123", date_of_birth: "1930-01-01")
+  user15= User.create(email: "lralra@gmail.com", username: "Le sécateur", password: "123123", date_of_birth: "1930-01-01")
+  user16 = User.create(email: "lrylry@gmail.com", username: "Beyoncé 💫", password: "123123", date_of_birth: "1930-01-01")
+  user17 = User.create(email: "lrelre@gmail.com", username: "Mamad", password: "123123", date_of_birth: "1930-01-01")
+  user18 = User.create(email: "tlatla@gmail.com", username: "Habibi", password: "123123", date_of_birth: "1930-01-01")
+  user19 = User.create(email: "rere@gmail.com", username: "Habiba", password: "123123", date_of_birth: "1930-01-01")
+  user20 = User.create(email: "lala@gmail.com", username: "Inti la queen", password: "123123", date_of_birth: "1930-01-01")
 
 
-  # photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar17_qtsqti.png')
-  # photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar13_fsnstx.png')
-  # photo3 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar16_rrnegl.png')
-  # photo4 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar15_rhbfga.png')
-  # photo5 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar12_xtsruw.png')
-  # photo6 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar1_fk25i8.png')
-  # photo7 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar11_iqgvrx.png')
-  # photo8 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar3_upsa1a.png')
-  # photo9 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar14_lvvi2o.png')
-  # photo10 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar8_ropll8.png')
-  # photo11 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar9_qaofir.png')
-  # photo12 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar4_fsv3rk.png')
+  photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar17_qtsqti.png')
+  photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar13_fsnstx.png')
+  photo3 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar16_rrnegl.png')
+  photo4 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar15_rhbfga.png')
+  photo5 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar12_xtsruw.png')
+  photo6 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar1_fk25i8.png')
+  photo7 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar11_iqgvrx.png')
+  photo8 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar3_upsa1a.png')
+  photo9 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar14_lvvi2o.png')
+  photo10 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar8_ropll8.png')
+  photo11 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar9_qaofir.png')
+  photo12 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991181/development/p%C3%A9tanque-social-club/avatar4_fsv3rk.png')
 
-  # photo13 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar28_rymzs5.png')
-  # photo14 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar30_j1ykss.png')
-  # photo15 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar27_zslrxn.png')
-  # photo16 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar29_wcuf9a.png')
-  # photo17 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar33_pilzlp.png')
-  # photo18 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar26_qmk0tw.png')
-  # photo19 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar32_qscnpf.png')
-  # photo20 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar31_o1jg8m.png')
+  photo13 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar28_rymzs5.png')
+  photo14 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar30_j1ykss.png')
+  photo15 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar27_zslrxn.png')
+  photo16 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar29_wcuf9a.png')
+  photo17 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar33_pilzlp.png')
+  photo18 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar26_qmk0tw.png')
+  photo19 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar32_qscnpf.png')
+  photo20 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1670423889/development/p%C3%A9tanque-social-club/new%20avatars/avatar31_o1jg8m.png')
 
 
-    # user1.avatar.attach(io: photo1, filename: 'avatar1.png', content_type: 'image/png')
-    # user2.avatar.attach(io: photo2, filename: 'avatar2.png', content_type: 'image/png')
-    # user3.avatar.attach(io: photo3, filename: 'avatar3.png', content_type: 'image/png')
-    # user4.avatar.attach(io: photo4, filename: 'avatar4.png', content_type: 'image/png')
-    # user5.avatar.attach(io: photo5, filename: 'avatar5.png', content_type: 'image/png')
-    # user6.avatar.attach(io: photo6, filename: 'avatar6.png', content_type: 'image/png')
-    # user7.photo.attach(io: photo7, filename: 'avatar7.png', content_type: 'image/png')
-    # user8.photo.attach(io: photo8, filename: 'avatar8.png', content_type: 'image/png')
-    # user9.photo.attach(io: photo9, filename: 'avatar9.png', content_type: 'image/png')
-    # user10.photo.attach(io: photo10, filename: 'avatar10.png', content_type: 'image/png')
-    # user11.photo.attach(io: photo11, filename: 'avatar11.png', content_type: 'image/png')
-    # user12.photo.attach(io: photo12, filename: 'avatar12.png', content_type: 'image/png')
-    # user13.photo.attach(io: photo13, filename: 'avatar13.png', content_type: 'image/png')
-    # user14.photo.attach(io: photo14, filename: 'avatar14.png', content_type: 'image/png')
-    # user15.photo.attach(io: photo15, filename: 'avatar15.png', content_type: 'image/png')
-    # user16.photo.attach(io: photo16, filename: 'avatar16.png', content_type: 'image/png')
-    # user17.photo.attach(io: photo17, filename: 'avatar17.png', content_type: 'image/png')
-    # user18.photo.attach(io: photo18, filename: 'avatar18.png', content_type: 'image/png')
-    # user19.photo.attach(io: photo19, filename: 'avatar19.png', content_type: 'image/png')
-    # user20.photo.attach(io: photo20, filename: 'avatar20.png', content_type: 'image/png')
+    user1.photo.attach(io: photo1, filename: 'avatar1.png', content_type: 'image/png')
+    user2.photo.attach(io: photo2, filename: 'avatar2.png', content_type: 'image/png')
+    user3.photo.attach(io: photo3, filename: 'avatar3.png', content_type: 'image/png')
+    user4.photo.attach(io: photo4, filename: 'avatar4.png', content_type: 'image/png')
+    user5.photo.attach(io: photo5, filename: 'avatar5.png', content_type: 'image/png')
+    user6.photo.attach(io: photo6, filename: 'avatar6.png', content_type: 'image/png')
+    user7.photo.attach(io: photo7, filename: 'avatar7.png', content_type: 'image/png')
+    user8.photo.attach(io: photo8, filename: 'avatar8.png', content_type: 'image/png')
+    user9.photo.attach(io: photo9, filename: 'avatar9.png', content_type: 'image/png')
+    user10.photo.attach(io: photo10, filename: 'avatar10.png', content_type: 'image/png')
+    user11.photo.attach(io: photo11, filename: 'avatar11.png', content_type: 'image/png')
+    user12.photo.attach(io: photo12, filename: 'avatar12.png', content_type: 'image/png')
+    user13.photo.attach(io: photo13, filename: 'avatar13.png', content_type: 'image/png')
+    user14.photo.attach(io: photo14, filename: 'avatar14.png', content_type: 'image/png')
+    user15.photo.attach(io: photo15, filename: 'avatar15.png', content_type: 'image/png')
+    user16.photo.attach(io: photo16, filename: 'avatar16.png', content_type: 'image/png')
+    user17.photo.attach(io: photo17, filename: 'avatar17.png', content_type: 'image/png')
+    user18.photo.attach(io: photo18, filename: 'avatar18.png', content_type: 'image/png')
+    user19.photo.attach(io: photo19, filename: 'avatar19.png', content_type: 'image/png')
+    user20.photo.attach(io: photo20, filename: 'avatar20.png', content_type: 'image/png')
 
     # Badge.create!(user: user1)
     # Badge.create!(user: user2)
@@ -115,38 +115,29 @@ puts "creating Users"
     # Badge.create!(user: user19)
     # Badge.create!(user: user20)
 
-    puts "creating Avatars"
 
-    avatar1 = Avatar.create(filename: 'avataaars(36).svg')
-    avatar2 = Avatar.create(filename: 'avataaars (37).svg')
 
-user1.avatar = avatar1
-user2.avatar = avatar1
-user3.avatar = avatar2
 
-    # user20.save
-    # user19.save
-    # user18.save
-    # user17.save
-    # user16.save
-    # user15.save
-    # user14.save
-    # user13.save
-    # user12.save
-    # user11.save
-    # user10.save
-    # user9.save
-    # user8.save
-    # user7.save
+    user20.save
+    user19.save
+    user18.save
+    user17.save
+    user16.save
+    user15.save
+    user14.save
+    user13.save
+    user12.save
+    user11.save
+    user10.save
+    user9.save
+    user8.save
+    user7.save
     user6.save
     user5.save
     user4.save
     user3.save
     user2.save
     user1.save
-
-
-
 
 puts "creating Games"
 

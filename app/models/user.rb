@@ -3,10 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_one_attached :avatar
+  has_one_attached :photo
   has_one :badge
   after_create :add_badge
-  belongs_to :avatar
 
   validates :username, presence: true, uniqueness: true, length: { in: 3..15 }
   validates :date_of_birth, presence: true
