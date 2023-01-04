@@ -133,18 +133,20 @@
 
 
   <%# <script>src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js"</script>
+
+  <script>src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js"</script>
 <div id="animation container">
-  <script>
-    var animation = bodymovin.loadAnimation({
-      container: document.getElementByID('animation container'),
-      path: "/test.json",
-      render: 'svg',
-      loop: true,
-      autoplay: true,
-      name: 'test animation'
-    })
-  </script>
-</div> %>
+<script>
+var animation = lottie.loadAnimation({
+  container: document.getElementByID('animation container'),
+  path: "/test.json",
+  render: 'svg',
+  loop: true,
+  autoplay: true,
+  name: 'test animation'
+})
+</script>
+</div>
 
 <%# <i class="fa-solid fa-arrow-down image-clignote"></i> %>
     <%# <a href="#sec-2">

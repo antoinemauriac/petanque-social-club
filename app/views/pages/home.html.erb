@@ -1,12 +1,34 @@
 <div class="home-container">
-  <div>
-    <h1>PETANQUE</h1>
-    <h1>-</h1>
-    <h1>SOCIAL</h1>
-    <h1>-</h1>
-    <h1>CLUB</h1>
-  </div>
+  <section id="sec-1">
+    <div>
+      <h1>PETANQUE</h1>
+      <h1>-</h1>
+      <h1>SOCIAL</h1>
+      <h1>-</h1>
+      <h1>CLUB</h1>
+    </div>
+    <div class="flexy">
+      <%= link_to "JOUER" , accueil_path, class:"btn-small", id:"btn-jouer" %>
+    </div>
+    <div id="bottom">
+      <p>Comment ça marche ?</p>
+      <a href="#sec-2">
+      <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_ktjpAwISY0.json"  class="flexy scroll-down" background="transparent"  speed="1"  style="height: 70px;"  loop  autoplay></lottie-player>
+      </a>
+    </div>
+  </section>
+  <section id="sec-2">
+    <div class="container">
+      <h1>Hello you</h1>
+    </div>
+  <h2>Etape1</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nemo temporibus ipsum, blanditiis ipsam expedita.</p>
+  <h2>Etape2</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nemo temporibus ipsum, blanditiis ipsam expedita.</p>
+  <h2>Etape3</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nemo temporibus ipsum, blanditiis ipsam expedita.</p>
   <div class="flexy">
-    <p class="btn-small"><%= link_to "JOUER" , accueil_path %></p>
+    <%= link_to "JOUER" , accueil_path, class:"btn-small", id:"btn-jouer" %>
   </div>
+  </section>
 </div>
