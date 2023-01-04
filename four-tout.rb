@@ -130,3 +130,52 @@
   #                 item_wrapper_class: 'tag-item' %>
   #   <%= f.submit 'Suivant', class: "btn btn-primary" %>
   # <% end %>
+
+
+  <%# <script>src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js"</script>
+<div id="animation container">
+  <script>
+    var animation = bodymovin.loadAnimation({
+      container: document.getElementByID('animation container'),
+      path: "/test.json",
+      render: 'svg',
+      loop: true,
+      autoplay: true,
+      name: 'test animation'
+    })
+  </script>
+</div> %>
+
+<%# <i class="fa-solid fa-arrow-down image-clignote"></i> %>
+    <%# <a href="#sec-2">
+      <div class="scroll-down"></div>
+    </a> %>
+
+    <%#
+<p class="image-clignote">⌄</p> %>
+
+<div id="sec-2">
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+HEEEELLLLO
+
+</div>
