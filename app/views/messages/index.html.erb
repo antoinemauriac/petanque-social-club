@@ -27,7 +27,7 @@
       <% if message.user == current_user %>
         <div class="card-chat card-chat-reverse">
           <div class="message-avatar-date message-reverse">
-            <%= cl_image_tag message.user.photo.key, class: "avatar-poto-message avatar-reverse" %><span class= "username-comment username-reverse"><%= message.user.username.upcase %></span>
+            <%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-medium avatar-poto-message avatar-reverse"%><span class= "username-comment username-reverse"><%= message.user.username.upcase %></span>
             <p class="message-light-grey message-reverse"> <%= message.created_at.strftime("%d" +"/" + "%m" +"/" + "%Y") %>
                                                            <%= message.created_at.strftime("%H"+":"+ "%M") %></p>
           </div>
@@ -36,7 +36,7 @@
       <% else %>
         <div class="card-chat">
           <div class="message-avatar-date">
-            <%= cl_image_tag message.user.photo.key, class: "avatar-poto-message" %><span class= "username-comment"><%= message.user.username.upcase%></span>
+            <%= image_tag message.user.profile_pic, class: "avatar-blue avatar-medium avatar-poto-message"%><span class= "username-comment"><%= message.user.username.upcase%></span>
             <p class="message-light-grey"> <%= message.created_at.strftime("%d" +"/" + "%m" +"/" + "%Y") %>
                                            <%= message.created_at.strftime("%H"+":"+ "%M") %></p>
           </div>

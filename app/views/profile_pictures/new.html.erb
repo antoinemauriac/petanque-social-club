@@ -1,3 +1,9 @@
-<% @avatars.each do |a| %>
-<%= button_to image_tag("avatars/#{a.filename}"), {:controller => "profile_pictures", :action => "create", :avatar_id => a.id}, :method=>:post, class: "btn-avatar"  %>
-<% end %>
+<div class="bar light-blue-bar">
+  <h3>CHOISIS TON AVATAR</h3>
+  <p id="p-new-avatar">(Clique sur celui qui te plait)</p>
+</div>
+<div class="container container-new-avatar">
+  <% @avatars.each do |a| %>
+    <%= button_to image_tag("avatars/#{a.filename}"), {:controller => "profile_pictures", :action => "create", :avatar_id => a.id}, :method=>:post, class: "btn-avatar"  %>
+  <% end %>
+</div>

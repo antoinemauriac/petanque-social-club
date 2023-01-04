@@ -15,11 +15,7 @@
     <% @users.each do |user| %>
       <div class="user-card">
         <div class="pics">
-            <% if user.photo.attached? %>
-              <%= cl_image_tag user.photo.key, class: "avatar-community" %>
-            <% else %>
-              <%= image_tag "bobby.png", class: "avatar-community" %>
-            <% end %>
+          <%= image_tag user.profile_pic, class: "avatar-blue avatar-medium" %>
         </div>
 
         <div class="card-info">

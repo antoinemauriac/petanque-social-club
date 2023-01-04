@@ -8,11 +8,7 @@
     </a>
     <button class="navbar-toggler border-0" onclick="this.blur();" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <% if current_user %>
-      <% if current_user.avatar.present? %>
-      <%= image_tag "avatars/#{current_user.avatar.filename}", class: "avatar-yellow avatar-medium", data: { bs_toggle: "dropdown" } %>
-      <% else %>
-      <%= image_tag "bobby.png", class: "avatar-navbar", data: { bs_toggle: "dropdown" } %>
-      <% end %>
+      <%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-medium", data: { bs_toggle: "dropdown" } %>
     <% end %>
 
     </button>

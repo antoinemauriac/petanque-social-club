@@ -27,14 +27,11 @@
     <% else %>
     <% if @user == current_user %>
       <h3>MON BILAN</h3>
+      <%= image_tag @user.profile_pic, class: "avatar-yellow avatar-big" %>
     <% else %>
-    <h3>LE BILAN DE <%= @user.username.upcase %> </h3>
+      <h3>LE BILAN DE <%= @user.username.upcase %> </h3>
+      <%= image_tag @user.profile_pic, class: "avatar-blue avatar-big" %>
     <% end %>
-      <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, class: "avatar-poto"%>
-      <% else %>
-        <%= image_tag "bobby.png", class: "avatar-poto"%>
-      <% end %>
       <h3>TOTAL MATCHS : <%= @user.number_of_games_played %></h3>
       <div class="victoires-defaites">
         <div>
@@ -74,22 +71,14 @@
         <div class="flexy">
           <div class="card-player">
             <h4>C'est le sang !</h4>
-            <% if @best_teammate.photo.attached? %>
-              <%= cl_image_tag @best_teammate.photo.key, class: "avatar-poto"%><span><%= @best_teammate.username.upcase %></span>
-            <% else %>
-              <%= image_tag "bobby.png", class: "avatar-poto"%><span><%= @best_teammate.username.upcase %></span>
-            <% end %>
+            <%= image_tag @best_teammate.profile_pic, class: "avatar-blue avatar-big avatar-teammate" %><span><%= @best_teammate.username.upcase %></span>
             <p><%=@perc_of_wins%>% de victoires avec <%= @best_teammate.username.upcase %> comme collègue. On peut dire que c’est une affaire qui roule entre vous deux !</p>
           </div>
         </div>
         <div class="flexy">
           <div class="card-player">
             <h4>Oh misère...</h4>
-            <% if @worst_teammate.photo.attached? %>
-            <%= cl_image_tag @worst_teammate.photo.key, class: "avatar-poto"%><span><%= @worst_teammate.username.upcase %></span>
-            <% else %>
-            <%= image_tag "bobby.png", class: "avatar-poto"%><span><%= @worst_teammate.username.upcase %></span>
-            <% end %>
+            <%= image_tag @worst_teammate.profile_pic, class: "avatar-blue avatar-big avatar-teammate" %><span><%= @worst_teammate.username.upcase %></span>
             <p><%=@perc_of_loses%>% de défaites avec <%= @worst_teammate.username.upcase %> comme collègue. Il serait temps de se rendre à l’évidence....</p>
           </div>
         </div>
@@ -104,9 +93,7 @@
           <% @teammates_sorted.reverse.each do |teammate| %>
             <tr>
               <td class="classement-gras">
-                <% if teammate.photo.attached? %>
-                  <%= cl_image_tag teammate.photo.key, class: "avatar-poto-list" %>
-                <% end %>
+                <%= image_tag teammate.profile_pic, class: "avatar-blue avatar-big avatar-teammate-list" %>
                 <%= teammate.username.upcase %>
               </td>
               <td class="points-id back-grey"><%= @user.number_of_played_with(teammate) %></td>
@@ -220,11 +207,7 @@
       <% @user.friends.each do |friend| %>
         <div class="flexy col-5" style="margin-bottom:30px;flex-grow:1">
           <%= link_to user_path(friend) do %>
-            <% if friend.photo.attached? %>
-              <%= cl_image_tag friend.photo.key, class: "avatar-poto" %>
-            <% else %>
-              <%= image_tag "bobby.png", class: "avatar-poto"%>
-            <% end %>
+            <%= image_tag friend.profile_pic, class: "avatar-blue avatar-big" %>
             <p style="text-align:center"><%= friend.username.upcase %></p>
           <% end %>
         </div>
