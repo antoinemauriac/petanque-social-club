@@ -21,11 +21,11 @@ class UsersController < ApplicationController
     # CONSEIL DE CLASSE
 
     relevant_teams = @user.teams.where(games_played: 2...)
-    @teammates = User.joins(team_users: :team).where(teams: { id: relevant_teams }).where.not(id: @user).to_a.uniq!
+    @teammates = User.joins(team_users: :team).where(teams: { id: relevant_teams }).where.not(id: @user).to_a.uniq
     if @teammates.nil?
       @teammates = []
     end
-    return if @teammates.nil? || @teammates.size < 2
+    return if @teammates == [] || @teammates.size < 2
     @teammates_sorted = @teammates.sort_by { |mate| (@user.number_of_wins_with(mate).to_f / @user.number_of_played_with(mate)) }
     @worst_teammate = @teammates_sorted.first
     @perc_of_loses = (@user.number_of_loses_with(@worst_teammate).to_f / @user.number_of_played_with(@worst_teammate)

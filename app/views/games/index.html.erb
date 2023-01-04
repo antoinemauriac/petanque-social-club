@@ -15,32 +15,13 @@
 </ul>
 
 <div class="flexy" style="margin-top:20px">
-  <% @league.games.each do |game| %>
-      <% game_players = game.teams.map { |team| team.users }.flatten %>
-      <% if game_players.include?(current_user) %>
+  <% @current_user_games.each do |game| %>
+    <% first_team = game.teams.first %>
+    <% second_team = game.teams.last %>
         <div class="row row-game">
           <div class="col-4 col-left">
-            <% if current_user == game_players[0] || current_user == game_players[1] %>
-              <% if current_user == game_players[0] %>
-                <div class="flex-class-user">
-                  <p class="player-actuel"><%= game_players[0].username.upcase %>
-                  <%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
-                </div>
-              <% else %>
-                <p class="player-actuel"><%= game_players[0].username.upcase %>
-              <% end %>
-              <% if current_user == game_players[1] %>
-                <div class="flex-class-user">
-                  <p class="player-actuel"><%= game_players[1].username.upcase %>
-                  <%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
-                </div>
-              <% else %>
-                <p class="player-actuel"><%= game_players[1].username.upcase %>
-              <% end %>
-            <% else %>
-              <p class="other-player"><%= game_players[0].username.upcase %></p>
-              <p class="other-player"><%= game_players[1].username.upcase %></p>
-            <% end %>
+            <p class="player-actuel"><%= first_team.users[0].username.upcase %>
+            <p class="player-actuel"><%= first_team.users[1].username.upcase %>
           </div>
           <div class="col-4 score-color" style="text-align:center">
           <% if game.status == true %>
@@ -50,53 +31,32 @@
           <% end %>
           </div>
           <div class="col-4 col-right">
-          <% if current_user == game_players[2] || current_user == game_players[3] %>
-            <% if current_user == game_players[2] %>
-              <div class="flex-class-user">
-                <p class="player-actuel"><%= game_players[2].username.upcase %>
-                <%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
-              </div>
-            <% else %>
-              <p class="player-actuel"><%= game_players[2].username.upcase %>
-            <% end %>
-            <% if current_user == game_players[3] %>
-              <div class="flex-class-user">
-                <p class="player-actuel"><%= game_players[3].username.upcase %>
-                <%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
-              </div>
-            <% else %>
-              <p class="player-actuel"><%= game_players[3].username.upcase %>
-            <% end %>
-          <% else %>
-            <p class="other-player"><%= game_players[2].username.upcase %></p>
-            <p class="other-player"><%= game_players[3].username.upcase %></p>
-          <% end %>
+            <p class="player-actuel"><%= second_team.users[0].username.upcase %>
+            <p class="player-actuel"><%= second_team.users[1].username.upcase %>
           </div>
         </div>
-      <% end %>
-    <% end %>
+  <% end %>
 
 
-  <% @league.games.each do |game| %>
-      <% game_players = game.teams.map { |team| team.users }.flatten %>
-      <% if game_players.exclude?(current_user) %>
+  <% @other_games.each do |game| %>
+    <% first_team = game.teams.first %>
+    <% second_team = game.teams.last %>
         <div class="row row-game">
           <div class="col-4 col-left">
-            <p class="other-player"><%= game_players[0].username.upcase %></p>
-            <p class="other-player"><%= game_players[1].username.upcase %></p>
+            <p class="player-actuel"><%= first_team.users[0].username.upcase %>
+            <p class="player-actuel"><%= first_team.users[1].username.upcase %>
           </div>
           <div class="col-4 score-color" style="text-align:center">
           <% if game.status == true %>
             <%= game.score_first_team %> - <%= game.score_second_team %>
-            <% else %>
+          <% else %>
             <%= "-" %>
           <% end %>
           </div>
           <div class="col-4 col-right">
-            <p class="other-player"><%= game_players[2].username.upcase %></p>
-            <p class="other-player"><%= game_players[3].username.upcase %></p>
+            <p class="player-actuel"><%= second_team.users[0].username.upcase %>
+            <p class="player-actuel"><%= second_team.users[1].username.upcase %>
           </div>
         </div>
-          <% end %>
-      <% end %>
+  <% end %>
 </div>

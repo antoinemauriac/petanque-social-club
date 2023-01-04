@@ -40,7 +40,15 @@
   font-weight: 800!important;
 }
 
+.classement-gras {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.username-classement {
+  flex-grow: 1;
+}
 table {
   color: $blue;
   font-size: 16px;

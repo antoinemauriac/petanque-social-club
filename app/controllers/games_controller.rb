@@ -1,6 +1,9 @@
 class GamesController < ApplicationController
   def index
     @league = League.find(params[:league_id])
+    @user = current_user
+    @current_user_games = @user.games.where(league: @league)
+    @other_games = @league.games.where.not(id: @current_user_games)
   end
 
   def edit
