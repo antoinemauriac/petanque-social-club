@@ -1,5 +1,11 @@
 .navbar {
-  min-height: 13vh;
+  height: 13vh;
+
+     a {
+     color: $blue;
+     font-family: $body-font;
+     font-weight: 700;
+   }
 }
 
 .navbar-lewagon {
@@ -45,9 +51,9 @@
   display:none;
 }
 
-.padding_right {
-  padding-right: 22px;
-}
+// .padding_right {
+//   padding-right: 22px;
+// }
 
 .navbar {
   position:sticky;
@@ -56,6 +62,35 @@
   z-index:10;
 }
 
-.avatar-navbar {
-  width: 70px;
+
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: #002060;
+// }
+
+//  .navbar {
+//    height: 13vh;
+
+//    a {
+//      color: #FBD449!important;
+//    }
+//  }
+
+
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+#navbarSupportedContent {
+  max-width: fit-content;
+}
+
+.dropdown-menu {
+  border: 2px solid $blue;
+  border-radius: 5px;
 }

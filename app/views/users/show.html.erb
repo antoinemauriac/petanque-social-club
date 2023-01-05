@@ -87,12 +87,12 @@
       <% if @teammates.size >= 2 %>
         <h3 class="bar yellow-bar bar-inside">LE DÉTAIL PAR COLLÈGUE</h3>
         <table>
-          <tr>
-            <th>COLLÈGUES</th><th>J</th><th>V</th><th>D</th><th>%V</th>
+          <tr class="border-ranking">
+            <th class="teammates-col">COLLÈGUES</th><th>J</th><th>V</th><th>D</th><th>%V</th>
           </tr>
           <% @teammates_sorted.reverse.each do |teammate| %>
-            <tr>
-              <td class="classement-gras">
+            <tr class="border-ranking">
+              <td class="ranking-teammates">
                 <%= image_tag teammate.profile_pic, class: "avatar-blue avatar-big avatar-teammate-list" %>
                <span class="username-classement"><%= teammate.username.upcase %></span>
               </td>

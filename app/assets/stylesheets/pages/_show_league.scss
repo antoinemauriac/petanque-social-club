@@ -32,15 +32,15 @@
   background-color: $yellow;
 }
 
-.other-players td {
-  font-weight: 400;
-}
+// .other-players td {
+//   font-weight: 400;
+// }
 
-.points-id, .diff-id, .classement-gras {
+.points-id, .diff-id, .ranking-teammates {
   font-weight: 800!important;
 }
 
-.classement-gras {
+.ranking-teammates {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -49,6 +49,7 @@
 .username-classement {
   flex-grow: 1;
 }
+
 table {
   color: $blue;
   font-size: 16px;
@@ -57,10 +58,12 @@ table {
 }
 
 th, td {
-  border-bottom: 1px solid $blue;
   padding: 20px 4px;
 }
 
+.teammates-col {
+  padding: 20px 1px;
+}
 
 .show-ranking {
   text-align: center;
@@ -100,4 +103,8 @@ th, td {
 .avatar-vainqueur {
   width: 70px;
   margin-bottom: 20px;
+}
+
+.border-ranking {
+  border-bottom: 2px solid $blue;
 }
