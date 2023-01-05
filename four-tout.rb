@@ -181,3 +181,37 @@ HEEEELLLLO
 HEEEELLLLO
 
 </div>
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+
+    <a href="/" class="logo-home">
+      <h4>PETANQUE</h4>
+      <h4>SOCIAL</h4>
+      <h4>CLUB</h4>
+    </a>
+    <button class="navbar-toggler border-0" onclick="this.blur();" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <% if current_user %>
+      <%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-medium", data: { bs_toggle: "dropdown" } %>
+    <% end %>
+
+    </button>
+
+    <div class="collapse navbar-collapse padding_right" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto align-items-end pr-5">
+        <% if user_signed_in? %>
+          <li class="nav-item nav-item-navabar">
+          <%= link_to "Mes infos", edit_user_registration_path %>
+          </li>
+          <li class="nav-item nav-item-navabar">
+          <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete} %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link nav-link-login" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

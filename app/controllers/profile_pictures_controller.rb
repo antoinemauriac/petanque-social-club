@@ -1,7 +1,7 @@
 class ProfilePicturesController < ApplicationController
 
   def new
-    @avatars = Avatar.all
+    @avatars = Avatar.all.shuffle
     @profile_picture = ProfilePicture.new
     @user = current_user
   end
@@ -16,7 +16,7 @@ class ProfilePicturesController < ApplicationController
   end          # just a suggestion
 
   def edit
-    @avatars = Avatar.all
+    @avatars = Avatar.all.shuffle
   end
 
   def update

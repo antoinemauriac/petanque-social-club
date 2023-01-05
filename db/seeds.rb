@@ -20,7 +20,7 @@ League.destroy_all
 puts "creating Avatars"
 
 avatars = []
-(1..5).each do |i|
+(1..41).each do |i|
   avatar = Avatar.create(filename: "avatar#{i}.svg")
   avatars << avatar
 end

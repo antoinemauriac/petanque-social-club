@@ -7,6 +7,8 @@
 
 .btn-avatar {
   border: 0;
+  margin-top: 10px;
+  background-color: #F4F4F4;
   img {
     background-color: $blue;
     border-radius: 50%;
@@ -17,4 +19,9 @@
 #p-new-avatar {
   font-size: 15px;
   margin: 0;
+}
+
+#bar-avatar h2 {
+  font-size: 20px;
+  margin-bottom: 0;
 }

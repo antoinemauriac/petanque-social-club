@@ -3,7 +3,8 @@
   <head>
     <title>Petanque Social Club. Passion, plaisir et mauvaise foi</title>
      <%= favicon_link_tag "psc.png", rel: "icon", type: "image/png" %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta property="og:title" content="Petanque Social Club">
@@ -12,6 +13,9 @@
     <meta property="og:image" content="https://cap.img.pmdstatic.net/fit/https.3A.2F.2Fi.2Epmdstatic.2Enet.2Fcap.2F2021.2F02.2F03.2F12ee0f8e-d6b9-411f-a063-d2d53051792d.2Ejpeg/1200x630/background-color/ffffff/quality/70/3105-euros-damendes-pour-une-partie-de-petanque-1392982.jpg">
     <meta property="og:description" content="La première communauté des boulistes amateurs. Avec passion, plaisir et mauvaise foi">
     <meta property="og:site_name" content="petanquesocialclub">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +32,8 @@
     <meta name="mobile-web-app-capable" content="yes">
     <%= render 'shared/ios_pwa_links' %>
 
+    <!-- JavaScript: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
   </head>
 
@@ -40,5 +46,7 @@
       </div>
       <%= render "shared/footer" %>
     </div>
+
+
   </body>
 </html>

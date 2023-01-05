@@ -36,12 +36,12 @@
   <div>
     <div class="flexy show-ranking" id="ol-classement">
       <table>
-        <tr>
-          <th style="padding-right:30px;"></th><th>CLASSEMENT</th><th>PTS</th><th>J</th><th>V/D</th><th>DIF</th>
+        <tr class="border-ranking">
+          <th></th><th>CLASSEMENT</th><th>PTS</th><th>J</th><th>V/D</th><th>DIF</th>
         </tr>
           <% @teams_sorted.each_with_index do |team, index| %>
           <% if team.users.include?(current_user) %>
-            <tr class="current-player">
+            <tr class="current-player border-ranking">
               <td class="classement-gras"><%= index + 1 %></td>
               <td class="points-id back-grey"><%= team.users.first.username.upcase %><br><%= team.users.last.username.upcase %><br></td>
               <td class="points-id"><%= team.number_of_wins %></td>
@@ -54,7 +54,7 @@
               <% end %>
             </tr>
           <% else %>
-            <tr class="other-players">
+            <tr class="other-players border-ranking">
               <td class="classement-gras"><%= index + 1 %></td>
               <td><%= team.users.first.username.upcase %><br><%= team.users.last.username.upcase %><br></td>
               <td class="points-id back-grey"><%= team.number_of_wins %></td>
