@@ -5,16 +5,16 @@ puts "cleaning DB"
 ProfilePicture.destroy_all
 Avatar.destroy_all
 Badge.destroy_all
-# Invitation.destroy_all
-# SelectedUser.destroy_all
-# Field.destroy_all
-# Message.destroy_all
-# TeamUser.destroy_all
+Invitation.destroy_all
+SelectedUser.destroy_all
+Field.destroy_all
+Message.destroy_all
+TeamUser.destroy_all
 User.destroy_all
-# GameTeam.destroy_all
-# Team.destroy_all
-# Game.destroy_all
-# League.destroy_all
+GameTeam.destroy_all
+Team.destroy_all
+Game.destroy_all
+League.destroy_all
 
 
 puts "creating Avatars"
