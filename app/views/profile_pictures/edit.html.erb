@@ -3,6 +3,6 @@
 </div>
 <div class="container container-new-avatar">
   <% @avatars.each do |a| %>
-    <%= button_to image_tag("avatars/#{a.filename}"), {:controller => "profile_pictures", :action => "create", :avatar_id => a.id}, :method=>:post, class: "btn-avatar"  %>
+    <%= button_to image_tag("avatars/#{a.filename}"), {:controller => "profile_pictures", :action => "update", :avatar_id => a.id}, :method=>:patch, class: "btn-avatar"  %>
   <% end %>
 </div>

@@ -20,10 +20,9 @@ class ProfilePicturesController < ApplicationController
   end
 
   def update
-    @user = current_user
-    @profile_picture = @user.profile_picture
-    @profile_picture.update!(avatar_id: params[:avatar_id], user_id: current_user.id)
-    @user.avatar = @profile_picture.avatar
+    @profile_picture = current_user.profile_picture
+    @profile_picture.update(avatar_id: params[:avatar_id], user_id: current_user.id)
+    current_user.avatar = @profile_picture.avatar
     flash[:notice] = 'Avatar mis à jour.' # just a suggestion
     redirect_to accueil_path
   end
