@@ -2,15 +2,15 @@
 
 puts "cleaning DB"
 
-# ProfilePicture.destroy_all
-# Avatar.destroy_all
-# Badge.destroy_all
+ProfilePicture.destroy_all
+Avatar.destroy_all
+Badge.destroy_all
 # Invitation.destroy_all
 # SelectedUser.destroy_all
 # Field.destroy_all
 # Message.destroy_all
 # TeamUser.destroy_all
-# User.destroy_all
+User.destroy_all
 # GameTeam.destroy_all
 # Team.destroy_all
 # Game.destroy_all
@@ -20,7 +20,7 @@ puts "cleaning DB"
 puts "creating Avatars"
 
 avatars = []
-(42..67).each do |i|
+(1..67).each do |i|
   avatar = Avatar.create(filename: "avatar#{i}.svg")
   avatars << avatar
 end
@@ -32,31 +32,31 @@ end
 
 # puts "creating Users"
 
-# users = []
-#   user1 = User.create(email: "titi@gmail.com", username: "Titi", password: "123123", date_of_birth: "1930-01-01")
-#   user2 = User.create(email: "toto@gmail.com", username: "Uncle Moh", password: "123123", date_of_birth: "2000-01-01")
-#   user3 = User.create(email: "tata@gmail.com", username: "Nina", password: "123123", date_of_birth: "1930-01-01")
-#   user4 = User.create(email: "bibi@gmail.com", username: "Maaaarc", password: "123123", date_of_birth: "1930-01-01")
-#   user5 = User.create(email: "tutu@gmail.com", username: "Cathydu13", password: "123123", date_of_birth: "1930-01-01")
-#   user6 = User.create(email: "tete@gmail.com", username: "Patoche", password: "123123", date_of_birth: "1930-01-01")
-#   user7 = User.create(email: "tyty@gmail.com", username: "Aline", password: "123123", date_of_birth: "1930-01-01")
-#   user8 = User.create(email: "trotro@gmail.com", username: "Lucienne", password: "123123", date_of_birth: "1930-01-01")
-#   user9 = User.create(email: "tratra@gmail.com", username: "Léo le minot", password: "123123", date_of_birth: "1930-01-01")
-#   user10 = User.create(email: "trytry@gmail.com", username: "Dwight S", password: "123123", date_of_birth: "1930-01-01")
-#   user11 = User.create(email: "tretre@gmail.com", username: "Hasnia", password: "123123", date_of_birth: "1930-01-01")
-#   user12 = User.create(email: "blabla@gmail.com", username: "Sophia", password: "123123", date_of_birth: "1930-01-01")
-#   user13 = User.create(email: "lyly@gmail.com", username: "Canto", password: "123123", date_of_birth: "1930-01-01")
-#   user14 = User.create(email: "lrolro@gmail.com", username: "La Machine", password: "123123", date_of_birth: "1930-01-01")
-#   user15= User.create(email: "lralra@gmail.com", username: "Le sécateur", password: "123123", date_of_birth: "1930-01-01")
-#   user16 = User.create(email: "lrylry@gmail.com", username: "Felipe", password: "123123", date_of_birth: "1930-01-01")
-#   user17 = User.create(email: "lrelre@gmail.com", username: "Mamad", password: "123123", date_of_birth: "1930-01-01")
-#   user18 = User.create(email: "tlatla@gmail.com", username: "Habibi", password: "123123", date_of_birth: "1930-01-01")
-#   user19 = User.create(email: "rere@gmail.com", username: "Tireur en bois", password: "123123", date_of_birth: "1930-01-01")
-#   user20 = User.create(email: "lala@gmail.com", username: "Inti la queen", password: "123123", date_of_birth: "1930-01-01")
+users = []
+  user1 = User.create(email: "titi@gmail.com", username: "Titi", password: "123123", date_of_birth: "1930-01-01")
+  user2 = User.create(email: "toto@gmail.com", username: "Uncle Moh", password: "123123", date_of_birth: "2000-01-01")
+  user3 = User.create(email: "tata@gmail.com", username: "Nina", password: "123123", date_of_birth: "1930-01-01")
+  user4 = User.create(email: "bibi@gmail.com", username: "Maaaarc", password: "123123", date_of_birth: "1930-01-01")
+  user5 = User.create(email: "tutu@gmail.com", username: "Cathydu13", password: "123123", date_of_birth: "1930-01-01")
+  user6 = User.create(email: "tete@gmail.com", username: "Patoche", password: "123123", date_of_birth: "1930-01-01")
+  user7 = User.create(email: "tyty@gmail.com", username: "Aline", password: "123123", date_of_birth: "1930-01-01")
+  user8 = User.create(email: "trotro@gmail.com", username: "Lucienne", password: "123123", date_of_birth: "1930-01-01")
+  user9 = User.create(email: "tratra@gmail.com", username: "Léo le minot", password: "123123", date_of_birth: "1930-01-01")
+  user10 = User.create(email: "trytry@gmail.com", username: "Dwight S", password: "123123", date_of_birth: "1930-01-01")
+  user11 = User.create(email: "tretre@gmail.com", username: "Hasnia", password: "123123", date_of_birth: "1930-01-01")
+  user12 = User.create(email: "blabla@gmail.com", username: "Sophia", password: "123123", date_of_birth: "1930-01-01")
+  user13 = User.create(email: "lyly@gmail.com", username: "Canto", password: "123123", date_of_birth: "1930-01-01")
+  user14 = User.create(email: "lrolro@gmail.com", username: "La Machine", password: "123123", date_of_birth: "1930-01-01")
+  user15= User.create(email: "lralra@gmail.com", username: "Le sécateur", password: "123123", date_of_birth: "1930-01-01")
+  user16 = User.create(email: "lrylry@gmail.com", username: "Felipe", password: "123123", date_of_birth: "1930-01-01")
+  user17 = User.create(email: "lrelre@gmail.com", username: "Mamad", password: "123123", date_of_birth: "1930-01-01")
+  user18 = User.create(email: "tlatla@gmail.com", username: "Habibi", password: "123123", date_of_birth: "1930-01-01")
+  user19 = User.create(email: "rere@gmail.com", username: "Tireur en bois", password: "123123", date_of_birth: "1930-01-01")
+  user20 = User.create(email: "lala@gmail.com", username: "Inti la queen", password: "123123", date_of_birth: "1930-01-01")
 
-#   (0..19).each do |i|
-#     users.push(User.all[i])
-#   end
+  (0..19).each do |i|
+    users.push(User.all[i])
+  end
 
   # photo1 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar17_qtsqti.png')
   # photo2 = URI.open('https://res.cloudinary.com/dushuxqmj/image/upload/v1669991182/development/p%C3%A9tanque-social-club/avatar13_fsnstx.png')
@@ -123,9 +123,9 @@ end
     # Badge.create!(user: user19)
     # Badge.create!(user: user20)
 
-    # (0..19).each do |i|
-    #   User.all[i].profile_picture = ProfilePicture.create(avatar_id: avatars.sample.id, user_id: User.all[i])
-    # end
+    (0..19).each do |i|
+      User.all[i].profile_picture = ProfilePicture.create(avatar_id: avatars.sample.id, user_id: User.all[i])
+    end
 
 
     # user20.save
