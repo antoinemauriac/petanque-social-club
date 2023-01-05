@@ -23,7 +23,12 @@
 
   <div class="stats" data-profile-target="stats">
     <% if @user.number_of_games_played == 0 %>
-      <p>Il faut jouer des matchs pour avoir des statistiques 🤓</p>
+    <div class="no-stats">
+      <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_emntxv1p.json"  background="transparent"  id="lottie-man" speed="1"  style="width: 180px; height: 180px;"  loop autoplay></lottie-player>
+      <div id="man-text">
+        <p><span data-controller="typed-js"></span></p>
+      </div>
+    </div>
     <% else %>
     <% if @user == current_user %>
       <h3>MON BILAN</h3>

@@ -27,3 +27,6 @@ application.register("selection", SelectionController)
 
 import TerrainController from "./terrain_controller"
 application.register("terrain", TerrainController)
+
+import TypedJsController from "./typed_js_controller"
+application.register("typed-js", TypedJsController)
