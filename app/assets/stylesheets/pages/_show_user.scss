@@ -123,3 +123,30 @@
   margin: 0 auto;
   text-align: left;
 }
+
+.no-stats {
+  width: 320px;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    font-size: 22px;
+    line-height: 4vh;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 0!important;
+  }
+}
+
+#man-text {
+  background-color: $yellow;
+  border-radius: 10px;
+  width: 320px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
