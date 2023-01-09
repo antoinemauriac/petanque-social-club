@@ -61,3 +61,21 @@ section {
     opacity: 0;
   }
 }
+
+#etape-container {
+  text-align: left;
+  max-width: 350px;
+
+  h2 {
+    font-size: 20px;
+    margin: 16px 0px;
+    font-style: normal;
+    text-align: center;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 2.5vh;
+    // font-style: normal;
+  }
+}

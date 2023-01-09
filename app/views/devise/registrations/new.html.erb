@@ -7,25 +7,30 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
-              <%= f.input :username,
+      <%= f.input :username,
+                  label: "Nom d'utilisateur (surnom)",
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "username" }%>
-      <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
-                                end_year: Date.today.year, discard_day: true,
-                                order: [:day, :month, :year] %>
-
+                  input_html: { autocomplete: "username" },
+                  hint: ("15 caractères maximum")%>
+      <%= f.input :date_of_birth, as: :date,
+                                start_year: Date.today.year - 90,
+                                end_year: Date.today.year,
+                                order: [:day, :month, :year],
+                                label: "Date de naissance" %>
       <%= f.input :password,
+                  label: "Mot de passe",
                   required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  hint: ("#{@minimum_password_length} charactères minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation,
+                  label: "Confirmation du mot de passe",
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up", class: "btn-score btn btn-small btn-login" %>
+      <%= f.button :submit, "C'est parti !", class: "btn-score btn btn-small btn-login" %>
     </div>
   <% end %>
 
