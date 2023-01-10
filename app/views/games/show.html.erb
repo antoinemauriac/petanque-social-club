@@ -1,8 +1,7 @@
-<h3 class="bar light-blue-bar">ALORS C'EST QUOI LE SCORE ?</h3>
-<div class="edit-score edit-score-league">
-  <%= form_with model: @game, html: {class: "edit-score-form"} do |form| %>
-    <div class="team-display">
-      <% @team1.users.each do |user| %>
+<h2 class="bar light-blue-bar">MATCH ONE SHOT</h2>
+  <div class="edit-score-form">
+    <div class="team-display team-display-one-shot">
+      <% @team_one.users.each do |user| %>
       <div class="each-player">
       <% if user == current_user %>
         <%= image_tag user.profile_pic, class: "avatar-yellow avatar-medium avatar-score" %>
@@ -13,9 +12,21 @@
       </div>
       <% end %>
     </div>
-  <%= form.text_area :score_first_team, class: 'score-team'  %>
-    <div class="team-display">
-      <% @team2.users.each do |user| %>
+
+    <div class="flexy" id="score-one-shot">
+    <% if @game.status == true %>
+      <div class="score-one-shot">
+        <h1><%= @game.score_first_team %></h1>
+        <h1> ------ </h1>
+        <h1><%= @game.score_second_team %></h1>
+      </div>
+    <% else %>
+      <%= link_to "SCORE ?", edit_league_game_path(@game.id), class:"btn-small btn-score" %>
+    <% end %>
+    </div>
+
+    <div class="team-display team-display-one-shot">
+      <% @team_two.users.each do |user| %>
       <div class="each-player">
       <% if user == current_user %>
         <%= image_tag user.profile_pic, class: "avatar-yellow avatar-medium avatar-score" %>
@@ -26,8 +37,5 @@
       </div>
         <% end %>
     </div>
-    <%= form.text_area :score_second_team, class: 'score-team'  %>
-    <br>
-    <%= form.submit "VALIDER", class: "btn-small btn-smally" %>
-  <% end %>
-</div>
+
+  </div>

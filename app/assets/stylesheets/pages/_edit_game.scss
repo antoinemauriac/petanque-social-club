@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 330px;
+  width: 330px;
   margin: auto auto;
   text-align: center;
 }
@@ -37,5 +37,15 @@
 }
 
 .edit-score-form {
-  width: 300px;
+  width: 330px;
+  margin: auto auto;
+}
+
+.team-display-one-shot {
+  margin: 4vh 0;
+}
+
+.score-one-shot {
+  display: grid;
+  place-items: center;
 }

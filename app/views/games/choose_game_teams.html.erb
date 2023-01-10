@@ -1,0 +1,20 @@
+<h2 class="bar light-blue-bar">NOUVEAU MATCH</h2>
+<h3 class="bar yellow-bar">2. JE FORME LES DOUBLETTES</h3>
+
+<div class="flexy choose-teams">
+  <%= form_with model: [@game, @team_user], :url =>  choose_game_teams_create_game_path(@game), :html => {:method => :post} do |f| %>
+  <h3>DOUBLETTE n°1</h3>
+  <div class="doublette-selection">
+    <%= f.collection_select "team1user1", @players.map { |player| [player.username.upcase, player.id] }, :second, :first, {}, { class: "btn-doublette" } %>
+    <%= f.collection_select "team1user2", @players.map { |player| [player.username.upcase, player.id] }, :second, :first, {}, { class: "btn-doublette" } %>
+  </div>
+  <h3>DOUBLETTE n°2</h3>
+  <div class="doublette-selection">
+    <%= f.collection_select "team2user1", @players.map { |player| [player.username.upcase, player.id] }, :second, :first, {}, { class: "btn-doublette" } %>
+    <%= f.collection_select "team2user2", @players.map { |player| [player.username.upcase, player.id] }, :second, :first, {}, { class: "btn-doublette" } %>
+  </div>
+  <div class="flexy">
+    <%= f.submit 'FINITO', class: "btn-small btn-smally" %>
+  </div>
+  <% end %>
+</div>

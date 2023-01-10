@@ -5,10 +5,10 @@
   <%= form_with model: [@league, @team_user], :url =>  choose_teams_create_league_path(@league), :html => {:method => :post} do |f| %>
     <% i = 1 %>
     <% @number_of_teams.times do %>
-      <h3><%= "Doublette #{i}" %></h3>
+      <h3><%= "DOUBLETTE n°#{i}" %></h3>
       <div class="doublette-selection">
-        <%= f.collection_select "team#{i}user1", @players, :id, :username, {}, { class: "btn-doublette" } %>
-        <%= f.collection_select "team#{i}user2", @players, :id, :username, {}, { class: "btn-doublette" } %>
+        <%= f.collection_select "team#{i}user1", @players.map { |player| [player.username.upcase, player.id] }, :second, :first, {}, { class: "btn-doublette" } %>
+        <%= f.collection_select "team#{i}user2", @players.map { |player| [player.username.upcase, player.id] }, :second, :first, {}, { class: "btn-doublette" } %>
       </div>
       <% i += 1 %>
     <% end %>

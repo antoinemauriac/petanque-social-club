@@ -35,9 +35,9 @@
 }
 
 .btn-medium {
-  margin: 10px 0px;
-  width: 95%;
-  height: 50px;
+  margin: 8px 0px;
+  width: 90%;
+  height: 60px;
   border-radius: 15px;
   background-color: $blue;
   text-align: center;
@@ -58,12 +58,12 @@
 
 #btn-create {
   align-items: center;
-  color: $blue;
-  background-color: $yellow;
+  color: $yellow;
+  background-color: $blue;
 }
 
 #btn-create:hover {
-  color: $blue!important;
+  color: $yellow!important;
 }
 
 .btn-big {
@@ -97,7 +97,7 @@
   font-style: italic;
   margin-top: 10px;
   margin-bottom: 15px;
-  color: $white;
+  color: $yellow;
   height: 35px;
 }
 
@@ -107,4 +107,10 @@
 
 #btn-jouer {
   margin-top: 40px;
+}
+
+#btn-score-one-shot {
+ a{
+  width: 100px;
+ }
 }

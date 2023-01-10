@@ -20,6 +20,7 @@ class User < ApplicationRecord
   has_many :messages
   has_many :selected_users
   has_many :leagues, through: :selected_users
+  has_many :selected_players
 
   include PgSearch::Model
   pg_search_scope :global_search,
