@@ -1,0 +1,6 @@
+<% if @current_games.any? %>
+<h2 class="bar light-blue-bar">MATCHS EN COURS</h2>
+<% @current_games.each do |game| %>
+<%= game.teams.last.users.first.username.upcase %>
+<% end %>
+<% end %>

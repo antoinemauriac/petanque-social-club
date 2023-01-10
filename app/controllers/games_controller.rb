@@ -6,6 +6,68 @@ class GamesController < ApplicationController
     @other_games = @league.games.where.not(id: @current_user_games)
   end
 
+  def new
+    @game = Game.new
+    @user = current_user
+    @friends = @user.friends.to_a.push(@user).reverse
+  end
+
+  def create
+    @game = Game.new
+    @players = params[:user].keys.map { |username| User.find_by(username: username) }
+    if @players.size == 4
+      if @game.save
+        @players.each do |player|
+          SelectedPlayer.create(game: @game, user: player)
+        end
+        redirect_to choose_game_teams_game_path(@game)
+      else
+        render :new, status: :unprocessable_entity
+      end
+    else
+      redirect_to new_game_path
+      flash[:notice] = 'Il faut 4 joueurs'
+    end
+  end
+
+  def choose_game_teams
+    @game = Game.find(params[:id])
+    @players = @game.selected_players.map(&:user)
+    @usernames = @players.map(&:username)
+    @team_user = TeamUser.new
+  end
+
+  def choose_game_teams_create
+    @game = Game.find(params[:id])
+    @pairs_of_players = params[:team_user].values.map { |id| User.find(id) }.each_slice(2).to_a
+
+    @team_one = Team.create
+    @team_two = Team.create
+
+    @pairs_of_players.first.each do |player|
+      TeamUser.create(user: player, team: @team_one)
+    end
+
+    @pairs_of_players.last.each do |player|
+      TeamUser.create(user: player, team: @team_two)
+    end
+
+    GameTeam.create!(team: @team_one, game: @game)
+    GameTeam.create!(team: @team_two, game: @game)
+
+    if @game.save
+      redirect_to game_path(@game)
+    else
+      redirect_to choose_game_teams_game_path(@game)
+    end
+  end
+
+  def show
+    @game = Game.find(params[:id])
+    @team_one = @game.teams.first
+    @team_two = @game.teams.last
+  end
+
   def edit
     @game = Game.find(params[:id])
     @team1 = @game.teams.first
@@ -13,6 +75,7 @@ class GamesController < ApplicationController
   end
 
   def update
+    # raise
     @game = Game.find(params[:id])
     @league = @game.league
     @team1 = @game.teams.first
@@ -49,23 +112,27 @@ class GamesController < ApplicationController
         @game.save
 
         # fin_de_league
-        @number_of_games_finished = @league.games.where(status: true).count
-        @number_total_of_games = @league.games.count
-        if @number_of_games_finished == @number_total_of_games
-          @league.league_winner = @league.teams.sort_by { |team| [-team.number_of_wins, -(team.points_for - team.points_against)] }.first.id
-          @league.status = true
-          @league.save
-        end
+        if @game.league.present?
+          @number_of_games_finished = @league.games.where(status: true).count
+          @number_total_of_games = @league.games.count
+          if @number_of_games_finished == @number_total_of_games
+            @league.league_winner = @league.teams.sort_by { |team| [-team.number_of_wins, -(team.points_for - team.points_against)] }.first.id
+            @league.status = true
+            @league.save
+          end
 
-        if @league.status == true
-          badge_first_league_winner
-          badge_generation
-        end
+          if @league.status == true
+            badge_first_league_winner
+            badge_generation
+          end
 
-        if @league.status == true
-          redirect_to league_path(@league)
+          if @league.status == true
+            redirect_to league_path(@league)
+          else
+            redirect_to league_games_path(@game.league)
+          end
         else
-          redirect_to league_games_path(@game.league)
+          redirect_to game_path(@game)
         end
 
       else
@@ -143,6 +210,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:score_first_team, :score_second_team)
+    params.require(:game).permit(:score_first_team, :score_second_team, :user, :game_id)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_03_141202) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_10_134108) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -85,7 +85,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_03_141202) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.bigint "league_id", null: false
+    t.bigint "league_id"
     t.integer "score_first_team"
     t.integer "score_second_team"
     t.integer "game_winner"
@@ -130,6 +130,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_03_141202) do
     t.datetime "updated_at", null: false
     t.index ["avatar_id"], name: "index_profile_pictures_on_avatar_id"
     t.index ["user_id"], name: "index_profile_pictures_on_user_id"
+  end
+
+  create_table "selected_players", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_selected_players_on_game_id"
+    t.index ["user_id"], name: "index_selected_players_on_user_id"
   end
 
   create_table "selected_users", force: :cascade do |t|
@@ -180,12 +189,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_03_141202) do
   add_foreign_key "badges", "users"
   add_foreign_key "game_teams", "games"
   add_foreign_key "game_teams", "teams"
-  add_foreign_key "games", "leagues"
+  add_foreign_key "games", "leagues", on_delete: :nullify
   add_foreign_key "invitations", "users"
   add_foreign_key "messages", "leagues"
   add_foreign_key "messages", "users"
   add_foreign_key "profile_pictures", "avatars"
   add_foreign_key "profile_pictures", "users"
+  add_foreign_key "selected_players", "games"
+  add_foreign_key "selected_players", "users"
   add_foreign_key "selected_users", "leagues"
   add_foreign_key "selected_users", "users"
   add_foreign_key "team_users", "teams"

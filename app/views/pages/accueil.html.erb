@@ -1,8 +1,10 @@
 <h2 class="bar light-blue-bar">LE MENU</h2>
 
 <div class="flexy">
-  <%= link_to "MODE LIGUE" , leagues_path, class:"btn-big" %>
-  <%= link_to "MATCH ONE SHOT" , fields_path, class:"btn-big" %>
-  <%= link_to "MON PROFIL" , user_path(current_user), class:"btn-big" %>
-  <%= link_to "LA COMMUNAUTÉ" , community_path, class:"btn-big" %>
+  <%= link_to "+ NOUVELLE LIGUE +", new_league_path, class:"btn-medium", id:"btn-create" %>
+  <%= link_to "+ NOUVEAU MATCH +", new_game_path, class:"btn-medium", id:"btn-create" %>
+  <%= link_to "MES LIGUES" , leagues_path, class:"btn-medium btn-accueil" %>
+  <%= link_to "MATCHS ONE SHOT" , users_games_index_path, class:"btn-medium btn-accueil" %>
+  <%= link_to "MON PROFIL" , user_path(current_user), class:"btn-medium btn-accueil" %>
+  <%= link_to "LA COMMUNAUTÉ" , community_path, class:"btn-medium btn-accueil" %>
 </div>

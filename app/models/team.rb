@@ -2,7 +2,7 @@ class Team < ApplicationRecord
   has_many :game_teams
   has_many :games, through: :game_teams
 
-  belongs_to :league
+  belongs_to :league, optional: true
 
   has_many :team_users
   has_many :users, through: :team_users

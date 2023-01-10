@@ -1,0 +1,16 @@
+<h3 class="bar light-blue-bar">NOUVEAU MATCH</h3>
+<h3 class="bar yellow-bar">1. CHOISIS 4 COLLÈGUES</h3>
+<div class="container-player-selection">
+  <%= simple_form_for @game, html: { class: "form-new-league"} do |f| %>
+  <div class="player-selection">
+      <% @friends.each do |friend| %>
+      <div class="select-player"  data-controller="selection" data-selection-target="player">
+        <input type="checkbox" name="user[<%=friend.username%>]" id="<%=friend.username%>" class="check-player" />
+        <label class="username-create" data-action="click->selection#background" for="<%= friend.username %>"><%= friend.username.upcase %></label>
+        <%= image_tag friend.profile_pic, class: "avatar-blue avatar-small", id: "avatar-background"%>
+      </div>
+    <% end %>
+  </div>
+  <%= f.submit 'SUIVANT', class: "btn-small btn-smally" %>
+    <% end %>
+</div>
