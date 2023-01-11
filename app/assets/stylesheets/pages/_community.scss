@@ -38,12 +38,14 @@
 
 
 #searchbar {
-  margin-top: 20px;
+  border: none;
+  margin-top: 30px;
+  margin-bottom: 10px;
   border: 3px solid $blue;
   border-radius: 7px;
-  width: 210px;
+  width: 280px;
   text-align: center;
-  height: 40px;
+  height: 55px;
   color: $blue;
   font-weight: 700;
 }

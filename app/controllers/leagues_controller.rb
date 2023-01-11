@@ -25,7 +25,7 @@ class LeaguesController < ApplicationController
   def create
     @league = League.new(league_params)
     @players = params[:user].keys.map { |username| User.find_by(username: username) }
-    if @players.size.even?
+    if @players.size.even? && @players.size > 2 && @players.include?(current_user)
       if @league.save
         @players.each do |player|
           SelectedUser.create(league: @league, user: player)
@@ -36,7 +36,7 @@ class LeaguesController < ApplicationController
       end
     else
       redirect_to new_league_path
-      flash[:notice] = 'Il faut un nombre pair de joueurs'
+      flash[:notice] = 'Il faut un nombre pair de joueurs et que tu en fasses partie'
     end
   end
 

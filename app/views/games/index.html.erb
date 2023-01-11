@@ -20,19 +20,35 @@
     <% second_team = game.teams.last %>
         <div class="row row-game">
           <div class="col-4 col-left">
-            <p class="player-actuel"><%= first_team.users[0].username.upcase %>
-            <p class="player-actuel"><%= first_team.users[1].username.upcase %>
+            <% if first_team.users[0] == current_user %>
+              <p class="player-actuel"><%= first_team.users[0].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+            <% else %>
+              <p class="player-actuel"><%= first_team.users[0].username.upcase %>
+            <% end %>
+            <% if first_team.users[1] == current_user %>
+              <p class="player-actuel"><%= first_team.users[1].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+            <% else %>
+              <p class="player-actuel"><%= first_team.users[1].username.upcase %>
+            <% end %>
           </div>
           <div class="col-4 score-color" style="text-align:center">
-          <% if game.status == true %>
-            <%= game.score_first_team %> - <%= game.score_second_team %>
-          <% else %>
-            <%= link_to "SCORE ?", edit_league_game_path(@league, game.id), class:"btn-small btn-score" %>
-          <% end %>
+            <% if game.status == true %>
+              <%= game.score_first_team %> - <%= game.score_second_team %>
+            <% else %>
+              <%= link_to "SCORE ?", edit_league_game_path(@league, game.id), class:"btn-small btn-score" %>
+            <% end %>
           </div>
           <div class="col-4 col-right">
-            <p class="player-actuel"><%= second_team.users[0].username.upcase %>
-            <p class="player-actuel"><%= second_team.users[1].username.upcase %>
+            <% if second_team.users[0] == current_user %>
+              <p class="player-actuel"><%= second_team.users[0].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+            <% else %>
+              <p class="player-actuel"><%= second_team.users[0].username.upcase %>
+            <% end %>
+            <% if second_team.users[1] == current_user %>
+              <p class="player-actuel"><%= second_team.users[1].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+            <% else %>
+              <p class="player-actuel"><%= second_team.users[1].username.upcase %>
+            <% end %>
           </div>
         </div>
   <% end %>
@@ -43,19 +59,35 @@
     <% second_team = game.teams.last %>
         <div class="row row-game">
           <div class="col-4 col-left">
-            <p class="player-actuel"><%= first_team.users[0].username.upcase %>
-            <p class="player-actuel"><%= first_team.users[1].username.upcase %>
+            <% if first_team.users[0] == current_user %>
+              <p class="player-actuel"><%= first_team.users[0].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+            <% else %>
+              <p class="player-actuel"><%= first_team.users[0].username.upcase %>
+            <% end %>
+            <% if first_team.users[1] == current_user %>
+              <p class="player-actuel"><%= first_team.users[1].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+            <% else %>
+              <p class="player-actuel"><%= first_team.users[1].username.upcase %>
+            <% end %>
           </div>
           <div class="col-4 score-color" style="text-align:center">
-          <% if game.status == true %>
-            <%= game.score_first_team %> - <%= game.score_second_team %>
-          <% else %>
-            <%= "-" %>
-          <% end %>
+            <% if game.status == true %>
+              <%= game.score_first_team %> - <%= game.score_second_team %>
+            <% else %>
+              <%= "-" %>
+            <% end %>
           </div>
           <div class="col-4 col-right">
-            <p class="player-actuel"><%= second_team.users[0].username.upcase %>
-            <p class="player-actuel"><%= second_team.users[1].username.upcase %>
+            <% if second_team.users[0] == current_user %>
+              <p class="player-actuel"><%= second_team.users[0].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+            <% else %>
+              <p class="player-actuel"><%= second_team.users[0].username.upcase %>
+            <% end %>
+            <% if second_team.users[1] == current_user %>
+              <p class="player-actuel"><%= second_team.users[1].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+            <% else %>
+              <p class="player-actuel"><%= second_team.users[1].username.upcase %>
+            <% end %>
           </div>
         </div>
   <% end %>

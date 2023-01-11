@@ -15,7 +15,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new
     @players = params[:user].keys.map { |username| User.find_by(username: username) }
-    if @players.size == 4
+    if @players.size == 4 && @players.include?(current_user)
       if @game.save
         @players.each do |player|
           SelectedPlayer.create(game: @game, user: player)
@@ -26,7 +26,7 @@ class GamesController < ApplicationController
       end
     else
       redirect_to new_game_path
-      flash[:notice] = 'Il faut 4 joueurs'
+      flash[:notice] = 'Il faut 4 joueurs et que tu sois dans les 4'
     end
   end
 
@@ -136,7 +136,7 @@ class GamesController < ApplicationController
         end
 
       else
-        flash[:notice] = 'Score non valide !'
+        # flash[:notice] = 'Score non valide !'
         render :edit, status: :unprocessable_entity
       end
     else
@@ -152,14 +152,14 @@ class GamesController < ApplicationController
     if @first_vainqueur.badge.first_league_winner == false
       @first_vainqueur.badge.update!(first_league_winner: true)
       if @first_vainqueur == current_user
-        flash[:notice] = 'Badge "Vainqueur de Ligue" débloqué 🏆'
+        flash[:notice] = 'Nouveau badge débloqué'
       end
     end
 
     if @second_vainqueur.badge.first_league_winner == false
       @second_vainqueur.badge.update!(first_league_winner: true)
       if @second_vainqueur == current_user
-        flash[:notice] = 'Badge "Vainqueur de Ligue" débloqué 🏆'
+        flash[:notice] = 'Nouveau badge débloqué'
       end
     end
   end
@@ -171,14 +171,14 @@ class GamesController < ApplicationController
     if @first_vainqueur.badge.generation == false && (@first_vainqueur.date_of_birth.year - @second_vainqueur.date_of_birth.year).abs > 30
       @first_vainqueur.badge.update!(generation: true)
       if @first_vainqueur == current_user
-        flash[:alert] = 'Badge "Génération" débloqué 👴🏻'
+        flash[:alert] = 'Nouveau badge débloqué'
       end
     end
 
     if @second_vainqueur.badge.generation == false && (@first_vainqueur.date_of_birth.year - @second_vainqueur.date_of_birth.year).abs > 30
       @second_vainqueur.badge.update!(generation: true)
       if @second_vainqueur == current_user
-        flash[:alert] = 'Badge "Génération" débloqué 👴🏻'
+        flash[:alert] = 'Nouveau badge débloqué'
       end
     end
   end
@@ -195,14 +195,14 @@ class GamesController < ApplicationController
     if @first_game_winner.badge.first_fanny == false
       @first_game_winner.badge.update!(first_fanny: true)
       if @first_game_winner == current_user
-        flash[:notice] = 'Badge "Fanny" débloqué 😘'
+        flash[:notice] = 'Nouveau badge débloqué'
       end
     end
 
     if @second_game_winner.badge.first_fanny == false
       @second_game_winner.badge.update!(first_fanny: true)
       if @second_game_winner == current_user
-        flash[:notice] = 'Badge "Fanny" débloqué 😘'
+        flash[:notice] = 'Nouveau badge débloqué'
       end
     end
   end

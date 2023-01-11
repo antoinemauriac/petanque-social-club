@@ -4,5 +4,6 @@ class Users::GamesController < ApplicationController
     @games = @user.games.where(league_id: nil)
     @current_games = @games.where(status: nil)
     @finished_games = @games.where(status: true)
+    @league = nil
   end
 end

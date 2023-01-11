@@ -1,7 +1,7 @@
 <h2 class= "bar light-blue-bar">MES LIGUES</h2>
 
 <div class="flexy create-league" style="margin-top:15px">
-  <%= link_to "+ NOUVELLE LIGUE +", new_league_path, class:"btn-medium", id:"btn-create" %>
+  <%= link_to content_tag(:i, '', class: "fa-solid fa-square-plus fa-square-left") + "NOUVELLE LIGUE" + content_tag(:i, '', class: "fa-solid fa-square-plus fa-square-right"), new_league_path, class: "btn-medium", id: "btn-create" %>
 </div>
 
 <div class="flexy">
