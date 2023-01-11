@@ -10,6 +10,7 @@ SelectedUser.destroy_all
 Field.destroy_all
 Message.destroy_all
 TeamUser.destroy_all
+SelectedPlayer.destroy_all
 User.destroy_all
 GameTeam.destroy_all
 Team.destroy_all

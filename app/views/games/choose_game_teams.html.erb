@@ -14,7 +14,7 @@
     <%= f.collection_select "team2user2", @players.map { |player| [player.username.upcase, player.id] }, :second, :first, {}, { class: "btn-doublette" } %>
   </div>
   <div class="flexy">
-    <%= f.submit 'FINITO', class: "btn-small btn-smally" %>
+    <%= f.submit 'JOUER', class: "btn-small btn-smally" %>
   </div>
   <% end %>
 </div>

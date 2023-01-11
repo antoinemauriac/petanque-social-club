@@ -22,6 +22,11 @@
   }
 }
 
+.row-current-game {
+  border-bottom: none;
+  margin-bottom: 10px;
+}
+
 .score-color {
   color: $blue;
   margin-top: 10px;

@@ -1,9 +1,12 @@
 <div class="menu">
-  <%= link_to leagues_path, class:"menu__item" do %>
-    <i class="fa-solid fa-crown icones"></i>
+  <%= link_to "/accueil", class:"menu__item" do %>
+    <i class="fa-solid fa-house icones"></i>
   <% end %>
-  <%= link_to fields_path, class:"menu__item" do %>
-    <i class="fa-solid fa-map-location-dot icones"></i>
+  <%= link_to leagues_path, class:"menu__item" do %>
+    <i class="fa-solid fa-trophy icones"></i>
+  <% end %>
+  <%= link_to users_games_index_path, class:"menu__item" do %>
+    <i class="fa-solid fa-basketball icones"></i>
   <% end %>
   <% if current_user %>
     <%= link_to user_path(current_user), class:"menu__item" do %>
@@ -11,6 +14,6 @@
     <% end %>
   <% end %>
   <%= link_to community_path, class:"menu__item" do %>
-    <i class="fa-solid fa-globe icones"></i>
+    <i class="fa-solid fa-face-smile icones"></i>
   <% end %>
 </div>

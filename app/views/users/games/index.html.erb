@@ -1,6 +1,75 @@
 <% if @current_games.any? %>
-<h2 class="bar light-blue-bar">MATCHS EN COURS</h2>
-<% @current_games.each do |game| %>
-<%= game.teams.last.users.first.username.upcase %>
+  <h2 class="bar light-blue-bar">MATCHS EN COURS</h2>
+  <div class="flexy" style="margin-top:20px">
+    <% @current_games.each do |game| %>
+      <% first_team = game.teams.first %>
+      <% second_team = game.teams.last %>
+      <div class="row row-game row-current-game">
+        <div class="col-4 col-left">
+          <% if first_team.users[0] == current_user %>
+            <p class="player-actuel"><%= first_team.users[0].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+          <% else %>
+            <p class="player-actuel"><%= first_team.users[0].username.upcase %>
+          <% end %>
+          <% if first_team.users[1] == current_user %>
+            <p class="player-actuel"><%= first_team.users[1].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+          <% else %>
+            <p class="player-actuel"><%= first_team.users[1].username.upcase %>
+          <% end %>
+        </div>
+        <div class="col-4 score-color" style="text-align:center">
+          <%= link_to "SCORE ?", edit_league_game_path(game.id, game.id), class:"btn-small btn-score" %>
+        </div>
+        <div class="col-4 col-right">
+          <% if second_team.users[0] == current_user %>
+            <p class="player-actuel"><%= second_team.users[0].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+          <% else %>
+            <p class="player-actuel"><%= second_team.users[0].username.upcase %>
+          <% end %>
+          <% if second_team.users[1] == current_user %>
+            <p class="player-actuel"><%= second_team.users[1].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+          <% else %>
+            <p class="player-actuel"><%= second_team.users[1].username.upcase %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>
-<% end %>
+
+<h2 class="bar light-blue-bar">HISTORIQUE</h2>
+<div class="flexy" style="margin-top:20px">
+  <% @finished_games.each do |game| %>
+    <% first_team = game.teams.first %>
+    <% second_team = game.teams.last %>
+    <div class="row row-game">
+      <div class="col-4 col-left">
+        <% if first_team.users[0] == current_user %>
+          <p class="player-actuel"><%= first_team.users[0].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+        <% else %>
+          <p class="player-actuel"><%= first_team.users[0].username.upcase %>
+        <% end %>
+        <% if first_team.users[1] == current_user %>
+          <p class="player-actuel"><%= first_team.users[1].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+        <% else %>
+          <p class="player-actuel"><%= first_team.users[1].username.upcase %>
+        <% end %>
+      </div>
+      <div class="col-4 score-color" style="text-align:center">
+        <%= game.score_first_team %> - <%= game.score_second_team %>
+      </div>
+        <div class="col-4 col-right">
+          <% if second_team.users[0] == current_user %>
+            <p class="player-actuel"><%= second_team.users[0].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+          <% else %>
+            <p class="player-actuel"><%= second_team.users[0].username.upcase %>
+          <% end %>
+          <% if second_team.users[1] == current_user %>
+            <p class="player-actuel"><%= second_team.users[1].username.upcase %><%= image_tag current_user.profile_pic, class: "avatar-yellow avatar-mini" %>
+          <% else %>
+            <p class="player-actuel"><%= second_team.users[1].username.upcase %>
+          <% end %>
+        </div>
+    </div>
+  <% end %>
+</div>

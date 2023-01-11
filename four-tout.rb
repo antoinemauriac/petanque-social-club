@@ -215,3 +215,10 @@ HEEEELLLLO
     </div>
   </div>
 </div>
+
+<%= form_with url: "/community", method: :get do %>
+  <%= text_field_tag :query, params[:query], placeholder: "nanard ou bernard@gmail.com", id: "searchbar" %>
+  <div class="flexy">
+  <button class="btn-small btn-smally" id="btn-search" type="submit" label="search">RECHERCHER</button>
+  </div>
+<% end %>
