@@ -53,25 +53,46 @@ class LeaguesController < ApplicationController
     end
   end
 
+  # def random
+  #   @league = League.find(params[:id])
+  #   @teams = []
+  #   @pairs_of_players = @league.selected_users.map(&:user).shuffle.each_slice(2).to_a
+  #   @pairs_of_players.each do |pair|
+  #     @team = Team.create(league: @league)
+  #     pair.each do |player|
+  #       TeamUser.create(user: player, team: @team)
+  #     end
+  #     if @teams.any?
+  #       @teams.each do |team|
+  #         @game = Game.create(league: @league)
+  #         GameTeam.create!(team: team, game: @game)
+  #         GameTeam.create!(team: @team, game: @game)
+  #       end
+  #     end
+  #     @teams.push(@team)
+  #   end
+  #   redirect_to league_games_path(@league)
+  # end
+
   def random
-    @league = League.find(params[:id])
-    @teams = []
-    @pairs_of_players = @league.selected_users.map(&:user).shuffle.each_slice(2).to_a
-    @pairs_of_players.each do |pair|
-      @team = Team.create(league: @league)
+    league = League.find(params[:id])
+    players = league.selected_users.map(&:user).shuffle
+    teams = []
+
+    players.in_groups_of(2, false) do |pair|
+      team = league.teams.create!
+
       pair.each do |player|
-        TeamUser.create(user: player, team: @team)
+        team.users << player
       end
-      if @teams.any?
-        @teams.each do |team|
-          @game = Game.create(league: @league)
-          GameTeam.create!(team: team, game: @game)
-          GameTeam.create!(team: @team, game: @game)
-        end
+
+      teams.each do |other_team|
+        league.games.create!(teams: [other_team, team])
       end
-      @teams.push(@team)
+
+      teams << team
     end
-    redirect_to league_games_path(@league)
+    redirect_to league_games_path(league)
   end
 
   def choose_teams
@@ -82,25 +103,53 @@ class LeaguesController < ApplicationController
     @number_of_teams = @players.size / 2
   end
 
+  # def choose_teams_create
+  #   @league = League.find(params[:id])
+  #   @pairs_of_players = params[:team_user].values.map { |id| User.find(id) }.each_slice(2).to_a
+  #   @teams = []
+  #   @pairs_of_players.each do |pair|
+  #     @team = Team.create(league: @league)
+  #     pair.each do |player|
+  #       TeamUser.create(user: player, team: @team)
+  #     end
+  #     if @teams.any?
+  #       @teams.each do |team|
+  #         @game = Game.create(league: @league)
+  #         GameTeam.create!(team: team, game: @game)
+  #         GameTeam.create!(team: @team, game: @game)
+  #       end
+  #     end
+  #     @teams.push(@team)
+  #   end
+  #   redirect_to league_games_path(@league)
+  # end
+
   def choose_teams_create
-    @league = League.find(params[:id])
-    @pairs_of_players = params[:team_user].values.map { |id| User.find(id) }.each_slice(2).to_a
-    @teams = []
-    @pairs_of_players.each do |pair|
-      @team = Team.create(league: @league)
+    league = League.find(params[:id])
+    # begin
+    #   raise "missing params" if params[:team_user].nil? || params[:team_user].empty?
+    player_ids = params[:team_user].values
+      # raise "invalid player ids" if player_ids.count {|id| User.find_by(id: id).nil? } > 0
+    players = player_ids.map { |id| User.find(id) }
+    # rescue StandardError => e
+    #   redirect_to league_path(league), alert: e.message
+    #   return
+    # end
+
+    teams = []
+    players.in_groups_of(2, false) do |pair|
+      team = league.teams.create!
       pair.each do |player|
-        TeamUser.create(user: player, team: @team)
+        team.users << player
       end
-      if @teams.any?
-        @teams.each do |team|
-          @game = Game.create(league: @league)
-          GameTeam.create!(team: team, game: @game)
-          GameTeam.create!(team: @team, game: @game)
-        end
+
+      teams.each do |other_team|
+        league.games.create!(teams: [other_team, team])
       end
-      @teams.push(@team)
+
+      teams << team
     end
-    redirect_to league_games_path(@league)
+    redirect_to league_games_path(league)
   end
 
   private

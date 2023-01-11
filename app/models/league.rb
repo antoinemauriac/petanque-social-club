@@ -7,4 +7,5 @@ class League < ApplicationRecord
   has_many :messages
   has_many :selected_users
   has_many :users, through: :selected_users
+
 end
